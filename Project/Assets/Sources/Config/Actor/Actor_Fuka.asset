@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2d017bab802b544cae25f12c3993ded, type: 3}
+  m_Name: Actor_Fuka
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  actorID: 11000
+  actorName: Fuka
+  actorProperty:
+    heathPoints: 1000
+    actorDamage: 100
+    actorMoveSpeed: 100
+    actorAttackSpeed: 100
+    actorAccumulateTankSpeed: 100
+    actorDefaultPositive: {x: 0, y: 90, z: 0}
+  skillActions:
+    defaultSkillActions: {fileID: 11400000, guid: 468619934b90b89409c7fea4ecc8a4f6,
+      type: 2}
+    actorSkillActions:
+    - {fileID: 11400000, guid: f089ef613b9c97e43b52c5079715089b, type: 2}
+    - {fileID: 11400000, guid: addaae1097b0ce14289caa70a9514ab7, type: 2}
+    - {fileID: 11400000, guid: f240f816a0a552d46a6cf4c5323b6e86, type: 2}
