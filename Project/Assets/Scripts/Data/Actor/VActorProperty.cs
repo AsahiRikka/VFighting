@@ -33,10 +33,10 @@ public class VActorProperty
     /// 基础蓄力速度
     /// </summary>
     public float actorAccumulateTankSpeed = 100;
-    
+
     /// <summary>
     /// 角色正方向
     /// </summary>
-    [InfoBox("角色正方向，向右为准")]
-    public Vector3 actorDefaultPositive=Vector3.zero;
+    // [InfoBox("角色正方向，向右为准")] 
+    // public Vector3 actorDefaultRotate = Vector3.zero;
 }

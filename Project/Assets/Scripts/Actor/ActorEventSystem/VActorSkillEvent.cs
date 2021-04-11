@@ -11,11 +11,6 @@ public class VActorSkillEvent
     public MySkillInputEvent skillPlayTriggerEvent = new MySkillInputEvent();
 
     /// <summary>
-    /// 技能结束被触发事件
-    /// </summary>
-    public MySkillInputEvent skillEndTriggerEvent=new MySkillInputEvent();
-
-    /// <summary>
     /// 播放技能事件，符合条件的技能被播放
     /// </summary>
     public MySkillInputEvent skillStartEvent = new MySkillInputEvent();
@@ -23,8 +18,18 @@ public class VActorSkillEvent
     /// <summary>
     /// 技能循环
     /// </summary>
-    public MySkillInputEvent skillUpdateVent=new MySkillInputEvent();
+    public MySkillInputEvent skillUpdateEvent=new MySkillInputEvent();
 
+    /// <summary>
+    /// fixupdate
+    /// </summary>
+    public MySkillInputEvent skillFixUpdateEvent=new MySkillInputEvent();
+    
+    /// <summary>
+    /// 技能结束事件，自然结束的情况下
+    /// </summary>
+    public MySkillInputEvent skillEndNormalEvent = new MySkillInputEvent();
+    
     /// <summary>
     /// 技能结束事件，确认技能结束
     /// </summary>

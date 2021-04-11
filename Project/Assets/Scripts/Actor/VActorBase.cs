@@ -19,6 +19,11 @@ public class VActorBase : MonoBehaviour
     public VActorState state;
 
     /// <summary>
+    /// 引用绑定
+    /// </summary>
+    public VActorReferanceGameObject referanceGameObject;
+    
+    /// <summary>
     /// 技能行为集合
     /// </summary>
     public VSkillActions skillActions;
@@ -44,8 +49,6 @@ public class VActorBase : MonoBehaviour
     public void BindInit()
     {
         actorProperty=new VActorChangeProperty();
-
-        actorEvent=new VActorEvent();
         skillActions=new VSkillActions();
     }
 
@@ -54,8 +57,9 @@ public class VActorBase : MonoBehaviour
     /// </summary>
     public void ActorDataInit()
     {
-        actorInfo=new VActorInfo(actorProperty,skillActions);
+        actorInfo=new VActorInfo(actorProperty,skillActions,referanceGameObject);
         state=new VActorState(actorProperty.playerEnum);
+        actorEvent = new VActorEvent(skillActions, referanceGameObject, actorInfo);
     }
 
     /// <summary>
@@ -63,7 +67,8 @@ public class VActorBase : MonoBehaviour
     /// </summary>
     public void LogicInit()
     {
-        actorController = new VActorController(actorProperty, state, skillActions, actorInfo, actorEvent);
+        actorController =
+            new VActorController(actorProperty, state, skillActions, actorInfo, actorEvent, referanceGameObject);
         actorController.ControllerInit();
     }
 
@@ -78,8 +83,13 @@ public class VActorBase : MonoBehaviour
         actorController.ControllerUpdate();
     }
 
+    private void FixedUpdate()
+    {
+        actorController.ControllerFixUpdate();
+    }
+
     private void OnDestroy()
     {
-        actorController.COntrollerExit();
+        actorController.ControllerExit();
     }
 }

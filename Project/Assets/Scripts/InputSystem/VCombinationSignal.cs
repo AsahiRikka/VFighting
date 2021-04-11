@@ -65,46 +65,46 @@ public class VCombinationSignal
         for (int i = 0; i < combinationSignal.Count; i++)
         {
             var combination = combinationSignal.ElementAt(i);
-            // if (combination.Key.signalEnum == SkillSignalEnum.combinationPress)
-            // {
-            //     //上一帧已经判断为true，此时判断初始化
-            //     if (combination.Key.currentKeys >= combination.Key.combinationLength)
-            //     {
-            //         Reset(combination.Key);
-            //     }
-            //     else
-            //     {
-            //         CombinationLogic(combination);
-            //     }
-            // }else if (combination.Key.signalEnum == SkillSignalEnum.combinationHold)
-            // {
-            //     //上一帧为true，如果release任意键则初始化
-            //     if (combination.Key.currentKeys >= combination.Key.combinationLength)
-            //     {
-            //         if (_keySignalContainer.IsAnyRelease(
-            //             combination.Key.combinationKeys[combination.Key.combinationLength - 1]))
-            //         {
-            //             Reset(combination.Key);
-            //         }
-            //     }
-            //     else
-            //     {
-            //         CombinationLogic(combination);
-            //     }
-            // }
+            if (combination.Key.signalEnum == SkillSignalEnum.combinationPress)
+            {
+                //上一帧已经判断为true，此时判断初始化
+                if (combination.Key.currentKeys >= combination.Key.combinationLength)
+                {
+                    Reset(combination.Key);
+                }
+                else
+                {
+                    CombinationLogic(combination);
+                }
+            }else if (combination.Key.signalEnum == SkillSignalEnum.combinationHold)
+            {
+                //上一帧为true，如果release任意键则初始化
+                if (combination.Key.currentKeys >= combination.Key.combinationLength)
+                {
+                    if (_keySignalContainer.IsAnyRelease(
+                        combination.Key.combinationKeys[combination.Key.combinationLength - 1]))
+                    {
+                        Reset(combination.Key);
+                    }
+                }
+                else
+                {
+                    CombinationLogic(combination);
+                }
+            }
             //上一帧已经判断为true，此时判断初始化
-            if (combination.Key.currentKeys >= combination.Key.combinationLength)
-            {
-                //添加进release字典，当发现字典按键被释放返回true
-                if(!combinationReleaseSignal.ContainsKey(combination.Key))
-                    combinationReleaseSignal.Add(combination.Key,false);
-
-                Reset(combination.Key);
-            }
-            else
-            {
-                CombinationLogic(combination);
-            }
+            // if (combination.Key.currentKeys >= combination.Key.combinationLength)
+            // {
+            //     //添加进release字典，当发现字典按键被释放返回true
+            //     if(!combinationReleaseSignal.ContainsKey(combination.Key))
+            //         combinationReleaseSignal.Add(combination.Key,false);
+            //
+            //     Reset(combination.Key);
+            // }
+            // else
+            // {
+            //     CombinationLogic(combination);
+            // }
         }
 
         for (int j = 0; j < combinationReleaseSignal.Count; j++)

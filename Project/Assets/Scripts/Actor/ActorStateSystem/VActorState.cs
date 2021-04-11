@@ -1,9 +1,11 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 /// <summary>
 /// 角色状态管理
 /// </summary>
+[Serializable]
 public class VActorState
 {
     /// <summary>
@@ -21,6 +23,11 @@ public class VActorState
     /// </summary>
     public bool canMove = true;
 
+    /// <summary>
+    /// 是否可以冲刺
+    /// </summary>
+    public bool canDash = true;
+    
     /// <summary>
     /// 是否可以跳跃
     /// </summary>

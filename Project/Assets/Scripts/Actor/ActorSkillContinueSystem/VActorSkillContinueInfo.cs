@@ -17,7 +17,7 @@ public class VActorSkillContinueInfo
         {
             foreach (var skill in skillAction.preConditionData.skillContinues)
             {
-                if(!skillContinues.Contains(skill) && skill.needLayer==0)
+                if (!skillContinues.Contains(skill) && skill.needLayer == 0) 
                     skillContinues.Add(skill);
             }
         }

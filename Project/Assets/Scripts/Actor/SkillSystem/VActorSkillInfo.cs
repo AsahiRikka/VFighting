@@ -1,10 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 /// <summary>
 /// 存储技能运行数据
 /// </summary>
+[Serializable]
 public class VActorSkillInfo
 {
     /// <summary>
@@ -13,9 +15,9 @@ public class VActorSkillInfo
     public VSkillAction currentSkill;
 
     /// <summary>
-    /// 判断能否打断技能，会被buff，动画等判断实时修改
+    /// 是否在技能运行中，只有在运行中执行判断
     /// </summary>
-    public bool isInterrupt = true;
+    public bool inSkillUpdate = true;
     
     /// <summary>
     /// 技能释放方向，1为右，-1为左

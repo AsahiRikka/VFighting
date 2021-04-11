@@ -7,6 +7,11 @@ using UnityEngine;
 public class VActorController
 {
     /// <summary>
+    /// 角色状态控制
+    /// </summary>
+    public VActorStateController stateController;
+    
+    /// <summary>
     /// 物理效果控制
     /// </summary>
     public VActorPhysicController physicController;
@@ -32,16 +37,17 @@ public class VActorController
     public VActorSkillSignal skillSignal;
 
     public VActorController(VActorChangeProperty property, VActorState state, VSkillActions skillActions,
-        VActorInfo actorInfo, VActorEvent actorEvent)
+        VActorInfo actorInfo, VActorEvent actorEvent,VActorReferanceGameObject referance)
     {
-        //控制器初始化
-        physicController = new VActorPhysicController(property, state,actorEvent);
-        animationController=new VActorAnimationController(actorEvent);
-        skillController = new VActorSkillController(skillActions, actorEvent, actorInfo, state);
-        skillContinueController = new VActorSkillContinueController(actorEvent);
-        
         //输入信号初始化
-        skillSignal = new VActorSkillSignal(property, skillActions, actorEvent);
+        skillSignal = new VActorSkillSignal(property, skillActions, actorEvent,actorInfo,state);
+        
+        //控制器初始化
+        stateController = new VActorStateController(actorEvent, state, actorInfo);
+        physicController = new VActorPhysicController(property, state,actorEvent);
+        animationController = new VActorAnimationController(actorEvent, actorInfo, skillActions, referance, state);
+        skillContinueController = new VActorSkillContinueController(actorEvent);
+        skillController = new VActorSkillController(skillActions, actorEvent, actorInfo, state);
 
         _actorInfo = actorInfo;
         _actorEvent = actorEvent;
@@ -57,16 +63,20 @@ public class VActorController
     private VActorEvent _actorEvent;
     public void ControllerUpdate()
     {
-        skillSignal.Update();
-        
-        //技能update
-        if (_actorInfo.skillInfo.currentSkill is null)
+        if (_actorInfo.skillInfo.inSkillUpdate)
         {
-            _actorEvent.SkillEvent.skillUpdateVent.Invoke(_actorInfo.skillInfo.currentSkill);
+            skillSignal.Update();
         }
+
+        skillController.Update();
     }
 
-    public void COntrollerExit()
+    public void ControllerFixUpdate()
+    {
+        skillController.FixUpdate();
+    }
+
+    public void ControllerExit()
     {
         skillSignal.Destroy();
     }

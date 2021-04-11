@@ -23,16 +23,17 @@ MonoBehaviour:
     SerializationNodes: []
   skillProperty:
     skillActionID: 130001
-    skillActionName: 
+    skillActionName: moveFront
     skillType: 1
-    priority: 0
+    priority: 1
     canInterrupt: 1
+    isLoopSkill: 1
   signalData:
-    SignalEnum: 2
+    SignalEnum: 3
     skillSignalDataSegments:
     - playerKeyCodes: 0a000000
   preConditionData:
-    skillContinutes: []
+    skillContinues: []
     notSkillPreState: 03000000
   motion: {fileID: 11400000, guid: a7490739ae96b764884645834e40cfc5, type: 2}
   ActionDamanges: []

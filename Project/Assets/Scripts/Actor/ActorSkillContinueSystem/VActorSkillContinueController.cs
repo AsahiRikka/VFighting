@@ -8,4 +8,9 @@ public class VActorSkillContinueController:VActorControllerBase
     {
         
     }
+
+    protected override void SkillEndEvent(VSkillAction skillAction)
+    {
+        //技能结束时存在技能连携需要消除
+    }
 }

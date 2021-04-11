@@ -23,18 +23,19 @@ MonoBehaviour:
     SerializationNodes: []
   skillProperty:
     skillActionID: 130002
-    skillActionName: 
+    skillActionName: moveBack
     skillType: 2
-    priority: 0
+    priority: 1
     canInterrupt: 1
+    isLoopSkill: 1
   signalData:
-    SignalEnum: 0
+    SignalEnum: 3
     skillSignalDataSegments:
     - playerKeyCodes: 0b000000
   preConditionData:
-    skillContinutes: []
+    skillContinues: []
     notSkillPreState: 03000000
-  motion: {fileID: 0}
+  motion: {fileID: 11400000, guid: f183158d62c18a94bb95854a418fdc00, type: 2}
   ActionDamanges: []
   ActionSounds: []
   ActionAnimates: []

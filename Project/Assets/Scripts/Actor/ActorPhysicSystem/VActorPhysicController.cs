@@ -21,8 +21,4 @@ public class VActorPhysicController:VActorControllerBase
         _actorProperty = actorProperty;
         _state = state;
     }
-    
-    public VActorPhysicController(VActorEvent actorEvent) : base(actorEvent)
-    {
-    }
 }

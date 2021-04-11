@@ -7,27 +7,46 @@ using UnityEngine;
 /// </summary>
 public class VActorControllerBase
 {
-    public VActorControllerBase(VActorEvent actorEvent)
+    protected VActorControllerBase(VActorEvent actorEvent)
     {
         VActorSkillEvent skillEvent = actorEvent.SkillEvent;
         
         //技能事件监听添加
+        
+        skillEvent.skillPlayTriggerEvent.AddListener(SkillStartTriggerEvent);
         skillEvent.skillStartEvent.AddListener(SkillStartEvent);
-        skillEvent.skillUpdateVent.AddListener(SkillUpdateEvent);
+        skillEvent.skillUpdateEvent.AddListener(SkillUpdateEvent);
+        skillEvent.skillFixUpdateEvent.AddListener(SkillFixUpdateEvent);
+        skillEvent.skillEndNormalEvent.AddListener(SkillEndNormalEvent);
         skillEvent.skillEndEvent.AddListener(SkillEndEvent);
     }
-
-    public virtual void SkillStartEvent(VSkillAction skillAction)
+    
+    protected virtual void SkillStartTriggerEvent(VSkillAction skillAction)
     {
         
     }
 
-    public virtual void SkillUpdateEvent(VSkillAction skillAction)
+    protected virtual void SkillStartEvent(VSkillAction skillAction)
     {
         
     }
 
-    public virtual void SkillEndEvent(VSkillAction skillAction)
+    protected virtual void SkillUpdateEvent(VSkillAction skillAction)
+    {
+        
+    }
+
+    protected virtual void SkillFixUpdateEvent(VSkillAction skillAction)
+    {
+        
+    }
+
+    protected virtual void SkillEndNormalEvent(VSkillAction skillAction)
+    {
+        
+    }
+
+    protected virtual void SkillEndEvent(VSkillAction skillAction)
     {
         
     }

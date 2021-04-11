@@ -20,6 +20,7 @@ public class VSkillSignalData
 /// </summary>
 public enum SkillSignalEnum
 {
+    none,
     allPress,
     combinationPress,
     

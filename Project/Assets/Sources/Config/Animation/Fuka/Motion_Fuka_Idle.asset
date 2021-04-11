@@ -23,15 +23,19 @@ MonoBehaviour:
     SerializationNodes: []
   motionID: 0
   motionName: Fuka_Idle
-  animationClip: {fileID: 8694863238961996233, guid: 0884c9d47df80e446adeffc5337e5e0b,
+  parameter: Idle
+  animationDefaultRotate: {x: 0, y: 90, z: 0}
+  applyRoomMotion: 0
+  animationClip: {fileID: -2512537694871840702, guid: 0884c9d47df80e446adeffc5337e5e0b,
     type: 3}
   passiveBoxes:
   - segmentMotion:
       startFrame: 0
-      endFrame: 596
+      endFrame: 122
     collider:
       center: {x: 0, y: 0.8, z: 0}
       size: {x: 0.5, y: 1.8, z: 0.5}
       trigger: 0
   hitBoxes: []
   defenseBoxes: []
+  animationStraights: []

@@ -9,15 +9,20 @@ public class VActorSkillSignal
     private readonly KeySignalContainer _inputService = GameFramework.instance._service.input;
     private VActorChangeProperty _property;
     private readonly VSkillActions _skillActions;
+    private VActorInfo _actorInfo;
     private readonly VCombinationSignal _combinationSignal;
     private VActorEvent _actorEvent;
+    private readonly VActorState _actorState;
 
-    public VActorSkillSignal(VActorChangeProperty property,VSkillActions skillActions,VActorEvent actorEvent)
+    public VActorSkillSignal(VActorChangeProperty property, VSkillActions skillActions, VActorEvent actorEvent,
+        VActorInfo actorInfo, VActorState actorState)
     {
         _property = property;
         _skillActions = skillActions;
         _actorEvent = actorEvent;
-        
+        _actorInfo = actorInfo;
+        _actorState = actorState;
+
         _combinationSignal=new VCombinationSignal();
     }
 
@@ -35,7 +40,7 @@ public class VActorSkillSignal
         //将组合键添加进输入系统中
         AddCombination();
     }
-    
+
     public void Update()
     {
         _combinationSignal.Update();
@@ -43,28 +48,52 @@ public class VActorSkillSignal
         //组合技能
         foreach (var skill in currentTriggerCombinationDic)
         {
-            if (_combinationSignal.IsCombination(skill.Key))
+            if (_actorInfo.skillInfo.currentSkill != skill.Value) 
             {
-                _actorEvent.SkillEvent.skillPlayTriggerEvent.Invoke(skill.Value);
-            }else if (_combinationSignal.IsCombinationRelease(skill.Key) &&
-                      skill.Value.signalData.SignalEnum == SkillSignalEnum.combinationHold) 
+                if (_combinationSignal.IsCombination(skill.Key)) 
+                {
+                    _actorEvent.SkillEvent.skillPlayTriggerEvent.Invoke(skill.Value);
+                }
+            }
+            else
             {
-                //hold型技能释放按键
-                _actorEvent.SkillEvent.skillEndTriggerEvent.Invoke(skill.Value);
+                //hold类型退出判断
+                if (!_combinationSignal.IsCombination(skill.Key) &&
+                    skill.Value.signalData.SignalEnum == SkillSignalEnum.combinationHold)
+                {
+                    //hold型技能释放按键
+                    _actorEvent.SkillEvent.skillEndNormalEvent.Invoke(skill.Value);
+                }
             }
         }
         
         //其他技能
         foreach (var trigger in currentNormalSignalDic)
         {
-            if (_inputService.IsAllPress(trigger.Key))
+            if (_actorInfo.skillInfo.currentSkill != trigger.Value) 
             {
-                _actorEvent.SkillEvent.skillPlayTriggerEvent.Invoke(trigger.Value);
-            }else if (_inputService.IsAnyRelease(trigger.Key) &&
-                      trigger.Value.signalData.SignalEnum == SkillSignalEnum.allHold)  
+                if (_inputService.IsAllPress(trigger.Key) &&
+                    trigger.Value.signalData.SignalEnum == SkillSignalEnum.allPress) 
+                {
+                    //press技能按键按键
+                    _actorEvent.SkillEvent.skillPlayTriggerEvent.Invoke(trigger.Value);
+
+                }else if (trigger.Value.signalData.SignalEnum == SkillSignalEnum.allHold &&
+                          _inputService.IsAllHold(trigger.Key)) 
+                {
+                    //hold按下按键
+                    _actorEvent.SkillEvent.skillPlayTriggerEvent.Invoke(trigger.Value);
+                }
+            }
+            else
             {
-                //hold型技能释放按键
-                _actorEvent.SkillEvent.skillEndTriggerEvent.Invoke(trigger.Value);
+                //hold类型退出判断
+                if (trigger.Value.signalData.SignalEnum == SkillSignalEnum.allHold &&
+                    _inputService.IsAnyRelease(trigger.Key))
+                {
+                    //hold型技能释放按键
+                    _actorEvent.SkillEvent.skillEndNormalEvent.Invoke(trigger.Value);
+                }
             }
         }
     }

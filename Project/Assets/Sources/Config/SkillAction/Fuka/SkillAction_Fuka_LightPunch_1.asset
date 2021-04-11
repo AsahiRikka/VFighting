@@ -25,10 +25,11 @@ MonoBehaviour:
     skillActionID: 130006
     skillActionName: Fuka_LightPunch_1
     skillType: 6
-    priority: 0
+    priority: 2
     canInterrupt: 1
+    isLoopSkill: 0
   signalData:
-    SignalEnum: 0
+    SignalEnum: 1
     skillSignalDataSegments:
     - playerKeyCodes: 04000000
   preConditionData:
@@ -43,15 +44,8 @@ MonoBehaviour:
     startFrame: 0
     endFrame: 0
     damage: 0
-  ActionSounds:
-  - skillActionType: 0
-    startFrame: 0
-    endFrame: 0
-    audioClip: {fileID: 0}
-  ActionAnimates:
-  - skillActionType: 0
-    startFrame: 0
-    endFrame: 0
+  ActionSounds: []
+  ActionAnimates: []
   ActionBuffs:
   - skillActionType: 0
     startFrame: 0

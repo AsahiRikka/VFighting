@@ -6,7 +6,17 @@ using UnityEngine;
 /// </summary>
 public class VActorAnimationInfo
 {
-    public Animation actorAnimation;
-    
+    public Animator animator;
+
     public int currentFrame;
+
+    /// <summary>
+    /// 动画层面上判断能否释放技能
+    /// </summary>
+    public bool canSkill = true;
+
+    public VActorAnimationInfo(VActorReferanceGameObject referance)
+    {
+        animator = referance.actorAnimator;
+    }
 }

@@ -12,7 +12,7 @@ public static class VActorLoad
     public static void ActorDataBind(string name, GameObject actor, VActorData data)
     {
         //调整角色正朝向
-        actor.transform.rotation = Quaternion.Euler(data.actorProperty.actorDefaultPositive);
+        actor.transform.rotation = Quaternion.Euler(data.skillActions.defaultSkillActions.motion.animationDefaultRotate);
         
         //角色初始化
         VActorBase actorBase = actor.AddComponent<VActorBase>();
@@ -21,7 +21,10 @@ public static class VActorLoad
         actorBase.BindInit();
         
         //基础属性数据绑定
-        ActorPropertyBind(data.actorProperty,actorBase.actorProperty);
+        ActorPropertyBind(data.actorProperty,actorBase.actorProperty,data);
+        
+        //引用绑定
+        actorBase.referanceGameObject = actor.GetComponent<VActorReferanceGameObject>();
         
         //技能行为绑定
         actorBase.skillActions = data.skillActions;
@@ -32,13 +35,15 @@ public static class VActorLoad
         actorBase.LogicInit();
     }
 
-    private static void ActorPropertyBind(VActorProperty property,VActorChangeProperty changeProperty)
+    private static void ActorPropertyBind(VActorProperty property,VActorChangeProperty changeProperty,VActorData data)
     {
         changeProperty.heathPoints = property.heathPoints;
         changeProperty.actorDamage = property.actorDamage;
         changeProperty.actorMoveSpeed = property.actorMoveSpeed;
         changeProperty.actorAttackSpeed = property.actorAttackSpeed;
         changeProperty.actorAccumulateTankSpeed = property.actorAccumulateTankSpeed;
-        changeProperty.actorDirection = property.actorDefaultPositive;
+        
+        //使用默认动画的角度
+        changeProperty.actorDirection = data.skillActions.defaultSkillActions.motion.animationDefaultRotate;
     }
 }

@@ -23,15 +23,14 @@ MonoBehaviour:
     SerializationNodes: []
   motionID: 0
   motionName: Fuka_Defense
-  animationClip: {fileID: 5724330737417425550, guid: 0884c9d47df80e446adeffc5337e5e0b,
-    type: 3}
+  parameter: Defense
   passiveBoxes:
   - segmentMotion:
       startFrame: 0
       endFrame: 0
     collider:
       center: {x: 0, y: 0, z: 0}
-      Size: {x: 0, y: 0, z: 0}
+      size: {x: 0, y: 0, z: 0}
       trigger: 0
   hitBoxes: []
   defenseBoxes:
@@ -40,5 +39,5 @@ MonoBehaviour:
       endFrame: 13
     collider:
       center: {x: 0, y: 0.8, z: 0}
-      Size: {x: 1, y: 2, z: 1}
+      size: {x: 0, y: 0, z: 0}
       trigger: 0

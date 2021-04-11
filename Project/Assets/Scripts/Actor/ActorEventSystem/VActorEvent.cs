@@ -9,10 +9,11 @@ using UnityEngine.Events;
 public class VActorEvent
 {
     public VActorSkillEvent SkillEvent;
-
-    public VActorEvent()
+    public VActorAnimationEvent AnimationEvent;
+    public VActorEvent(VSkillActions skillActions, VActorReferanceGameObject referance, VActorInfo actorInfo)
     {
         SkillEvent=new VActorSkillEvent();
+        AnimationEvent=new VActorAnimationEvent(skillActions,referance,actorInfo);
     }
 }
 

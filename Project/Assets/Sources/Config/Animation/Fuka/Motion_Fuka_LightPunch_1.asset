@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 456a6edc4ab0d3441a9c762d78e18888, type: 3}
-  m_Name: Motion_Fuka_HeavyPunch
+  m_Name: Motion_Fuka_LightPunch_1
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -22,9 +22,29 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   motionID: 0
-  motionName: Fuka_HeavyPunch
-  animationClip: {fileID: 5471323206850896461, guid: 0884c9d47df80e446adeffc5337e5e0b,
+  motionName: Fuka_LightPunch_1
+  parameter: LightPunch_1
+  animationDefaultRotate: {x: 0, y: 180, z: 0}
+  applyRoomMotion: 0
+  animationClip: {fileID: 7382378529333395315, guid: 0884c9d47df80e446adeffc5337e5e0b,
     type: 3}
-  passiveBoxes: []
-  hitBoxes: []
+  passiveBoxes:
+  - segmentMotion:
+      startFrame: 0
+      endFrame: 155
+    collider:
+      center: {x: 0, y: 0.8, z: 0}
+      size: {x: 0.5, y: 1.8, z: 0.5}
+      trigger: 1
+  hitBoxes:
+  - segmentMotion:
+      startFrame: 12
+      endFrame: 50
+    collider:
+      center: {x: 0, y: 1.2, z: 0.45}
+      size: {x: 0.5, y: 0.5, z: 0.5}
+      trigger: 0
   defenseBoxes: []
+  animationStraights:
+  - startFrame: 2
+    endFrame: 20

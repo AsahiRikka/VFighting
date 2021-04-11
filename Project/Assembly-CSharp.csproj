@@ -66,6 +66,14 @@
      <Compile Include="Assets\3rd\MMD4Mecanim\Scripts\MMD4MecanimMorphHelper.cs" />
      <Compile Include="Assets\3rd\MMD4Mecanim\Scripts\MMD4MecanimRigidBody.cs" />
      <Compile Include="Assets\3rd\MMD4Mecanim\Scripts\MMD4MecanimSpeechHelper.cs" />
+     <Compile Include="Assets\3rd\MecanimEventSystem\Core\AnimatorHelper.cs" />
+     <Compile Include="Assets\3rd\MecanimEventSystem\Core\BaseEventConfig.cs" />
+     <Compile Include="Assets\3rd\MecanimEventSystem\Core\CallbackListener.cs" />
+     <Compile Include="Assets\3rd\MecanimEventSystem\Core\EventConfig.cs" />
+     <Compile Include="Assets\3rd\MecanimEventSystem\Core\EventExtension.cs" />
+     <Compile Include="Assets\3rd\MecanimEventSystem\Core\EventHandler.cs" />
+     <Compile Include="Assets\3rd\MecanimEventSystem\Core\EventInfo.cs" />
+     <Compile Include="Assets\3rd\MecanimEventSystem\Example\EventListener.cs" />
      <Compile Include="Assets\3rd\unity-chan!\Unity-chan! Model\Scripts\AutoBlink.cs" />
      <Compile Include="Assets\3rd\unity-chan!\Unity-chan! Model\Scripts\CameraController.cs" />
      <Compile Include="Assets\3rd\unity-chan!\Unity-chan! Model\Scripts\FaceUpdate.cs" />
@@ -78,12 +86,15 @@
      <Compile Include="Assets\3rd\unity-chan!\Unity-chan! Model\Scripts\ThirdPersonCamera.cs" />
      <Compile Include="Assets\3rd\unity-chan!\Unity-chan! Model\Scripts\UnityChanControlScriptWithRgidBody.cs" />
      <Compile Include="Assets\3rd\unity-chan!\Unity-chan! Model\SplashScreen\Scripts\SplashScreen.cs" />
+     <Compile Include="Assets\Scripts\Actor\ActorEventSystem\VActorAnimationEvent.cs" />
      <Compile Include="Assets\Scripts\Actor\ActorEventSystem\VActorEvent.cs" />
      <Compile Include="Assets\Scripts\Actor\ActorEventSystem\VActorSkillEvent.cs" />
      <Compile Include="Assets\Scripts\Actor\ActorPhysicSystem\VActorPhysicController.cs" />
      <Compile Include="Assets\Scripts\Actor\ActorPhysicSystem\VActorPhysicInfo.cs" />
      <Compile Include="Assets\Scripts\Actor\ActorSkillContinueSystem\VActorSkillContinueController.cs" />
      <Compile Include="Assets\Scripts\Actor\ActorSkillContinueSystem\VActorSkillContinueInfo.cs" />
+     <Compile Include="Assets\Scripts\Actor\ActorStateSystem\VActorState.cs" />
+     <Compile Include="Assets\Scripts\Actor\ActorStateSystem\VActorStateController.cs" />
      <Compile Include="Assets\Scripts\Actor\AnimationSystem\VActorAnimationController.cs" />
      <Compile Include="Assets\Scripts\Actor\AnimationSystem\VActorAnimationInfo.cs" />
      <Compile Include="Assets\Scripts\Actor\BuffSystem\VActorBuffController.cs" />
@@ -102,7 +113,7 @@
      <Compile Include="Assets\Scripts\Actor\VActorFactory.cs" />
      <Compile Include="Assets\Scripts\Actor\VActorInfo.cs" />
      <Compile Include="Assets\Scripts\Actor\VActorLoad.cs" />
-     <Compile Include="Assets\Scripts\Actor\VActorState.cs" />
+     <Compile Include="Assets\Scripts\Actor\VActorReferanceGameObject.cs" />
      <Compile Include="Assets\Scripts\ActorCenter\VActorDirController.cs" />
      <Compile Include="Assets\Scripts\ActorCenter\VSkillManager.cs" />
      <Compile Include="Assets\Scripts\Common\GameCommonSetting.cs" />
@@ -359,49 +370,49 @@
      <None Include="Assets\3rd\Toon\Shader\Tess\Toon_ShadingGradeMap_Tess_Light_StencilMask.shader" />
      <None Include="Assets\3rd\MMD4Mecanim\Shaders\MMD4Mecanim-MMDLit-NEXTEdge-Pass8.shader" />
  <Reference Include="Unity.Timeline.Editor">
- <HintPath>D:/Work/VBattle/Project/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+ <HintPath>D:/Work/VFightFight/Project/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.CacheServer">
- <HintPath>D:/Work/VBattle/Project/Library/ScriptAssemblies/UnityEditor.CacheServer.dll</HintPath>
+ <HintPath>D:/Work/VFightFight/Project/Library/ScriptAssemblies/UnityEditor.CacheServer.dll</HintPath>
  </Reference>
  <Reference Include="Unity.ScriptableBuildPipeline.Editor">
- <HintPath>D:/Work/VBattle/Project/Library/ScriptAssemblies/Unity.ScriptableBuildPipeline.Editor.dll</HintPath>
+ <HintPath>D:/Work/VFightFight/Project/Library/ScriptAssemblies/Unity.ScriptableBuildPipeline.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.VSCode.Editor">
- <HintPath>D:/Work/VBattle/Project/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+ <HintPath>D:/Work/VFightFight/Project/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>D:/Work/VBattle/Project/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ <HintPath>D:/Work/VFightFight/Project/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.ResourceManager">
- <HintPath>D:/Work/VBattle/Project/Library/ScriptAssemblies/Unity.ResourceManager.dll</HintPath>
+ <HintPath>D:/Work/VFightFight/Project/Library/ScriptAssemblies/Unity.ResourceManager.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
- <HintPath>D:/Work/VBattle/Project/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+ <HintPath>D:/Work/VFightFight/Project/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Timeline">
- <HintPath>D:/Work/VBattle/Project/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+ <HintPath>D:/Work/VFightFight/Project/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Addressables.Editor">
- <HintPath>D:/Work/VBattle/Project/Library/ScriptAssemblies/Unity.Addressables.Editor.dll</HintPath>
+ <HintPath>D:/Work/VFightFight/Project/Library/ScriptAssemblies/Unity.Addressables.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.CollabProxy.Editor">
- <HintPath>D:/Work/VBattle/Project/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+ <HintPath>D:/Work/VFightFight/Project/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Rider.Editor">
- <HintPath>D:/Work/VBattle/Project/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+ <HintPath>D:/Work/VFightFight/Project/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Addressables">
- <HintPath>D:/Work/VBattle/Project/Library/ScriptAssemblies/Unity.Addressables.dll</HintPath>
+ <HintPath>D:/Work/VFightFight/Project/Library/ScriptAssemblies/Unity.Addressables.dll</HintPath>
  </Reference>
  <Reference Include="Unity.ScriptableBuildPipeline">
- <HintPath>D:/Work/VBattle/Project/Library/ScriptAssemblies/Unity.ScriptableBuildPipeline.dll</HintPath>
+ <HintPath>D:/Work/VFightFight/Project/Library/ScriptAssemblies/Unity.ScriptableBuildPipeline.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
- <HintPath>D:/Work/VBattle/Project/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ <HintPath>D:/Work/VFightFight/Project/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.UI">
- <HintPath>D:/Work/VBattle/Project/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ <HintPath>D:/Work/VFightFight/Project/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>C:/OTHER/2019.4.6/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -581,28 +592,28 @@
  <HintPath>C:/OTHER/2019.4.6/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
  </Reference>
  <Reference Include="MMD4Mecanim">
- <HintPath>D:/Work/VBattle/Project/Assets/3rd/MMD4Mecanim/Scripts/MMD4Mecanim.dll</HintPath>
+ <HintPath>D:/Work/VFightFight/Project/Assets/3rd/MMD4Mecanim/Scripts/MMD4Mecanim.dll</HintPath>
  </Reference>
  <Reference Include="LitJson">
- <HintPath>D:/Work/VBattle/Project/Assets/Plugins/LitJson.dll</HintPath>
+ <HintPath>D:/Work/VFightFight/Project/Assets/Plugins/LitJson.dll</HintPath>
  </Reference>
  <Reference Include="Sirenix.OdinInspector.Attributes">
- <HintPath>D:/Work/VBattle/Project/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Attributes.dll</HintPath>
+ <HintPath>D:/Work/VFightFight/Project/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Attributes.dll</HintPath>
  </Reference>
  <Reference Include="Sirenix.OdinInspector.Editor">
- <HintPath>D:/Work/VBattle/Project/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Editor.dll</HintPath>
+ <HintPath>D:/Work/VFightFight/Project/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Sirenix.Serialization.Config">
- <HintPath>D:/Work/VBattle/Project/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.Config.dll</HintPath>
+ <HintPath>D:/Work/VFightFight/Project/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.Config.dll</HintPath>
  </Reference>
  <Reference Include="Sirenix.Serialization">
- <HintPath>D:/Work/VBattle/Project/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.dll</HintPath>
+ <HintPath>D:/Work/VFightFight/Project/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.dll</HintPath>
  </Reference>
  <Reference Include="Sirenix.Utilities">
- <HintPath>D:/Work/VBattle/Project/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.dll</HintPath>
+ <HintPath>D:/Work/VFightFight/Project/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.dll</HintPath>
  </Reference>
  <Reference Include="Sirenix.Utilities.Editor">
- <HintPath>D:/Work/VBattle/Project/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.Editor.dll</HintPath>
+ <HintPath>D:/Work/VFightFight/Project/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.Editor.dll</HintPath>
  </Reference>
  <Reference Include="mscorlib">
  <HintPath>C:/OTHER/2019.4.6/Unity/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>

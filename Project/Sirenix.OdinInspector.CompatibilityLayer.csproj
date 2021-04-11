@@ -62,10 +62,10 @@
      <Compile Include="Assets\Plugins\Sirenix\Odin Inspector\Scripts\VectorIntFormatters.cs" />
      <None Include="Assets\Plugins\Sirenix\Odin Inspector\Scripts\Sirenix.OdinInspector.CompatibilityLayer.asmdef" />
  <Reference Include="UnityEditor.UI">
- <HintPath>D:/Work/VBattle/Project/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ <HintPath>D:/Work/VFightFight/Project/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
- <HintPath>D:/Work/VBattle/Project/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+ <HintPath>D:/Work/VFightFight/Project/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>C:/OTHER/2019.4.6/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -254,31 +254,31 @@
  <HintPath>C:/OTHER/2019.4.6/Unity/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
  </Reference>
  <Reference Include="MMD4MecanimEditor">
- <HintPath>D:/Work/VBattle/Project/Assets/3rd/MMD4Mecanim/Editor/MMD4MecanimEditor.dll</HintPath>
+ <HintPath>D:/Work/VFightFight/Project/Assets/3rd/MMD4Mecanim/Editor/MMD4MecanimEditor.dll</HintPath>
  </Reference>
  <Reference Include="MMD4Mecanim">
- <HintPath>D:/Work/VBattle/Project/Assets/3rd/MMD4Mecanim/Scripts/MMD4Mecanim.dll</HintPath>
+ <HintPath>D:/Work/VFightFight/Project/Assets/3rd/MMD4Mecanim/Scripts/MMD4Mecanim.dll</HintPath>
  </Reference>
  <Reference Include="LitJson">
- <HintPath>D:/Work/VBattle/Project/Assets/Plugins/LitJson.dll</HintPath>
+ <HintPath>D:/Work/VFightFight/Project/Assets/Plugins/LitJson.dll</HintPath>
  </Reference>
  <Reference Include="Sirenix.OdinInspector.Attributes">
- <HintPath>D:/Work/VBattle/Project/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Attributes.dll</HintPath>
+ <HintPath>D:/Work/VFightFight/Project/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Attributes.dll</HintPath>
  </Reference>
  <Reference Include="Sirenix.OdinInspector.Editor">
- <HintPath>D:/Work/VBattle/Project/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Editor.dll</HintPath>
+ <HintPath>D:/Work/VFightFight/Project/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Sirenix.Serialization.Config">
- <HintPath>D:/Work/VBattle/Project/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.Config.dll</HintPath>
+ <HintPath>D:/Work/VFightFight/Project/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.Config.dll</HintPath>
  </Reference>
  <Reference Include="Sirenix.Serialization">
- <HintPath>D:/Work/VBattle/Project/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.dll</HintPath>
+ <HintPath>D:/Work/VFightFight/Project/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.dll</HintPath>
  </Reference>
  <Reference Include="Sirenix.Utilities">
- <HintPath>D:/Work/VBattle/Project/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.dll</HintPath>
+ <HintPath>D:/Work/VFightFight/Project/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.dll</HintPath>
  </Reference>
  <Reference Include="Sirenix.Utilities.Editor">
- <HintPath>D:/Work/VBattle/Project/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.Editor.dll</HintPath>
+ <HintPath>D:/Work/VFightFight/Project/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.Editor.dll</HintPath>
  </Reference>
  <Reference Include="netstandard">
  <HintPath>C:/OTHER/2019.4.6/Unity/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

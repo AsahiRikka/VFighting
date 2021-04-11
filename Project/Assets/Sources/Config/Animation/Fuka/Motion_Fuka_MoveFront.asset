@@ -23,6 +23,9 @@ MonoBehaviour:
     SerializationNodes: []
   motionID: 0
   motionName: Fuka_MoveFront
+  parameter: MoveFront
+  animationDefaultRotate: {x: 0, y: 90, z: 0}
+  applyRoomMotion: 0
   animationClip: {fileID: -8487307672374459578, guid: 0884c9d47df80e446adeffc5337e5e0b,
     type: 3}
   passiveBoxes:
@@ -35,3 +38,4 @@ MonoBehaviour:
       trigger: 0
   hitBoxes: []
   defenseBoxes: []
+  animationStraights: []

@@ -14,6 +14,14 @@ public class VMotion:SerializedScriptableObject
     public string motionID;
 
     public string motionName;
+
+    public string parameter;
+
+    [InfoBox("动画默认角度")] 
+    public Vector3 animationDefaultRotate = Vector3.zero;
+
+    [InfoBox("动画使用rootMotion")]
+    public bool applyRoomMotion = true;
     
     public AnimationClip animationClip;
 
@@ -23,5 +31,5 @@ public class VMotion:SerializedScriptableObject
 
     public List<VActorDefenseBox> defenseBoxes;
 
-    public List<VAnimationStraight> animationStraight;
+    public List<VAnimationStraight> animationStraights;
 }

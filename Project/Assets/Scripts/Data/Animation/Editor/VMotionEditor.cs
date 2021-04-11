@@ -35,6 +35,7 @@ public class VMotionEditor : OdinEditorWindow
     private bool motionState = false;
 
     private GameObject prefab;
+    private GameObject parent;
     private BoxCollider collider;
 
     [VerticalGroup("ModelSelect")]
@@ -73,9 +74,14 @@ public class VMotionEditor : OdinEditorWindow
         if (GameObject.Find(modelPrefab.name) != null)
             DestroyImmediate(GameObject.Find(modelPrefab.name));
 
+        parent = new GameObject();
+
         prefab = Instantiate(modelPrefab,Vector3.zero,new Quaternion(0,0,0,0));
         collider = prefab.AddComponent<BoxCollider>();
 
+        prefab.transform.SetParent(parent.transform);
+        parent.transform.rotation = Quaternion.Euler(animationDefaultRotate);
+        
         //Gizmos
         vGizmos = prefab.AddComponent<VMotionDataGizmos>();
         vGizmos.Init(motion);
@@ -83,9 +89,10 @@ public class VMotionEditor : OdinEditorWindow
 
     private void AssetLoad()
     {
-        ///数据初始化
-        motion.motionName = motion.name.Substring(7, motion.name.Length - 7);
         animationClip = motion.animationClip;
+        animationDefaultRotate = motion.animationDefaultRotate;
+        rootMotion = motion.applyRoomMotion;
+        
         motionID = motion.motionID;
         if (animationClip != null) 
             motionFrameMax = (int)(animationClip.frameRate * animationClip.length);
@@ -94,12 +101,27 @@ public class VMotionEditor : OdinEditorWindow
         passiveBoxes = motion.passiveBoxes;
         hitBoxes = motion.hitBoxes;
         defenseBoxes = motion.defenseBoxes;
-        animationStraights = motion.animationStraight;
+
+        animationStraights = motion.animationStraights;
     }
 
+    
+    /// <summary>
+    /// 非引用变量的保存
+    /// </summary>
     private void AssetSave()
     {
-        //数据保存
+        motion.motionName = motion.name.Substring(7, motion.name.Length - 7);
+        string[] words = motion.motionName.Split('_');
+        string p = words[1];
+        for (int i = 2; i < words.Length; i++)
+        {
+            p += "_";
+            p += words[i];
+        }
+        motion.parameter = p;
+        motion.animationDefaultRotate = animationDefaultRotate;
+        motion.applyRoomMotion = rootMotion;
         motion.animationClip = animationClip;
     }
     
@@ -123,7 +145,18 @@ public class VMotionEditor : OdinEditorWindow
     [InfoBox("选择动画片段：")] 
     public AnimationClip animationClip;
 
-    [VerticalGroup("modelFrame",12)]
+    [VerticalGroup("animationRotate", 12)]
+    [ShowIf("motionState")]
+    [OnValueChanged("AnimationDefaultRotateChange")]
+    [InfoBox("动画默认角度，以向右为准")]
+    public Vector3 animationDefaultRotate;
+
+    [VerticalGroup("rootMotion", 13)] 
+    [ShowIf("motionState")] 
+    [InfoBox("是否使用rootMotion")]
+    public bool rootMotion;
+
+    [VerticalGroup("modelFrame",13)]
     [ShowIf("motionState")]
     [OnValueChanged("MotionFrameChange")]
     [PropertyRange(0, "motionFrameMax")] 
@@ -139,10 +172,13 @@ public class VMotionEditor : OdinEditorWindow
     {
         animationClip.SampleAnimation(prefab, currentFrame / animationClip.frameRate);
         vGizmos.CurrentFrameRefrsh(currentFrame);
-
-        //prefab.transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0) + prefab.transform.localPosition);
     }
-    
+
+    private void AnimationDefaultRotateChange()
+    {
+        parent.transform.rotation = Quaternion.Euler(animationDefaultRotate);
+    }
+
     [Space(40)]
     [VerticalGroup("passiveBox",21)]
     [ShowIf("motionState")]
@@ -158,10 +194,10 @@ public class VMotionEditor : OdinEditorWindow
     [ShowIf("motionState")]
     [InfoBox("角色防御框：")] 
     public List<VActorDefenseBox> defenseBoxes;
-    
-    [VerticalGroup("animationStraight",33)]
 
-    [ShowIf("motionState")] [InfoBox("动画硬直，一些无法被打断的片段")]
+    [VerticalGroup("animationStraight", 33)] 
+    [ShowIf("motionState")] 
+    [InfoBox("硬直帧：")]
     public List<VAnimationStraight> animationStraights;
 }
 
