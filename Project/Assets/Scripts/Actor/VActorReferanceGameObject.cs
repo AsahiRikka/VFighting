@@ -8,6 +8,8 @@ public class VActorReferanceGameObject : MonoBehaviour
 {
     public GameObject parent;
 
+    public GameObject actor;
+    
     public Animator actorAnimator;
 
     public void MyCoroutine(IEnumerator method)

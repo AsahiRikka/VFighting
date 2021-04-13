@@ -11,9 +11,12 @@ public class VSkillActionBase
 {
     public SkillActionEnum skillActionType;
     
-    [ShowIf("skillActionType",SkillActionEnum.frame)]
+    [ShowIf("skillActionType",(SkillActionEnum.frame))]
     public int startFrame;
 
+    [ShowIf("skillActionType",SkillActionEnum.keyFrame)]
+    public int keyFrame;
+    
     [ShowIf("skillActionType",SkillActionEnum.frame)]
     public int endFrame;
 }
@@ -29,6 +32,11 @@ public enum SkillActionEnum
     [InfoBox("技能开始")]
     skillAction,
     /// <summary>
+    /// 技能运行时
+    /// </summary>
+    [InfoBox("技能运行时")]
+    skillUpdate,
+    /// <summary>
     /// 技能结束
     /// </summary>
     [InfoBox("技能结束")]
@@ -36,13 +44,8 @@ public enum SkillActionEnum
     /// <summary>
     /// 技能命中
     /// </summary>
-    [InfoBox("技能命中")]
+    [InfoBox("技能命中敌方")]
     skillHit,
-    /// <summary>
-    /// 按帧数范围
-    /// </summary>
-    [InfoBox("按帧数范围")]
-    frame,
     /// <summary>
     /// 被攻击
     /// </summary>
@@ -53,4 +56,14 @@ public enum SkillActionEnum
     /// </summary>
     [InfoBox("按键触发")]
     keyTrigger,
+    /// <summary>
+    /// 按帧数范围
+    /// </summary>
+    [InfoBox("按帧数范围")]
+    frame,
+    /// <summary>
+    /// 指定帧
+    /// </summary>
+    [InfoBox("指定帧")]
+    keyFrame,
 }

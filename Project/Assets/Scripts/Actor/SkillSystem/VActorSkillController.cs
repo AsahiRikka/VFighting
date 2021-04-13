@@ -5,7 +5,7 @@ using UnityEngine;
 /// <summary>
 /// 单个角色的技能处理
 /// </summary>
-public class VActorSkillController:VActorControllerBase
+public class VActorSkillController:VSkillEventBase
 {
     public VActorSkillController(VSkillActions skillActions, VActorEvent actorEvent, VActorInfo actorInfo,
         VActorState actorState) : base(actorEvent)
@@ -49,7 +49,7 @@ public class VActorSkillController:VActorControllerBase
             {
                 foreach (var haveSkillCon in _actorInfo.skillContinueInfo.skillContinues)
                 {
-                    if (haveSkillCon.ID == skillContinue.ID && haveSkillCon.needLayer == skillContinue.needLayer)
+                    if (haveSkillCon.ID == skillContinue.ID && haveSkillCon.targetLayer == skillContinue.needLayer)
                     {
                         SkillTriggerJudge(skillAction, _actorInfo.skillInfo, _actorState);
                         return;
@@ -66,16 +66,12 @@ public class VActorSkillController:VActorControllerBase
     {
         float temp = SkillEnterFlag;
         SkillEnterFlag = 0;
-        //过快的技能触发被忽略
-        if (temp <= 0.05f)
+        //过快的技能触发被忽略，只有当被关闭的当前技能有动画前摇时
+        if (temp <= 0.02f && skillInfo.currentSkill.motion.animationStraights.Count > 0) 
         {
             return;
         }
-        
-        //打断当前技能
-        if (skillInfo.currentSkill != null) 
-            _actorEvent.SkillEvent.skillEndEvent.Invoke(skillInfo.currentSkill);
-        
+
         //技能判断
         switch (skillAction.skillProperty.skillType)
         {
@@ -134,18 +130,21 @@ public class VActorSkillController:VActorControllerBase
                 break;
             }
         }
-
-        //修改状态
-        skillInfo.currentSkill = skillAction;
-
+        
+        //打断当前技能
+        if (skillInfo.currentSkill != null)
+            _actorEvent.SkillEvent.skillEndEvent.Invoke(skillInfo.currentSkill, skillAction);
+        
         //完成释放判断，释放技能
-        _actorEvent.SkillEvent.skillStartEvent.Invoke(skillAction);
+        _actorEvent.SkillEvent.skillStartEvent.Invoke(skillInfo.currentSkill, skillAction);
     }
 
-    protected override void SkillStartEvent(VSkillAction skillAction)
+    protected override void SkillStartEvent(VSkillAction lastSkill, VSkillAction currentSkill)
     {
-        _actorInfo.skillInfo.inSkillUpdate = true;
-        DebugHelper.Log("开始技能：" + skillAction);
+        //修改状态
+        _actorInfo.skillInfo.currentSkill = currentSkill;
+
+        DebugHelper.Log("开始技能：" + currentSkill);
     }
 
     protected override void SkillEndNormalEvent(VSkillAction skillAction)
@@ -157,23 +156,15 @@ public class VActorSkillController:VActorControllerBase
             return;
 
         //进入技能结束
-        _actorEvent.SkillEvent.skillEndEvent.Invoke(skillAction);
+        _actorEvent.SkillEvent.skillEndEvent.Invoke(skillAction, null);
 
         //自然结束添加idle技能
         _actorEvent.SkillEvent.skillPlayTriggerEvent.Invoke(_skillActions.defaultSkillActions);
     }
 
-    protected override void SkillEndEvent(VSkillAction skillAction)
-    {
-        _actorInfo.skillInfo.inSkillUpdate = false;
-    }
-
     public void Update()
     {
-        if (_actorInfo.skillInfo.inSkillUpdate)
-        {
-            _actorEvent.SkillEvent.skillUpdateEvent.Invoke(_actorInfo.skillInfo.currentSkill);
-        }
+        _actorEvent.SkillEvent.skillUpdateEvent.Invoke(_actorInfo.skillInfo.currentSkill);
     }
 
     public void FixUpdate()
@@ -183,9 +174,6 @@ public class VActorSkillController:VActorControllerBase
             SkillEnterFlag +=  Time.fixedDeltaTime;
         }
 
-        if (_actorInfo.skillInfo.inSkillUpdate)
-        {
-            _actorEvent.SkillEvent.skillFixUpdateEvent.Invoke(_actorInfo.skillInfo.currentSkill);
-        }
+        _actorEvent.SkillEvent.skillFixUpdateEvent.Invoke(_actorInfo.skillInfo.currentSkill);
     }
 }

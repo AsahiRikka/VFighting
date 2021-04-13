@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 456a6edc4ab0d3441a9c762d78e18888, type: 3}
-  m_Name: Motion_Fuka_LightPunch_1
+  m_Name: Motion_Fuka_LightPunch_2
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -21,31 +21,17 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  motionID: 0
-  motionName: Fuka_LightPunch_1
-  parameter: LightPunch_1
-  animationDefaultRotate: {x: 0, y: 180, z: 0}
+  motionID: 
+  motionName: Fuka_LightPunch_2
+  parameter: LightPunch_2
+  animationDefaultRotate: {x: 0, y: 0, z: 0}
   animationDefaultPos: {x: 0, y: 0, z: 0}
   applyRoomMotion: 0
-  animationClip: {fileID: 7382378529333395315, guid: 0884c9d47df80e446adeffc5337e5e0b,
+  animationClip: {fileID: -898632268292908620, guid: 0884c9d47df80e446adeffc5337e5e0b,
     type: 3}
-  passiveBoxes:
-  - segmentMotion:
-      startFrame: 0
-      endFrame: 155
-    collider:
-      center: {x: 0, y: 0.8, z: 0}
-      size: {x: 0.5, y: 1.8, z: 0.5}
-      trigger: 1
-  hitBoxes:
-  - segmentMotion:
-      startFrame: 12
-      endFrame: 50
-    collider:
-      center: {x: 0, y: 1.2, z: 0.45}
-      size: {x: 0.5, y: 0.5, z: 0.5}
-      trigger: 0
+  passiveBoxes: []
+  hitBoxes: []
   defenseBoxes: []
   animationStraights:
   - startFrame: 1
-    endFrame: 15
+    endFrame: 17

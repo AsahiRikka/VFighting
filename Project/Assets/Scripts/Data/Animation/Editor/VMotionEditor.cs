@@ -91,6 +91,7 @@ public class VMotionEditor : OdinEditorWindow
     {
         animationClip = motion.animationClip;
         animationDefaultRotate = motion.animationDefaultRotate;
+        animationDefaultPos = motion.animationDefaultPos;
         rootMotion = motion.applyRoomMotion;
         
         motionID = motion.motionID;
@@ -121,6 +122,7 @@ public class VMotionEditor : OdinEditorWindow
         }
         motion.parameter = p;
         motion.animationDefaultRotate = animationDefaultRotate;
+        motion.animationDefaultPos = animationDefaultPos;
         motion.applyRoomMotion = rootMotion;
         motion.animationClip = animationClip;
     }
@@ -150,13 +152,19 @@ public class VMotionEditor : OdinEditorWindow
     [OnValueChanged("AnimationDefaultRotateChange")]
     [InfoBox("动画默认角度，以向右为准")]
     public Vector3 animationDefaultRotate;
+    
+    [VerticalGroup("animationPos", 13)]
+    [ShowIf("motionState")]
+    [OnValueChanged("AnimationDefaultRotateChange")]
+    [InfoBox("动画默认角度，以向右为准")]
+    public Vector3 animationDefaultPos;
 
-    [VerticalGroup("rootMotion", 13)] 
+    [VerticalGroup("rootMotion", 14)] 
     [ShowIf("motionState")] 
     [InfoBox("是否使用rootMotion")]
     public bool rootMotion;
 
-    [VerticalGroup("modelFrame",13)]
+    [VerticalGroup("modelFrame",15)]
     [ShowIf("motionState")]
     [OnValueChanged("MotionFrameChange")]
     [PropertyRange(0, "motionFrameMax")] 
@@ -177,6 +185,8 @@ public class VMotionEditor : OdinEditorWindow
     private void AnimationDefaultRotateChange()
     {
         parent.transform.rotation = Quaternion.Euler(animationDefaultRotate);
+
+        parent.transform.position += animationDefaultPos;
     }
 
     [Space(40)]

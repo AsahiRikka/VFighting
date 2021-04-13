@@ -45,9 +45,9 @@ public class VActorController
         //控制器初始化
         stateController = new VActorStateController(actorEvent, state, actorInfo);
         physicController = new VActorPhysicController(property, state,actorEvent);
-        animationController = new VActorAnimationController(actorEvent, actorInfo, skillActions, referance, state);
-        skillContinueController = new VActorSkillContinueController(actorEvent);
         skillController = new VActorSkillController(skillActions, actorEvent, actorInfo, state);
+        animationController = new VActorAnimationController(actorEvent, actorInfo, skillActions, referance, state);
+        skillContinueController = new VActorSkillContinueController(actorEvent,actorInfo);
 
         _actorInfo = actorInfo;
         _actorEvent = actorEvent;
@@ -63,10 +63,7 @@ public class VActorController
     private VActorEvent _actorEvent;
     public void ControllerUpdate()
     {
-        if (_actorInfo.skillInfo.inSkillUpdate)
-        {
-            skillSignal.Update();
-        }
+        skillSignal.Update();
 
         skillController.Update();
     }

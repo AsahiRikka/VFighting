@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 004375c057d011742b39c0344172fe0e, type: 3}
-  m_Name: SkillAction_Fuka_LightPunch_1
+  m_Name: SkillAction_Fuka_LightPunck_4
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -22,10 +22,10 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   skillProperty:
-    skillActionID: 130006
-    skillActionName: Fuka_LightPunch_1
+    skillActionID: 
+    skillActionName: 
     skillType: 7
-    priority: 2
+    priority: 0
     canInterrupt: 1
     isLoopSkill: 0
   signalData:
@@ -35,32 +35,13 @@ MonoBehaviour:
   preConditionData:
     skillContinues:
     - ID: 1001
-      needLayer: 0
-      targetLayer: 1
+      needLayer: 3
+      targetLayer: 4
     notSkillPreState: 03000000
-  motion: {fileID: 11400000, guid: a2dd5d1084a25e34892549549f292445, type: 2}
-  ActionDamanges:
-  - skillActionType: 0
-    startFrame: 0
-    endFrame: 0
-    damage: 0
+  motion: {fileID: 11400000, guid: 7614cadac3efde943888c86acc5ac615, type: 2}
+  ActionDamanges: []
   ActionSounds: []
   ActionAnimates: []
-  ActionBuffs:
-  - skillActionType: 0
-    startFrame: 0
-    endFrame: 0
-    addOrRemoveBuff: 0
-  ActionEffects:
-  - skillActionType: 0
-    startFrame: 0
-    endFrame: 0
-    fxData: {fileID: 0}
-    isCycle: 0
-    persistTime: 0
-    trackType: 0
-    isFollowParent: 0
-  ActionPhysics:
-  - skillActionType: 0
-    startFrame: 0
-    endFrame: 0
+  ActionBuffs: []
+  ActionEffects: []
+  ActionPhysics: []

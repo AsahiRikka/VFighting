@@ -4,7 +4,7 @@ using UnityEngine;
 /// <summary>
 /// 其他控制器产生的状态影响优先级判断
 /// </summary>
-public class VActorStateController:VActorControllerBase
+public class VActorStateController:VSkillEventBase
 {
     public VActorStateController(VActorEvent actorEvent,VActorState actorState,VActorInfo actorInfo) : base(actorEvent)
     {

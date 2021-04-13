@@ -11,4 +11,6 @@ public class VSkillAction_Buff:VSkillActionBase
 {
     [InfoBox("true:添加该buff;false:删除该buff")]
     public bool addOrRemoveBuff;
+
+    public string buffID;
 }

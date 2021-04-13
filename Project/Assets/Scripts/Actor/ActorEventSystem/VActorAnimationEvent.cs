@@ -5,71 +5,54 @@ using UnityEngine.Events;
 using zFrame.Event;
 
 /// <summary>
-/// 插入动画事件
+/// 负责调用动画帧绑定功能，将与动画有关的帧事件进行绑定
 /// </summary>
-public class VActorAnimationEvent
+public class VActorAnimationEvent:VSkillEventBase
 {
-    public VActorAnimationEvent(VSkillActions skillActions,VActorReferanceGameObject referance,VActorInfo actorInfo)
+    public VActorAnimationEvent(VSkillActions skillActions, VActorInfo actorInfo, VActorAnimationClipEventBind bind,
+        VActorEvent actorEvent) : base(actorEvent)
     {
         _skillActions = skillActions;
-        _animator = referance.actorAnimator;
         _actorInfo = actorInfo;
-        
-        //添加事件
+
+        //动画硬直
         foreach (var straight in _skillActions.defaultSkillActions.motion.animationStraights)
         {
-            _animator.SetTarget(_skillActions.defaultSkillActions.motion.animationClip.name, straight.startFrame)
-                .OnProcess(
-                    (v) =>
-                    {
-                        SetAnimatorFalseSkill();
-                    });
-            
-            _animator.SetTarget(_skillActions.defaultSkillActions.motion.animationClip.name, straight.endFrame)
-                .OnProcess(
-                    (v) =>
-                    {
-                        SetAnimatorCanSkill();
-                    });
+            bind.AddEvent(_skillActions.defaultSkillActions,SetAnimatorFalseSkill,straight.startFrame);
+            bind.AddEvent(_skillActions.defaultSkillActions,SetAnimatorCanSkill,straight.endFrame);
         }
 
         foreach (VSkillAction skill in _skillActions.actorSkillActions)
         {
             foreach (var straight in skill.motion.animationStraights)
             {
-                _animator.SetTarget(skill.motion.animationClip.name, straight.startFrame)
-                    .OnProcess(
-                        (v) =>
-                        {
-                            SetAnimatorFalseSkill();
-                        });
-            
-                _animator.SetTarget(skill.motion.animationClip.name, straight.endFrame)
-                    .OnProcess(
-                        (v) =>
-                        {
-                            SetAnimatorCanSkill();
-                        });
+                bind.AddEvent(skill,SetAnimatorFalseSkill,straight.startFrame);
+                bind.AddEvent(skill,SetAnimatorCanSkill,straight.endFrame);
             }
         }
-        
-        _animator.Rebind();
     }
 
     private VSkillActions _skillActions;
-    private Animator _animator;
     private VActorInfo _actorInfo;
-
 
     private void SetAnimatorCanSkill()
     {
         _actorInfo.animationInfo.canSkill = true;
-        DebugHelper.LogWarning("设置动画can");
     }
 
     private void SetAnimatorFalseSkill()
     {
         _actorInfo.animationInfo.canSkill = false;
-        DebugHelper.LogWarning("设置动画false");
+    }
+
+    /// <summary>
+    /// 技能被打断，无法执行帧事件时
+    /// </summary>
+    /// <param name="currentSkill"></param>
+    /// <param name="nextSkill"></param>
+    protected override void SkillEndEvent(VSkillAction currentSkill, VSkillAction nextSkill)
+    {
+        base.SkillEndEvent(currentSkill, nextSkill);
+        SetAnimatorCanSkill();
     }
 }

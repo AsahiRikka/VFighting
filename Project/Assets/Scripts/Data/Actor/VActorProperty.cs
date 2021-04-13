@@ -35,6 +35,11 @@ public class VActorProperty
     public float actorAccumulateTankSpeed = 100;
 
     /// <summary>
+    /// 角色基础重量
+    /// </summary>
+    public float actorWeight = 100;
+
+    /// <summary>
     /// 角色正方向
     /// </summary>
     // [InfoBox("角色正方向，向右为准")] 

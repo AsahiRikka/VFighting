@@ -30,4 +30,9 @@ public enum ActorBuffTypeEnum
     /// 控制类
     /// </summary>
     control,
+    
+    /// <summary>
+    /// 技能连携类
+    /// </summary>
+    skillContinute,
 }

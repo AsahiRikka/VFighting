@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// 控制器基类
+/// 技能事件
 /// </summary>
-public class VActorControllerBase
+public class VSkillEventBase
 {
-    protected VActorControllerBase(VActorEvent actorEvent)
+    protected VSkillEventBase(VActorEvent actorEvent)
     {
         VActorSkillEvent skillEvent = actorEvent.SkillEvent;
         
@@ -26,7 +26,12 @@ public class VActorControllerBase
         
     }
 
-    protected virtual void SkillStartEvent(VSkillAction skillAction)
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="currentSkill">当前技能</param>
+    /// <param name="nextSkill">上一技能</param>
+    protected virtual void SkillStartEvent(VSkillAction lastSkill,VSkillAction currentSkill)
     {
         
     }
@@ -46,7 +51,12 @@ public class VActorControllerBase
         
     }
 
-    protected virtual void SkillEndEvent(VSkillAction skillAction)
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="currentSkill">当前技能</param>
+    /// <param name="nextSkill">下一技能</param>
+    protected virtual void SkillEndEvent(VSkillAction currentSkill,VSkillAction nextSkill)
     {
         
     }

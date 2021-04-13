@@ -8,5 +8,5 @@ using UnityEngine;
 [Serializable]
 public class VBuffFXSetting
 {
-    public VFXData fxData;
+    public List<VFXData> buffFXs;
 }

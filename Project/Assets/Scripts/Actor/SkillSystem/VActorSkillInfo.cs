@@ -15,11 +15,6 @@ public class VActorSkillInfo
     public VSkillAction currentSkill;
 
     /// <summary>
-    /// 是否在技能运行中，只有在运行中执行判断
-    /// </summary>
-    public bool inSkillUpdate = true;
-    
-    /// <summary>
     /// 技能释放方向，1为右，-1为左
     /// </summary>
     public int skillDir;

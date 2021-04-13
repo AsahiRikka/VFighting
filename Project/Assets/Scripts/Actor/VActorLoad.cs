@@ -42,8 +42,6 @@ public static class VActorLoad
         changeProperty.actorMoveSpeed = property.actorMoveSpeed;
         changeProperty.actorAttackSpeed = property.actorAttackSpeed;
         changeProperty.actorAccumulateTankSpeed = property.actorAccumulateTankSpeed;
-        
-        //使用默认动画的角度
-        changeProperty.actorDirection = data.skillActions.defaultSkillActions.motion.animationDefaultRotate;
+        changeProperty.actorWeight = property.actorWeight;
     }
 }

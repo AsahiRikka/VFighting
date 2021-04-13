@@ -22,15 +22,21 @@ public class VSkillAction:SerializedScriptableObject
     [InfoBox("技能动画配置")]
     public VMotion motion;
     
+    [InfoBox("伤害事件，前提是发生敌我碰撞")]
     public List<VSkillAction_Damange> ActionDamanges;
 
+    [InfoBox("声音事件")]
     public List<VSkillAction_Sound> ActionSounds;
 
+    [InfoBox("跳转技能")]
     public List<VSkillAction_Animate> ActionAnimates;
 
+    [InfoBox("buff事件")]
     public List<VSkillAction_Buff> ActionBuffs;
 
+    [InfoBox("特效事件")]
     public List<VSkillAction_FX> ActionEffects;
 
+    [InfoBox("物理事件")]
     public List<VSkillAction_Physic> ActionPhysics;
 }

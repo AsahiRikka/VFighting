@@ -86,9 +86,11 @@
      <Compile Include="Assets\3rd\unity-chan!\Unity-chan! Model\Scripts\ThirdPersonCamera.cs" />
      <Compile Include="Assets\3rd\unity-chan!\Unity-chan! Model\Scripts\UnityChanControlScriptWithRgidBody.cs" />
      <Compile Include="Assets\3rd\unity-chan!\Unity-chan! Model\SplashScreen\Scripts\SplashScreen.cs" />
+     <Compile Include="Assets\Scripts\Actor\ActorEventSystem\VActorAnimationClipEventBind.cs" />
      <Compile Include="Assets\Scripts\Actor\ActorEventSystem\VActorAnimationEvent.cs" />
      <Compile Include="Assets\Scripts\Actor\ActorEventSystem\VActorEvent.cs" />
      <Compile Include="Assets\Scripts\Actor\ActorEventSystem\VActorSkillEvent.cs" />
+     <Compile Include="Assets\Scripts\Actor\ActorEventSystem\VSkillActionAniClipBind.cs" />
      <Compile Include="Assets\Scripts\Actor\ActorPhysicSystem\VActorPhysicController.cs" />
      <Compile Include="Assets\Scripts\Actor\ActorPhysicSystem\VActorPhysicInfo.cs" />
      <Compile Include="Assets\Scripts\Actor\ActorSkillContinueSystem\VActorSkillContinueController.cs" />
@@ -108,12 +110,12 @@
      <Compile Include="Assets\Scripts\Actor\VActorBase.cs" />
      <Compile Include="Assets\Scripts\Actor\VActorChangeProperty.cs" />
      <Compile Include="Assets\Scripts\Actor\VActorController.cs" />
-     <Compile Include="Assets\Scripts\Actor\VActorControllerBase.cs" />
      <Compile Include="Assets\Scripts\Actor\VActorEfficiencyProperty.cs" />
      <Compile Include="Assets\Scripts\Actor\VActorFactory.cs" />
      <Compile Include="Assets\Scripts\Actor\VActorInfo.cs" />
      <Compile Include="Assets\Scripts\Actor\VActorLoad.cs" />
      <Compile Include="Assets\Scripts\Actor\VActorReferanceGameObject.cs" />
+     <Compile Include="Assets\Scripts\Actor\VSkillEventBase.cs" />
      <Compile Include="Assets\Scripts\ActorCenter\VActorDirController.cs" />
      <Compile Include="Assets\Scripts\ActorCenter\VSkillManager.cs" />
      <Compile Include="Assets\Scripts\Common\GameCommonSetting.cs" />
@@ -132,6 +134,7 @@
      <Compile Include="Assets\Scripts\Data\Buff\VBuffBase.cs" />
      <Compile Include="Assets\Scripts\Data\Buff\VBuffData_Control.cs" />
      <Compile Include="Assets\Scripts\Data\Buff\VBuffData_Damage.cs" />
+     <Compile Include="Assets\Scripts\Data\Buff\VBuffData_SkillContinute.cs" />
      <Compile Include="Assets\Scripts\Data\Buff\VBuffEffectType.cs" />
      <Compile Include="Assets\Scripts\Data\Buff\VBuffFXSetting.cs" />
      <Compile Include="Assets\Scripts\Data\Buff\VBuffSetting.cs" />

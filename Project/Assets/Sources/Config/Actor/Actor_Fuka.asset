@@ -29,11 +29,15 @@ MonoBehaviour:
     actorMoveSpeed: 100
     actorAttackSpeed: 100
     actorAccumulateTankSpeed: 100
-    actorDefaultPositive: {x: 0, y: 90, z: 0}
   skillActions:
     defaultSkillActions: {fileID: 11400000, guid: 468619934b90b89409c7fea4ecc8a4f6,
       type: 2}
     actorSkillActions:
     - {fileID: 11400000, guid: f089ef613b9c97e43b52c5079715089b, type: 2}
-    - {fileID: 11400000, guid: addaae1097b0ce14289caa70a9514ab7, type: 2}
     - {fileID: 11400000, guid: f240f816a0a552d46a6cf4c5323b6e86, type: 2}
+    - {fileID: 11400000, guid: addaae1097b0ce14289caa70a9514ab7, type: 2}
+    - {fileID: 11400000, guid: 8164f869c6caffb45a7ae591d1574702, type: 2}
+    - {fileID: 11400000, guid: f96ad10e5f5242048b408620a5ea05d8, type: 2}
+    - {fileID: 11400000, guid: b69706f64f0d8734bb7703d91e9819ef, type: 2}
+    - {fileID: 11400000, guid: e3465712d9b46074eb471f7bbc338ac7, type: 2}
+    - {fileID: 11400000, guid: 4dc79fbedce6ced44bc2eac52f7cfa8d, type: 2}

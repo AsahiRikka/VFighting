@@ -37,6 +37,11 @@ public class VActorChangeProperty
     public float actorAttackSpeed;
 
     /// <summary>
+    /// 当前重量
+    /// </summary>
+    public float actorWeight;
+
+    /// <summary>
     /// 当前蓄力速度
     /// </summary>
     public float actorAccumulateTankSpeed;

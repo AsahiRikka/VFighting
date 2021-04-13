@@ -13,7 +13,7 @@ public class VActorSkillEvent
     /// <summary>
     /// 播放技能事件，符合条件的技能被播放
     /// </summary>
-    public MySkillInputEvent skillStartEvent = new MySkillInputEvent();
+    public MySkillInputEventForTwo skillStartEvent = new MySkillInputEventForTwo();
     
     /// <summary>
     /// 技能循环
@@ -33,10 +33,15 @@ public class VActorSkillEvent
     /// <summary>
     /// 技能结束事件，确认技能结束
     /// </summary>
-    public MySkillInputEvent skillEndEvent = new MySkillInputEvent();
+    public MySkillInputEventForTwo skillEndEvent = new MySkillInputEventForTwo();
 }
 
 public class MySkillInputEvent : UnityEvent<VSkillAction>
+{
+    
+}
+
+public class MySkillInputEventForTwo : UnityEvent<VSkillAction, VSkillAction>
 {
     
 }

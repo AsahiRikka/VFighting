@@ -1,9 +1,11 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 /// <summary>
 /// 动画数据
 /// </summary>
+[Serializable]
 public class VActorAnimationInfo
 {
     public Animator animator;

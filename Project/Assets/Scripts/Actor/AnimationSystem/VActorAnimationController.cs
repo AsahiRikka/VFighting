@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Runtime.InteropServices;
 using UnityEngine;
 using zFrame.Event;
@@ -7,7 +8,7 @@ using zFrame.Event;
 /// <summary>
 /// 角色动画控制器，根据信号播放动画
 /// </summary>
-public class VActorAnimationController:VActorControllerBase
+public class VActorAnimationController:VSkillEventBase
 {
     public VActorAnimationController(VActorEvent actorEvent, VActorInfo actorInfo, VSkillActions skillActions,
         VActorReferanceGameObject referance,VActorState actorState) : base(actorEvent)
@@ -15,7 +16,7 @@ public class VActorAnimationController:VActorControllerBase
         _actorInfo = actorInfo;
         _skillActions = skillActions;
         _animator = _actorInfo.animationInfo.animator;
-        parent = referance.parent;
+        actor = referance.actor;
         _actorEvent = actorEvent;
         _actorState = actorState;
     }
@@ -24,13 +25,13 @@ public class VActorAnimationController:VActorControllerBase
     private VActorEvent _actorEvent;
     private VSkillActions _skillActions;
     private Animator _animator;
-    private GameObject parent;
+    private GameObject actor;
     private VActorState _actorState;
 
-    protected override void SkillStartEvent(VSkillAction skillAction)
+    protected override void SkillStartEvent(VSkillAction lastSkill, VSkillAction currentSkill)
     {
         _actorInfo.animationInfo.currentFrame = 0;
-        AnimationPlay(_animator,parent,skillAction);
+        AnimationPlay(_animator,actor,currentSkill);
     }
 
     protected override void SkillUpdateEvent(VSkillAction skillAction)
@@ -50,10 +51,10 @@ public class VActorAnimationController:VActorControllerBase
         }
     }
 
-    protected override void SkillEndEvent(VSkillAction skillAction)
+    protected override void SkillEndEvent(VSkillAction currentSkill, VSkillAction nextSkill)
     {
         _actorInfo.animationInfo.currentFrame = 0;
-        _animator.SetBool(skillAction.motion.parameter, false);
+        _animator.SetBool(currentSkill.motion.parameter, false);
     }
 
     private void AnimationPlay(Animator animator, GameObject p, VSkillAction startSkill)
@@ -63,6 +64,9 @@ public class VActorAnimationController:VActorControllerBase
             
         //设置该动画初始角度
         p.transform.rotation = Quaternion.Euler(startSkill.motion.animationDefaultRotate);
+        
+        //位置偏移量
+        p.transform.position += startSkill.motion.animationDefaultPos;
         
         //播放动画
         animator.SetBool(startSkill.motion.parameter, true);

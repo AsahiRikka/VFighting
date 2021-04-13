@@ -17,6 +17,11 @@ public class VActorBuffInfo
     public List<VBuffData_Damage> buffOfDamageList;
 
     /// <summary>
+    /// 角色技能连携Buff
+    /// </summary>
+    public List<VBuffData_SkillContinute> buffSkillContinuteList;
+    
+    /// <summary>
     /// 角色状态数据
     /// </summary>
     private VActorState _actorState;

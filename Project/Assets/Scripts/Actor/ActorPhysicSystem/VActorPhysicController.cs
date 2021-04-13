@@ -4,7 +4,7 @@ using UnityEngine;
 /// <summary>
 /// 角色物理效果控制器
 /// </summary>
-public class VActorPhysicController:VActorControllerBase
+public class VActorPhysicController:VSkillEventBase
 {
     /// <summary>
     /// 角色属性
