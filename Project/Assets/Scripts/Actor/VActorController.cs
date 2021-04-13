@@ -44,7 +44,7 @@ public class VActorController
         
         //控制器初始化
         stateController = new VActorStateController(actorEvent, state, actorInfo);
-        physicController = new VActorPhysicController(property, state,actorEvent);
+        physicController = new VActorPhysicController(property, state,actorEvent,skillSignal,referance);
         skillController = new VActorSkillController(skillActions, actorEvent, actorInfo, state);
         animationController = new VActorAnimationController(actorEvent, actorInfo, skillActions, referance, state);
         skillContinueController = new VActorSkillContinueController(actorEvent,actorInfo);

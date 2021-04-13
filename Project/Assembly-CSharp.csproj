@@ -91,6 +91,8 @@
      <Compile Include="Assets\Scripts\Actor\ActorEventSystem\VActorEvent.cs" />
      <Compile Include="Assets\Scripts\Actor\ActorEventSystem\VActorSkillEvent.cs" />
      <Compile Include="Assets\Scripts\Actor\ActorEventSystem\VSkillActionAniClipBind.cs" />
+     <Compile Include="Assets\Scripts\Actor\ActorPhysicSystem\VActorGravitySimulate.cs" />
+     <Compile Include="Assets\Scripts\Actor\ActorPhysicSystem\VActorPhysicComponent.cs" />
      <Compile Include="Assets\Scripts\Actor\ActorPhysicSystem\VActorPhysicController.cs" />
      <Compile Include="Assets\Scripts\Actor\ActorPhysicSystem\VActorPhysicInfo.cs" />
      <Compile Include="Assets\Scripts\Actor\ActorSkillContinueSystem\VActorSkillContinueController.cs" />
@@ -171,6 +173,7 @@
      <Compile Include="Assets\Scripts\InputSystem\VCombinationSignal.cs" />
      <Compile Include="Assets\Scripts\ResourcesName.cs" />
      <Compile Include="Assets\Scripts\Service.cs" />
+     <Compile Include="Assets\Scripts\TriggerDetection.cs" />
      <Compile Include="Assets\Scripts\Util\DebugHelper.cs" />
      <Compile Include="Assets\Scripts\Util\EnumType.cs" />
      <Compile Include="Assets\Scripts\Util\EventManager\EventManager.cs" />
@@ -182,6 +185,7 @@
      <Compile Include="Assets\Scripts\Util\KeyCodeMapper.cs" />
      <Compile Include="Assets\Scripts\Util\ResourceManager.cs" />
      <Compile Include="Assets\Scripts\Util\Singleton.cs" />
+     <Compile Include="Assets\Scripts\Util\TagType.cs" />
      <None Include="Assets\3rd\unity-chan!\Unity-chan! Model\Art\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />
      <None Include="Assets\3rd\Toon\Shader\Toon_DoubleShadeWithFeather_Mobile_TransClipping_StencilMask.shader" />
      <None Include="Assets\3rd\Toon\Shader\Toon_ShadingGradeMap_Mobile_StencilMask.shader" />

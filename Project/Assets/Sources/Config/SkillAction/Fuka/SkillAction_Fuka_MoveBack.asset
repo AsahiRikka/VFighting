@@ -35,6 +35,16 @@ MonoBehaviour:
   preConditionData:
     skillContinues: []
     notSkillPreState: 03000000
+  physicComponent:
+    isEnable: 1
+    isMove: 0
+    isBack: 1
+    isDash: 0
+    isJump: 0
+    moveSpeedScale: 0
+    backSpeedScale: 2
+    dashSpeedScale: 0
+    jumpForceScale: 0
   motion: {fileID: 11400000, guid: f183158d62c18a94bb95854a418fdc00, type: 2}
   ActionDamanges: []
   ActionSounds: []

@@ -26,9 +26,13 @@ MonoBehaviour:
   actorProperty:
     heathPoints: 1000
     actorDamage: 100
-    actorMoveSpeed: 100
-    actorAttackSpeed: 100
-    actorAccumulateTankSpeed: 100
+    actorMoveSpeed: 10
+    actorBackSpeed: 5
+    actorDashSpeed: 20
+    jumpForce: 10
+    actorAttackSpeed: 10
+    actorAccumulateTankSpeed: 10
+    actorWeight: 10
   skillActions:
     defaultSkillActions: {fileID: 11400000, guid: 468619934b90b89409c7fea4ecc8a4f6,
       type: 2}

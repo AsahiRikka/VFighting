@@ -39,10 +39,12 @@ public class VActorState
     public Vector3 actorDir;
 
     /// <summary>
-    /// 跟踪目标的朝向，角度值
+    /// 目标的朝向，角度值
     /// </summary>
     public Vector3 focusDir;
 
+    public int actorFace;
+    
     public VActorState(PlayerEnum e)
     {
         //初始朝向设置，游戏中会变化
@@ -50,10 +52,12 @@ public class VActorState
         {
             actorDir=Vector3.zero;
             focusDir=new Vector3(0,180,0);
+            actorFace = 1;
         }else if (e == PlayerEnum.player_2)
         {
             actorDir=new Vector3(0,180,0);
             focusDir=Vector3.zero;
+            actorFace = -1;
         }
     }
 }
@@ -62,6 +66,7 @@ public enum ActorStateTypeEnum
 {
     idle,
     move,
+    moveBack,
     dash,
     jump,
     crouch,

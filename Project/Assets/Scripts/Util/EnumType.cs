@@ -81,3 +81,14 @@ public enum DifficultOfOperationEnum
     medium,
     hard,
 }
+
+/// <summary>
+/// tag枚举
+/// </summary>
+[System.Flags]
+public enum TagEnum
+{
+    untagged,
+    ground,
+    wall,
+}

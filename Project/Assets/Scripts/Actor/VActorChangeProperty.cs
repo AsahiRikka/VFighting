@@ -32,6 +32,21 @@ public class VActorChangeProperty
     public float actorMoveSpeed;
 
     /// <summary>
+    /// 后退速度
+    /// </summary>
+    public float actorBackSpeed;
+
+    /// <summary>
+    /// 冲刺速度
+    /// </summary>
+    public float actorDashSpeed;
+
+    /// <summary>
+    /// 跳跃力
+    /// </summary>
+    public float jumpForce;
+
+    /// <summary>
     /// 当前攻击速度，影响动画速度，从而影响技能系统
     /// </summary>
     public float actorAttackSpeed;

@@ -22,26 +22,35 @@ public class VActorProperty
     /// <summary>
     /// 基础移动速度
     /// </summary>
-    public float actorMoveSpeed = 100;
+    public float actorMoveSpeed = 10;
+
+    /// <summary>
+    /// 后退速度
+    /// </summary>
+    public float actorBackSpeed = 5;
+
+    /// <summary>
+    /// 冲刺速度
+    /// </summary>
+    public float actorDashSpeed = 20;
+
+    /// <summary>
+    /// 跳跃力
+    /// </summary>
+    public float jumpForce = 10;
 
     /// <summary>
     /// 基础攻击速度，影响动画速度，从而影响技能系统
     /// </summary>
-    public float actorAttackSpeed = 100;
+    public float actorAttackSpeed = 10;
 
     /// <summary>
     /// 基础蓄力速度
     /// </summary>
-    public float actorAccumulateTankSpeed = 100;
+    public float actorAccumulateTankSpeed = 10;
 
     /// <summary>
     /// 角色基础重量
     /// </summary>
-    public float actorWeight = 100;
-
-    /// <summary>
-    /// 角色正方向
-    /// </summary>
-    // [InfoBox("角色正方向，向右为准")] 
-    // public Vector3 actorDefaultRotate = Vector3.zero;
+    public float actorWeight = 10;
 }

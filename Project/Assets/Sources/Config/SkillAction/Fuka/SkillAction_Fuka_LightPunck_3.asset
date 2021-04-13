@@ -38,6 +38,12 @@ MonoBehaviour:
       needLayer: 2
       targetLayer: 3
     notSkillPreState: 03000000
+  physicComponent:
+    isEnable: 0
+    moveSpeedScale: 0
+    backSpeedScale: 0
+    dashSpeedScale: 0
+    jumpForceScale: 0
   motion: {fileID: 11400000, guid: f0bb24ebf18b87942814e0045a9b7aab, type: 2}
   ActionDamanges: []
   ActionSounds: []

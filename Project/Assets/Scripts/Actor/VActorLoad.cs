@@ -40,6 +40,9 @@ public static class VActorLoad
         changeProperty.heathPoints = property.heathPoints;
         changeProperty.actorDamage = property.actorDamage;
         changeProperty.actorMoveSpeed = property.actorMoveSpeed;
+        changeProperty.actorBackSpeed = property.actorBackSpeed;
+        changeProperty.actorDashSpeed = property.actorDashSpeed;
+        changeProperty.jumpForce = property.jumpForce;
         changeProperty.actorAttackSpeed = property.actorAttackSpeed;
         changeProperty.actorAccumulateTankSpeed = property.actorAccumulateTankSpeed;
         changeProperty.actorWeight = property.actorWeight;

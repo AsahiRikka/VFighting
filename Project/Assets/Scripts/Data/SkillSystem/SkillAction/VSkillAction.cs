@@ -16,6 +16,11 @@ public class VSkillAction:SerializedScriptableObject
     public VSkillSignalData signalData;
 
     public VSkillPreConditionData preConditionData;
+
+    [Space(30)]
+    
+    [InfoBox("物理组件")]
+    public VActorPhysicComponent physicComponent;
     
     [Space(30)]
     

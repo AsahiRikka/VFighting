@@ -91,7 +91,7 @@ public class VActorSkillController:VSkillEventBase
             {
                 if(!actorState.canMove)
                     return;
-                actorState.actorState = ActorStateTypeEnum.move;
+                actorState.actorState = ActorStateTypeEnum.moveBack;
                 break;
             }
             case SkillTypeEnum.dash:

@@ -19,7 +19,7 @@ public class VSkillEventBase
         skillEvent.skillFixUpdateEvent.AddListener(SkillFixUpdateEvent);
         skillEvent.skillEndNormalEvent.AddListener(SkillEndNormalEvent);
         skillEvent.skillEndEvent.AddListener(SkillEndEvent);
-    }
+    }  
     
     protected virtual void SkillStartTriggerEvent(VSkillAction skillAction)
     {

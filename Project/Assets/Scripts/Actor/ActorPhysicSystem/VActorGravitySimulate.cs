@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 /// <summary>
-/// 物理效果数据
+/// 角色重力模拟
 /// </summary>
-public class VActorPhysicInfo
+public class VActorGravitySimulate : MonoBehaviour
 {
-
+    
 }

@@ -19,7 +19,7 @@ public class VCombinationSignal
     public Dictionary<InputCombinationObj, bool> combinationSignal = new Dictionary<InputCombinationObj, bool>();
 
     //组合键释放信号
-    public Dictionary<InputCombinationObj, bool> combinationReleaseSignal = new Dictionary<InputCombinationObj, bool>();
+    private Dictionary<InputCombinationObj, bool> combinationReleaseSignal = new Dictionary<InputCombinationObj, bool>();
     
     //组合键的超时判断
     private Dictionary<InputCombinationObj,bool> combinationTimeSignal=new Dictionary<InputCombinationObj, bool>();
@@ -106,7 +106,6 @@ public class VCombinationSignal
             //     CombinationLogic(combination);
             // }
         }
-
         for (int j = 0; j < combinationReleaseSignal.Count; j++)
         {
             var combination = combinationReleaseSignal.ElementAt(j);
@@ -205,6 +204,5 @@ public class VCombinationSignal
     {
         RemoveCombination(combinationObjs);
     }
-    
     
 }
