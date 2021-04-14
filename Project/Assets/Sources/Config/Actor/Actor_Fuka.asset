@@ -26,9 +26,9 @@ MonoBehaviour:
   actorProperty:
     heathPoints: 1000
     actorDamage: 100
-    actorMoveSpeed: 10
-    actorBackSpeed: 5
-    actorDashSpeed: 20
+    actorMoveSpeed: 2
+    actorBackSpeed: 2
+    actorDashSpeed: 5
     jumpForce: 10
     actorAttackSpeed: 10
     actorAccumulateTankSpeed: 10
@@ -45,3 +45,6 @@ MonoBehaviour:
     - {fileID: 11400000, guid: b69706f64f0d8734bb7703d91e9819ef, type: 2}
     - {fileID: 11400000, guid: e3465712d9b46074eb471f7bbc338ac7, type: 2}
     - {fileID: 11400000, guid: 4dc79fbedce6ced44bc2eac52f7cfa8d, type: 2}
+    - {fileID: 11400000, guid: ce7308fd9678d7244ac2e1cacd509444, type: 2}
+    - {fileID: 11400000, guid: 5e06008b6c344964a8a42f8e35ebdfe3, type: 2}
+    - {fileID: 11400000, guid: 4fb2919b27cc8904f91a30a46d7a7570, type: 2}

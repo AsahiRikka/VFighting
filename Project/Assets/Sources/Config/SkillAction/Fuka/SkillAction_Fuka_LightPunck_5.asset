@@ -36,12 +36,34 @@ MonoBehaviour:
     skillContinues:
     - ID: 1001
       needLayer: 4
+      frame: {x: 5, y: 50}
       targetLayer: 5
-    notSkillPreState: 03000000
+    skillPreState: 
+    notSkillPreState: 04000000
+  physicComponent:
+    isEnable: 0
+    isMove: 0
+    isBack: 0
+    isDash: 0
+    isJump: 0
+    moveSpeedScale: 0
+    backSpeedScale: 0
+    dashSpeedScale: 0
+    jumpForceScale: 0
   motion: {fileID: 11400000, guid: f0b01814b3f69e1448a66c900a9da7d2, type: 2}
   ActionDamanges: []
   ActionSounds: []
   ActionAnimates: []
   ActionBuffs: []
   ActionEffects: []
-  ActionPhysics: []
+  ActionPhysics:
+  - skillActionType: 0
+    target: 0
+    startFrame: 0
+    keyFrame: 0
+    endFrame: 0
+    initSpeed: 500
+    initVector: {x: 1, y: 0, z: 0}
+    speedDecay: 1
+    bounceTimes: 1
+    gravityScale: 1

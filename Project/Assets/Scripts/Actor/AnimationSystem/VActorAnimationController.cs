@@ -41,9 +41,6 @@ public class VActorAnimationController:VSkillEventBase
         //计算当前帧数
         _actorInfo.animationInfo.currentFrame = GetCurrentFrame();
 
-        //刷新角色状态
-        ActorStateRefresh(skillAction);
-
         if (_actorInfo.animationInfo.currentFrame >= (int) totalFrame * 0.95f && !skillAction.skillProperty.isLoopSkill) 
         {
             //自然结束的技能
@@ -95,20 +92,5 @@ public class VActorAnimationController:VSkillEventBase
         _actorInfo.animationInfo.currentFrame = (int) (Mathf.Floor(totalFrame * currentTime) % totalFrame);
         //计算当前播放的动画片段运行至哪一帧
         return _actorInfo.animationInfo.currentFrame;
-    }
-
-    private void ActorStateRefresh(VSkillAction skill)
-    {
-        // int frame = _actorInfo.animationInfo.currentFrame;
-        // foreach (var straight in skill.motion.animationStraights)
-        // {
-        //     if (frame >= straight.startFrame && frame <= straight.endFrame)
-        //     {
-        //         _actorInfo.animationInfo.canSkill = false;
-        //         return;
-        //     }
-        // }
-        //
-        // _actorInfo.animationInfo.canSkill = true;
     }
 }

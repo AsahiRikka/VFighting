@@ -16,6 +16,9 @@ public class VSkillPreConditionData_SkillContinue
     [InfoBox("需要连携级数")]
     public int needLayer;
 
+    [InfoBox("相应帧率范围")] 
+    public Vector2 frame;
+
     [InfoBox("技能发动后的连携级数")]
     public int targetLayer;
 }

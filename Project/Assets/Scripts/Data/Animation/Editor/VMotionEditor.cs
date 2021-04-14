@@ -156,7 +156,7 @@ public class VMotionEditor : OdinEditorWindow
     [VerticalGroup("animationPos", 13)]
     [ShowIf("motionState")]
     [OnValueChanged("AnimationDefaultRotateChange")]
-    [InfoBox("动画默认角度，以向右为准")]
+    [InfoBox("动画位置偏移")]
     public Vector3 animationDefaultPos;
 
     [VerticalGroup("rootMotion", 14)] 

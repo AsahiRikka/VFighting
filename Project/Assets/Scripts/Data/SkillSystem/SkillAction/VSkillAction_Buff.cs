@@ -13,4 +13,7 @@ public class VSkillAction_Buff:VSkillActionBase
     public bool addOrRemoveBuff;
 
     public string buffID;
+
+    [InfoBox("buff层级")]
+    public int buffLevel;
 }

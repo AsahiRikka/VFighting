@@ -10,6 +10,8 @@ using UnityEngine;
 public class VSkillActionBase
 {
     public SkillActionEnum skillActionType;
+
+    public SkillActionTargetEnum target;
     
     [ShowIf("skillActionType",(SkillActionEnum.frame))]
     public int startFrame;
@@ -66,4 +68,13 @@ public enum SkillActionEnum
     /// </summary>
     [InfoBox("指定帧")]
     keyFrame,
+}
+
+/// <summary>
+/// 技能事件目标
+/// </summary>
+public enum SkillActionTargetEnum
+{
+    self,
+    anamy
 }

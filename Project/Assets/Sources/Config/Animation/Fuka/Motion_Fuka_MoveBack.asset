@@ -24,9 +24,10 @@ MonoBehaviour:
   motionID: 0
   motionName: Fuka_MoveBack
   parameter: MoveBack
-  animationDefaultRotate: {x: 0, y: -90, z: 0}
+  animationDefaultRotate: {x: 0, y: 90, z: 0}
+  animationDefaultPos: {x: 0, y: 0, z: 0}
   applyRoomMotion: 0
-  animationClip: {fileID: -8487307672374459578, guid: 0884c9d47df80e446adeffc5337e5e0b,
+  animationClip: {fileID: -203655887218126122, guid: ed4509b532e8d1f419411bacb9a57415,
     type: 3}
   passiveBoxes:
   - segmentMotion:

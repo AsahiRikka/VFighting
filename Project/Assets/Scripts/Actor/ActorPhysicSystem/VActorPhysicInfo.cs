@@ -6,5 +6,8 @@ using UnityEngine;
 /// </summary>
 public class VActorPhysicInfo
 {
-
+    /// <summary>
+    /// 角色当前垂直加速度
+    /// </summary>
+    public float actorVerticalAcceleration = -100;
 }

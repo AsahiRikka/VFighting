@@ -11,5 +11,7 @@ public class VBuffData_SkillContinute:SerializedScriptableObject
     [ReadOnly] public ActorBuffTypeEnum buffType = ActorBuffTypeEnum.skillContinute;
     
     public VBuffBase buffBaseProperty;
+    
+    
 }
  

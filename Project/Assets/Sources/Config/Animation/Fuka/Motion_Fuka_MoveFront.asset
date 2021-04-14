@@ -25,8 +25,9 @@ MonoBehaviour:
   motionName: Fuka_MoveFront
   parameter: MoveFront
   animationDefaultRotate: {x: 0, y: 90, z: 0}
+  animationDefaultPos: {x: 0, y: 0, z: 0}
   applyRoomMotion: 0
-  animationClip: {fileID: -8487307672374459578, guid: 0884c9d47df80e446adeffc5337e5e0b,
+  animationClip: {fileID: -203655887218126122, guid: 7c6bff5b56ac0634f957b1be3bb40d38,
     type: 3}
   passiveBoxes:
   - segmentMotion:

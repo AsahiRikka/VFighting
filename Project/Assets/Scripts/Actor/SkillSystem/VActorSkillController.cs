@@ -37,14 +37,27 @@ public class VActorSkillController:VSkillEventBase
         if(!_actorState.canSkill)
             return;
 
-        //前置技能判断
+        //前置状态是否满足，为空不需要前置状态
+        if (!skillAction.preConditionData.skillPreState.Contains(_actorState.actorState) &&
+            skillAction.preConditionData.skillPreState.Count > 0) 
+        {
+            return;
+        }
+        //无法触发技能的状态，为空不需要
+        if (skillAction.preConditionData.notSkillPreState.Contains(_actorState.actorState) &&
+            skillAction.preConditionData.notSkillPreState.Count > 0) 
+        {
+            return;
+        }
+
+        //连携技能判断
         if (skillAction.preConditionData.skillContinues.Count == 0)
         {
             SkillTriggerJudge(skillAction, _actorInfo.skillInfo, _actorState);
         }
         else
         {
-            //遍历技能前置条件是否有一个被满足
+            //遍历连携技能条件是否有一个被满足
             foreach (var skillContinue in skillAction.preConditionData.skillContinues)
             {
                 foreach (var haveSkillCon in _actorInfo.skillContinueInfo.skillContinues)
@@ -67,7 +80,7 @@ public class VActorSkillController:VSkillEventBase
         float temp = SkillEnterFlag;
         SkillEnterFlag = 0;
         //过快的技能触发被忽略，只有当被关闭的当前技能有动画前摇时
-        if (temp <= 0.02f && skillInfo.currentSkill.motion.animationStraights.Count > 0) 
+        if (temp <= 0.1f && skillInfo.currentSkill.motion.animationStraights.Count > 0) 
         {
             return;
         }
@@ -82,7 +95,7 @@ public class VActorSkillController:VSkillEventBase
             }
             case SkillTypeEnum.moveFront:
             {
-                if(!actorState.canMove)
+                if (!actorState.canMove || skillInfo.currentSkill.skillProperty.skillType == SkillTypeEnum.dash) 
                     return;
                 actorState.actorState = ActorStateTypeEnum.move;
                 break;
@@ -143,7 +156,6 @@ public class VActorSkillController:VSkillEventBase
     {
         //修改状态
         _actorInfo.skillInfo.currentSkill = currentSkill;
-
         DebugHelper.Log("开始技能：" + currentSkill);
     }
 
@@ -173,7 +185,6 @@ public class VActorSkillController:VSkillEventBase
         {
             SkillEnterFlag +=  Time.fixedDeltaTime;
         }
-
         _actorEvent.SkillEvent.skillFixUpdateEvent.Invoke(_actorInfo.skillInfo.currentSkill);
     }
 }

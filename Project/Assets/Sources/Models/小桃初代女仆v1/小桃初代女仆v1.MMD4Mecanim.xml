@@ -140,9 +140,9 @@
     <vertexScaleByHeightFlag>false</vertexScaleByHeightFlag>
     <vertexScaleByHeight>158</vertexScaleByHeight>
     <waitProcessExitting>false</waitProcessExitting>
-    <pmxAssetPath>Assets/Sources/Models/小桃初代女仆v1/小桃初代女仆v1.pmx</pmxAssetPath>
+    <pmxAssetPath>Assets/小桃初代女仆v1/小桃初代女仆v1.pmx</pmxAssetPath>
     <vmdAssetPathList />
-    <fbxOutputPath>Assets/Sources/Models/小桃初代女仆v1/小桃初代女仆v1.fbx</fbxOutputPath>
+    <fbxOutputPath>Assets/小桃初代女仆v1/小桃初代女仆v1.fbx</fbxOutputPath>
     <bulletPhysicsVersion>_275</bulletPhysicsVersion>
     <useWineFlag>false</useWineFlag>
     <wine>Manual</wine>

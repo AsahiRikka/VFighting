@@ -22,12 +22,6 @@ public class VBuffSetting
     public bool isRemove = false;
 
     /// <summary>
-    /// buff等级
-    /// </summary>
-    [InfoBox("buff等级")]
-    public int level = 1;
-
-    /// <summary>
     /// 是否有优先级，相同buff不同等级时（true：高等级覆盖；false：同时存在）
     /// </summary>
     [InfoBox("是否有优先级，相同buff不同等级时（true：高等级覆盖；false：同时存在）")]

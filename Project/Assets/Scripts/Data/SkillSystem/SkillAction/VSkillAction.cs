@@ -15,6 +15,8 @@ public class VSkillAction:SerializedScriptableObject
     
     public VSkillSignalData signalData;
 
+    [Space(30)]
+    
     public VSkillPreConditionData preConditionData;
 
     [Space(30)]

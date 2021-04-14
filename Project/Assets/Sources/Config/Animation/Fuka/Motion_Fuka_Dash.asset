@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 456a6edc4ab0d3441a9c762d78e18888, type: 3}
+  m_Name: Motion_Fuka_Dash
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  motionID: 
+  motionName: Fuka_Dash
+  parameter: Dash
+  animationDefaultRotate: {x: 0, y: 90, z: 0}
+  animationDefaultPos: {x: 0, y: 0, z: 0}
+  applyRoomMotion: 0
+  animationClip: {fileID: -8487307672374459578, guid: 0884c9d47df80e446adeffc5337e5e0b,
+    type: 3}
+  passiveBoxes: []
+  hitBoxes: []
+  defenseBoxes: []
+  animationStraights: []

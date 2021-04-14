@@ -12,6 +12,8 @@ public class VActorReferanceGameObject : MonoBehaviour
     
     public Animator actorAnimator;
 
+    public TriggerDetection actorPhysicDetect;
+
     public void MyCoroutine(IEnumerator method)
     {
         StartCoroutine(method);

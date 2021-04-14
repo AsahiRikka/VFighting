@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 004375c057d011742b39c0344172fe0e, type: 3}
+  m_Name: SkillAction_Fuka_DodgeBack
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  skillProperty:
+    skillActionID: 
+    skillActionName: 
+    skillType: 7
+    priority: 0
+    canInterrupt: 1
+    isLoopSkill: 0
+  signalData:
+    SignalEnum: 1
+    skillSignalDataSegments:
+    - playerKeyCodes: 06000000
+  preConditionData:
+    skillContinues: []
+    skillPreState: 02000000
+    notSkillPreState: 0400000000000000
+  physicComponent:
+    isEnable: 0
+    isMove: 0
+    isBack: 0
+    isDash: 0
+    isJump: 0
+    moveSpeedScale: 0
+    backSpeedScale: 0
+    dashSpeedScale: 0
+    jumpForceScale: 0
+  motion: {fileID: 11400000, guid: c3566d235ec2def46a5f74925fd6e1da, type: 2}
+  ActionDamanges: []
+  ActionSounds: []
+  ActionAnimates: []
+  ActionBuffs: []
+  ActionEffects: []
+  ActionPhysics:
+  - skillActionType: 7
+    target: 0
+    startFrame: 0
+    keyFrame: 1
+    endFrame: 0
+    initSpeed: 800
+    initVector: {x: -1, y: 0, z: 0}
+    speedDecay: 1
+    bounceTimes: 1
+    gravityScale: 1
