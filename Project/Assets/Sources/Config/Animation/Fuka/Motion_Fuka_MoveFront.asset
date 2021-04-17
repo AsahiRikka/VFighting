@@ -27,16 +27,18 @@ MonoBehaviour:
   animationDefaultRotate: {x: 0, y: 90, z: 0}
   animationDefaultPos: {x: 0, y: 0, z: 0}
   applyRoomMotion: 0
-  animationClip: {fileID: -203655887218126122, guid: 7c6bff5b56ac0634f957b1be3bb40d38,
+  animationEndClip: 0
+  animationClip: {fileID: -203655887218126122, guid: b7dc6e53e62785a4084f36fba83dcbdf,
     type: 3}
   passiveBoxes:
   - segmentMotion:
-      startFrame: 0
-      endFrame: 41
+      Type: 1
+      startFrame: 1
+      endFrame: 61
     collider:
       center: {x: 0, y: 0.8, z: 0}
       size: {x: 0.5, y: 1.8, z: 0.5}
-      trigger: 0
+      trigger: 1
   hitBoxes: []
   defenseBoxes: []
   animationStraights: []

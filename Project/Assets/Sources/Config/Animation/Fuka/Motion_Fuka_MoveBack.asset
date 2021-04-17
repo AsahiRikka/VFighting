@@ -24,19 +24,21 @@ MonoBehaviour:
   motionID: 0
   motionName: Fuka_MoveBack
   parameter: MoveBack
-  animationDefaultRotate: {x: 0, y: 90, z: 0}
+  animationDefaultRotate: {x: 0, y: 150, z: 0}
   animationDefaultPos: {x: 0, y: 0, z: 0}
   applyRoomMotion: 0
+  animationEndClip: 0
   animationClip: {fileID: -203655887218126122, guid: ed4509b532e8d1f419411bacb9a57415,
     type: 3}
   passiveBoxes:
   - segmentMotion:
-      startFrame: 0
-      endFrame: 41
+      Type: 1
+      startFrame: 1
+      endFrame: 88
     collider:
       center: {x: 0, y: 0.8, z: 0}
       size: {x: 0.5, y: 1.8, z: 0.5}
-      trigger: 0
+      trigger: 1
   hitBoxes: []
   defenseBoxes: []
   animationStraights: []

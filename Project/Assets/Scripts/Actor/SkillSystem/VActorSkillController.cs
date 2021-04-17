@@ -21,7 +21,7 @@ public class VActorSkillController:VSkillEventBase
     private VSkillActions _skillActions;
     private readonly VActorState _actorState;
 
-    private float SkillEnterFlag = 100;
+    private float SkillEnterFlag = 1f;
 
     /// <summary>
     /// 技能输入被触发，这一步判断是否释放技能，判断条件：角色状态能否释放，是否有前置buff条件，当前技能是否能被打断
@@ -29,6 +29,12 @@ public class VActorSkillController:VSkillEventBase
     /// <param name="skillAction"></param>
     protected override void SkillStartTriggerEvent(VSkillAction skillAction)
     {
+        //过快的技能触发被忽略，只有当被关闭的当前技能有动画前摇时
+        if (SkillEnterFlag <= 0.5f && _actorInfo.skillInfo.currentSkill.motion.animationStraights.Count > 0) 
+        {
+            return;
+        }
+        
         //相同技能退出
         if (skillAction == _actorInfo.skillInfo.currentSkill)
             return;
@@ -77,14 +83,6 @@ public class VActorSkillController:VSkillEventBase
     /// </summary>
     private void SkillTriggerJudge(VSkillAction skillAction, VActorSkillInfo skillInfo, VActorState actorState)
     {
-        float temp = SkillEnterFlag;
-        SkillEnterFlag = 0;
-        //过快的技能触发被忽略，只有当被关闭的当前技能有动画前摇时
-        if (temp <= 0.1f && skillInfo.currentSkill.motion.animationStraights.Count > 0) 
-        {
-            return;
-        }
-
         //技能判断
         switch (skillAction.skillProperty.skillType)
         {
@@ -148,14 +146,17 @@ public class VActorSkillController:VSkillEventBase
         if (skillInfo.currentSkill != null)
             _actorEvent.SkillEvent.skillEndEvent.Invoke(skillInfo.currentSkill, skillAction);
         
+        //修改当前技能
+        _actorInfo.skillInfo.currentSkill = skillAction;
+        
         //完成释放判断，释放技能
         _actorEvent.SkillEvent.skillStartEvent.Invoke(skillInfo.currentSkill, skillAction);
     }
 
     protected override void SkillStartEvent(VSkillAction lastSkill, VSkillAction currentSkill)
     {
-        //修改状态
-        _actorInfo.skillInfo.currentSkill = currentSkill;
+        SkillEnterFlag = 0;
+        
         DebugHelper.Log("开始技能：" + currentSkill);
     }
 
@@ -172,6 +173,17 @@ public class VActorSkillController:VSkillEventBase
 
         //自然结束添加idle技能
         _actorEvent.SkillEvent.skillPlayTriggerEvent.Invoke(_skillActions.defaultSkillActions);
+    }
+
+    /// <summary>
+    /// 角色受到攻击，敌方暂时无法影响受击者技能，受击者自动跳转到被攻击技能
+    /// </summary>
+    /// <param name="activeSkillAction"></param>
+    /// <param name="passiveSkillAction"></param>
+    protected override void ActorBeAttackedEvent(VSkillAction activeSkillAction, VSkillAction passiveSkillAction)
+    {
+        //无视前置条件直接跳转
+        SkillTriggerJudge(_skillActions.beAttackSkillAction, _actorInfo.skillInfo, _actorState);
     }
 
     public void Update()

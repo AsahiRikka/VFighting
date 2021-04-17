@@ -32,12 +32,12 @@ public class KeyMapSetting
         keyMapJsons.Add(AddValue(MyKeyCode.downArrow_2,"DownArrow"));
         keyMapJsons.Add(AddValue(MyKeyCode.leftArrow_2,"LeftArrow"));
         keyMapJsons.Add(AddValue(MyKeyCode.rightArrow_2,"RightArrow"));
-        keyMapJsons.Add(AddValue(MyKeyCode.attack1_2,"KeyPad1"));
-        keyMapJsons.Add(AddValue(MyKeyCode.attack2_2,"KeyPad2"));
-        keyMapJsons.Add(AddValue(MyKeyCode.dodge_2,"KeyPad3"));
-        keyMapJsons.Add(AddValue(MyKeyCode.skill1_2,"KeyPad4"));
-        keyMapJsons.Add(AddValue(MyKeyCode.skill2_2,"KeyPad5"));
-        keyMapJsons.Add(AddValue(MyKeyCode.skill3_2,"KeyPad6"));
+        keyMapJsons.Add(AddValue(MyKeyCode.attack1_2,"Keypad1"));
+        keyMapJsons.Add(AddValue(MyKeyCode.attack2_2,"Keypad2"));
+        keyMapJsons.Add(AddValue(MyKeyCode.dodge_2,"Keypad3"));
+        keyMapJsons.Add(AddValue(MyKeyCode.skill1_2,"Keypad4"));
+        keyMapJsons.Add(AddValue(MyKeyCode.skill2_2,"Keypad5"));
+        keyMapJsons.Add(AddValue(MyKeyCode.skill3_2,"Keypad6"));
     }
 
     private KeyMapToJson AddValue(MyKeyCode key,string value)

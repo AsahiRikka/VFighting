@@ -25,6 +25,9 @@ public class VMotion:SerializedScriptableObject
 
     [InfoBox("动画使用rootMotion")]
     public bool applyRoomMotion = true;
+
+    [InfoBox("技能结束帧")] 
+    public int animationEndClip;
     
     public AnimationClip animationClip;
 

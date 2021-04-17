@@ -28,7 +28,7 @@ public class VSkillAction:SerializedScriptableObject
     
     [InfoBox("技能动画配置")]
     public VMotion motion;
-    
+
     [InfoBox("伤害事件，前提是发生敌我碰撞")]
     public List<VSkillAction_Damange> ActionDamanges;
 

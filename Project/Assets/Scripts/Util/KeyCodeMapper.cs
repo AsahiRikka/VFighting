@@ -24,12 +24,12 @@ public static class KeyCodeMapper
         {"DownArrow",KeyCode.DownArrow},
         {"LeftArrow",KeyCode.LeftArrow},
         {"RightArrow",KeyCode.RightArrow},
-        {"KeyPad1",KeyCode.Keypad1},
-        {"KeyPad2",KeyCode.Keypad2},
-        {"KeyPad3",KeyCode.Keypad3},
-        {"KeyPad4",KeyCode.Keypad4},
-        {"KeyPad5",KeyCode.Keypad5},
-        {"KeyPad6",KeyCode.Keypad6},
+        {"Keypad1",KeyCode.Keypad1},
+        {"Keypad2",KeyCode.Keypad2},
+        {"Keypad3",KeyCode.Keypad3},
+        {"Keypad4",KeyCode.Keypad4},
+        {"Keypad5",KeyCode.Keypad5},
+        {"Keypad6",KeyCode.Keypad6},
         
         {"Z",KeyCode.Z},
         

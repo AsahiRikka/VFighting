@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 /// <summary>
 /// 角色物理效果控制器
@@ -43,39 +45,44 @@ public class VActorPhysicController:VSkillEventBase
             if (_skillSignal.physicComponentDic[VActorPhysicComponentEnum.dash] && _state.canDash &&
                 skillAction.physicComponent.isDash)
             {
-                _target.transform.position += new Vector3(
+                _actorRig.MovePosition(_target.transform.position + new Vector3(
                     skillAction.physicComponent.dashSpeedScale *
                     _actorProperty.actorDashSpeed *
                     _state.actorFace * Time.deltaTime,
                     0, 0
-                );
+                ));
             }
             else if (_skillSignal.physicComponentDic[VActorPhysicComponentEnum.move] && _state.canMove &&
-                     skillAction.physicComponent.isMove) 
+                     skillAction.physicComponent.isMove)
             {
-                _target.transform.position += new Vector3(
+                _actorRig.MovePosition(_target.transform.position + new Vector3(
                     skillAction.physicComponent.moveSpeedScale *
                     _actorProperty.actorMoveSpeed *
                     _state.actorFace * Time.deltaTime,
                     0, 0
-                );
+                ));
             }
             
             if (_skillSignal.physicComponentDic[VActorPhysicComponentEnum.retreat] && _state.canMove &&
                 skillAction.physicComponent.isBack) 
             {
-                _target.transform.position += new Vector3(
+                _actorRig.MovePosition(_target.transform.position + new Vector3(
                     skillAction.physicComponent.backSpeedScale *
                     _actorProperty.actorBackSpeed *
                     _state.actorFace * -1 * Time.deltaTime,
                     0, 0
-                );
+                ));
             }
             
             if (_skillSignal.physicComponentDic[VActorPhysicComponentEnum.jump] && _state.canJump &&
                 skillAction.physicComponent.isJump)
             {
-                
+                _actorRig.AddForce(new Vector3(
+                    0,
+                    skillAction.physicComponent.jumpForceScale *
+                    _actorProperty.jumpForce * Time.deltaTime,
+                    0
+                ), ForceMode.VelocityChange);
             }
         }
         #endregion
@@ -83,40 +90,98 @@ public class VActorPhysicController:VSkillEventBase
     
     protected override void SkillStartEvent(VSkillAction lastSkill, VSkillAction currentSkill)
     {
+        PhysicReset();
+        
         PhysicAction(currentSkill,SkillActionEnum.skillAction);
     }
 
-    
-    public void PhysicAction(VSkillAction currentSkill,SkillActionEnum e)
+    /// <summary>
+    /// 角色攻击效果
+    /// </summary>
+    /// <param name="activeSkillAction"></param>
+    /// <param name="passiveSkillAction"></param>
+    protected override void ActorAttackEvent(VSkillAction activeSkillAction, VSkillAction passiveSkillAction)
     {
-        //PhysicReset();
-        
-        foreach (var physic in currentSkill.ActionPhysics)
+        //技能命中对自己的效果
+        foreach (var physic in activeSkillAction.ActionPhysics)
         {
-            if (physic.skillActionType == e)
+            if (physic.target == SkillActionTargetEnum.self && physic.skillActionType == SkillActionEnum.skillHit) 
             {
-                _actorInfo.physicInfo.actorVerticalAcceleration *= physic.gravityScale;
+                PhysicEffect(physic);
+            }
+        }
 
-                _actorRig.AddForce(physic.initVector *
-                                   physic.initSpeed *
-                                   Time.deltaTime, ForceMode.VelocityChange
-                );
+        //技能命中敌人对自己的效果
+        foreach (var physic in passiveSkillAction.ActionPhysics)
+        {
+            if (physic.target == SkillActionTargetEnum.anamy && physic.skillActionType == SkillActionEnum.beAttack)  
+            {
+                PhysicEffect(physic);
             }
         }
     }
 
+    /// <summary>
+    /// 被攻击时
+    /// </summary>
+    /// <param name="activeSkillAction"></param>
+    /// <param name="passiveSkillAction"></param>
+    protected override void ActorBeAttackedEvent(VSkillAction activeSkillAction, VSkillAction passiveSkillAction)
+    {
+        //被命中时自身效果
+        foreach (var physic in activeSkillAction.ActionPhysics)
+        {
+            if (physic.target == SkillActionTargetEnum.self && physic.skillActionType == SkillActionEnum.beAttack) 
+            {
+                PhysicEffect(physic);
+            }
+        }
+
+        //被命中时敌人对命中者的效果
+        foreach (var physic in passiveSkillAction.ActionPhysics)
+        {
+            if (physic.target == SkillActionTargetEnum.anamy && physic.skillActionType == SkillActionEnum.skillHit) 
+            {
+                PhysicEffect(physic);
+            }
+        }
+    }
+
+    public void PhysicAction(VSkillAction currentSkill,SkillActionEnum e)
+    {
+        foreach (var physic in currentSkill.ActionPhysics)
+        {
+            if (physic.skillActionType == e)
+            {
+                PhysicEffect(physic);
+            }
+        }
+    }
+
+    /// <summary>
+    /// 物理效果实现
+    /// </summary>
+    /// <param name="physic"></param>
+    private void PhysicEffect(VSkillAction_Physic physic)
+    {
+        _actorInfo.physicInfo.actorVerticalAcceleration *= physic.gravityScale;
+        _actorRig.AddForce(physic.initVector *
+                           physic.initSpeed *
+                           _state.actorFace *
+                           Time.deltaTime, ForceMode.VelocityChange
+        );
+    }
+
     public void PhysicActionByAcceleration(VSkillAction currentSkill, SkillActionEnum e)
     {
-        //PhysicReset();
-        
         foreach (var physic in currentSkill.ActionPhysics)
         {
             if (physic.skillActionType == e)
             {
                 _actorInfo.physicInfo.actorVerticalAcceleration *= physic.gravityScale;
-
                 _actorRig.AddForce(physic.initVector *
                                    physic.initSpeed *
+                                   _state.actorFace *
                                    Time.deltaTime, ForceMode.Acceleration
                 );
             }
@@ -140,6 +205,20 @@ public class VActorPhysicController:VSkillEventBase
                 _actorProperty.actorWeight * _actorInfo.physicInfo.actorVerticalAcceleration * Time.deltaTime,
                 0, ForceMode.Acceleration);
         }
+
+        if (Mathf.Abs(_actorRig.velocity.x) > 10f)
+        {
+            var velocity = _actorRig.velocity;
+            _actorRig.AddForce(new Vector3(
+                _actorInfo.physicInfo.actorHorizontalSpeedDecay *
+                 Time.deltaTime,
+                0, 0
+            ),ForceMode.Acceleration);
+        }
+        else
+        {
+            PhysicReset();
+        }
     }
 
     private bool _isGravity = true;
@@ -147,8 +226,6 @@ public class VActorPhysicController:VSkillEventBase
     {
         if (e == TagEnum.ground)
         {
-            _actorRig.velocity = new Vector3(_actorRig.velocity.x, 0, _actorRig.velocity.z);
-            _target.transform.position=new Vector3(_target.transform.position.x,0,_target.transform.position.z);
             _isGravity = false;
         }
     }

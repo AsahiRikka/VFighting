@@ -27,7 +27,7 @@ public class VMotionDataGizmos : MonoBehaviour
     {
         if(_motion==null)
             return;
-
+    
         foreach (var VARIABLE in _motion.passiveBoxes)
         {
             if (_currentFrame >= VARIABLE.segmentMotion.startFrame && _currentFrame <= VARIABLE.segmentMotion.endFrame)
@@ -36,7 +36,7 @@ public class VMotionDataGizmos : MonoBehaviour
                 Gizmos.DrawWireCube(VARIABLE.collider.center + transform.position, VARIABLE.collider.size);
             }
         }
-
+    
         foreach (var VARIABLE in _motion.hitBoxes)
         {
             if (_currentFrame >= VARIABLE.segmentMotion.startFrame && _currentFrame <= VARIABLE.segmentMotion.endFrame)

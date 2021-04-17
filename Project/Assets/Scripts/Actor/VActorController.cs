@@ -32,6 +32,11 @@ public class VActorController
     public VActorSkillContinueController skillContinueController;
 
     /// <summary>
+    /// 碰撞控制
+    /// </summary>
+    public VActorColliderController colliderController;
+
+    /// <summary>
     /// 技能释放控制
     /// </summary>
     public VActorSkillSignal skillSignal;
@@ -48,6 +53,7 @@ public class VActorController
         skillController = new VActorSkillController(skillActions, actorEvent, actorInfo, state);
         animationController = new VActorAnimationController(actorEvent, actorInfo, skillActions, referance, state);
         skillContinueController = new VActorSkillContinueController(actorEvent,actorInfo);
+        colliderController = new VActorColliderController(actorEvent, actorInfo, referance, property);
 
         _actorInfo = actorInfo;
         _actorEvent = actorEvent;

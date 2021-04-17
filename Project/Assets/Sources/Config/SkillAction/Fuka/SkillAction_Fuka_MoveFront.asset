@@ -34,6 +34,7 @@ MonoBehaviour:
     - playerKeyCodes: 0a000000
   preConditionData:
     skillContinues: []
+    skillPreState: 
     notSkillPreState: 0400000003000000
   physicComponent:
     isEnable: 1
@@ -51,13 +52,4 @@ MonoBehaviour:
   ActionAnimates: []
   ActionBuffs: []
   ActionEffects: []
-  ActionPhysics:
-  - skillActionType: 7
-    startFrame: 0
-    keyFrame: 0
-    endFrame: 0
-    initSpeed: 1
-    initAngle: {x: 0, y: 0, z: 0}
-    speedDecay: 1
-    bounceTimes: 1
-    gravityScale: 1
+  ActionPhysics: []

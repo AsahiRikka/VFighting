@@ -9,7 +9,14 @@ using UnityEngine;
 [Serializable]
 public class VSegmentMotion
 {
+    public VSegmengMotionType Type;
+    
     public int startFrame;
 
     public int endFrame;
+}
+
+public enum VSegmengMotionType{
+    keyFrame,
+    allskill,
 }

@@ -22,17 +22,15 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Config_1
-    m_MainAsset: {fileID: 11400000, guid: 353cebca1767f9144b1f6738030ad950, type: 2}
-    m_TargetAsset: {fileID: 11400000, guid: 353cebca1767f9144b1f6738030ad950, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 5bd19d70c8ac254458e3b1c3359063cc
     m_Address: Actor_Prefab_Fuka
     m_ReadOnly: 0
     m_SerializedLabels:
     - Model_1
-    m_MainAsset: {fileID: 6589796070768851289, guid: 5bd19d70c8ac254458e3b1c3359063cc,
-      type: 3}
-    m_TargetAsset: {fileID: 6589796070768851289, guid: 5bd19d70c8ac254458e3b1c3359063cc,
-      type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 8e518f294edf0e146969a20a4329c77f, type: 2}
   m_SchemaSet:

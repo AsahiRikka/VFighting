@@ -55,13 +55,11 @@ public class VActorSkillSignal
         AddCombination();
         
         //冲刺
-
         if (_property.playerEnum == PlayerEnum.player_2)
         {
             anamy = PlayerKeyCode.leftArrow;
             invertAnamy = PlayerKeyCode.rightArrow;
         }
-
         dash = new InputCombinationObj(new List<MyKeyCode[]>()
         {
             {
@@ -77,7 +75,6 @@ public class VActorSkillSignal
                 }
             },
         }, allkeys, SkillSignalEnum.combinationHold);
-        
         _combinationSignal.InsertCombinationSignal(dash);
     }
 
@@ -320,12 +317,12 @@ public class VActorSkillSignal
                 {
                     if (key == PlayerKeyCode.anamyArrow)
                     {
-                        normalSignal[flag] = MyKeyCode.rightArrow_1;
-                        invertSignal[flag] = MyKeyCode.leftArrow_1;
+                        normalSignal[flag] = MyKeyCodeForPlayer[PlayerKeyCode.rightArrow];
+                        invertSignal[flag] = MyKeyCodeForPlayer[PlayerKeyCode.leftArrow];
                     }else if (key == PlayerKeyCode.invertAnamyArrow)
                     {
-                        normalSignal[flag] = MyKeyCode.leftArrow_1;
-                        invertSignal[flag] = MyKeyCode.rightArrow_1;
+                        normalSignal[flag] = MyKeyCodeForPlayer[PlayerKeyCode.leftArrow];
+                        invertSignal[flag] = MyKeyCodeForPlayer[PlayerKeyCode.rightArrow];
                     }
                     else
                     {

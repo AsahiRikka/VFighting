@@ -11,8 +11,10 @@ public class VSkillActionBase
 {
     public SkillActionEnum skillActionType;
 
+    [ShowIf("@skillActionType == SkillActionEnum.skillHit ||" +
+            "skillActionType == SkillActionEnum.beAttack")]
     public SkillActionTargetEnum target;
-    
+
     [ShowIf("skillActionType",(SkillActionEnum.frame))]
     public int startFrame;
 

@@ -22,7 +22,7 @@ public class TriggerDetection : MonoBehaviour
     private void Start()
     {
         #if DEBUGER
-        Collider coll = gameObject.GetComponent<Collider>(); 
+        BoxCollider coll = gameObject.GetComponent<BoxCollider>(); 
         if (coll == null || !coll.isTrigger)
         {
             DebugHelper.LogError("不存在对应的触发器" + gameObject.name);

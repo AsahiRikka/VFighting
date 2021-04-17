@@ -185,7 +185,6 @@ public class VMotionEditor : OdinEditorWindow
     private void AnimationDefaultRotateChange()
     {
         parent.transform.rotation = Quaternion.Euler(animationDefaultRotate);
-
         parent.transform.position += animationDefaultPos;
     }
 

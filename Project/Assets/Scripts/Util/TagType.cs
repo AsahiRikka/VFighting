@@ -9,6 +9,11 @@ public class TagType:Singleton<TagType>
         {(int)TagEnum.untagged,"Untagged" },
         {(int)TagEnum.ground,"Ground" },
         {(int)TagEnum.wall,"Wall" },
+        {(int)TagEnum.player1,"Player1" },
+        {(int)TagEnum.player2,"Player2" },
+        {(int)TagEnum.hitCollider,"HitCollider" },
+        {(int)TagEnum.passiveCollider,"PassiveCollider" },
+        {(int)TagEnum.defenceCollider,"defenceCollider" },
     };
     
     public Dictionary<string,int> tagStringDictionary=new Dictionary<string, int>()
@@ -16,5 +21,10 @@ public class TagType:Singleton<TagType>
         {"Untagged",(int)TagEnum.untagged },
         {"Ground",(int)TagEnum.ground },
         {"Wall",(int)TagEnum.wall },
+        {"Player1",(int)TagEnum.player1 },
+        {"Player2",(int)TagEnum.player2 },
+        {"HitCollider",(int)TagEnum.hitCollider },
+        {"PassiveCollider",(int)TagEnum.passiveCollider },
+        {"DefenceCollider",(int)TagEnum.defenceCollider },
     };
 }

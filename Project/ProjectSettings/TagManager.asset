@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Ground
   - Wall
+  - HitCollider
+  - PassiveCollider
+  - DefenceCollider
   layers:
   - Default
   - TransparentFX
@@ -15,8 +18,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Player_1
+  - Player_2
   - 
   - 
   - 

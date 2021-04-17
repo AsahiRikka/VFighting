@@ -579,7 +579,7 @@ PlayerSettings:
   webGLThreadsSupport: 0
   webGLWasmStreaming: 0
   scriptingDefineSymbols:
-    1: ODIN_INSPECTOR;DEBUGER
+    1: ODIN_INSPECTOR;DEBUGER;GIZMOS
   platformArchitecture: {}
   scriptingBackend: {}
   il2cppCompilerConfiguration: {}

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using DG.Tweening;
 using UnityEngine;
 /// <summary>
 /// 游戏循环控制
@@ -32,7 +34,7 @@ public class GameFramework : MonoBehaviour
         _gameFactory=new GameFactory(
             new VActorFactory(),
             new GameStartSetting());
-        
+
         _gameFactory.LoadGame();
     }
 
@@ -40,5 +42,10 @@ public class GameFramework : MonoBehaviour
     void Update()
     {
         _service.Update();
+    }
+
+    private void OnDestroy()
+    {
+        _gameFactory.Destroy();
     }
 }

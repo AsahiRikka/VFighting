@@ -11,6 +11,9 @@ public class VSkillActions
 {
     [InfoBox("默认技能，一般为idle")]
     public VSkillAction defaultSkillActions;
+
+    [InfoBox("受击技能")] 
+    public VSkillAction beAttackSkillAction;
     
     [InfoBox("技能集合")]
     public List<VSkillAction> actorSkillActions;

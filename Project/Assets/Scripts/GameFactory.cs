@@ -1,5 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 
 /// <summary>
@@ -10,7 +13,11 @@ public class GameFactory
     private readonly VActorFactory _actorFactory;
     private readonly GameStartSetting _startSetting;
 
-    private GameObject actor;
+    private VActorManager _actorManager;
+
+    private GameObject player1;
+    private GameObject player2;
+    
     public GameFactory(VActorFactory actorFactory,GameStartSetting startSetting)
     {
         _actorFactory = actorFactory;
@@ -20,11 +27,21 @@ public class GameFactory
     /// <summary>
     /// 进入游戏的加载
     /// </summary>
-    public void LoadGame()
+    public async UniTask LoadGame()
     {
-        _actorFactory.LoadActor(ResourcesName.FukaPrefabName, ResourcesName.FukaConfigName, ResourcesName.FukaName,
-            result => actor = result);
-        
-        
+        _actorFactory.LoadActor(ResourcesName.FukaPrefabName, ResourcesName.FukaConfigName, ResourcesName.FukaName,PlayerEnum.player_1,
+            result => player1 = result);
+
+        _actorFactory.LoadActor(ResourcesName.FukaPrefabName, ResourcesName.FukaConfigName, ResourcesName.FukaName,PlayerEnum.player_2,
+            result => player2 = result);
+
+        await UniTask.Delay(TimeSpan.FromSeconds(3));
+
+        _actorManager = new VActorManager(player1.GetComponent<VActorBase>(), player2.GetComponent<VActorBase>());
+    }
+
+    public void Destroy()
+    {
+        _actorManager.Destory();
     }
 }

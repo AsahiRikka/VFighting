@@ -34,6 +34,7 @@ MonoBehaviour:
     - playerKeyCodes: 0b000000
   preConditionData:
     skillContinues: []
+    skillPreState: 
     notSkillPreState: 04000000
   physicComponent:
     isEnable: 1

@@ -9,10 +9,25 @@ using UnityEngine;
 /// </summary>
 public static class VActorLoad
 {
-    public static void ActorDataBind(string name, GameObject actor, VActorData data)
+    public static void ActorDataBind(string name, GameObject actor, VActorData data,PlayerEnum e)
     {
-        //调整角色正朝向
-        actor.transform.rotation = Quaternion.Euler(data.skillActions.defaultSkillActions.motion.animationDefaultRotate);
+        //设置摄像机跟踪
+        string act = "Player1";
+        if (e == PlayerEnum.player_2)
+            act = "Player2";
+        GameObject camera = GameObject.Find(act);
+        CameraFollowObj follow;
+        camera.TryGetComponent<CameraFollowObj>(out follow);
+        if (follow == null)
+        {
+            follow = camera.AddComponent<CameraFollowObj>();
+            follow.actor = actor;
+        }
+        else
+        {
+            follow.actor = actor;
+        }
+        
         
         //角色初始化
         VActorBase actorBase = actor.AddComponent<VActorBase>();
@@ -21,7 +36,16 @@ public static class VActorLoad
         actorBase.BindInit();
         
         //基础属性数据绑定
-        ActorPropertyBind(data.actorProperty,actorBase.actorProperty,data);
+        ActorPropertyBind(data.actorProperty,actorBase.actorProperty,data,e);
+        
+        //调整角色正朝向
+        actor.transform.rotation = Quaternion.Euler(data.skillActions.defaultSkillActions.motion.animationDefaultRotate);
+        if (e == PlayerEnum.player_2)
+        {
+            actor.transform.rotation =
+                Quaternion.Euler(data.skillActions.defaultSkillActions.motion.animationDefaultRotate +new Vector3(0,180,0));
+            actor.transform.position=new Vector3(5,0,0);
+        }
         
         //引用绑定
         actorBase.referanceGameObject = actor.GetComponent<VActorReferanceGameObject>();
@@ -35,7 +59,7 @@ public static class VActorLoad
         actorBase.LogicInit();
     }
 
-    private static void ActorPropertyBind(VActorProperty property,VActorChangeProperty changeProperty,VActorData data)
+    private static void ActorPropertyBind(VActorProperty property,VActorChangeProperty changeProperty,VActorData data,PlayerEnum e)
     {
         changeProperty.heathPoints = property.heathPoints;
         changeProperty.actorDamage = property.actorDamage;
@@ -46,5 +70,8 @@ public static class VActorLoad
         changeProperty.actorAttackSpeed = property.actorAttackSpeed;
         changeProperty.actorAccumulateTankSpeed = property.actorAccumulateTankSpeed;
         changeProperty.actorWeight = property.actorWeight;
+
+        changeProperty.playerEnum = e;
+        
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 /// <summary>
@@ -14,8 +15,12 @@ public class VActorReferanceGameObject : MonoBehaviour
 
     public TriggerDetection actorPhysicDetect;
 
-    public void MyCoroutine(IEnumerator method)
+    public GameObject hitBoxPrefab;
+    public GameObject passiveBoxPrefab;
+    public GameObject defenceBoxPrefab;
+    
+    private void Start()
     {
-        StartCoroutine(method);
+        
     }
 }

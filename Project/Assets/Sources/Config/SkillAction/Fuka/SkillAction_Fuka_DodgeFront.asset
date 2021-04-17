@@ -53,12 +53,12 @@ MonoBehaviour:
   ActionBuffs: []
   ActionEffects: []
   ActionPhysics:
-  - skillActionType: 7
+  - skillActionType: 0
     target: 0
     startFrame: 0
-    keyFrame: 1
+    keyFrame: 0
     endFrame: 0
-    initSpeed: 800
+    initSpeed: 500
     initVector: {x: 1, y: 0, z: 0}
     speedDecay: 1
     bounceTimes: 1

@@ -25,7 +25,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>Temp\bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;UNITY_2019_4_6;UNITY_2019_4;UNITY_2019;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;PLATFORM_ARCH_64;UNITY_64;UNITY_INCLUDE_TESTS;ENABLE_AR;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_EVENT_QUEUE;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;INCLUDE_DYNAMIC_GI;ENABLE_MONO_BDWGC;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_VIDEO;PLATFORM_STANDALONE;PLATFORM_STANDALONE_WIN;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_OUT_OF_PROCESS_CRASH_HANDLER;ENABLE_CLUSTER_SYNC;ENABLE_CLUSTERINPUT;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_STANDARD_2_0;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_LEGACY_INPUT_MANAGER;ODIN_INSPECTOR;DEBUGER;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;UNITY_2019_4_6;UNITY_2019_4;UNITY_2019;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;PLATFORM_ARCH_64;UNITY_64;UNITY_INCLUDE_TESTS;ENABLE_AR;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_EVENT_QUEUE;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;INCLUDE_DYNAMIC_GI;ENABLE_MONO_BDWGC;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_VIDEO;PLATFORM_STANDALONE;PLATFORM_STANDALONE_WIN;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_OUT_OF_PROCESS_CRASH_HANDLER;ENABLE_CLUSTER_SYNC;ENABLE_CLUSTERINPUT;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_STANDARD_2_0;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_LEGACY_INPUT_MANAGER;ODIN_INSPECTOR;DEBUGER;GIZMOS;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
@@ -58,6 +58,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\3rd\DOTween\Modules\DOTweenModuleAudio.cs" />
+     <Compile Include="Assets\3rd\DOTween\Modules\DOTweenModulePhysics.cs" />
+     <Compile Include="Assets\3rd\DOTween\Modules\DOTweenModulePhysics2D.cs" />
+     <Compile Include="Assets\3rd\DOTween\Modules\DOTweenModuleSprite.cs" />
+     <Compile Include="Assets\3rd\DOTween\Modules\DOTweenModuleUI.cs" />
+     <Compile Include="Assets\3rd\DOTween\Modules\DOTweenModuleUnityVersion.cs" />
+     <Compile Include="Assets\3rd\DOTween\Modules\DOTweenModuleUtils.cs" />
      <Compile Include="Assets\3rd\MMD4Mecanim\Scripts\MMD4MecanimAnimMorphHelper.cs" />
      <Compile Include="Assets\3rd\MMD4Mecanim\Scripts\MMD4MecanimBone.cs" />
      <Compile Include="Assets\3rd\MMD4Mecanim\Scripts\MMD4MecanimBulletPhysics.cs" />
@@ -86,14 +93,21 @@
      <Compile Include="Assets\3rd\unity-chan!\Unity-chan! Model\Scripts\ThirdPersonCamera.cs" />
      <Compile Include="Assets\3rd\unity-chan!\Unity-chan! Model\Scripts\UnityChanControlScriptWithRgidBody.cs" />
      <Compile Include="Assets\3rd\unity-chan!\Unity-chan! Model\SplashScreen\Scripts\SplashScreen.cs" />
-     <Compile Include="Assets\Scripts\Actor\ActorEventSystem\VActorAnimationClipEventBind.cs" />
-     <Compile Include="Assets\Scripts\Actor\ActorEventSystem\VActorAnimationEvent.cs" />
+     <Compile Include="Assets\Scripts\Actor\ActorColliderSystem\VActorColliderBox\VActorColliderScriptBase.cs" />
+     <Compile Include="Assets\Scripts\Actor\ActorColliderSystem\VActorColliderBox\VActorDefenceColliderScript.cs" />
+     <Compile Include="Assets\Scripts\Actor\ActorColliderSystem\VActorColliderBox\VActorHitColliderScript.cs" />
+     <Compile Include="Assets\Scripts\Actor\ActorColliderSystem\VActorColliderBox\VActorPassiveColliderScript.cs" />
+     <Compile Include="Assets\Scripts\Actor\ActorColliderSystem\VActorColliderController.cs" />
+     <Compile Include="Assets\Scripts\Actor\ActorColliderSystem\VActorColliderInfo.cs" />
+     <Compile Include="Assets\Scripts\Actor\ActorEventSystem\VActorAnimationEvenBind\VActorAnimationClipEventBind.cs" />
+     <Compile Include="Assets\Scripts\Actor\ActorEventSystem\VActorAnimationEvenBind\VActorAnimationEventBind.cs" />
+     <Compile Include="Assets\Scripts\Actor\ActorEventSystem\VActorAnimationEvenBind\VActorColliderEventBind.cs" />
+     <Compile Include="Assets\Scripts\Actor\ActorEventSystem\VActorAnimationEvenBind\VActorEventBind.cs" />
+     <Compile Include="Assets\Scripts\Actor\ActorEventSystem\VActorAnimationEvenBind\VActorPhysicEventBind.cs" />
+     <Compile Include="Assets\Scripts\Actor\ActorEventSystem\VActorAnimationEvenBind\VActorSkillContinueEventBind.cs" />
+     <Compile Include="Assets\Scripts\Actor\ActorEventSystem\VActorAnimationEvenBind\VSkillActionAniClipBind.cs" />
      <Compile Include="Assets\Scripts\Actor\ActorEventSystem\VActorEvent.cs" />
-     <Compile Include="Assets\Scripts\Actor\ActorEventSystem\VActorEventBind.cs" />
-     <Compile Include="Assets\Scripts\Actor\ActorEventSystem\VActorPhysicEvent.cs" />
-     <Compile Include="Assets\Scripts\Actor\ActorEventSystem\VActorSkillContinueEvent.cs" />
      <Compile Include="Assets\Scripts\Actor\ActorEventSystem\VActorSkillEvent.cs" />
-     <Compile Include="Assets\Scripts\Actor\ActorEventSystem\VSkillActionAniClipBind.cs" />
      <Compile Include="Assets\Scripts\Actor\ActorPhysicSystem\VActorGravitySimulate.cs" />
      <Compile Include="Assets\Scripts\Actor\ActorPhysicSystem\VActorPhysicComponent.cs" />
      <Compile Include="Assets\Scripts\Actor\ActorPhysicSystem\VActorPhysicController.cs" />
@@ -112,6 +126,7 @@
      <Compile Include="Assets\Scripts\Actor\SkillSystem\VActorSkillController.cs" />
      <Compile Include="Assets\Scripts\Actor\SkillSystem\VActorSkillInfo.cs" />
      <Compile Include="Assets\Scripts\Actor\SkillSystem\VActorSkillSignal.cs" />
+     <Compile Include="Assets\Scripts\Actor\SkillSystem\VSkillEventBase.cs" />
      <Compile Include="Assets\Scripts\Actor\VActorBase.cs" />
      <Compile Include="Assets\Scripts\Actor\VActorChangeProperty.cs" />
      <Compile Include="Assets\Scripts\Actor\VActorController.cs" />
@@ -120,9 +135,13 @@
      <Compile Include="Assets\Scripts\Actor\VActorInfo.cs" />
      <Compile Include="Assets\Scripts\Actor\VActorLoad.cs" />
      <Compile Include="Assets\Scripts\Actor\VActorReferanceGameObject.cs" />
-     <Compile Include="Assets\Scripts\Actor\VSkillEventBase.cs" />
-     <Compile Include="Assets\Scripts\ActorCenter\VActorDirController.cs" />
+     <Compile Include="Assets\Scripts\ActorCenter\VActorColliderManager.cs" />
+     <Compile Include="Assets\Scripts\ActorCenter\VActorDirManager.cs" />
+     <Compile Include="Assets\Scripts\ActorCenter\VActorManager.cs" />
      <Compile Include="Assets\Scripts\ActorCenter\VSkillManager.cs" />
+     <Compile Include="Assets\Scripts\Camera\CameraControl.cs" />
+     <Compile Include="Assets\Scripts\Camera\CameraFollowObj.cs" />
+     <Compile Include="Assets\Scripts\Camera\WallControl.cs" />
      <Compile Include="Assets\Scripts\Common\GameCommonSetting.cs" />
      <Compile Include="Assets\Scripts\Common\GameStartSetting.cs" />
      <Compile Include="Assets\Scripts\Common\SoundSetting.cs" />
@@ -186,9 +205,14 @@
      <Compile Include="Assets\Scripts\Util\EventManager\FEventregisterComb.cs" />
      <Compile Include="Assets\Scripts\Util\FileManager.cs" />
      <Compile Include="Assets\Scripts\Util\KeyCodeMapper.cs" />
+     <Compile Include="Assets\Scripts\Util\PoolManager\Scripts\Pool.cs" />
+     <Compile Include="Assets\Scripts\Util\PoolManager\Scripts\PoolException.cs" />
+     <Compile Include="Assets\Scripts\Util\PoolManager\Scripts\PoolManager.cs" />
      <Compile Include="Assets\Scripts\Util\ResourceManager.cs" />
      <Compile Include="Assets\Scripts\Util\Singleton.cs" />
      <Compile Include="Assets\Scripts\Util\TagType.cs" />
+     <Compile Include="Assets\Sources\AZURE Nature\Scripts\MouseLook.cs" />
+     <Compile Include="Assets\Sources\AZURE Nature\Scripts\MoveController.cs" />
      <None Include="Assets\3rd\unity-chan!\Unity-chan! Model\Art\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />
      <None Include="Assets\3rd\Toon\Shader\Toon_DoubleShadeWithFeather_Mobile_TransClipping_StencilMask.shader" />
      <None Include="Assets\3rd\Toon\Shader\Toon_ShadingGradeMap_Mobile_StencilMask.shader" />
@@ -203,6 +227,7 @@
      <None Include="Assets\3rd\MMD4Mecanim\Shaders\MMD4Mecanim-MMDLit-Tess-BothFaces-Edge.shader" />
      <None Include="Assets\3rd\MMD4Mecanim\Shaders\MMD4Mecanim-MMDLit-Tess-NoShadowCasting-BothFaces-Transparent.shader" />
      <None Include="Assets\3rd\Toon\Shader\Tess\Toon_DoubleShadeWithFeather_Clipping_Tess.shader" />
+     <None Include="Assets\Sources\AZURE Nature\Shaders\AN_Vegetation.shader" />
      <None Include="Assets\3rd\Toon\Shader\Tess\ToonColor_ShadingGradeMap_Tess.shader" />
      <None Include="Assets\3rd\Toon\Shader\Tess\ToonColor_ShadingGradeMap_AngelRing_TransClipping_Tess_StencilOut.shader" />
      <None Include="Assets\3rd\Toon\Shader\ToonColor_ShadingGradeMap_TransClipping_StencilOut.shader" />
@@ -235,6 +260,7 @@
      <None Include="Assets\3rd\MMD4Mecanim\Shaders\MMD4Mecanim-MMDLit-Tess-NoShadowCasting-BothFaces-Edge.shader" />
      <None Include="Assets\3rd\Toon\Shader\Tess\Toon_DoubleShadeWithFeather_Tess_Light.shader" />
      <None Include="Assets\3rd\MMD4Mecanim\Shaders\MMD4Mecanim-MMDLit-NoShadowCasting-BothFaces-Edge.shader" />
+     <None Include="Assets\3rd\DOTween\readme.txt" />
      <None Include="Assets\3rd\Toon\Shader\ToonColor_ShadingGradeMap_StencilOut.shader" />
      <None Include="Assets\3rd\unity-chan!\Unity-chan! Model\Art\UnityChanShader\Shader\Unitychan_chara_hada.shader" />
      <None Include="Assets\3rd\Toon\Shader\Tess\ToonColor_ShadingGradeMap_AngelRing_Tess_TransClipping.shader" />
@@ -264,6 +290,7 @@
      <None Include="Assets\3rd\MMD4Mecanim\Shaders\MMD4Mecanim-MMDLit-Edge.shader" />
      <None Include="Assets\3rd\MMD4Mecanim\Shaders\MMD4Mecanim-MMDLit-NoShadowCasting-Edge.shader" />
      <None Include="Assets\3rd\MMD4Mecanim\Shaders\MMD4Mecanim-MMDLit-Tess-Edge.shader" />
+     <None Include="Assets\Sources\AZURE Nature\Shaders\AN_Surface.shader" />
      <None Include="Assets\3rd\Toon\Shader\Tess\Toon_ShadingGradeMap_Tess_StencilOut.shader" />
      <None Include="Assets\Sources\Models\小桃初代女仆v1\Readme.txt" />
      <None Include="Assets\3rd\MMD4Mecanim\Shaders\MMD4Mecanim-MMDLit-NEXTEdge-Lighting.cginc" />
@@ -273,6 +300,7 @@
      <None Include="Assets\3rd\Toon\Shader\Tess\ToonColor_DoubleShadeWithFeather_Tess_StencilMask.shader" />
      <None Include="Assets\3rd\Toon\Shader\Tess\ToonColor_DoubleShadeWithFeather_TransClipping_Tess_StencilOut.shader" />
      <None Include="Assets\3rd\Toon\Shader\ToonColor_DoubleShadeWithFeather_Clipping_StencilOut.shader" />
+     <None Include="Assets\Sources\AZURE Nature\Readme.txt" />
      <None Include="Assets\3rd\Toon\Shader\Tess\Toon_DoubleShadeWithFeather_Tess_StencilMask.shader" />
      <None Include="Assets\3rd\Toon\Shader\Tess\Toon_ShadingGradeMap_TransClipping_Tess_StencilOut.shader" />
      <None Include="Assets\3rd\Toon\Shader\Tess\Toon_OutlineObject_Tess.shader" />
@@ -316,6 +344,7 @@
      <None Include="Assets\3rd\Toon\Shader\Toon_ShadingGradeMap_StencilMask.shader" />
      <None Include="Assets\3rd\Toon\Shader\Toon_ShadingGradeMap.shader" />
      <None Include="Assets\3rd\MMD4Mecanim\Shaders\MMD4Mecanim-MMDLit-Tess-NoShadowCasting.shader" />
+     <None Include="Assets\Sources\AZURE Nature\Shaders\AN_Water.shader" />
      <None Include="Assets\3rd\MMD4Mecanim\Shaders\MMD4Mecanim-MMDLit-AutoLight.cginc" />
      <None Include="Assets\3rd\Toon\Shader\ToonColor_DoubleShadeWithFeather_Transparent_StencilOut.shader" />
      <None Include="Assets\3rd\MMD4Mecanim\Shaders\MMD4Mecanim-MMDLit-NoShadowCasting-BothFaces-Transparent.shader" />
@@ -382,6 +411,9 @@
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>D:/Work/VFightFight/Project/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
+ <Reference Include="Cinemachine">
+ <HintPath>D:/Work/VFightFight/Project/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEditor.CacheServer">
  <HintPath>D:/Work/VFightFight/Project/Library/ScriptAssemblies/UnityEditor.CacheServer.dll</HintPath>
  </Reference>
@@ -411,6 +443,9 @@
  </Reference>
  <Reference Include="Unity.Rider.Editor">
  <HintPath>D:/Work/VFightFight/Project/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="com.unity.cinemachine.editor">
+ <HintPath>D:/Work/VFightFight/Project/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Addressables">
  <HintPath>D:/Work/VFightFight/Project/Library/ScriptAssemblies/Unity.Addressables.dll</HintPath>
@@ -601,6 +636,9 @@
  <Reference Include="UnityEngine.XRModule">
  <HintPath>C:/OTHER/2019.4.6/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
  </Reference>
+ <Reference Include="DOTween">
+ <HintPath>D:/Work/VFightFight/Project/Assets/3rd/DOTween/DOTween.dll</HintPath>
+ </Reference>
  <Reference Include="MMD4Mecanim">
  <HintPath>D:/Work/VFightFight/Project/Assets/3rd/MMD4Mecanim/Scripts/MMD4Mecanim.dll</HintPath>
  </Reference>
@@ -624,6 +662,9 @@
  </Reference>
  <Reference Include="Sirenix.Utilities.Editor">
  <HintPath>D:/Work/VFightFight/Project/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="clipper_library">
+ <HintPath>D:/Work/VFightFight/Project/Library/PackageCache/com.unity.cinemachine@2.7.3/Runtime/ThirdParty/clipper_library.dll</HintPath>
  </Reference>
  <Reference Include="mscorlib">
  <HintPath>C:/OTHER/2019.4.6/Unity/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
@@ -988,6 +1029,26 @@
     <ProjectReference Include="Sirenix.OdinInspector.CompatibilityLayer.Editor.csproj">
       <Project>{70752A40-DAFF-1895-865E-787FB39CAA5A}</Project>
       <Name>Sirenix.OdinInspector.CompatibilityLayer.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="UniTask.Addressables.csproj">
+      <Project>{E3B76A27-DB34-D4EF-87DA-6F912096F252}</Project>
+      <Name>UniTask.Addressables</Name>
+    </ProjectReference>
+    <ProjectReference Include="UniTask.csproj">
+      <Project>{614D5A0A-BD63-756C-88B1-5C9744EAE97C}</Project>
+      <Name>UniTask</Name>
+    </ProjectReference>
+    <ProjectReference Include="UniTask.DOTween.csproj">
+      <Project>{8233909E-E4FC-0009-1E41-6F10E9EF5B77}</Project>
+      <Name>UniTask.DOTween</Name>
+    </ProjectReference>
+    <ProjectReference Include="UniTask.TextMeshPro.csproj">
+      <Project>{7EAA919F-F327-87A6-EEC6-0953FA2283FE}</Project>
+      <Name>UniTask.TextMeshPro</Name>
+    </ProjectReference>
+    <ProjectReference Include="UniTask.Linq.csproj">
+      <Project>{07216589-009C-212E-74CD-887D280C9431}</Project>
+      <Name>UniTask.Linq</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

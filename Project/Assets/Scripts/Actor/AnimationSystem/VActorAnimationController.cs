@@ -60,7 +60,10 @@ public class VActorAnimationController:VSkillEventBase
         animator.applyRootMotion = startSkill.motion.applyRoomMotion;
             
         //设置该动画初始角度
-        p.transform.rotation = Quaternion.Euler(startSkill.motion.animationDefaultRotate);
+        Vector3 offset=new Vector3(0,0,0);
+        if(_actorState.actorFace==-1)
+            offset=new Vector3(0,180,0);
+        p.transform.rotation = Quaternion.Euler(startSkill.motion.animationDefaultRotate + offset);
         
         //位置偏移量
         p.transform.position += startSkill.motion.animationDefaultPos;

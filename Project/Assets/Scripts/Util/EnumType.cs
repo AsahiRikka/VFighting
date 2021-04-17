@@ -91,4 +91,9 @@ public enum TagEnum
     untagged,
     ground,
     wall,
+    player1,
+    player2,
+    hitCollider,
+    passiveCollider,
+    defenceCollider,
 }
