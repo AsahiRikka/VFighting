@@ -28,12 +28,12 @@ public class VSkillEventBase
     {
         
     }
-
+    
     /// <summary>
     /// 
     /// </summary>
-    /// <param name="currentSkill">当前技能</param>
-    /// <param name="nextSkill">上一技能</param>
+    /// <param name="lastSkill"></param>
+    /// <param name="currentSkill"></param>
     protected virtual void SkillStartEvent(VSkillAction lastSkill,VSkillAction currentSkill)
     {
         

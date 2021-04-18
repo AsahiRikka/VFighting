@@ -15,42 +15,35 @@ public class VActorPhysicEventBind:VSkillEventBase
         _actorController = actorController;
         _actorInfo = actorInfo;
         
-        foreach (var physic in skillActions.defaultSkillActions.ActionPhysics)
-        {
-            if (physic.skillActionType == SkillActionEnum.keyFrame)
-            {
-                bind.AddEvent(skillActions.defaultSkillActions,AddKeyFrameEvent,physic.keyFrame);
-            }
-            else if (physic.skillActionType == SkillActionEnum.frame)
-            {
-                _dictionary.Add(physic,false);
-                
-                bind.AddEvent(skillActions.defaultSkillActions,AddFrameEvent,physic.startFrame);
-                bind.AddEvent(skillActions.defaultSkillActions,RemoveFrameEvent,physic.endFrame);
-            }
-        }
+        BindAdding(skillActions.defaultSkillActions,bind);
+        BindAdding(skillActions.beAttackSkillAction,bind);
 
         foreach (var skill in skillActions.actorSkillActions)
         {
-            foreach (var physic in skill.ActionPhysics)
-            {
-                if (physic.skillActionType == SkillActionEnum.keyFrame)
-                {
-                    bind.AddEvent(skill,AddKeyFrameEvent,physic.keyFrame);
-                }
-                else if (physic.skillActionType == SkillActionEnum.frame)
-                {
-                    _dictionary.Add(physic,false);
-                    
-                    bind.AddEvent(skill,AddFrameEvent,physic.startFrame);
-                    bind.AddEvent(skill,RemoveFrameEvent,physic.endFrame);
-                }
-            }
+            BindAdding(skill,bind);
         }
     }
 
     private VActorController _actorController;
     private VActorInfo _actorInfo;
+
+    private void BindAdding(VSkillAction skill, VActorAnimationClipEventBind bind)
+    {
+        foreach (var physic in skill.ActionPhysics)
+        {
+            if (physic.skillActionType == SkillActionEnum.keyFrame)
+            {
+                bind.AddEvent(skill,AddKeyFrameEvent,physic.keyFrame);
+            }
+            else if (physic.skillActionType == SkillActionEnum.frame)
+            {
+                _dictionary.Add(physic,false);
+                    
+                bind.AddEvent(skill,AddFrameEvent,physic.startFrame);
+                bind.AddEvent(skill,RemoveFrameEvent,physic.endFrame);
+            }
+        }
+    }
 
     private void AddKeyFrameEvent()
     {

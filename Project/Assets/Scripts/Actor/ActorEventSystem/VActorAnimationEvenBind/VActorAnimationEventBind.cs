@@ -17,29 +17,24 @@ public class VActorAnimationEventBind:VSkillEventBase
         _event = actorEvent;
 
         //动画硬直
-        foreach (var straight in _skillActions.defaultSkillActions.motion.animationStraights)
-        {
-            bind.AddEvent(_skillActions.defaultSkillActions,SetAnimatorFalseSkill,straight.startFrame);
-            bind.AddEvent(_skillActions.defaultSkillActions,SetAnimatorCanSkill,straight.endFrame);
-        }
-
-        if (!skillActions.defaultSkillActions.skillProperty.isLoopSkill)
-        {
-            bind.AddEvent(_skillActions.defaultSkillActions, SkillEndNormal,
-                _skillActions.defaultSkillActions.motion.animationEndClip);
-        }
-
+        BindAdding(skillActions.defaultSkillActions,bind);
+        BindAdding(skillActions.beAttackSkillAction,bind);
         foreach (VSkillAction skill in _skillActions.actorSkillActions)
         {
-            foreach (var straight in skill.motion.animationStraights)
-            {
-                bind.AddEvent(skill,SetAnimatorFalseSkill,straight.startFrame);
-                bind.AddEvent(skill,SetAnimatorCanSkill,straight.endFrame);
-            }
-            if (!skillActions.defaultSkillActions.skillProperty.isLoopSkill)
-            {
-                bind.AddEvent(skill,SkillEndNormal,skill.motion.animationEndClip);
-            }
+            BindAdding(skill,bind);
+        }
+    }
+
+    private void BindAdding(VSkillAction skill, VActorAnimationClipEventBind bind)
+    {
+        foreach (var straight in skill.motion.animationStraights)
+        {
+            bind.AddEvent(skill,SetAnimatorFalseSkill,straight.startFrame);
+            bind.AddEvent(skill,SetAnimatorCanSkill,straight.endFrame);
+        }
+        if (!skill.skillProperty.isLoopSkill)
+        {
+            bind.AddEvent(skill,SkillEndNormal,skill.motion.animationEndClip);
         }
     }
 
@@ -72,7 +67,6 @@ public class VActorAnimationEventBind:VSkillEventBase
     /// <param name="nextSkill"></param>
     protected override void SkillEndEvent(VSkillAction currentSkill, VSkillAction nextSkill)
     {
-        base.SkillEndEvent(currentSkill, nextSkill);
         SetAnimatorCanSkill();
     }
 }

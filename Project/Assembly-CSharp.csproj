@@ -1026,10 +1026,6 @@
       <Project>{82186C0C-CEB3-3379-0436-00D2BD2F357B}</Project>
       <Name>Sirenix.OdinInspector.CompatibilityLayer</Name>
     </ProjectReference>
-    <ProjectReference Include="Sirenix.OdinInspector.CompatibilityLayer.Editor.csproj">
-      <Project>{70752A40-DAFF-1895-865E-787FB39CAA5A}</Project>
-      <Name>Sirenix.OdinInspector.CompatibilityLayer.Editor</Name>
-    </ProjectReference>
     <ProjectReference Include="UniTask.Addressables.csproj">
       <Project>{E3B76A27-DB34-D4EF-87DA-6F912096F252}</Project>
       <Name>UniTask.Addressables</Name>
@@ -1041,6 +1037,10 @@
     <ProjectReference Include="UniTask.DOTween.csproj">
       <Project>{8233909E-E4FC-0009-1E41-6F10E9EF5B77}</Project>
       <Name>UniTask.DOTween</Name>
+    </ProjectReference>
+    <ProjectReference Include="Sirenix.OdinInspector.CompatibilityLayer.Editor.csproj">
+      <Project>{70752A40-DAFF-1895-865E-787FB39CAA5A}</Project>
+      <Name>Sirenix.OdinInspector.CompatibilityLayer.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="UniTask.TextMeshPro.csproj">
       <Project>{7EAA919F-F327-87A6-EEC6-0953FA2283FE}</Project>

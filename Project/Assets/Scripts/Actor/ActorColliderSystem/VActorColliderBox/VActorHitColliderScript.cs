@@ -21,7 +21,7 @@ public class VActorHitColliderScript : MonoBehaviour
     private string defenceTag = TagType.GetInstance().tagDictionary[(int) TagEnum.defenceCollider];
     private string passiveTag = TagType.GetInstance().tagDictionary[(int) TagEnum.passiveCollider];
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         //攻击->身体
         if (other.CompareTag(passiveTag))

@@ -26,20 +26,6 @@ public class VActorColliderController:VSkillEventBase
 
     public void AddBoxes(VSkillAction skillAction,ColliderBoxTypeEnum e)
     {
-        if (e == ColliderBoxTypeEnum.hit)
-        {
-            if(skillAction.motion.hitBoxes.Count==0)
-                return;
-        }else if (e == ColliderBoxTypeEnum.passive)
-        {
-            if(skillAction.motion.passiveBoxes.Count==0)
-                return;
-        }else if (e == ColliderBoxTypeEnum.defence)
-        {
-            if(skillAction.motion.defenseBoxes.Count==0)
-                return;
-        }
-
         switch (e)
         {
             case ColliderBoxTypeEnum.hit:
@@ -65,41 +51,52 @@ public class VActorColliderController:VSkillEventBase
                 _colliderInfo.hitBoxes[skillAction] = colliderList;
                 break;
             case ColliderBoxTypeEnum.passive:
-                VActorPassiveBox passiveBox = skillAction.motion.passiveBoxes[0];
+                List<VActorPassiveColliderScript> passiveList=new List<VActorPassiveColliderScript>();
+                foreach (var passive in skillAction.motion.passiveBoxes)
+                {
+                    VActorPassiveBox passiveBox = passive;
+                    Pool passivePool = PoolManager.GetPool(_referance.passiveBoxPrefab);
+                    GameObject passiveObj = passivePool.Get(_parent.transform);
+                    passiveObj.tag = TagType.GetInstance().tagDictionary[(int) TagEnum.passiveCollider];
+
+                    VActorPassiveColliderScript passiveScript = passiveObj.GetComponent<VActorPassiveColliderScript>();
+
+                    passiveScript.ColliderScriptBase.collider.center = passiveBox.collider.center;
+                    passiveScript.ColliderScriptBase.collider.size = passiveBox.collider.size;
+                    passiveScript.ColliderScriptBase.collider.isTrigger = passiveBox.collider.trigger;
                 
-                Pool passivePool = PoolManager.GetPool(_referance.passiveBoxPrefab);
-                GameObject passiveObj = passivePool.Get(_parent.transform);
-                passiveObj.tag = TagType.GetInstance().tagDictionary[(int) TagEnum.passiveCollider];
-
-                VActorPassiveColliderScript passiveScript = passiveObj.GetComponent<VActorPassiveColliderScript>();
-
-                passiveScript.ColliderScriptBase.collider.center = passiveBox.collider.center;
-                passiveScript.ColliderScriptBase.collider.size = passiveBox.collider.size;
-                passiveScript.ColliderScriptBase.collider.isTrigger = passiveBox.collider.trigger;
-                
-                passiveScript.player = _property.playerEnum;
-                passiveScript.currentSkill = skillAction;
-
-                _colliderInfo.passiveBoxes[skillAction] = passiveScript;
+                    passiveScript.player = _property.playerEnum;
+                    passiveScript.currentSkill = skillAction;
+                    
+                    passiveList.Add(passiveScript);
+                }
+                _colliderInfo.passiveBoxes[skillAction] = passiveList;
                 
                 break;
             case ColliderBoxTypeEnum.defence:
-                VActorDefenseBox defenceBox = skillAction.motion.defenseBoxes[0];
+                List<VActorDefenceColliderScript> defenceList=new List<VActorDefenceColliderScript>();
+                foreach (var defence in skillAction.motion.defenseBoxes)
+                {
+                    VActorDefenseBox defenceBox = defence;
                 
-                Pool defencePool = PoolManager.GetPool(_referance.defenceBoxPrefab);
-                GameObject defenceObj = defencePool.Get(_parent.transform);
-                defenceObj.tag = TagType.GetInstance().tagDictionary[(int) TagEnum.defenceCollider];
+                    Pool defencePool = PoolManager.GetPool(_referance.defenceBoxPrefab);
+                    GameObject defenceObj = defencePool.Get(_parent.transform);
+                    defenceObj.tag = TagType.GetInstance().tagDictionary[(int) TagEnum.defenceCollider];
 
-                VActorDefenceColliderScript defenceScript = defenceObj.GetComponent<VActorDefenceColliderScript>();
+                    VActorDefenceColliderScript defenceScript = defenceObj.GetComponent<VActorDefenceColliderScript>();
 
-                defenceScript.ColliderScriptBase.collider.center = defenceBox.collider.center;
-                defenceScript.ColliderScriptBase.collider.size = defenceBox.collider.size;
-                defenceScript.ColliderScriptBase.collider.isTrigger = defenceBox.collider.trigger;
+                    defenceScript.ColliderScriptBase.collider.center = defenceBox.collider.center;
+                    defenceScript.ColliderScriptBase.collider.size = defenceBox.collider.size;
+                    defenceScript.ColliderScriptBase.collider.isTrigger = defenceBox.collider.trigger;
                 
-                defenceScript.player = _property.playerEnum;
-                defenceScript.currentSkill = skillAction;
+                    defenceScript.player = _property.playerEnum;
+                    defenceScript.currentSkill = skillAction;
+                    
+                    defenceList.Add(defenceScript);
+                }
 
-                _colliderInfo.defenceBoxes[skillAction] = defenceScript;
+
+                _colliderInfo.defenceBoxes[skillAction] = defenceList;
                 
                 break;
         }
@@ -122,15 +119,27 @@ public class VActorColliderController:VSkillEventBase
                 }
                 break;
             case ColliderBoxTypeEnum.passive:
-                if (_colliderInfo.passiveBoxes.ContainsKey(skillAction) && _colliderInfo.passiveBoxes[skillAction]) 
+                if (_colliderInfo.passiveBoxes.ContainsKey(skillAction)) 
                 {
-                    _colliderInfo.passiveBoxes[skillAction].gameObject.SetActive(false);
+                    foreach (var passiveBox in _colliderInfo.passiveBoxes[skillAction])
+                    {
+                        if (passiveBox)
+                        {
+                            passiveBox.gameObject.SetActive(false);
+                        }
+                    }
                 }
                 break;
             case ColliderBoxTypeEnum.defence:
-                if (_colliderInfo.defenceBoxes.ContainsKey(skillAction) && _colliderInfo.defenceBoxes[skillAction]) 
+                if (_colliderInfo.defenceBoxes.ContainsKey(skillAction)) 
                 {
-                    _colliderInfo.passiveBoxes[skillAction].gameObject.SetActive(false);
+                    foreach (var defenceBox in _colliderInfo.defenceBoxes[skillAction])
+                    {
+                        if (defenceBox)
+                        {
+                            defenceBox.gameObject.SetActive(false);
+                        }
+                    }
                 }
                 break;
         }

@@ -32,7 +32,7 @@ MonoBehaviour:
     type: 3}
   passiveBoxes:
   - segmentMotion:
-      Type: 1
+      type: 1
       startFrame: 0
       endFrame: 155
     collider:
@@ -41,7 +41,7 @@ MonoBehaviour:
       trigger: 1
   hitBoxes:
   - segmentMotion:
-      Type: 0
+      type: 0
       startFrame: 12
       endFrame: 50
     collider:

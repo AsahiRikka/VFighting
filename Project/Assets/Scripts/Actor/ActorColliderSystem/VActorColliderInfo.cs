@@ -8,15 +8,17 @@ public class VActorColliderInfo
 {
     public Dictionary<VSkillAction, List<VActorHitColliderScript>> hitBoxes;
 
-    public Dictionary<VSkillAction, VActorPassiveColliderScript> passiveBoxes;
+    public Dictionary<VSkillAction, List<VActorPassiveColliderScript>> passiveBoxes;
 
-    public Dictionary<VSkillAction, VActorDefenceColliderScript> defenceBoxes;
+    public Dictionary<VSkillAction, List<VActorDefenceColliderScript>> defenceBoxes;
 
     public VActorColliderInfo(VSkillActions skillActions)
     {
         hitBoxes = new Dictionary<VSkillAction, List<VActorHitColliderScript>>();
-        passiveBoxes = new Dictionary<VSkillAction, VActorPassiveColliderScript>();
-        defenceBoxes = new Dictionary<VSkillAction, VActorDefenceColliderScript>();
+        passiveBoxes = new Dictionary<VSkillAction, List<VActorPassiveColliderScript>>();
+        defenceBoxes = new Dictionary<VSkillAction, List<VActorDefenceColliderScript>>();
+        
+        
     }
 }
 

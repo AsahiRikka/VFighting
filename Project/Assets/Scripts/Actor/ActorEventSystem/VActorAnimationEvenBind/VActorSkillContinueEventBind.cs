@@ -16,19 +16,21 @@ public class VActorSkillContinueEventBind:VSkillEventBase
         _continueInfo = actorInfo.skillContinueInfo;
 
         //添加技能事件响应
-        foreach (var myCon in skillActions.defaultSkillActions.preConditionData.skillContinues)
-        {
-            bind.AddEvent(skillActions.defaultSkillActions,AddConEvent,(int)myCon.frame.x);
-            bind.AddEvent(skillActions.defaultSkillActions,RemoveConEvent,(int)myCon.frame.y);
-        }
-        
+        BindAdding(skillActions.defaultSkillActions,bind);
+        BindAdding(skillActions.beAttackSkillAction,bind);
+
         foreach (VSkillAction skill in skillActions.actorSkillActions)
         {
-            foreach (var myCon in skill.preConditionData.skillContinues)
-            {
-                bind.AddEvent(skill,AddConEvent,(int)myCon.frame.x);
-                bind.AddEvent(skill,RemoveConEvent,(int)myCon.frame.y);
-            }
+            BindAdding(skill,bind);
+        }
+    }
+
+    private void BindAdding(VSkillAction skill, VActorAnimationClipEventBind bind)
+    {
+        foreach (var myCon in skill.preConditionData.skillContinues)
+        {
+            bind.AddEvent(skill,AddConEvent,(int)myCon.frame.x);
+            bind.AddEvent(skill,RemoveConEvent,(int)myCon.frame.y);
         }
     }
 

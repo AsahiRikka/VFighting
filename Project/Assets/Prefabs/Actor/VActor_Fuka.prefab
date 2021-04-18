@@ -1342,6 +1342,118 @@ MonoBehaviour:
     clip: {fileID: -203655887218126122, guid: 5e4eac011a975a74c9ae4ffc175d7f13, type: 3}
     layerIndex: 0
     funcs: []
+  - stateName: Base Layer.Avatar_Fuka_Ani_StandBy
+    clip: {fileID: 3644802387886327014, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Avatar_Fuka_Ani_A1
+    clip: {fileID: 7382378529333395315, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.moveFrant
+    clip: {fileID: -203655887218126122, guid: b7dc6e53e62785a4084f36fba83dcbdf, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.moveBack
+    clip: {fileID: -203655887218126122, guid: ed4509b532e8d1f419411bacb9a57415, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Avatar_Fuka_Ani_A2
+    clip: {fileID: -898632268292908620, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Avatar_Fuka_Ani_A3
+    clip: {fileID: -4202730747837278895, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Avatar_Fuka_Ani_A4
+    clip: {fileID: -85481574712235593, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Avatar_Fuka_Ani_A5
+    clip: {fileID: 7494061353682422395, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Avatar_Fuka_Ani_A6
+    clip: {fileID: -7778489565417566346, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Avatar_Fuka_Ani_Run
+    clip: {fileID: -8487307672374459578, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.DodgeBack
+    clip: {fileID: 997057917329610289, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.DodgeFront
+    clip: {fileID: 850611847518859096, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Avatar_Fuka_Ani_Appear
+    clip: {fileID: -203655887218126122, guid: 5e4eac011a975a74c9ae4ffc175d7f13, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Fuka_Attacked
+    clip: {fileID: -203655887218126122, guid: 3520c975e6d361b41bc12a1c6be8074c, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Avatar_Fuka_Ani_StandBy
+    clip: {fileID: 3644802387886327014, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Avatar_Fuka_Ani_A1
+    clip: {fileID: 7382378529333395315, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.moveFrant
+    clip: {fileID: -203655887218126122, guid: b7dc6e53e62785a4084f36fba83dcbdf, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.moveBack
+    clip: {fileID: -203655887218126122, guid: ed4509b532e8d1f419411bacb9a57415, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Avatar_Fuka_Ani_A2
+    clip: {fileID: -898632268292908620, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Avatar_Fuka_Ani_A3
+    clip: {fileID: -4202730747837278895, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Avatar_Fuka_Ani_A4
+    clip: {fileID: -85481574712235593, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Avatar_Fuka_Ani_A5
+    clip: {fileID: 7494061353682422395, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Avatar_Fuka_Ani_A6
+    clip: {fileID: -7778489565417566346, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Avatar_Fuka_Ani_Run
+    clip: {fileID: -8487307672374459578, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.DodgeBack
+    clip: {fileID: 997057917329610289, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.DodgeFront
+    clip: {fileID: 850611847518859096, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Avatar_Fuka_Ani_Appear
+    clip: {fileID: -203655887218126122, guid: 5e4eac011a975a74c9ae4ffc175d7f13, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Fuka_Attacked
+    clip: {fileID: -203655887218126122, guid: 3520c975e6d361b41bc12a1c6be8074c, type: 3}
+    layerIndex: 0
+    funcs: []
 --- !u!1 &6589796070768851289
 GameObject:
   m_ObjectHideFlags: 0
@@ -1413,7 +1525,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 1
   m_Constraints: 88
-  m_CollisionDetection: 1
+  m_CollisionDetection: 2
 --- !u!1001 &6589796070825389465
 PrefabInstance:
   m_ObjectHideFlags: 0

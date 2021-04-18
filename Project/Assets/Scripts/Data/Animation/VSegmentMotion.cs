@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 /// <summary>
@@ -9,14 +10,16 @@ using UnityEngine;
 [Serializable]
 public class VSegmentMotion
 {
-    public VSegmengMotionType Type;
+    public VSegmentMotionType type;
     
+    [ShowIf("type",VSegmentMotionType.keyFrame)]
     public int startFrame;
 
+    [ShowIf("type",VSegmentMotionType.keyFrame)]
     public int endFrame;
 }
 
-public enum VSegmengMotionType{
+public enum VSegmentMotionType{
     keyFrame,
     allskill,
 }

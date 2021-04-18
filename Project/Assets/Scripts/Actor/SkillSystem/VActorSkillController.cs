@@ -144,35 +144,34 @@ public class VActorSkillController:VSkillEventBase
         
         //打断当前技能
         if (skillInfo.currentSkill != null)
+        {
             _actorEvent.SkillEvent.skillEndEvent.Invoke(skillInfo.currentSkill, skillAction);
+        }
+
+        VSkillAction temp = _actorInfo.skillInfo.currentSkill;
         
         //修改当前技能
         _actorInfo.skillInfo.currentSkill = skillAction;
         
         //完成释放判断，释放技能
-        _actorEvent.SkillEvent.skillStartEvent.Invoke(skillInfo.currentSkill, skillAction);
+        _actorEvent.SkillEvent.skillStartEvent.Invoke(temp, skillAction);
     }
 
     protected override void SkillStartEvent(VSkillAction lastSkill, VSkillAction currentSkill)
     {
         SkillEnterFlag = 0;
-        
-        DebugHelper.Log("开始技能：" + currentSkill);
+        DebugHelper.Log("开始技能：{0}  结束技能{1}",currentSkill,lastSkill);
     }
 
     protected override void SkillEndNormalEvent(VSkillAction skillAction)
     {
-        base.SkillEndNormalEvent(skillAction);
-
-        //触发关闭技能时不是当前技能
-        if (skillAction != _actorInfo.skillInfo.currentSkill)
-            return;
-
-        //进入技能结束
-        _actorEvent.SkillEvent.skillEndEvent.Invoke(skillAction, null);
-
         //自然结束添加idle技能
         _actorEvent.SkillEvent.skillPlayTriggerEvent.Invoke(_skillActions.defaultSkillActions);
+    }
+
+    protected override void SkillEndEvent(VSkillAction currentSkill, VSkillAction nextSkill)
+    {
+        
     }
 
     /// <summary>

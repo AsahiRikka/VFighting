@@ -32,7 +32,7 @@ MonoBehaviour:
     type: 3}
   passiveBoxes:
   - segmentMotion:
-      Type: 1
+      type: 1
       startFrame: 1
       endFrame: 145
     collider:
@@ -41,21 +41,21 @@ MonoBehaviour:
       trigger: 1
   hitBoxes:
   - segmentMotion:
-      Type: 0
+      type: 0
       startFrame: 19
       endFrame: 25
     collider:
-      center: {x: 0.6, y: 1.2, z: 0}
+      center: {x: -0.6, y: 1.2, z: 0}
       size: {x: 0.8, y: 0.5, z: 0.5}
       trigger: 1
   - segmentMotion:
-      Type: 0
-      startFrame: 39
-      endFrame: 41
+      type: 0
+      startFrame: 37
+      endFrame: 43
     collider:
-      center: {x: 0.6, y: 1.2, z: 0}
+      center: {x: -0.6, y: 1.2, z: 0}
       size: {x: 0.8, y: 0.5, z: 0.5}
-      trigger: 0
+      trigger: 1
   defenseBoxes: []
   animationStraights:
   - startFrame: 1

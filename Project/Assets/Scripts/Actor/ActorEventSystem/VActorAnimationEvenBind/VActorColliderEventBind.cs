@@ -9,33 +9,10 @@ public class VActorColliderEventBind : VSkillEventBase
     {
         _colliderController = actorController.colliderController;
         _actorInfo = actorInfo;
-        VMotion makeMotion = skillActions.defaultSkillActions.motion;
         #region 初始技能
-
-        foreach (var hitBox in makeMotion.hitBoxes)
-        {
-            if (hitBox.segmentMotion.Type == VSegmengMotionType.keyFrame)
-            {
-                bind.AddEvent(skillActions.defaultSkillActions,AddHitEvent,hitBox.segmentMotion.startFrame);
-                bind.AddEvent(skillActions.defaultSkillActions,RemoveHitEvent,hitBox.segmentMotion.endFrame);
-            }
-        }
         
-        // if (makeMotion.hitBoxes.Count > 0 && makeMotion.hitBoxes[0].segmentMotion.Type==VSegmengMotionType.keyFrame)
-        // {
-        //     bind.AddEvent(skillActions.defaultSkillActions,AddHitEvent,makeMotion.hitBoxes[0].segmentMotion.startFrame);
-        //     bind.AddEvent(skillActions.defaultSkillActions,RemoveHitEvent,makeMotion.hitBoxes[0].segmentMotion.endFrame);
-        // }
-        if (makeMotion.passiveBoxes.Count > 0&& makeMotion.passiveBoxes[0].segmentMotion.Type==VSegmengMotionType.keyFrame)
-        {
-            bind.AddEvent(skillActions.defaultSkillActions,AddPassiveEvent,makeMotion.passiveBoxes[0].segmentMotion.startFrame);
-            bind.AddEvent(skillActions.defaultSkillActions,RemovePassiveEvent,makeMotion.passiveBoxes[0].segmentMotion.endFrame);
-        }
-        if (makeMotion.defenseBoxes.Count > 0&& makeMotion.defenseBoxes[0].segmentMotion.Type==VSegmengMotionType.keyFrame)
-        {
-            bind.AddEvent(skillActions.defaultSkillActions,AddDefenceEvent,makeMotion.defenseBoxes[0].segmentMotion.startFrame);
-            bind.AddEvent(skillActions.defaultSkillActions,RemoveDefenceEvent,makeMotion.defenseBoxes[0].segmentMotion.endFrame);
-        }
+        BindAdding(skillActions.defaultSkillActions,bind);
+        BindAdding(skillActions.beAttackSkillAction,bind);
 
         #endregion
 
@@ -43,52 +20,49 @@ public class VActorColliderEventBind : VSkillEventBase
 
         foreach (var skill in skillActions.actorSkillActions)
         {
-            makeMotion = skill.motion;
-            
-            foreach (var hitBox in makeMotion.hitBoxes)
-            {
-                if (hitBox.segmentMotion.Type == VSegmengMotionType.keyFrame)
-                {
-                    bind.AddEvent(skill,AddHitEvent,hitBox.segmentMotion.startFrame);
-                    bind.AddEvent(skill,RemoveHitEvent,hitBox.segmentMotion.endFrame);
-                }
-            }
-            
-            // if (makeMotion.hitBoxes.Count > 0&& makeMotion.hitBoxes[0].segmentMotion.Type==VSegmengMotionType.keyFrame)
-            // {
-            //     bind.AddEvent(skill,AddHitEvent,makeMotion.hitBoxes[0].segmentMotion.startFrame);
-            //     bind.AddEvent(skill,RemoveHitEvent,makeMotion.hitBoxes[0].segmentMotion.endFrame);
-            // }
-            if (makeMotion.passiveBoxes.Count > 0&&makeMotion.passiveBoxes[0].segmentMotion.Type==VSegmengMotionType.keyFrame)
-            {
-                bind.AddEvent(skill,AddPassiveEvent,makeMotion.passiveBoxes[0].segmentMotion.startFrame);
-                bind.AddEvent(skill,RemovePassiveEvent,makeMotion.passiveBoxes[0].segmentMotion.endFrame);
-            }
-            if (makeMotion.defenseBoxes.Count > 0&& makeMotion.defenseBoxes[0].segmentMotion.Type==VSegmengMotionType.keyFrame)
-            {
-                bind.AddEvent(skill,AddDefenceEvent,makeMotion.defenseBoxes[0].segmentMotion.startFrame);
-                bind.AddEvent(skill,RemoveDefenceEvent,makeMotion.defenseBoxes[0].segmentMotion.endFrame);
-            }
+            BindAdding(skill,bind);
         }
 
         #endregion
     }
 
+    private void BindAdding(VSkillAction skill, VActorAnimationClipEventBind bind)
+    {
+        VMotion makeMotion = skill.motion;
+            
+        foreach (var hitBox in makeMotion.hitBoxes)
+        {
+            if (hitBox.segmentMotion.type == VSegmentMotionType.keyFrame)
+            {
+                bind.AddEvent(skill,AddHitEvent,hitBox.segmentMotion.startFrame);
+                bind.AddEvent(skill,RemoveHitEvent,hitBox.segmentMotion.endFrame);
+            }
+        }
+
+        foreach (var passiveBox in makeMotion.passiveBoxes)
+        {
+            if (passiveBox.segmentMotion.type == VSegmentMotionType.keyFrame)
+            {
+                bind.AddEvent(skill,AddPassiveEvent,passiveBox.segmentMotion.startFrame);
+                bind.AddEvent(skill,RemovePassiveEvent,passiveBox.segmentMotion.endFrame);
+            }
+        }
+
+        foreach (var defenseBox in makeMotion.defenseBoxes)
+        {
+            if (defenseBox.segmentMotion.type == VSegmentMotionType.keyFrame)
+            {
+                bind.AddEvent(skill,AddDefenceEvent,defenseBox.segmentMotion.startFrame);
+                bind.AddEvent(skill,RemoveDefenceEvent,defenseBox.segmentMotion.endFrame);
+            }
+        }
+    }
+
     protected override void SkillStartEvent(VSkillAction lastSkill, VSkillAction currentSkill)
     {
-        VMotion makeMotion = currentSkill.motion;
-        if (makeMotion.hitBoxes.Count > 0 && makeMotion.hitBoxes[0].segmentMotion.Type==VSegmengMotionType.allskill)
-        {
-            AddHitEvent();
-        }
-        if (makeMotion.passiveBoxes.Count > 0&& makeMotion.passiveBoxes[0].segmentMotion.Type==VSegmengMotionType.allskill)
-        {
-            AddPassiveEvent();
-        }
-        if (makeMotion.defenseBoxes.Count > 0&& makeMotion.defenseBoxes[0].segmentMotion.Type==VSegmengMotionType.allskill)
-        {
-            AddDefenceEvent();
-        }
+        AddHitEvent();
+        AddPassiveEvent();
+        AddDefenceEvent();
     }
 
     protected override void SkillEndEvent(VSkillAction currentSkill, VSkillAction nextSkill)

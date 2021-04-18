@@ -31,17 +31,17 @@ MonoBehaviour:
   animationClip: {fileID: 0}
   passiveBoxes:
   - segmentMotion:
-      Type: 0
+      type: 1
       startFrame: 0
       endFrame: 0
     collider:
       center: {x: 0, y: 0, z: 0}
       size: {x: 0, y: 0, z: 0}
-      trigger: 1
+      trigger: 0
   hitBoxes: []
   defenseBoxes:
   - segmentMotion:
-      Type: 0
+      type: 0
       startFrame: 6
       endFrame: 13
     collider:

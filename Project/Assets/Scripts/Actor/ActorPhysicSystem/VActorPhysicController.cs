@@ -206,7 +206,7 @@ public class VActorPhysicController:VSkillEventBase
                 0, ForceMode.Acceleration);
         }
 
-        if (Mathf.Abs(_actorRig.velocity.x) > 10f)
+        if (Mathf.Abs(_actorRig.velocity.x) > 1f)
         {
             var velocity = _actorRig.velocity;
             _actorRig.AddForce(new Vector3(

@@ -21,7 +21,7 @@ public class VActorPassiveColliderScript : MonoBehaviour
     private string defenceTag = TagType.GetInstance().tagDictionary[(int) TagEnum.defenceCollider];
     private string passiveTag = TagType.GetInstance().tagDictionary[(int) TagEnum.passiveCollider];
     
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         //身体->攻击
         if (other.CompareTag(hitTag))
@@ -32,7 +32,6 @@ public class VActorPassiveColliderScript : MonoBehaviour
             if (player != enemy)
             {
                 EventManager.PassiveToHitEvent.BoradCastEvent(player, currentSkill, enemy, hitScript.currentSkill);
-                gameObject.SetActive(false);
             }
         }
     }

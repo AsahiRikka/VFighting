@@ -10,8 +10,6 @@ public class VActorAnimationInfo
 {
     public Animator animator;
 
-    public int currentFrame;
-
     /// <summary>
     /// 动画层面上判断能否释放技能
     /// </summary>

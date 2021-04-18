@@ -27,8 +27,7 @@ MonoBehaviour:
     skillType: 7
     priority: 0
     canInterrupt: 1
-    isLoopSkill: 1
-    isSelfTrigger: 0
+    isLoopSkill: 0
   signalData:
     SignalEnum: 1
     skillSignalDataSegments:
