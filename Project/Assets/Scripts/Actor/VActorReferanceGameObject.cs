@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Sirenix.OdinInspector;
 using UnityEngine;
 /// <summary>
 /// 预设引用
@@ -14,11 +15,32 @@ public class VActorReferanceGameObject : MonoBehaviour
     public Animator actorAnimator;
 
     public TriggerDetection actorPhysicDetect;
-
-    public GameObject hitBoxPrefab;
-    public GameObject passiveBoxPrefab;
-    public GameObject defenceBoxPrefab;
     
+    [SerializeField]
+    private GameObject hitBoxPrefab;
+    [SerializeField]
+    private GameObject passiveBoxPrefab;
+    [SerializeField]
+    private GameObject defenceBoxPrefab;
+
+    public VActorHitColliderScript GetHitColliderScript()
+    {
+        GameObject obj = Instantiate(hitBoxPrefab);
+        return obj.GetComponent<VActorHitColliderScript>();
+    }
+    
+    public VActorPassiveColliderScript GetPassiveColliderScript()
+    {
+        GameObject obj = Instantiate(passiveBoxPrefab);
+        return obj.GetComponent<VActorPassiveColliderScript>();
+    }
+    
+    public VActorDefenceColliderScript GetDefenceColliderScript()
+    {
+        GameObject obj = Instantiate(defenceBoxPrefab);
+        return obj.GetComponent<VActorDefenceColliderScript>();
+    }
+
     private void Start()
     {
         

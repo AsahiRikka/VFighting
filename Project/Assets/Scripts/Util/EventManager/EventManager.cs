@@ -9,6 +9,12 @@ public class EventManager
 {
     public static FEvent FeventTest = new FEvent();
 
+    
+    
+    //技能事件
+    
+    
+    
     //对于碰撞事件，只有不同阵营碰撞才触发事件。
 
     /// <summary>

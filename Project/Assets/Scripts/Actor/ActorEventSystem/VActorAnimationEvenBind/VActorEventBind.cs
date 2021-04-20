@@ -24,10 +24,10 @@ public class VActorEventBind
         _animationClipEventBind=new VActorAnimationClipEventBind(skillActions,referance.actorAnimator);
         
         //各部分绑定
-        _animationEvent=new VActorAnimationEventBind(skillActions,actorInfo,_animationClipEventBind,actorEvent);
+        _animationEvent=new VActorAnimationEventBind(skillActions,actorInfo,_animationClipEventBind);
         _continueEvent = new VActorSkillContinueEventBind(skillActions,actorInfo,
             _animationClipEventBind,actorEvent);
-        _physicEvent=new VActorPhysicEventBind(_animationClipEventBind,skillActions,actorController,actorInfo,actorEvent);
+        _physicEvent=new VActorPhysicEventBind(_animationClipEventBind,skillActions,actorController,actorInfo);
         _colliderEvent=new VActorColliderEventBind(actorEvent,skillActions,actorController,_animationClipEventBind,actorInfo);
 
             //最终绑定，在各部分添加事件后

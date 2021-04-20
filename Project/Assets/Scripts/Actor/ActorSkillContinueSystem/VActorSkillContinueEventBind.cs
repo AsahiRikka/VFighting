@@ -73,6 +73,8 @@ public class VActorSkillContinueEventBind:VSkillEventBase
     
     protected override void SkillEndEvent(VSkillAction currentSkill, VSkillAction nextSkill)
     {
+        base.SkillEndEvent(currentSkill,nextSkill);
+        
         //消除连携
         foreach (var initCon in _continueInfo.skillContinues)
         {

@@ -9,7 +9,7 @@ using UnityEngine;
 /// </summary>
 public static class VActorLoad
 {
-    public static void ActorDataBind(string name, GameObject actor, VActorData data,PlayerEnum e)
+    public static void ActorDataBind(string name,GameObject parent, VActorData data,PlayerEnum e)
     {
         //设置摄像机跟踪
         string act = "Player1";
@@ -21,34 +21,40 @@ public static class VActorLoad
         if (follow == null)
         {
             follow = camera.AddComponent<CameraFollowObj>();
-            follow.actor = actor;
+            follow.actor = parent;
         }
         else
         {
-            follow.actor = actor;
+            follow.actor = parent;
         }
         
-        
         //角色初始化
-        VActorBase actorBase = actor.AddComponent<VActorBase>();
+        VActorBase actorBase = parent.AddComponent<VActorBase>();
 
         //成员变量初始化
         actorBase.BindInit();
         
+        //调整角色正朝向
+        parent.transform.rotation = Quaternion.Euler(new Vector3(0,0,0));
+        if (e == PlayerEnum.player_2)
+        {
+            parent.transform.rotation =
+                Quaternion.Euler(new Vector3(0,180,0));
+            parent.transform.position=new Vector3(5,0,0);
+        }
+        
         //基础属性数据绑定
         ActorPropertyBind(data.actorProperty,actorBase.actorProperty,data,e);
         
-        //调整角色正朝向
-        actor.transform.rotation = Quaternion.Euler(data.skillActions.defaultSkillActions.motion.animationDefaultRotate);
-        if (e == PlayerEnum.player_2)
+        //设置layer
+        Transform trans = parent.transform;
+        foreach (var t in trans.GetComponentsInChildren<Transform>())
         {
-            actor.transform.rotation =
-                Quaternion.Euler(data.skillActions.defaultSkillActions.motion.animationDefaultRotate +new Vector3(0,180,0));
-            actor.transform.position=new Vector3(5,0,0);
+            t.gameObject.layer = LayerMask.NameToLayer(actorBase.actorProperty.Layer);
         }
-        
+
         //引用绑定
-        actorBase.referanceGameObject = actor.GetComponent<VActorReferanceGameObject>();
+        actorBase.referanceGameObject = parent.GetComponent<VActorReferanceGameObject>();
         
         //技能行为绑定
         actorBase.skillActions = data.skillActions;
@@ -72,6 +78,13 @@ public static class VActorLoad
         changeProperty.actorWeight = property.actorWeight;
 
         changeProperty.playerEnum = e;
-        
+        if (e == PlayerEnum.player_1)
+        {
+            changeProperty.Layer = "Player_1";
+        }
+        else
+        {
+            changeProperty.Layer = "Player_2";
+        }
     }
 }

@@ -5,13 +5,15 @@ using UnityEngine;
 /// <summary>
 /// 物理事件帧绑定
 /// </summary>
-public class VActorPhysicEventBind:VSkillEventBase
+public class VActorPhysicEventBind
 {
-    private Dictionary<VSkillAction_Physic, bool> _dictionary = new Dictionary<VSkillAction_Physic, bool>();
+    private Dictionary<VSkillAction_Physic, bool> _dictionary;
     
     public VActorPhysicEventBind(VActorAnimationClipEventBind bind, VSkillActions skillActions,
-        VActorController actorController, VActorInfo actorInfo,VActorEvent actorEvent):base(actorEvent)
+        VActorController actorController, VActorInfo actorInfo)
     {
+        _dictionary = actorInfo.physicInfo.PhysicDic;
+        
         _actorController = actorController;
         _actorInfo = actorInfo;
         
@@ -62,19 +64,7 @@ public class VActorPhysicEventBind:VSkillEventBase
             }
         }
     }
-
-    protected override void SkillUpdateEvent(VSkillAction skillAction)
-    {
-        base.SkillUpdateEvent(skillAction);
-        foreach (var physic in skillAction.ActionPhysics)
-        {
-            if (_dictionary.ContainsKey(physic) && _dictionary[physic]) 
-            {
-                _actorController.physicController.PhysicActionByAcceleration(skillAction,SkillActionEnum.frame);
-            }
-        }
-    }
-
+    
     private void RemoveFrameEvent()
     {
         VSkillAction skillAction = _actorInfo.skillInfo.currentSkill;
@@ -87,14 +77,4 @@ public class VActorPhysicEventBind:VSkillEventBase
         }
     }
 
-    protected override void SkillEndEvent(VSkillAction currentSkill, VSkillAction nextSkill)
-    {
-        foreach (var physic in currentSkill.ActionPhysics)
-        {
-            if (_dictionary.ContainsKey(physic))
-            {
-                _dictionary[physic] = false;
-            }
-        }
-    }
 }

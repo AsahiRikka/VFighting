@@ -27,6 +27,6 @@ public class VActorInfo
         buffInfo=new VActorBuffInfo();
         skillInfo=new VActorSkillInfo(property);
         skillContinueInfo=new VActorSkillContinueInfo(skillActions);
-        colliderInfo=new VActorColliderInfo(skillActions);
+        colliderInfo=new VActorColliderInfo(skillActions,referanceGameObject,property);
     }
 }

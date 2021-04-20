@@ -15,6 +15,11 @@ public class VActorAnimationInfo
     /// </summary>
     public bool canSkill = true;
 
+    /// <summary>
+    /// 当前帧数
+    /// </summary>
+    public int currentFrame;
+
     public VActorAnimationInfo(VActorReferanceGameObject referance)
     {
         animator = referance.actorAnimator;

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3297244346135001435}
   m_Layer: 0
   m_Name: ActorHItCollider
-  m_TagString: Untagged
+  m_TagString: HitCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59,3 +59,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ColliderScriptBase:
     collider: {fileID: 373340704868011701}
+  player: 0
+  currentSkill: {fileID: 0}

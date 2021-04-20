@@ -8,12 +8,16 @@ using UnityEngine;
 public class VActorSkillController:VSkillEventBase
 {
     public VActorSkillController(VSkillActions skillActions, VActorEvent actorEvent, VActorInfo actorInfo,
-        VActorState actorState) : base(actorEvent)
+        VActorState actorState,VActorController controller) : base(actorEvent)
     {
         _skillActions = skillActions;
         _actorEvent = actorEvent;
         _actorInfo = actorInfo;
         _actorState = actorState;
+
+        _animationController = controller.animationController;
+        _colliderController = controller.colliderController;
+        _physicController = controller.physicController;
     }
 
     private VActorInfo _actorInfo;
@@ -22,6 +26,10 @@ public class VActorSkillController:VSkillEventBase
     private readonly VActorState _actorState;
 
     private float SkillEnterFlag = 1f;
+
+    private readonly VActorAnimationController _animationController;
+    private readonly VActorColliderController _colliderController;
+    private readonly VActorPhysicController _physicController;
 
     /// <summary>
     /// 技能输入被触发，这一步判断是否释放技能，判断条件：角色状态能否释放，是否有前置buff条件，当前技能是否能被打断
@@ -159,19 +167,49 @@ public class VActorSkillController:VSkillEventBase
 
     protected override void SkillStartEvent(VSkillAction lastSkill, VSkillAction currentSkill)
     {
+        base.SkillStartEvent(lastSkill,currentSkill);
+        
+        _animationController.SkillStartEvent(lastSkill,currentSkill);
+        _colliderController.SkillStartEvent(lastSkill,currentSkill);
+        _physicController.SkillStart(lastSkill,currentSkill);
+        
         SkillEnterFlag = 0;
+        inSkill = true;
         DebugHelper.Log("开始技能：{0}  结束技能{1}",currentSkill,lastSkill);
+    }
+
+    protected override void SkillUpdateEvent(VSkillAction skillAction)
+    {
+        base.SkillUpdateEvent(skillAction);
+        
+        _animationController.SkillUpdateEvent(skillAction);
+        _colliderController.SkillUpdateEvent(skillAction);
+        _physicController.SkillUpdate(skillAction);
+    }
+
+    protected override void SkillFixUpdateEvent(VSkillAction skillAction)
+    {
+        base.SkillFixUpdateEvent(skillAction);
+
+        _physicController.SkillFixUpdate(skillAction);
     }
 
     protected override void SkillEndNormalEvent(VSkillAction skillAction)
     {
+        base.SkillEndNormalEvent(skillAction);
+        
         //自然结束添加idle技能
-        _actorEvent.SkillEvent.skillPlayTriggerEvent.Invoke(_skillActions.defaultSkillActions);
+        SkillTriggerJudge(_skillActions.defaultSkillActions, _actorInfo.skillInfo, _actorState);
     }
 
     protected override void SkillEndEvent(VSkillAction currentSkill, VSkillAction nextSkill)
     {
+        base.SkillEndEvent(currentSkill,nextSkill);
+
+        inSkill = false;
         
+        _animationController.SkillEndEvent(currentSkill,nextSkill);
+        _colliderController.SkillEndEvent(currentSkill,nextSkill);
     }
 
     /// <summary>
@@ -181,13 +219,16 @@ public class VActorSkillController:VSkillEventBase
     /// <param name="passiveSkillAction"></param>
     protected override void ActorBeAttackedEvent(VSkillAction activeSkillAction, VSkillAction passiveSkillAction)
     {
-        //无视前置条件直接跳转
+        base.ActorBeAttackedEvent(activeSkillAction,passiveSkillAction);
         SkillTriggerJudge(_skillActions.beAttackSkillAction, _actorInfo.skillInfo, _actorState);
     }
 
+    private bool inSkill = false;
+
     public void Update()
     {
-        _actorEvent.SkillEvent.skillUpdateEvent.Invoke(_actorInfo.skillInfo.currentSkill);
+        if(inSkill)
+            _actorEvent.SkillEvent.skillUpdateEvent.Invoke(_actorInfo.skillInfo.currentSkill);
     }
 
     public void FixUpdate()
@@ -196,6 +237,7 @@ public class VActorSkillController:VSkillEventBase
         {
             SkillEnterFlag +=  Time.fixedDeltaTime;
         }
-        _actorEvent.SkillEvent.skillFixUpdateEvent.Invoke(_actorInfo.skillInfo.currentSkill);
+        if(inSkill)
+            _actorEvent.SkillEvent.skillFixUpdateEvent.Invoke(_actorInfo.skillInfo.currentSkill);
     }
 }

@@ -50,10 +50,11 @@ public class VActorController
         //控制器初始化
         stateController = new VActorStateController(actorEvent, state, actorInfo);
         physicController = new VActorPhysicController(property, state, actorEvent, skillSignal, referance, actorInfo);
-        skillController = new VActorSkillController(skillActions, actorEvent, actorInfo, state);
-        animationController = new VActorAnimationController(actorEvent, actorInfo, skillActions, referance, state);
+        animationController = new VActorAnimationController(actorEvent, actorInfo, referance, state);
         skillContinueController = new VActorSkillContinueController(actorEvent,actorInfo);
-        colliderController = new VActorColliderController(actorEvent, actorInfo, referance, property);
+        colliderController = new VActorColliderController(actorInfo);
+        
+        skillController = new VActorSkillController(skillActions, actorEvent, actorInfo, state,this);
 
         _actorInfo = actorInfo;
         _actorEvent = actorEvent;
@@ -78,6 +79,7 @@ public class VActorController
     public void ControllerFixUpdate()
     {
         skillController.FixUpdate();
+        physicController.FixUpdate();
     }
 
     public void ControllerExit()

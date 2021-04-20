@@ -12,20 +12,6 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 /// </summary>
 public class VActorFactory
 {
-
-    // public async Task LoadActor(string prefabKey, string configKey,string actorName,PlayerEnum ePlayer, Action<GameObject> handle = null)
-    // {
-    //     try
-    //     {
-    //         MyLoadActor(prefabKey, configKey, actorName, ePlayer);
-    //     }
-    //     catch (Exception e)
-    //     {
-    //         DebugHelper.LogError(e.Message);
-    //         throw;
-    //     }
-    // }
-    
     /// <summary>
     /// 单个角色的加载，并进行实例化
     /// </summary>

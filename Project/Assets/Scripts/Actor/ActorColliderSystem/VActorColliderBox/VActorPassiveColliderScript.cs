@@ -16,23 +16,20 @@ public class VActorPassiveColliderScript : MonoBehaviour
     /// 碰撞器代表的技能
     /// </summary>
     public VSkillAction currentSkill;
+    
+    /// <summary>
+    /// 开始帧，-1表示技能开始开启
+    /// </summary>
+    public int startFrame;
+
+    /// <summary>
+    /// 结束帧，-1表示技能结束关闭
+    /// </summary>
+    public int endFrame;
+
 
     private string hitTag = TagType.GetInstance().tagDictionary[(int) TagEnum.hitCollider];
     private string defenceTag = TagType.GetInstance().tagDictionary[(int) TagEnum.defenceCollider];
     private string passiveTag = TagType.GetInstance().tagDictionary[(int) TagEnum.passiveCollider];
     
-    private void OnTriggerEnter(Collider other)
-    {
-        //身体->攻击
-        if (other.CompareTag(hitTag))
-        {
-            VActorHitColliderScript hitScript = other.gameObject.GetComponent<VActorHitColliderScript>();
-            PlayerEnum enemy = hitScript.player;
-            //不同阵营
-            if (player != enemy)
-            {
-                EventManager.PassiveToHitEvent.BoradCastEvent(player, currentSkill, enemy, hitScript.currentSkill);
-            }
-        }
-    }
 }

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VActorFXController:VSkillEventBase
+public class VActorFXController
 {
-    public VActorFXController(VActorEvent actorEvent) : base(actorEvent)
+    public VActorFXController()
     {
         
     }

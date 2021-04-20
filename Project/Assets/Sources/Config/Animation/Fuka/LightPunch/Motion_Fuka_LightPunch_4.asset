@@ -37,23 +37,23 @@ MonoBehaviour:
       endFrame: 145
     collider:
       center: {x: 0, y: 0.8, z: 0}
-      size: {x: 0.5, y: 1.8, z: 0.5}
+      size: {x: 0.8, y: 1.8, z: 0.8}
       trigger: 1
   hitBoxes:
   - segmentMotion:
       type: 0
-      startFrame: 19
+      startFrame: 18
       endFrame: 25
     collider:
-      center: {x: -0.6, y: 1.2, z: 0}
+      center: {x: 0.6, y: 1.2, z: 0}
       size: {x: 0.8, y: 0.5, z: 0.5}
       trigger: 1
   - segmentMotion:
       type: 0
-      startFrame: 37
-      endFrame: 43
+      startFrame: 35
+      endFrame: 45
     collider:
-      center: {x: -0.6, y: 1.2, z: 0}
+      center: {x: 0.6, y: 1.2, z: 0}
       size: {x: 0.8, y: 0.5, z: 0.5}
       trigger: 1
   defenseBoxes: []

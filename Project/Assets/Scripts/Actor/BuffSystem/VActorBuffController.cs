@@ -4,9 +4,9 @@ using UnityEngine;
 /// <summary>
 /// 单个角色的Buff处理
 /// </summary>
-public class VActorBuffController:VSkillEventBase
+public class VActorBuffController
 {
-    public VActorBuffController(VActorEvent actorEvent) : base(actorEvent)
+    public VActorBuffController(VActorEvent actorEvent)
     {
         
     }

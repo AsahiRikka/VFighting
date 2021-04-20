@@ -20,9 +20,4 @@ public class VActorDefenceColliderScript : MonoBehaviour
     private string hitTag = TagType.GetInstance().tagDictionary[(int) TagEnum.hitCollider];
     private string defenceTag = TagType.GetInstance().tagDictionary[(int) TagEnum.defenceCollider];
     private string passiveTag = TagType.GetInstance().tagDictionary[(int) TagEnum.passiveCollider];
-    
-    private void OnTriggerEnter(Collider other)
-    {
-
-    }
 }

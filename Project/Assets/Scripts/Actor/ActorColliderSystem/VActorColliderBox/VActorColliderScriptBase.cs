@@ -10,10 +10,3 @@ public class VActorColliderScriptBase
 {
     public BoxCollider collider;
 }
-
-public enum ColliderTypeEnum
-{
-    hit,
-    passive,
-    defence,
-}

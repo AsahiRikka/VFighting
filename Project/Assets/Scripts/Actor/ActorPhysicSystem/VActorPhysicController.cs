@@ -9,7 +9,8 @@ using UnityEngine;
 public class VActorPhysicController:VSkillEventBase
 {
     public VActorPhysicController(VActorChangeProperty actorProperty, VActorState state, VActorEvent actorEvent,
-        VActorSkillSignal signal, VActorReferanceGameObject referanceGameObject,VActorInfo actorInfo) : base(actorEvent)
+        VActorSkillSignal signal, VActorReferanceGameObject referanceGameObject, VActorInfo actorInfo) :
+        base(actorEvent)
     {
         _actorProperty = actorProperty;
         _state = state;
@@ -17,6 +18,7 @@ public class VActorPhysicController:VSkillEventBase
         _target = referanceGameObject.parent;
         _actorRig = referanceGameObject.parent.GetComponent<Rigidbody>();
         _actorInfo = actorInfo;
+        _dictionary = actorInfo.physicInfo.PhysicDic;
 
         referanceGameObject.actorPhysicDetect.TriggerEnterDetection += GroundEnter;
         referanceGameObject.actorPhysicDetect.TriggerExitDetection += GroundExit;
@@ -28,11 +30,44 @@ public class VActorPhysicController:VSkillEventBase
     private GameObject _target;
     private Rigidbody _actorRig;
     private VActorInfo _actorInfo;
+    
+    private Dictionary<VSkillAction_Physic, bool> _dictionary;
 
-    protected override void SkillUpdateEvent(VSkillAction skillAction)
+    public void SkillStart(VSkillAction lastSkill, VSkillAction currentSkill)
+    {
+        PhysicReset();
+        
+        PhysicAction(currentSkill,SkillActionEnum.skillAction);
+    }
+    
+    public void SkillUpdate(VSkillAction skillAction)
+    {
+        
+    }
+    public void SkillFixUpdate(VSkillAction skillAction)
     {
         //物理组件
         PhysicComponent(skillAction);
+        
+        //持续物理效果的字典
+        foreach (var physic in skillAction.ActionPhysics)
+        {
+            if (_dictionary.ContainsKey(physic) && _dictionary[physic]) 
+            {
+                PhysicActionByAcceleration(skillAction,SkillActionEnum.frame);
+            }
+        }
+    }
+    
+    public void SkillEnd(VSkillAction currentSkill, VSkillAction nextSkill)
+    {
+        foreach (var physic in currentSkill.ActionPhysics)
+        {
+            if (_dictionary.ContainsKey(physic))
+            {
+                _dictionary[physic] = false;
+            }
+        }
     }
 
     private void PhysicComponent(VSkillAction skillAction)
@@ -48,7 +83,7 @@ public class VActorPhysicController:VSkillEventBase
                 _actorRig.MovePosition(_target.transform.position + new Vector3(
                     skillAction.physicComponent.dashSpeedScale *
                     _actorProperty.actorDashSpeed *
-                    _state.actorFace * Time.deltaTime,
+                    _state.actorFace * Time.fixedDeltaTime,
                     0, 0
                 ));
             }
@@ -58,7 +93,7 @@ public class VActorPhysicController:VSkillEventBase
                 _actorRig.MovePosition(_target.transform.position + new Vector3(
                     skillAction.physicComponent.moveSpeedScale *
                     _actorProperty.actorMoveSpeed *
-                    _state.actorFace * Time.deltaTime,
+                    _state.actorFace * Time.fixedDeltaTime,
                     0, 0
                 ));
             }
@@ -69,7 +104,7 @@ public class VActorPhysicController:VSkillEventBase
                 _actorRig.MovePosition(_target.transform.position + new Vector3(
                     skillAction.physicComponent.backSpeedScale *
                     _actorProperty.actorBackSpeed *
-                    _state.actorFace * -1 * Time.deltaTime,
+                    _state.actorFace * -1 * Time.fixedDeltaTime,
                     0, 0
                 ));
             }
@@ -80,19 +115,12 @@ public class VActorPhysicController:VSkillEventBase
                 _actorRig.AddForce(new Vector3(
                     0,
                     skillAction.physicComponent.jumpForceScale *
-                    _actorProperty.jumpForce * Time.deltaTime,
+                    _actorProperty.jumpForce * Time.fixedDeltaTime,
                     0
                 ), ForceMode.VelocityChange);
             }
         }
         #endregion
-    }
-    
-    protected override void SkillStartEvent(VSkillAction lastSkill, VSkillAction currentSkill)
-    {
-        PhysicReset();
-        
-        PhysicAction(currentSkill,SkillActionEnum.skillAction);
     }
 
     /// <summary>
@@ -128,6 +156,8 @@ public class VActorPhysicController:VSkillEventBase
     /// <param name="passiveSkillAction"></param>
     protected override void ActorBeAttackedEvent(VSkillAction activeSkillAction, VSkillAction passiveSkillAction)
     {
+        base.ActorBeAttackedEvent(activeSkillAction,passiveSkillAction);
+        
         //被命中时自身效果
         foreach (var physic in activeSkillAction.ActionPhysics)
         {
@@ -172,7 +202,7 @@ public class VActorPhysicController:VSkillEventBase
         );
     }
 
-    public void PhysicActionByAcceleration(VSkillAction currentSkill, SkillActionEnum e)
+    private void PhysicActionByAcceleration(VSkillAction currentSkill, SkillActionEnum e)
     {
         foreach (var physic in currentSkill.ActionPhysics)
         {
@@ -182,7 +212,7 @@ public class VActorPhysicController:VSkillEventBase
                 _actorRig.AddForce(physic.initVector *
                                    physic.initSpeed *
                                    _state.actorFace *
-                                   Time.deltaTime, ForceMode.Acceleration
+                                   Time.fixedDeltaTime, ForceMode.Acceleration
                 );
             }
         }
@@ -198,6 +228,11 @@ public class VActorPhysicController:VSkillEventBase
 
     public void Update()
     {
+
+    }
+
+    public void FixUpdate()
+    {
         //重力模拟
         if (_isGravity)
         {
@@ -206,12 +241,12 @@ public class VActorPhysicController:VSkillEventBase
                 0, ForceMode.Acceleration);
         }
 
-        if (Mathf.Abs(_actorRig.velocity.x) > 1f)
+        if (Mathf.Abs(_actorRig.velocity.x) > 0.01f)
         {
             var velocity = _actorRig.velocity;
             _actorRig.AddForce(new Vector3(
                 _actorInfo.physicInfo.actorHorizontalSpeedDecay *
-                 Time.deltaTime,
+                Time.deltaTime,
                 0, 0
             ),ForceMode.Acceleration);
         }

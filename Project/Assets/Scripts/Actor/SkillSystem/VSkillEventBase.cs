@@ -22,8 +22,8 @@ public class VSkillEventBase
         
         skillEvent.ActorAttackEvent.AddListener(ActorAttackEvent);
         skillEvent.ActorBeAttackedEvent.AddListener(ActorBeAttackedEvent);
-    }  
-    
+    }
+
     protected virtual void SkillStartTriggerEvent(VSkillAction skillAction)
     {
         
@@ -36,22 +36,22 @@ public class VSkillEventBase
     /// <param name="currentSkill"></param>
     protected virtual void SkillStartEvent(VSkillAction lastSkill,VSkillAction currentSkill)
     {
-        
+
     }
 
     protected virtual void SkillUpdateEvent(VSkillAction skillAction)
     {
-        
+
     }
 
     protected virtual void SkillFixUpdateEvent(VSkillAction skillAction)
     {
-        
+
     }
 
     protected virtual void SkillEndNormalEvent(VSkillAction skillAction)
     {
-        
+
     }
 
     /// <summary>
@@ -61,7 +61,7 @@ public class VSkillEventBase
     /// <param name="passiveSkill">被动方被攻击对主动方的效果，attack以及anamy</param>
     protected virtual void ActorAttackEvent(VSkillAction activeSkillAction, VSkillAction passiveSkillAction)
     {
-        
+
     }
     
     /// <summary>
@@ -71,7 +71,7 @@ public class VSkillEventBase
     /// <param name="passiveSkill">受击者对主动方的效果，beAttack以及anamy</param>
     protected virtual void ActorBeAttackedEvent(VSkillAction activeSkillAction, VSkillAction passiveSkillAction)
     {
-        
+
     }
 
     /// <summary>
@@ -81,6 +81,6 @@ public class VSkillEventBase
     /// <param name="nextSkill">下一技能</param>
     protected virtual void SkillEndEvent(VSkillAction currentSkill,VSkillAction nextSkill)
     {
-        
+
     }
 }

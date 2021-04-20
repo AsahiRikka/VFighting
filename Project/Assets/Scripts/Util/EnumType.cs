@@ -1,21 +1,5 @@
 ﻿using Sirenix.OdinInspector;
 
-/// <summary>
-/// 追踪类型
-/// </summary>
-public enum TrackTypeEnum
-{
-    /// <summary>
-    /// 相对世界坐标
-    /// </summary>
-    [InfoBox("相对世界坐标")]
-    world,
-    /// <summary>
-    /// 相对父物体坐标
-    /// </summary>
-    [InfoBox("相对释放者")]
-    relative,
-}
 
 /// <summary>
 /// 阵营分类

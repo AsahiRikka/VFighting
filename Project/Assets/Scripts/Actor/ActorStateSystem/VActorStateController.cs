@@ -17,6 +17,8 @@ public class VActorStateController:VSkillEventBase
 
     protected override void SkillUpdateEvent(VSkillAction skillAction)
     {
+        base.SkillUpdateEvent(skillAction);
+        
         //每帧对能否释放技能的判断
         _actorState.canSkill = _actorInfo.animationInfo.canSkill;
     }

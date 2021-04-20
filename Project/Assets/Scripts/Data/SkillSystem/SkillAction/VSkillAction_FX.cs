@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Sirenix.OdinInspector;
 using UnityEngine;
 /// <summary>
 /// 技能特效事件
@@ -11,7 +12,7 @@ public class VSkillAction_FX:VSkillActionBase
     public VFXData fxData;
 
     /// <summary>
-    /// 是否循环，循环需要设置持续时间
+    /// 是否循环
     /// </summary>
     public bool isCycle;
 
@@ -31,3 +32,20 @@ public class VSkillAction_FX:VSkillActionBase
     public bool isFollowParent;
 }
 
+
+/// <summary>
+/// 追踪类型
+/// </summary>
+public enum TrackTypeEnum
+{
+    /// <summary>
+    /// 相对世界坐标
+    /// </summary>
+    [InfoBox("相对世界坐标")]
+    world,
+    /// <summary>
+    /// 相对父物体坐标
+    /// </summary>
+    [InfoBox("相对释放者")]
+    relative,
+}
