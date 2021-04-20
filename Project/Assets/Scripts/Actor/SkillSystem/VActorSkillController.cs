@@ -8,28 +8,34 @@ using UnityEngine;
 public class VActorSkillController:VSkillEventBase
 {
     public VActorSkillController(VSkillActions skillActions, VActorEvent actorEvent, VActorInfo actorInfo,
-        VActorState actorState,VActorController controller) : base(actorEvent)
+        VActorState actorState,VActorChangeProperty property,VActorController controller) : base(actorEvent)
     {
         _skillActions = skillActions;
         _actorEvent = actorEvent;
         _actorInfo = actorInfo;
         _actorState = actorState;
+        _property = property;
 
         _animationController = controller.animationController;
         _colliderController = controller.colliderController;
         _physicController = controller.physicController;
+        _stateController = controller.stateController;
+        _continueController = controller.skillContinueController;
     }
 
     private VActorInfo _actorInfo;
     private readonly VActorEvent _actorEvent;
     private VSkillActions _skillActions;
     private readonly VActorState _actorState;
+    private readonly VActorChangeProperty _property;
 
     private float SkillEnterFlag = 1f;
 
     private readonly VActorAnimationController _animationController;
     private readonly VActorColliderController _colliderController;
     private readonly VActorPhysicController _physicController;
+    private readonly VActorStateController _stateController;
+    private readonly VActorSkillContinueController _continueController;
 
     /// <summary>
     /// 技能输入被触发，这一步判断是否释放技能，判断条件：角色状态能否释放，是否有前置buff条件，当前技能是否能被打断
@@ -134,8 +140,6 @@ public class VActorSkillController:VSkillEventBase
             }
             case SkillTypeEnum.skill:
             {
-                if(!actorState.canSkill)
-                    return;
                 actorState.actorState = ActorStateTypeEnum.skill;
                 break;
             }
@@ -168,14 +172,17 @@ public class VActorSkillController:VSkillEventBase
     protected override void SkillStartEvent(VSkillAction lastSkill, VSkillAction currentSkill)
     {
         base.SkillStartEvent(lastSkill,currentSkill);
+
+        _continueController.SkillStartEvent();
         
         _animationController.SkillStartEvent(lastSkill,currentSkill);
+        
         _colliderController.SkillStartEvent(lastSkill,currentSkill);
         _physicController.SkillStart(lastSkill,currentSkill);
         
         SkillEnterFlag = 0;
         inSkill = true;
-        DebugHelper.Log("开始技能：{0}  结束技能{1}",currentSkill,lastSkill);
+        DebugHelper.Log("角色{0}，开始技能：{1}  结束技能{2}", _property.playerEnum.ToString(), currentSkill, lastSkill);
     }
 
     protected override void SkillUpdateEvent(VSkillAction skillAction)
@@ -183,23 +190,17 @@ public class VActorSkillController:VSkillEventBase
         base.SkillUpdateEvent(skillAction);
         
         _animationController.SkillUpdateEvent(skillAction);
+        
+        _continueController.SkillUpdateEvent(skillAction);
+        _stateController.SkillUpdateEvent(skillAction);
         _colliderController.SkillUpdateEvent(skillAction);
-        _physicController.SkillUpdate(skillAction);
+        _physicController.SkillUpdateEvent(skillAction);
     }
 
     protected override void SkillFixUpdateEvent(VSkillAction skillAction)
     {
         base.SkillFixUpdateEvent(skillAction);
-
-        _physicController.SkillFixUpdate(skillAction);
-    }
-
-    protected override void SkillEndNormalEvent(VSkillAction skillAction)
-    {
-        base.SkillEndNormalEvent(skillAction);
-        
-        //自然结束添加idle技能
-        SkillTriggerJudge(_skillActions.defaultSkillActions, _actorInfo.skillInfo, _actorState);
+        _physicController.SkillFixUpdateEvent(skillAction);
     }
 
     protected override void SkillEndEvent(VSkillAction currentSkill, VSkillAction nextSkill)
@@ -209,9 +210,20 @@ public class VActorSkillController:VSkillEventBase
         inSkill = false;
         
         _animationController.SkillEndEvent(currentSkill,nextSkill);
+        
+        _continueController.SkillEndEvent(currentSkill);
         _colliderController.SkillEndEvent(currentSkill,nextSkill);
+        _physicController.SkillEndEvent();
     }
 
+    protected override void SkillEndNormalEvent(VSkillAction skillAction)
+    {
+        base.SkillEndNormalEvent(skillAction);
+        
+        //自然结束添加idle技能
+        SkillTriggerJudge(_skillActions.defaultSkillActions, _actorInfo.skillInfo, _actorState);
+    }
+    
     /// <summary>
     /// 角色受到攻击，敌方暂时无法影响受击者技能，受击者自动跳转到被攻击技能
     /// </summary>

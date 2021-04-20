@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 /// <summary>
-/// 其他控制器产生的状态影响优先级判断
+/// 状态刷新
 /// </summary>
-public class VActorStateController:VSkillEventBase
+public class VActorStateController
 {
-    public VActorStateController(VActorEvent actorEvent,VActorState actorState,VActorInfo actorInfo) : base(actorEvent)
+    public VActorStateController(VActorEvent actorEvent,VActorState actorState,VActorInfo actorInfo)
     {
         _actorInfo = actorInfo;
         _actorState = actorState;
@@ -15,10 +15,8 @@ public class VActorStateController:VSkillEventBase
     private VActorState _actorState;
     private VActorInfo _actorInfo;
 
-    protected override void SkillUpdateEvent(VSkillAction skillAction)
+    public void SkillUpdateEvent(VSkillAction skillAction)
     {
-        base.SkillUpdateEvent(skillAction);
-        
         //每帧对能否释放技能的判断
         _actorState.canSkill = _actorInfo.animationInfo.canSkill;
     }

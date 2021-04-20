@@ -15,26 +15,28 @@ public class VActorAnimationEventBind
         _actorInfo = actorInfo;
 
         //动画硬直
-        BindAdding(skillActions.defaultSkillActions,bind);
-        BindAdding(skillActions.beAttackSkillAction,bind);
-        foreach (VSkillAction skill in _skillActions.actorSkillActions)
-        {
-            BindAdding(skill,bind);
-        }
+        // BindAdding(skillActions.defaultSkillActions,bind);
+        // BindAdding(skillActions.beAttackSkillAction,bind);
+        // foreach (VSkillAction skill in _skillActions.actorSkillActions)
+        // {
+        //     BindAdding(skill,bind);
+        // }
+        
+        
     }
 
-    private void BindAdding(VSkillAction skill, VActorAnimationClipEventBind bind)
-    {
-        foreach (var straight in skill.motion.animationStraights)
-        {
-            bind.AddEvent(skill,SetAnimatorFalseSkill,straight.startFrame);
-            bind.AddEvent(skill,SetAnimatorCanSkill,straight.endFrame);
-        }
-    }
+    // private void BindAdding(VSkillAction skill, VActorAnimationClipEventBind bind)
+    // {
+    //     foreach (var straight in skill.motion.animationStraights)
+    //     {
+    //         bind.AddEvent(skill,SetAnimatorFalseSkill,straight.startFrame);
+    //         bind.AddEvent(skill,SetAnimatorCanSkill,straight.endFrame);
+    //     }
+    // }
 
     private VSkillActions _skillActions;
     private VActorInfo _actorInfo;
-
+    
     private void SetAnimatorCanSkill()
     {
         _actorInfo.animationInfo.canSkill = true;

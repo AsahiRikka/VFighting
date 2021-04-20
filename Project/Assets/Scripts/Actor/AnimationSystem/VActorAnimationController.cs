@@ -31,17 +31,43 @@ public class VActorAnimationController
     private GameObject actor;
     private GameObject parent;
     private VActorState _actorState;
-
+    
+    //角色硬直帧存储，每个配置只生效1次
+    private List<VAnimationStraight> _straights=new List<VAnimationStraight>();
+    private List<VAnimationStraight> _faultStraights=new List<VAnimationStraight>();
+    
     public void SkillStartEvent(VSkillAction lastSkill, VSkillAction currentSkill)
     {
         AnimationPlay(_animator, actor.transform, parent.transform, currentSkill, lastSkill);
         _animationFrame.SkillStartEvent();
+        
+        //清理
+        _straights.Clear();
+        _faultStraights.Clear();
     }
 
     public void SkillUpdateEvent(VSkillAction skillAction)
     {
+        //刷新帧
         _animationFrame.SkillUpdateEvent(skillAction);
         
+        //硬直绑定刷新
+        foreach (var straight in skillAction.motion.animationStraights)
+        {
+            if (_actorInfo.animationInfo.currentFrame >= straight.startFrame && !_straights.Contains(straight))
+            {
+                _actorInfo.animationInfo.canSkill = false;
+                _straights.Add(straight);
+            }
+
+            if (_actorInfo.animationInfo.currentFrame >= straight.endFrame && !_faultStraights.Contains(straight))
+            {
+                _actorInfo.animationInfo.canSkill = true;
+                _faultStraights.Add(straight);
+            }
+        }
+        
+        //是否可循环，非循环技能播放到结尾帧自动结束
         if (!skillAction.skillProperty.isLoopSkill)
         {
             if (_actorInfo.animationInfo.currentFrame >= skillAction.motion.animationEndClip)
@@ -75,7 +101,6 @@ public class VActorAnimationController
         
         if (startSkill == lastSkill)
         {
-            DebugHelper.LogWarning("播放动画");
             _animator.SetTrigger(startSkill.motion.parameter + "_Trigger");
         }
         else

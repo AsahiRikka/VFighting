@@ -105,6 +105,8 @@
      <Compile Include="Assets\Scripts\Actor\ActorEventSystem\VActorAnimationEvenBind\VSkillActionAniClipBind.cs" />
      <Compile Include="Assets\Scripts\Actor\ActorEventSystem\VActorEvent.cs" />
      <Compile Include="Assets\Scripts\Actor\ActorEventSystem\VActorSkillEvent.cs" />
+     <Compile Include="Assets\Scripts\Actor\ActorFXSystem\VActorFXController.cs" />
+     <Compile Include="Assets\Scripts\Actor\ActorFXSystem\VActorFXInfo.cs" />
      <Compile Include="Assets\Scripts\Actor\ActorPhysicSystem\VActorGravitySimulate.cs" />
      <Compile Include="Assets\Scripts\Actor\ActorPhysicSystem\VActorPhysicComponent.cs" />
      <Compile Include="Assets\Scripts\Actor\ActorPhysicSystem\VActorPhysicController.cs" />
@@ -122,8 +124,6 @@
      <Compile Include="Assets\Scripts\Actor\BuffSystem\VActorBuffController.cs" />
      <Compile Include="Assets\Scripts\Actor\BuffSystem\VActorBuffInfo.cs" />
      <Compile Include="Assets\Scripts\Actor\BuffSystem\VBuffManager.cs" />
-     <Compile Include="Assets\Scripts\Actor\FXSystem\VActorFXController.cs" />
-     <Compile Include="Assets\Scripts\Actor\FXSystem\VActorFXInfo.cs" />
      <Compile Include="Assets\Scripts\Actor\SkillSystem\VActorSkillController.cs" />
      <Compile Include="Assets\Scripts\Actor\SkillSystem\VActorSkillInfo.cs" />
      <Compile Include="Assets\Scripts\Actor\SkillSystem\VActorSkillSignal.cs" />
@@ -182,6 +182,7 @@
      <Compile Include="Assets\Scripts\Data\SkillSystem\VSkillSignalDataSegment.cs" />
      <Compile Include="Assets\Scripts\Data\VCollider.cs" />
      <Compile Include="Assets\Scripts\Data\VKeyMap.cs" />
+     <Compile Include="Assets\Scripts\FXSystem\VFXBase.cs" />
      <Compile Include="Assets\Scripts\GameFactory.cs" />
      <Compile Include="Assets\Scripts\GameFramework.cs" />
      <Compile Include="Assets\Scripts\InputSystem\IInputService.cs" />

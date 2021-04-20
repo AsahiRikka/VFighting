@@ -51,10 +51,10 @@ public class VActorController
         stateController = new VActorStateController(actorEvent, state, actorInfo);
         physicController = new VActorPhysicController(property, state, actorEvent, skillSignal, referance, actorInfo);
         animationController = new VActorAnimationController(actorEvent, actorInfo, referance, state);
-        skillContinueController = new VActorSkillContinueController(actorEvent,actorInfo);
+        skillContinueController = new VActorSkillContinueController(actorInfo);
         colliderController = new VActorColliderController(actorInfo);
         
-        skillController = new VActorSkillController(skillActions, actorEvent, actorInfo, state,this);
+        skillController = new VActorSkillController(skillActions, actorEvent, actorInfo, state,property,this);
 
         _actorInfo = actorInfo;
         _actorEvent = actorEvent;

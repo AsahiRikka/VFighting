@@ -18,7 +18,7 @@ public class VActorPhysicController:VSkillEventBase
         _target = referanceGameObject.parent;
         _actorRig = referanceGameObject.parent.GetComponent<Rigidbody>();
         _actorInfo = actorInfo;
-        _dictionary = actorInfo.physicInfo.PhysicDic;
+        _animationInfo = actorInfo.animationInfo;
 
         referanceGameObject.actorPhysicDetect.TriggerEnterDetection += GroundEnter;
         referanceGameObject.actorPhysicDetect.TriggerExitDetection += GroundExit;
@@ -30,44 +30,88 @@ public class VActorPhysicController:VSkillEventBase
     private GameObject _target;
     private Rigidbody _actorRig;
     private VActorInfo _actorInfo;
-    
-    private Dictionary<VSkillAction_Physic, bool> _dictionary;
+    private VActorAnimationInfo _animationInfo;
 
+    //各种类型技能效果及字典
+    private Dictionary<SkillActionEnum, List<VSkillAction_Physic>> _dictionary =
+        new Dictionary<SkillActionEnum, List<VSkillAction_Physic>>();
+    
+    //帧范围效果的列表
+    private List<VSkillAction_Physic> _frameDic=new List<VSkillAction_Physic>();
+    
     public void SkillStart(VSkillAction lastSkill, VSkillAction currentSkill)
     {
+        //重置物理
         PhysicReset();
         
-        PhysicAction(currentSkill,SkillActionEnum.skillAction);
+        //清理持续字典
+        _dictionary.Clear();
+        _frameDic.Clear();
+        
+        //填充字典
+        foreach (SkillActionEnum e in Enum.GetValues(typeof(SkillActionEnum)))
+        {
+            _dictionary.Add(e,new List<VSkillAction_Physic>());
+        }
+        foreach (var physic in currentSkill.ActionPhysics)
+        {
+            _dictionary[physic.skillActionType].Add(physic);
+        }
+
+        //技能开始的物理效果
+        foreach (var physic in _dictionary[SkillActionEnum.skillAction])
+        {
+            PhysicEffect(physic);
+        }
     }
     
-    public void SkillUpdate(VSkillAction skillAction)
+    public void SkillUpdateEvent(VSkillAction skillAction)
     {
+        //根据关键帧的物理效果
+        foreach (var physic in _dictionary[SkillActionEnum.keyFrame])
+        {
+            if (_animationInfo.currentFrame >= physic.keyFrame)
+            {
+                PhysicEffect(physic);
+            }
+        }
         
+        //根据帧范围的物理效果添加和删除
+        foreach (var physic in _dictionary[SkillActionEnum.frame])
+        {
+            if (_animationInfo.currentFrame >= physic.startFrame && !_frameDic.Contains(physic))
+            {
+                _frameDic.Add(physic);
+            }
+            if (_animationInfo.currentFrame >= physic.endFrame && _frameDic.Contains(physic))
+            {
+                _frameDic.Remove(physic);
+            }
+        }
     }
-    public void SkillFixUpdate(VSkillAction skillAction)
+    public void SkillFixUpdateEvent(VSkillAction skillAction)
     {
         //物理组件
         PhysicComponent(skillAction);
         
-        //持续物理效果的字典
-        foreach (var physic in skillAction.ActionPhysics)
+        //技能全程物理效果
+        foreach (var physic in _dictionary[SkillActionEnum.skillUpdate])
         {
-            if (_dictionary.ContainsKey(physic) && _dictionary[physic]) 
-            {
-                PhysicActionByAcceleration(skillAction,SkillActionEnum.frame);
-            }
+            PhysicActionByAcceleration(physic);
+        }
+        
+        //根据帧范围的物理效果
+        foreach (var physic in _frameDic)
+        {
+            PhysicActionByAcceleration(physic);
         }
     }
-    
-    public void SkillEnd(VSkillAction currentSkill, VSkillAction nextSkill)
+
+    public void SkillEndEvent()
     {
-        foreach (var physic in currentSkill.ActionPhysics)
-        {
-            if (_dictionary.ContainsKey(physic))
-            {
-                _dictionary[physic] = false;
-            }
-        }
+        //清理持续字典
+        _dictionary.Clear();
+        _frameDic.Clear();
     }
 
     private void PhysicComponent(VSkillAction skillAction)
@@ -176,17 +220,7 @@ public class VActorPhysicController:VSkillEventBase
             }
         }
     }
-
-    public void PhysicAction(VSkillAction currentSkill,SkillActionEnum e)
-    {
-        foreach (var physic in currentSkill.ActionPhysics)
-        {
-            if (physic.skillActionType == e)
-            {
-                PhysicEffect(physic);
-            }
-        }
-    }
+    
 
     /// <summary>
     /// 物理效果实现
@@ -202,20 +236,14 @@ public class VActorPhysicController:VSkillEventBase
         );
     }
 
-    private void PhysicActionByAcceleration(VSkillAction currentSkill, SkillActionEnum e)
+    private void PhysicActionByAcceleration(VSkillAction_Physic physic)
     {
-        foreach (var physic in currentSkill.ActionPhysics)
-        {
-            if (physic.skillActionType == e)
-            {
-                _actorInfo.physicInfo.actorVerticalAcceleration *= physic.gravityScale;
-                _actorRig.AddForce(physic.initVector *
-                                   physic.initSpeed *
-                                   _state.actorFace *
-                                   Time.fixedDeltaTime, ForceMode.Acceleration
-                );
-            }
-        }
+        _actorInfo.physicInfo.actorVerticalAcceleration *= physic.gravityScale;
+        _actorRig.AddForce(physic.initVector *
+                           physic.initSpeed *
+                           _state.actorFace *
+                           Time.fixedDeltaTime, ForceMode.Acceleration
+        );
     }
 
     private void PhysicReset()
@@ -241,7 +269,7 @@ public class VActorPhysicController:VSkillEventBase
                 0, ForceMode.Acceleration);
         }
 
-        if (Mathf.Abs(_actorRig.velocity.x) > 0.01f)
+        if (Mathf.Abs(_actorRig.velocity.x) > 1f)
         {
             var velocity = _actorRig.velocity;
             _actorRig.AddForce(new Vector3(

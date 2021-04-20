@@ -20,6 +20,7 @@ public class VActorColliderController
 
     #endregion
     
+    //碰撞器列表
     private List<VActorHitColliderScript> hitList=new List<VActorHitColliderScript>();
     private List<VActorPassiveColliderScript> passiveList=new List<VActorPassiveColliderScript>();
 
