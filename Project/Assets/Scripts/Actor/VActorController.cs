@@ -35,6 +35,11 @@ public class VActorController
     /// 碰撞控制
     /// </summary>
     public VActorColliderController colliderController;
+    
+    /// <summary>
+    /// 特效控制器
+    /// </summary>
+    public VActorFXController FXController;
 
     /// <summary>
     /// 技能释放控制
@@ -53,6 +58,7 @@ public class VActorController
         animationController = new VActorAnimationController(actorEvent, actorInfo, referance, state);
         skillContinueController = new VActorSkillContinueController(actorInfo);
         colliderController = new VActorColliderController(actorInfo);
+        FXController=new VActorFXController(actorEvent,property,referance);
         
         skillController = new VActorSkillController(skillActions, actorEvent, actorInfo, state,property,this);
 

@@ -39,7 +39,7 @@ public class VActorPhysicController:VSkillEventBase
     //帧范围效果的列表
     private List<VSkillAction_Physic> _frameDic=new List<VSkillAction_Physic>();
     
-    public void SkillStart(VSkillAction lastSkill, VSkillAction currentSkill)
+    public void SkillStartEvent(VSkillAction lastSkill, VSkillAction currentSkill)
     {
         //重置物理
         PhysicReset();

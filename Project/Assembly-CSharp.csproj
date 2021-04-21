@@ -182,7 +182,17 @@
      <Compile Include="Assets\Scripts\Data\SkillSystem\VSkillSignalDataSegment.cs" />
      <Compile Include="Assets\Scripts\Data\VCollider.cs" />
      <Compile Include="Assets\Scripts\Data\VKeyMap.cs" />
+     <Compile Include="Assets\Scripts\FXSystem\Collider\VFXCollider.cs" />
+     <Compile Include="Assets\Scripts\FXSystem\Collider\VFXColliderControl.cs" />
+     <Compile Include="Assets\Scripts\FXSystem\Collider\VFXColliderScript.cs" />
+     <Compile Include="Assets\Scripts\FXSystem\Collider\VFXColliderSegment.cs" />
+     <Compile Include="Assets\Scripts\FXSystem\VFXActorProperty.cs" />
      <Compile Include="Assets\Scripts\FXSystem\VFXBase.cs" />
+     <Compile Include="Assets\Scripts\FXSystem\VFXControllerInfo.cs" />
+     <Compile Include="Assets\Scripts\FXSystem\VFXManager.cs" />
+     <Compile Include="Assets\Scripts\FXSystem\VFXParticleSystemControl.cs" />
+     <Compile Include="Assets\Scripts\FXSystem\VFXProperty.cs" />
+     <Compile Include="Assets\Scripts\FXSystem\VFXSoundControl.cs" />
      <Compile Include="Assets\Scripts\GameFactory.cs" />
      <Compile Include="Assets\Scripts\GameFramework.cs" />
      <Compile Include="Assets\Scripts\InputSystem\IInputService.cs" />
@@ -198,6 +208,7 @@
      <Compile Include="Assets\Scripts\ResourcesName.cs" />
      <Compile Include="Assets\Scripts\Service.cs" />
      <Compile Include="Assets\Scripts\TriggerDetection.cs" />
+     <Compile Include="Assets\Scripts\Util\AddressableResources.cs" />
      <Compile Include="Assets\Scripts\Util\DebugHelper.cs" />
      <Compile Include="Assets\Scripts\Util\EnumType.cs" />
      <Compile Include="Assets\Scripts\Util\EventManager\EventManager.cs" />

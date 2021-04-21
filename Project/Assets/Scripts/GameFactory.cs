@@ -14,6 +14,7 @@ public class GameFactory
     private readonly GameStartSetting _startSetting;
 
     private VActorManager _actorManager;
+    private VFXManager _vfxManager = GameFramework.instance._service.VFXManager;
 
     private GameObject player1;
     private GameObject player2;
@@ -29,10 +30,13 @@ public class GameFactory
     /// </summary>
     public async UniTask LoadGame()
     {
-        _actorFactory.LoadActor(ResourcesName.FukaPrefabName, ResourcesName.FukaConfigName, ResourcesName.FukaName,PlayerEnum.player_1,
+        //加载特效
+        await _vfxManager.VFXInit();
+        
+        await _actorFactory.LoadActor(ResourcesName.FukaPrefabName, ResourcesName.FukaConfigName, ResourcesName.FukaName,PlayerEnum.player_1,
             result => player1 = result);
 
-        _actorFactory.LoadActor(ResourcesName.FukaPrefabName, ResourcesName.FukaConfigName, ResourcesName.FukaName,PlayerEnum.player_2,
+        await _actorFactory.LoadActor(ResourcesName.FukaPrefabName, ResourcesName.FukaConfigName, ResourcesName.FukaName,PlayerEnum.player_2,
             result => player2 = result);
 
         await UniTask.Delay(TimeSpan.FromSeconds(3));

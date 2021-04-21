@@ -20,6 +20,8 @@ public class VActorInfo
 
     public VActorColliderInfo colliderInfo;
 
+    public VActorFXInfo FXInfo;
+
     public VActorInfo(VActorChangeProperty property,VSkillActions skillActions,VActorReferanceGameObject referanceGameObject)
     {
         physicInfo=new VActorPhysicInfo();
@@ -28,5 +30,6 @@ public class VActorInfo
         skillInfo=new VActorSkillInfo(property);
         skillContinueInfo=new VActorSkillContinueInfo(skillActions);
         colliderInfo=new VActorColliderInfo(skillActions,referanceGameObject,property);
+        FXInfo=new VActorFXInfo();
     }
 }

@@ -16,15 +16,15 @@ public class VActorFactory
     /// 单个角色的加载，并进行实例化
     /// </summary>
     /// <param name="handle">加载完成时回调方法</param>
-    public void LoadActor(string prefabKey, string configKey,string actorName,PlayerEnum e, Action<GameObject> handle = null)
+    public async UniTask LoadActor(string prefabKey, string configKey,string actorName,PlayerEnum e, Action<GameObject> handle = null)
     {
         GameObject actor;
         // 进行模型加载
-        ResourceManager.GetInstance().LoadAssetAndInstantiate(prefabKey, async result =>
+        await ResourceManager.GetInstance().LoadAssetAndInstantiate(prefabKey, async result =>
         {
             actor = (GameObject)result.Result;
             // 为角色加载配置
-            ResourceManager.GetInstance().LoadAsset<VActorData>(configKey, configResult =>
+            await ResourceManager.GetInstance().LoadAsset<VActorData>(configKey, configResult =>
             {
                 /*
                  * 翠花到此一游；

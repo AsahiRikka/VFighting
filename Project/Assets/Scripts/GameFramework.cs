@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using UnityEngine;
 /// <summary>
@@ -25,7 +26,7 @@ public class GameFramework : MonoBehaviour
     }
 
     public Service _service;
-    public GameFactory _gameFactory; 
+    private GameFactory _gameFactory; 
 
     // Start is called before the first frame update
     void Start()

@@ -9,17 +9,7 @@ using UnityEngine;
 [Serializable]
 public class VSkillAction_FX:VSkillActionBase
 {
-    public VFXData fxData;
-
-    /// <summary>
-    /// 是否循环
-    /// </summary>
-    public bool isCycle;
-
-    /// <summary>
-    /// 持续时间
-    /// </summary>
-    public float persistTime;
+    public string FXID;
 
     /// <summary>
     /// 跟踪类型
@@ -27,9 +17,36 @@ public class VSkillAction_FX:VSkillActionBase
     public TrackTypeEnum trackType;
 
     /// <summary>
-    /// 是否跟随释放者存在
+    /// 相对释放位置
     /// </summary>
-    public bool isFollowParent;
+    public Vector3 offsetPos;
+
+    /// <summary>
+    /// 相对角度
+    /// </summary>
+    public Vector3 offsetRotate;
+
+    [InfoBox("特效持续方式")]
+    public FXContinueTypeEnum ContinueTypeEnum;
+
+    [ShowIf("ContinueTypeEnum",FXContinueTypeEnum.time)]
+    public float time;
+    
+    
+    [InfoBox("是否有位移")]
+    public bool isMove;
+    
+    /// <summary>
+    /// 释放方向，移动特效
+    /// </summary>
+    [ShowIf("isMove")]
+    public Vector3 emitVector;
+
+    /// <summary>
+    /// 释放速度
+    /// </summary>
+    [ShowIf("isMove")]
+    public float emitSpeed;
 }
 
 
@@ -48,4 +65,23 @@ public enum TrackTypeEnum
     /// </summary>
     [InfoBox("相对释放者")]
     relative,
+}
+
+/// <summary>
+/// 特效持续方式
+/// </summary>
+public enum FXContinueTypeEnum
+{
+    /// <summary>
+    /// 按特效预设自动关闭
+    /// </summary>
+    auto,
+    /// <summary>
+    /// 按照技能配置提供的时间
+    /// </summary>
+    time,
+    /// <summary>
+    /// 手动设置
+    /// </summary>
+    manual,
 }

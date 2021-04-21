@@ -61,11 +61,15 @@ MonoBehaviour:
     startFrame: 0
     keyFrame: 0
     endFrame: 0
-    fxData: {fileID: 0}
-    isCycle: 0
-    persistTime: 0
+    FXID: 12001
     trackType: 0
-    isFollowParent: 0
+    offsetPos: {x: 1.5, y: 0, z: 0}
+    offsetRotate: {x: 0, y: 0, z: 0}
+    ContinueTypeEnum: 0
+    time: 0
+    isMove: 0
+    emitVector: {x: 0, y: 0, z: 0}
+    emitSpeed: 0
   ActionPhysics:
   - skillActionType: 0
     target: 0

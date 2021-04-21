@@ -9,20 +9,4 @@ using UnityEngine;
 public class VFXData:SerializedScriptableObject
 {
     public string FXID;
-
-    /// <summary>
-    /// 特效物体
-    /// </summary>
-    [InfoBox("特效预设根物体为空，作为特效中心点")]
-    public GameObject particleObj;
-
-    /// <summary>
-    /// 特效
-    /// </summary>
-    public ParticleSystem particle;
-
-    /// <summary>
-    /// 碰撞集合
-    /// </summary>
-    public List<VFXSegment> vFXSegments;
 }

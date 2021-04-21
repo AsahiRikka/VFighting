@@ -21,6 +21,7 @@ public class VActorSkillController:VSkillEventBase
         _physicController = controller.physicController;
         _stateController = controller.stateController;
         _continueController = controller.skillContinueController;
+        _fxController = controller.FXController;
     }
 
     private VActorInfo _actorInfo;
@@ -36,6 +37,7 @@ public class VActorSkillController:VSkillEventBase
     private readonly VActorPhysicController _physicController;
     private readonly VActorStateController _stateController;
     private readonly VActorSkillContinueController _continueController;
+    private readonly VActorFXController _fxController;
 
     /// <summary>
     /// 技能输入被触发，这一步判断是否释放技能，判断条件：角色状态能否释放，是否有前置buff条件，当前技能是否能被打断
@@ -178,7 +180,8 @@ public class VActorSkillController:VSkillEventBase
         _animationController.SkillStartEvent(lastSkill,currentSkill);
         
         _colliderController.SkillStartEvent(lastSkill,currentSkill);
-        _physicController.SkillStart(lastSkill,currentSkill);
+        _physicController.SkillStartEvent(lastSkill,currentSkill);
+        _fxController.SkillStartEvent(currentSkill);
         
         SkillEnterFlag = 0;
         inSkill = true;

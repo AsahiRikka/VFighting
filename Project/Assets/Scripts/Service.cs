@@ -7,10 +7,12 @@ using UnityEngine;
 public class Service
 {
     public KeySignalContainer input;
+    public VFXManager VFXManager;
 
     public Service()
     {
         input=new KeySignalContainer();
+        VFXManager=new VFXManager();
     }
 
     public void Init()

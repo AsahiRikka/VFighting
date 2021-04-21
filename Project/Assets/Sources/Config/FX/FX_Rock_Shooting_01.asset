@@ -21,8 +21,4 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  FXID: 0
-  particleObj: {fileID: 2830298575776996725, guid: ba075780dddcb8a439575e3b8ae2e454,
-    type: 3}
-  particle: {fileID: 0}
-  vFXSegments: []
+  FXID: 12001
