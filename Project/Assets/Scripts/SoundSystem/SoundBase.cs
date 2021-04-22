@@ -41,11 +41,14 @@ public class SoundBase : MonoBehaviour
 
     private void Update()
     {
-        if (currentTime - initTime >= audioClipTime)
+        if (!_audioSource.loop)
         {
-            SoundStop();
+            if (currentTime - initTime >= audioClipTime)
+            {
+                SoundStop();
+            }
+            currentTime = Time.time;
         }
-        currentTime = Time.time;
     }
 
     public void SoundStop()

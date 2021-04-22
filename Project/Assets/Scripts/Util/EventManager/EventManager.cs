@@ -28,4 +28,10 @@ public class EventManager
     /// </summary>
     public static FEvent<PlayerEnum, VSkillAction, PlayerEnum, VSkillAction> PassiveToHitEvent =
         new FEvent<PlayerEnum, VSkillAction, PlayerEnum, VSkillAction>();
+    
+    public static FEvent<PlayerEnum, VSkillAction, PlayerEnum, VSkillAction> HitToDefenceEvent =
+        new FEvent<PlayerEnum, VSkillAction, PlayerEnum, VSkillAction>();
+    
+    public static FEvent<PlayerEnum, VSkillAction, PlayerEnum, VSkillAction> DefenceToHitEvent =
+        new FEvent<PlayerEnum, VSkillAction, PlayerEnum, VSkillAction>();
 }

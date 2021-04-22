@@ -20,6 +20,11 @@ public class VActorSkillInfo
     /// </summary>
     public int skillDir;
 
+    /// <summary>
+    /// 技能硬直等级
+    /// </summary>
+    public int skillStraightLevel = 0;
+
     public VActorSkillInfo(VActorChangeProperty property)
     {
         if (property.playerEnum == PlayerEnum.player_1)

@@ -70,6 +70,16 @@ public enum SkillActionEnum
     /// </summary>
     [InfoBox("指定帧")]
     keyFrame,
+    /// <summary>
+    /// 攻击到防御
+    /// </summary>
+    [InfoBox("攻击到防御")]
+    attackToDefence,
+    /// <summary>
+    /// 成功防御攻击
+    /// </summary>
+    [InfoBox("成功防御攻击")]
+    successDefence,
 }
 
 /// <summary>

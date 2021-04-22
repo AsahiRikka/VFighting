@@ -60,6 +60,10 @@ public class VActorSkillController:VSkillEventBase
         //角色状态无法释放
         if(!_actorState.canSkill)
             return;
+        
+        //硬直检查
+        if (skillAction.skillProperty.priority <= _actorInfo.skillInfo.skillStraightLevel) 
+            return;
 
         //前置状态是否满足，为空不需要前置状态
         if (!skillAction.preConditionData.skillPreState.Contains(_actorState.actorState) &&

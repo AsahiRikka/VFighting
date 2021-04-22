@@ -13,7 +13,7 @@ public class VSkillProperty
 
     public SkillTypeEnum skillType = SkillTypeEnum.skill;
     
-    [InfoBox("技能优先级，能打断的情况下，优先级大于等于当前技能打断")]
+    [InfoBox("技能优先级，大于技能硬直等级才可释放")]
     public int priority;
 
     [InfoBox("能否打断")] 

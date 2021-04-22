@@ -47,15 +47,45 @@ public class VActorColliderManager
         }
     }
 
+    private void HitToDefenceEvent(PlayerEnum p1, VSkillAction skillAction1, PlayerEnum p2, VSkillAction skillAction2)
+    {
+        if (_playerEnum1 == p1)
+        {
+            _player1.SkillEvent.ActorHitToDefenceEvent.Invoke(skillAction1,skillAction2);
+        }
+        else if (_playerEnum2 == p1) 
+        {
+            _player2.SkillEvent.ActorHitToDefenceEvent.Invoke(skillAction1,skillAction2);
+        }
+    }
+
+    private void DefenceEvent(PlayerEnum p1, VSkillAction skillAction1, PlayerEnum p2, VSkillAction skillAction2)
+    {
+        if (_playerEnum1 == p1)
+        {
+            _player1.SkillEvent.ActorDefenceEvent.Invoke(skillAction1,skillAction2);
+        }
+        else if (_playerEnum2 == p1) 
+        {
+            _player2.SkillEvent.ActorDefenceEvent.Invoke(skillAction1,skillAction2);
+        }
+    }
+
     private void Subscribe()
     {
         EventManager.HitToPassiveEvent.AddEventHandler(HitToPassiveEvent);
         EventManager.PassiveToHitEvent.AddEventHandler(PassiveToHitEvent);
+        
+        EventManager.HitToDefenceEvent.AddEventHandler(HitToDefenceEvent);
+        EventManager.DefenceToHitEvent.AddEventHandler(DefenceEvent);
     }
     
     public void Destory()
     {
         EventManager.HitToPassiveEvent.RemoveEventHandler(HitToPassiveEvent);
         EventManager.PassiveToHitEvent.RemoveEventHandler(PassiveToHitEvent);
+        
+        EventManager.HitToDefenceEvent.RemoveEventHandler(HitToDefenceEvent);
+        EventManager.DefenceToHitEvent.RemoveEventHandler(DefenceEvent);
     }
 }

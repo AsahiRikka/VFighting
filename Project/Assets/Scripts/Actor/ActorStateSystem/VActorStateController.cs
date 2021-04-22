@@ -17,7 +17,7 @@ public class VActorStateController
 
     public void SkillUpdateEvent(VSkillAction skillAction)
     {
-        //每帧对能否释放技能的判断
-        _actorState.canSkill = _actorInfo.animationInfo.canSkill;
+        //动画硬直当前被认为等于技能硬直
+        _actorInfo.skillInfo.skillStraightLevel = _actorInfo.animationInfo.straightLevel;
     }
 }

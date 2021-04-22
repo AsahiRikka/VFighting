@@ -42,5 +42,6 @@ MonoBehaviour:
   hitBoxes: []
   defenseBoxes: []
   animationStraights:
-  - startFrame: 1
+  - straightLevel: 5
+    startFrame: 1
     endFrame: 50

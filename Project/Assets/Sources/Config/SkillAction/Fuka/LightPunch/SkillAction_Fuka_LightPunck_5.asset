@@ -25,7 +25,7 @@ MonoBehaviour:
     skillActionID: 
     skillActionName: 
     skillType: 7
-    priority: 0
+    priority: 2
     canInterrupt: 1
     isLoopSkill: 0
   signalData:

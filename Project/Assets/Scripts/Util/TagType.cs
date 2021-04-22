@@ -13,7 +13,7 @@ public class TagType:Singleton<TagType>
         {(int)TagEnum.player2,"Player2" },
         {(int)TagEnum.hitCollider,"HitCollider" },
         {(int)TagEnum.passiveCollider,"PassiveCollider" },
-        {(int)TagEnum.defenceCollider,"defenceCollider" },
+        {(int)TagEnum.defenceCollider,"DefenceCollider" },
         {(int)TagEnum.FXCollider,"FXCollider" },
     };
     

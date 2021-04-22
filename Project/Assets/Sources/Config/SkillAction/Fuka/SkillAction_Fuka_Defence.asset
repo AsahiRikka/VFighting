@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 004375c057d011742b39c0344172fe0e, type: 3}
-  m_Name: SkillAction_Fuka_Attacked
+  m_Name: SkillAction_Fuka_Defence
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -24,17 +24,18 @@ MonoBehaviour:
   skillProperty:
     skillActionID: 
     skillActionName: 
-    skillType: 6
-    priority: 5
-    canInterrupt: 0
-    isLoopSkill: 0
+    skillType: 7
+    priority: 1
+    canInterrupt: 1
+    isLoopSkill: 1
   signalData:
-    SignalEnum: 0
-    skillSignalDataSegments: []
+    SignalEnum: 3
+    skillSignalDataSegments:
+    - playerKeyCodes: 0700000008000000
   preConditionData:
     skillContinues: []
     skillPreState: 
-    notSkillPreState: 
+    notSkillPreState: 04000000
   physicComponent:
     isEnable: 0
     isMove: 0
@@ -45,20 +46,10 @@ MonoBehaviour:
     backSpeedScale: 0
     dashSpeedScale: 0
     jumpForceScale: 0
-  motion: {fileID: 11400000, guid: 359e0b0d18a90df4393d41ebdf1938d8, type: 2}
+  motion: {fileID: 0}
   ActionDamanges: []
   ActionSounds: []
   ActionAnimates: []
   ActionBuffs: []
   ActionEffects: []
-  ActionPhysics:
-  - skillActionType: 4
-    target: 0
-    startFrame: 0
-    keyFrame: 0
-    endFrame: 0
-    initSpeed: 100
-    initVector: {x: -1, y: 0, z: 0}
-    speedDecay: 1
-    bounceTimes: 1
-    gravityScale: 1
+  ActionPhysics: []

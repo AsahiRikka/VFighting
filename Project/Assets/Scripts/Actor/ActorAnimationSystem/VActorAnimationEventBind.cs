@@ -37,13 +37,13 @@ public class VActorAnimationEventBind
     private VSkillActions _skillActions;
     private VActorInfo _actorInfo;
     
-    private void SetAnimatorCanSkill()
-    {
-        _actorInfo.animationInfo.canSkill = true;
-    }
-
-    private void SetAnimatorFalseSkill()
-    {
-        _actorInfo.animationInfo.canSkill = false;
-    }
+    // private void SetAnimatorCanSkill()
+    // {
+    //     _actorInfo.animationInfo.canSkill = true;
+    // }
+    //
+    // private void SetAnimatorFalseSkill()
+    // {
+    //     _actorInfo.animationInfo.canSkill = false;
+    // }
 }

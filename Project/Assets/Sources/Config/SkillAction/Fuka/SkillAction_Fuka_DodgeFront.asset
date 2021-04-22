@@ -25,16 +25,17 @@ MonoBehaviour:
     skillActionID: 
     skillActionName: 
     skillType: 7
-    priority: 0
+    priority: 2
     canInterrupt: 1
     isLoopSkill: 0
   signalData:
-    SignalEnum: 1
+    SignalEnum: 0
     skillSignalDataSegments:
+    - playerKeyCodes: 0a000000
     - playerKeyCodes: 06000000
   preConditionData:
     skillContinues: []
-    skillPreState: 0100000003000000
+    skillPreState: 
     notSkillPreState: 04000000
   physicComponent:
     isEnable: 0

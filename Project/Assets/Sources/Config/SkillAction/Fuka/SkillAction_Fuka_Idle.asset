@@ -25,7 +25,7 @@ MonoBehaviour:
     skillActionID: 130000
     skillActionName: Idle
     skillType: 0
-    priority: 0
+    priority: 1
     canInterrupt: 1
     isLoopSkill: 1
   signalData:
@@ -33,6 +33,7 @@ MonoBehaviour:
     skillSignalDataSegments: []
   preConditionData:
     skillContinues: []
+    skillPreState: 
     notSkillPreState: 04000000
   physicComponent:
     isEnable: 0

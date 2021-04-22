@@ -11,9 +11,9 @@ public class VActorAnimationInfo
     public Animator animator;
 
     /// <summary>
-    /// 动画层面上判断能否释放技能
+    /// 动画硬直等级，技能优先级高于此才能释放
     /// </summary>
-    public bool canSkill = true;
+    public int straightLevel;
 
     /// <summary>
     /// 当前帧数

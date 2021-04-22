@@ -48,9 +48,15 @@ public class VActorSkillEvent
     public MySkillInputEventForTwo ActorBeAttackedEvent=new MySkillInputEventForTwo();
     
     /// <summary>
-    /// 角色防御事件
+    /// 角色防御完成事件
     /// </summary>
     public MySkillInputEventForTwo ActorDefenceEvent=new MySkillInputEventForTwo();
+    
+    /// <summary>
+    /// 攻击到防御碰撞的事件
+    /// </summary>
+    /// <returns></returns>
+    public MySkillInputEventForTwo ActorHitToDefenceEvent=new MySkillInputEventForTwo();
 }
 
 public class MySkillInputEvent : UnityEvent<VSkillAction>

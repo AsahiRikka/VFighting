@@ -55,6 +55,25 @@ public class VActorHitColliderScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        //攻击->防御，优先攻击->身体的判断
+        if (other.CompareTag(defenceTag))
+        {
+            VActorPassiveColliderScript passiveScript = other.gameObject.GetComponent<VActorPassiveColliderScript>();
+            PlayerEnum enemy = passiveScript.player;
+            
+            //不同阵营
+            if (player == enemy) return;
+            
+            //停止检测
+            ColliderScriptBase.collider.enabled = false;
+
+            //攻击方通知
+            EventManager.HitToDefenceEvent.BoradCastEvent(player, currentSkill, enemy, passiveScript.currentSkill);
+
+            //受击方通知
+            EventManager.DefenceToHitEvent.BoradCastEvent(enemy,passiveScript.currentSkill,player,currentSkill);
+        }
+        
         //攻击->身体
         if (other.CompareTag(passiveTag)) 
         {

@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Runtime.InteropServices;
 using UnityEngine;
 using zFrame.Event;
+using Debug = UnityEngine.Debug;
 
 /// <summary>
 /// 角色动画控制器，根据信号播放动画
@@ -35,6 +36,8 @@ public class VActorAnimationController
     //角色硬直帧存储，每个配置只生效1次
     private List<VAnimationStraight> _straights=new List<VAnimationStraight>();
     private List<VAnimationStraight> _faultStraights=new List<VAnimationStraight>();
+
+    private VAnimationStraight _preStraight;
     
     public void SkillStartEvent(VSkillAction lastSkill, VSkillAction currentSkill)
     {
@@ -44,6 +47,7 @@ public class VActorAnimationController
         //清理
         _straights.Clear();
         _faultStraights.Clear();
+        _preStraight = null;
     }
 
     public void SkillUpdateEvent(VSkillAction skillAction)
@@ -52,21 +56,21 @@ public class VActorAnimationController
         _animationFrame.SkillUpdateEvent(skillAction);
         
         //硬直绑定刷新
+        int tempStraight = 0;
         foreach (var straight in skillAction.motion.animationStraights)
         {
-            if (_actorInfo.animationInfo.currentFrame >= straight.startFrame && !_straights.Contains(straight))
+            //在硬直帧范围内，高等级会覆盖低等级
+            if (straight.startFrame <= _actorInfo.animationInfo.currentFrame &&
+                straight.endFrame >= _actorInfo.animationInfo.currentFrame)
             {
-                _actorInfo.animationInfo.canSkill = false;
-                _straights.Add(straight);
-            }
-
-            if (_actorInfo.animationInfo.currentFrame >= straight.endFrame && !_faultStraights.Contains(straight))
-            {
-                _actorInfo.animationInfo.canSkill = true;
-                _faultStraights.Add(straight);
+                if (straight.straightLevel > tempStraight)
+                {
+                    tempStraight = straight.straightLevel;
+                }
             }
         }
-        
+        _actorInfo.animationInfo.straightLevel = tempStraight;
+
         //是否可循环，非循环技能播放到结尾帧自动结束
         if (!skillAction.skillProperty.isLoopSkill)
         {
@@ -78,7 +82,8 @@ public class VActorAnimationController
     public void SkillEndEvent(VSkillAction currentSkill, VSkillAction nextSkill)
     {
         _animationFrame.SkillEndEvent();
-        _actorInfo.animationInfo.canSkill = true;
+        //技能结束硬直归0
+        _actorInfo.animationInfo.straightLevel = 0;
         _animator.SetBool(currentSkill.motion.parameter, false);
     }
 
