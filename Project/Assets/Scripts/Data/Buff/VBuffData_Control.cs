@@ -5,7 +5,7 @@ using UnityEngine;
 /// <summary>
 /// 控制类技能
 /// </summary>
-[CreateAssetMenu(order = 50,fileName = "BuffData_Control_",menuName = "创建控制类buff配置")]
+[CreateAssetMenu(order = 50,fileName = "BuffData_Control_",menuName = "创建buff配置/创建控制类buff配置")]
 public class VBuffData_Control:SerializedScriptableObject
 {
     [ReadOnly]

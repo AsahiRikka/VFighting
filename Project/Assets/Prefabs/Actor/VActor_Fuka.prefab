@@ -1566,6 +1566,62 @@ MonoBehaviour:
     clip: {fileID: -203655887218126122, guid: 3520c975e6d361b41bc12a1c6be8074c, type: 3}
     layerIndex: 0
     funcs: []
+  - stateName: Base Layer.Avatar_Fuka_Ani_StandBy
+    clip: {fileID: 3644802387886327014, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_1
+    clip: {fileID: 7382378529333395315, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.MoveFrant
+    clip: {fileID: -203655887218126122, guid: b7dc6e53e62785a4084f36fba83dcbdf, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.MoveBack
+    clip: {fileID: -203655887218126122, guid: ed4509b532e8d1f419411bacb9a57415, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_2
+    clip: {fileID: -898632268292908620, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_3
+    clip: {fileID: -4202730747837278895, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_4
+    clip: {fileID: -85481574712235593, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_5
+    clip: {fileID: 7494061353682422395, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_6
+    clip: {fileID: -7778489565417566346, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Dash
+    clip: {fileID: -8487307672374459578, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.DodgeBack
+    clip: {fileID: 997057917329610289, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.DodgeFront
+    clip: {fileID: 850611847518859096, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Jump
+    clip: {fileID: -203655887218126122, guid: 5e4eac011a975a74c9ae4ffc175d7f13, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Attacked
+    clip: {fileID: -203655887218126122, guid: 3520c975e6d361b41bc12a1c6be8074c, type: 3}
+    layerIndex: 0
+    funcs: []
 --- !u!1 &6589796070768851289
 GameObject:
   m_ObjectHideFlags: 0
@@ -1632,9 +1688,9 @@ Rigidbody:
   m_GameObject: {fileID: 6589796070768851289}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 0.1
   m_AngularDrag: 0
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 1
   m_Constraints: 88

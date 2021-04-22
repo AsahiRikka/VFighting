@@ -23,7 +23,7 @@ public class VActorFXController:VSkillEventBase
         {
             if (fx.skillActionType == SkillActionEnum.skillAction)
             {
-                _vfxManager.GetFXAndPlay(fx.FXID, fx, _property, _referance.parent);
+                _vfxManager.ActorGetFXAndPlay(fx.FXID, fx, _property, _referance.parent, currentSkill);
             }
         }
     }

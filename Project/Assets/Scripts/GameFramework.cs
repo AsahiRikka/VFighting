@@ -36,6 +36,8 @@ public class GameFramework : MonoBehaviour
             new VActorFactory(),
             new GameStartSetting());
 
+        _service.SoundManager.SoundInit();
+
         _gameFactory.LoadGame();
     }
 

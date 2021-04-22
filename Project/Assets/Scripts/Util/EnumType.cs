@@ -80,4 +80,5 @@ public enum TagEnum
     hitCollider,
     passiveCollider,
     defenceCollider,
+    FXCollider,
 }

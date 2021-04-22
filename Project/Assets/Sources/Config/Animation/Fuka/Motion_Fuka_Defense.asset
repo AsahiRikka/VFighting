@@ -37,7 +37,7 @@ MonoBehaviour:
     collider:
       center: {x: 0, y: 0, z: 0}
       size: {x: 0, y: 0, z: 0}
-      trigger: 0
+      trigger: 1
   hitBoxes: []
   defenseBoxes:
   - segmentMotion:

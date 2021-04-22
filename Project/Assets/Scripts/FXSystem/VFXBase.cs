@@ -38,18 +38,20 @@ public class VFXBase : MonoBehaviour
     /// </summary>
     private VFXSoundControl _soundControl;
 
+    
+    
     /// <summary>
     /// 特效使用时初始化，调用后再enable
     /// </summary>
-    public void FXPrefabInit(VSkillAction_FX skillActionFX,Transform actor,PlayerEnum e)
+    public void FXPrefabInit(VSkillAction_FX skillActionFX,Transform actor,VActorChangeProperty property,VSkillAction skillAction)
     {
         _vfxControllerInfo=new VFXControllerInfo();
 
         _particleSystemControl = new VFXParticleSystemControl(_vfxControllerInfo, Property, ActorProperty, this);
         _vFXColliderControl = new VFXColliderControl(Property, _vfxControllerInfo, ActorProperty);
         _soundControl=new VFXSoundControl();
-        
-        ActorProperty.e = e;
+
+        ActorProperty.e = property.playerEnum;
         ActorProperty.parentTrans = actor;
         ActorProperty.trackType = skillActionFX.trackType;
         ActorProperty.offsetPos = skillActionFX.offsetPos;
@@ -59,7 +61,14 @@ public class VFXBase : MonoBehaviour
         ActorProperty.isMove = skillActionFX.isMove;
         ActorProperty.FXContinueTypeEnum = skillActionFX.ContinueTypeEnum;
         ActorProperty.durationTime = skillActionFX.time;
+
+        ActorProperty.currentSKill = skillAction;
         
+        //设置layer
+        foreach (var t in transform.GetComponentsInChildren<Transform>())
+        {
+            t.gameObject.layer = LayerMask.NameToLayer(property.Layer);
+        }
 
         MyEnable();
     }

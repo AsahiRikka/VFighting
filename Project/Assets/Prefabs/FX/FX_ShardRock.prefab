@@ -54,8 +54,6 @@ MonoBehaviour:
     FXCollider:
       FXColliders:
       - VFXColliderScript: {fileID: 5599861523292330927}
-        startTime: 1
-        endTime: 2.8
   ActorProperty:
     e: 0
     parentTrans: {fileID: 0}
@@ -67,6 +65,7 @@ MonoBehaviour:
     emitSpeed: 0
     FXContinueTypeEnum: 0
     durationTime: 0
+    currentSKill: {fileID: 0}
 --- !u!1001 &1118498282423749259
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -210,6 +209,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1118498283874468607}
     m_Modifications:
+    - target: {fileID: 5842134589677934132, guid: 944eb0d1dfb555b48891f85cd37a9de9,
+        type: 3}
+      propertyPath: startTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5842134589677934132, guid: 944eb0d1dfb555b48891f85cd37a9de9,
+        type: 3}
+      propertyPath: endTime
+      value: 2.8
+      objectReference: {fileID: 0}
     - target: {fileID: 6237563279971556807, guid: 944eb0d1dfb555b48891f85cd37a9de9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -265,10 +274,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6527454235286668871, guid: 944eb0d1dfb555b48891f85cd37a9de9,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7957661088633075862, guid: 944eb0d1dfb555b48891f85cd37a9de9,
         type: 3}
       propertyPath: m_Name
       value: FXColliderPrefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 7957661088633075862, guid: 944eb0d1dfb555b48891f85cd37a9de9,
+        type: 3}
+      propertyPath: m_TagString
+      value: FXCollider
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 944eb0d1dfb555b48891f85cd37a9de9, type: 3}

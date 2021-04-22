@@ -26,3 +26,10 @@ public class SoundSetting
     [Range(0,1)]
     public double characterSound = 1;
 }
+
+public enum SoundTypEnum
+{
+    BGM,
+    Effect,
+    ActorVoice,
+}

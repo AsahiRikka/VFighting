@@ -261,27 +261,27 @@ public class VActorPhysicController:VSkillEventBase
 
     public void FixUpdate()
     {
-        //重力模拟
-        if (_isGravity)
-        {
-            _actorRig.AddForce(0,
-                _actorProperty.actorWeight * _actorInfo.physicInfo.actorVerticalAcceleration * Time.deltaTime,
-                0, ForceMode.Acceleration);
-        }
-
-        if (Mathf.Abs(_actorRig.velocity.x) > 1f)
-        {
-            var velocity = _actorRig.velocity;
-            _actorRig.AddForce(new Vector3(
-                _actorInfo.physicInfo.actorHorizontalSpeedDecay *
-                Time.deltaTime,
-                0, 0
-            ),ForceMode.Acceleration);
-        }
-        else
-        {
-            PhysicReset();
-        }
+        // 重力模拟
+        // if (_isGravity)
+        // {
+        //     _actorRig.AddForce(0,
+        //         _actorProperty.actorWeight * _actorInfo.physicInfo.actorVerticalAcceleration * Time.deltaTime,
+        //         0, ForceMode.Acceleration);
+        // }
+        // 摩擦力模拟
+        // if (Mathf.Abs(_actorRig.velocity.x) > 1f)
+        // {
+        //     var velocity = _actorRig.velocity;
+        //     _actorRig.AddForce(new Vector3(
+        //         _actorInfo.physicInfo.actorHorizontalSpeedDecay *
+        //         Time.deltaTime,
+        //         0, 0
+        //     ),ForceMode.Acceleration);
+        // }
+        // else
+        // {
+        //     PhysicReset();
+        // }
     }
 
     private bool _isGravity = true;
@@ -292,7 +292,7 @@ public class VActorPhysicController:VSkillEventBase
             _isGravity = false;
         }
     }
-
+    
     private void GroundExit(TagEnum e)
     {
         if (e == TagEnum.ground)

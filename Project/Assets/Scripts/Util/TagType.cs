@@ -14,6 +14,7 @@ public class TagType:Singleton<TagType>
         {(int)TagEnum.hitCollider,"HitCollider" },
         {(int)TagEnum.passiveCollider,"PassiveCollider" },
         {(int)TagEnum.defenceCollider,"defenceCollider" },
+        {(int)TagEnum.FXCollider,"FXCollider" },
     };
     
     public Dictionary<string,int> tagStringDictionary=new Dictionary<string, int>()
@@ -26,5 +27,6 @@ public class TagType:Singleton<TagType>
         {"HitCollider",(int)TagEnum.hitCollider },
         {"PassiveCollider",(int)TagEnum.passiveCollider },
         {"DefenceCollider",(int)TagEnum.defenceCollider },
+        {"FXCollider",(int)TagEnum.FXCollider },
     };
 }

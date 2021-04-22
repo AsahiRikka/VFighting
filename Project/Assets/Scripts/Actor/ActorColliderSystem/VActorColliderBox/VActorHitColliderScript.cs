@@ -27,6 +27,28 @@ public class VActorHitColliderScript : MonoBehaviour
     /// </summary>
     public int endFrame;
 
+    /// <summary>
+    /// 初始化
+    /// </summary>
+    /// <param name="colliderCenter"></param>
+    /// <param name="colliderSize"></param>
+    /// <param name="colliderTrigger"></param>
+    /// <param name="e"></param>
+    /// <param name="skill"></param>
+    /// <param name="startF"></param>
+    /// <param name="endF"></param>
+    public void ActorHitColliderInit(Vector3 colliderCenter, Vector3 colliderSize, bool colliderTrigger, PlayerEnum e,
+        VSkillAction skill, int startF, int endF)
+    {
+        ColliderScriptBase.collider.center = colliderCenter;
+        ColliderScriptBase.collider.size = colliderSize;
+        ColliderScriptBase.collider.isTrigger = colliderTrigger;
+        player = e;
+        currentSkill = skill;
+        startFrame = startF;
+        endFrame = endF;
+    }
+
     private string hitTag = TagType.GetInstance().tagDictionary[(int) TagEnum.hitCollider];
     private string defenceTag = TagType.GetInstance().tagDictionary[(int) TagEnum.defenceCollider];
     private string passiveTag = TagType.GetInstance().tagDictionary[(int) TagEnum.passiveCollider];

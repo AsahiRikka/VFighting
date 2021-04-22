@@ -47,11 +47,12 @@ public class VFXManager
     /// </summary>
     /// <param name="ID"></param>
     /// <param name="skillActionFX"></param>
-    public VFXBase GetFXAndPlay(string ID, VSkillAction_FX skillActionFX, VActorChangeProperty property, GameObject actor)
+    public VFXBase ActorGetFXAndPlay(string ID, VSkillAction_FX skillActionFX, VActorChangeProperty property,
+        GameObject actor, VSkillAction skillAction)
     {
         Pool pool = PoolManager.GetPoolSafe(fxDic[ID].gameObject);
         VFXBase fx = pool.Get<VFXBase>();
-        fx.FXPrefabInit(skillActionFX, actor.transform, property.playerEnum);
+        fx.FXPrefabInit(skillActionFX, actor.transform, property, skillAction);
         return fx;
     }
 
@@ -60,6 +61,7 @@ public class VFXManager
     /// </summary>
     public void FXDestroy(VFXBase vfxBase)
     {
-        
+        vfxBase
+            .gameObject.SetActive(false);
     }
 }

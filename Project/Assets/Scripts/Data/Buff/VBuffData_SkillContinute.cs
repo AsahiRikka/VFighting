@@ -5,13 +5,11 @@ using UnityEngine;
 /// <summary>
 /// 技能连携的buff
 /// </summary>
-[CreateAssetMenu(order = 50,fileName = "BuffData_SkillContinute_",menuName = "创建技能连携配置")]
+[CreateAssetMenu(order = 50,fileName = "BuffData_SkillContinue_",menuName = "创建buff配置/创建技能连携配置")]
 public class VBuffData_SkillContinute:SerializedScriptableObject
 {
     [ReadOnly] public ActorBuffTypeEnum buffType = ActorBuffTypeEnum.skillContinute;
     
     public VBuffBase buffBaseProperty;
-    
-    
 }
  

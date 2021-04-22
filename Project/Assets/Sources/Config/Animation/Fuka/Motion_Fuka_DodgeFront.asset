@@ -38,7 +38,7 @@ MonoBehaviour:
     collider:
       center: {x: 0, y: 0.8, z: 0}
       size: {x: 0.8, y: 1.8, z: 0.8}
-      trigger: 0
+      trigger: 1
   hitBoxes: []
   defenseBoxes: []
   animationStraights:

@@ -9,6 +9,7 @@ TagManager:
   - HitCollider
   - PassiveCollider
   - DefenceCollider
+  - FXCollider
   layers:
   - Default
   - TransparentFX

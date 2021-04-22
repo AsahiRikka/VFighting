@@ -8,11 +8,13 @@ public class Service
 {
     public KeySignalContainer input;
     public VFXManager VFXManager;
+    public SoundManager SoundManager;
 
     public Service()
     {
         input=new KeySignalContainer();
         VFXManager=new VFXManager();
+        SoundManager=new SoundManager();
     }
 
     public void Init()

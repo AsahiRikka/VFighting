@@ -18,6 +18,7 @@ public class VFXColliderControl
     private VFXProperty _vfxProperty;
     private VFXControllerInfo _controllerInfo;
     private VFXActorProperty _actorProperty;
+    private Transform _fxBase;
 
     private List<VFXColliderSegment> startList = new List<VFXColliderSegment>();
     private List<VFXColliderSegment> endList = new List<VFXColliderSegment>();
@@ -26,11 +27,15 @@ public class VFXColliderControl
     {
         startList.Clear();
         endList.Clear();
-        
-        //修改layer
-        
-        
-        ColliderClose();
+
+        foreach (var collider in _vfxProperty.FXCollider.FXColliders)
+        {
+            //修改碰撞的阵营和代表技能
+            collider.VFXColliderScript.FXColliderInit(_actorProperty.e, _actorProperty.currentSKill);
+            
+            //关闭所有碰撞
+            collider.VFXColliderScript.enabled = false;
+        }
     }
 
     public void Update()
@@ -38,13 +43,13 @@ public class VFXColliderControl
         //遍历碰撞，进行开启关闭
         foreach (var collider in _vfxProperty.FXCollider.FXColliders)
         {
-            if (collider.startTime >= _controllerInfo.playTime && !startList.Contains(collider))
+            if (collider.VFXColliderScript.startTime >= _controllerInfo.playTime && !startList.Contains(collider))
             {
                 collider.VFXColliderScript.enabled = true;
                 startList.Add(collider);
             }
 
-            if (collider.endTime >= _controllerInfo.playTime && !endList.Contains(collider))
+            if (collider.VFXColliderScript.endTime >= _controllerInfo.playTime && !endList.Contains(collider))
             {
                 collider.VFXColliderScript.enabled = false;
                 endList.Add(collider);
@@ -55,13 +60,5 @@ public class VFXColliderControl
     public void Disable()
     {
         
-    }
-
-    private void ColliderClose()
-    {
-        foreach (var collider in _vfxProperty.FXCollider.FXColliders)
-        {
-            collider.VFXColliderScript.enabled = false;
-        }
     }
 }

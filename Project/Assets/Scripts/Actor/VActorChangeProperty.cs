@@ -83,6 +83,9 @@ public class VActorChangeProperty
     [Sirenix.OdinInspector.ReadOnly]
     public PlayerEnum playerEnum = PlayerEnum.player_1;
 
+    /// <summary>
+    /// 玩家layer
+    /// </summary>
     public string Layer;
 
     /// <summary>

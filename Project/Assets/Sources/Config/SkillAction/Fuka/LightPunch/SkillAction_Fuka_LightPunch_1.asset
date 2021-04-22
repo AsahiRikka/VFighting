@@ -52,7 +52,15 @@ MonoBehaviour:
     jumpForceScale: 0
   motion: {fileID: 11400000, guid: a2dd5d1084a25e34892549549f292445, type: 2}
   ActionDamanges: []
-  ActionSounds: []
+  ActionSounds:
+  - skillActionType: 0
+    target: 0
+    startFrame: 0
+    keyFrame: 0
+    endFrame: 0
+    soundType: 1
+    audioClip: {fileID: 8300000, guid: 66fda1f43c9bfb146b37dc801101c2c0, type: 3}
+    isLoop: 0
   ActionAnimates: []
   ActionBuffs: []
   ActionEffects:
@@ -63,7 +71,7 @@ MonoBehaviour:
     endFrame: 0
     FXID: 12001
     trackType: 0
-    offsetPos: {x: 1.5, y: 0, z: 0}
+    offsetPos: {x: 2, y: 0, z: 0}
     offsetRotate: {x: 0, y: 0, z: 0}
     ContinueTypeEnum: 0
     time: 0
@@ -76,7 +84,7 @@ MonoBehaviour:
     startFrame: 0
     keyFrame: 1
     endFrame: 0
-    initSpeed: 400
+    initSpeed: 100
     initVector: {x: 1, y: 0, z: 0}
     speedDecay: 1
     bounceTimes: 1

@@ -53,24 +53,19 @@ public class VActorColliderInfo
             transform.localRotation=Quaternion.Euler(Vector3.zero);
 
             hitColliderScript.ColliderScriptBase.collider.enabled = false;
+
+            int startF = -1;
+            int endF = -1;
             
-            if (hitBox.segmentMotion.type == VSegmentMotionType.allskill)
+            if (hitBox.segmentMotion.type == VSegmentMotionType.keyFrame)
             {
-                hitColliderScript.startFrame = -1;
-                hitColliderScript.endFrame = -1;
-            }else if (hitBox.segmentMotion.type == VSegmentMotionType.keyFrame)
-            {
-                hitColliderScript.startFrame = hitBox.segmentMotion.startFrame;
-                hitColliderScript.endFrame = hitBox.segmentMotion.endFrame;
+                startF = hitBox.segmentMotion.startFrame;
+                endF = hitBox.segmentMotion.endFrame;
             }
 
-            hitColliderScript.player = _property.playerEnum;
-            hitColliderScript.ColliderScriptBase.collider.center = hitBox.collider.center;
-            hitColliderScript.ColliderScriptBase.collider.size = hitBox.collider.size;
-            hitColliderScript.ColliderScriptBase.collider.isTrigger = hitBox.collider.trigger;
+            hitColliderScript.ActorHitColliderInit(hitBox.collider.center, hitBox.collider.size,
+                hitBox.collider.trigger, _property.playerEnum, skillAction, startF, endF);
 
-            hitColliderScript.currentSkill = skillAction;
-            
             hitColliderScripts.Add(hitColliderScript);
         }
         
@@ -91,23 +86,18 @@ public class VActorColliderInfo
             transform.localPosition=Vector3.zero;
             transform.localRotation=Quaternion.Euler(Vector3.zero);
 
-            if (passiveBox.segmentMotion.type == VSegmentMotionType.allskill)
+            int startF = -1;
+            int endF = -1;
+            
+            if (passiveBox.segmentMotion.type == VSegmentMotionType.keyFrame)
             {
-                passiveColliderScript.startFrame = -1;
-                passiveColliderScript.endFrame = -1;
-            }else if (passiveBox.segmentMotion.type == VSegmentMotionType.keyFrame)
-            {
-                passiveColliderScript.startFrame = passiveBox.segmentMotion.startFrame;
-                passiveColliderScript.endFrame = passiveBox.segmentMotion.endFrame;
+                startF = passiveBox.segmentMotion.startFrame;
+                endF = passiveBox.segmentMotion.endFrame;
             }
 
-            passiveColliderScript.player = _property.playerEnum;
-            passiveColliderScript.ColliderScriptBase.collider.center = passiveBox.collider.center;
-            passiveColliderScript.ColliderScriptBase.collider.size = passiveBox.collider.size;
-            passiveColliderScript.ColliderScriptBase.collider.isTrigger = passiveBox.collider.trigger;
+            passiveColliderScript.ActorPassiveColliderInit(passiveBox.collider.center, passiveBox.collider.size,
+                passiveBox.collider.trigger, _property.playerEnum, skillAction, startF, endF);
 
-            passiveColliderScript.currentSkill = skillAction;
-            
             passiveColliderScripts.Add(passiveColliderScript);
         }
         

@@ -498,7 +498,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 30
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -523,7 +523,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: -0.070557676, y: 0.000000017691725, z: 0.000000001251406, w: 0.99750775}
+  m_LocalRotation: {x: 0.04013576, y: 0.000000018297694, z: -7.349839e-10, w: 0.99919426}
   m_LocalPosition: {x: 2.5, y: 3, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -644,7 +644,7 @@ GameObject:
   - component: {fileID: 1242019935}
   - component: {fileID: 1242019934}
   m_Layer: 0
-  m_Name: Resources
+  m_Name: ResourcesRef
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -665,6 +665,10 @@ MonoBehaviour:
   FXReferance:
   - m_AssetGUID: a1b7697c817cd6445b3e417ec4434bca
     m_SubObjectName: 
+  soundPrefab:
+    m_AssetGUID: 6edada73e3b2cb34596267e96d5481d0
+    m_SubObjectName: 
+  AudioMixer: {fileID: 24100000, guid: 6fb99db92816d794083cc332d048c76c, type: 2}
 --- !u!4 &1242019935
 Transform:
   m_ObjectHideFlags: 0
@@ -965,7 +969,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2050260808}
-  m_LocalRotation: {x: -0.070557676, y: 0.000000017691725, z: 0.000000001251406, w: 0.99750775}
+  m_LocalRotation: {x: 0.04013576, y: 0.000000018297694, z: -7.349839e-10, w: 0.99919426}
   m_LocalPosition: {x: 2.5, y: 3, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

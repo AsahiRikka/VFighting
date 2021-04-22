@@ -65,4 +65,9 @@ public class VFXActorProperty
     /// 默认特效存在时间
     /// </summary>
     public float durationTime;
+
+    /// <summary>
+    /// 代表技能
+    /// </summary>
+    public VSkillAction currentSKill;
 }
