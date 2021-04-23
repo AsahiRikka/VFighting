@@ -41,13 +41,19 @@ public class VActorAnimationController
     
     public void SkillStartEvent(VSkillAction lastSkill, VSkillAction currentSkill)
     {
-        AnimationPlay(_animator, actor.transform, parent.transform, currentSkill, lastSkill);
         _animationFrame.SkillStartEvent();
-        
+        AnimationPlay(_animator, actor.transform, parent.transform, currentSkill, lastSkill);
+
         //清理
         _straights.Clear();
         _faultStraights.Clear();
         _preStraight = null;
+        
+        //如果有硬直先判断为硬直
+        if (currentSkill.motion.animationStraights.Count > 0)
+        {
+            _actorInfo.animationInfo.straightLevel = 10;
+        }
     }
 
     public void SkillUpdateEvent(VSkillAction skillAction)
@@ -55,6 +61,9 @@ public class VActorAnimationController
         //刷新帧
         _animationFrame.SkillUpdateEvent(skillAction);
         
+        if(_actorInfo.animationInfo.currentFrame==0)
+            return;
+
         //硬直绑定刷新
         int tempStraight = 0;
         foreach (var straight in skillAction.motion.animationStraights)
@@ -81,10 +90,13 @@ public class VActorAnimationController
 
     public void SkillEndEvent(VSkillAction currentSkill, VSkillAction nextSkill)
     {
+        if (currentSkill.skillProperty.isLoopSkill)
+        {
+            _animator.SetBool(currentSkill.motion.parameter, false);
+        }
         _animationFrame.SkillEndEvent();
         //技能结束硬直归0
         _actorInfo.animationInfo.straightLevel = 0;
-        _animator.SetBool(currentSkill.motion.parameter, false);
     }
 
     private void AnimationPlay(Animator animator, Transform actor,Transform parent, VSkillAction startSkill,VSkillAction lastSkill)
@@ -104,14 +116,25 @@ public class VActorAnimationController
         //位置偏移量
         transform.localPosition += startSkill.motion.animationDefaultPos;
         
-        if (startSkill == lastSkill)
-        {
-            _animator.SetTrigger(startSkill.motion.parameter + "_Trigger");
-        }
-        else
+        //非循环动画使用trigger
+        if (startSkill.skillProperty.isLoopSkill)
         {
             //播放动画
             animator.SetBool(startSkill.motion.parameter, true);
         }
+        else
+        {
+            _animator.SetTrigger(startSkill.motion.parameter);
+        }
+        
+        // if (startSkill == lastSkill)
+        // {
+        //     _animator.SetTrigger(startSkill.motion.parameter + "_Trigger");
+        // }
+        // else
+        // {
+        //     //播放动画
+        //     animator.SetBool(startSkill.motion.parameter, true);
+        // }
     }
 }

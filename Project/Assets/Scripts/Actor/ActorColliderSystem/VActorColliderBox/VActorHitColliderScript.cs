@@ -72,6 +72,8 @@ public class VActorHitColliderScript : MonoBehaviour
 
             //受击方通知
             EventManager.DefenceToHitEvent.BoradCastEvent(enemy,passiveScript.currentSkill,player,currentSkill);
+            
+            return;
         }
         
         //攻击->身体

@@ -26,7 +26,6 @@ MonoBehaviour:
     skillActionName: Fuka_LightPunch_1
     skillType: 7
     priority: 2
-    canInterrupt: 1
     isLoopSkill: 0
   signalData:
     SignalEnum: 1
@@ -63,21 +62,7 @@ MonoBehaviour:
     isLoop: 0
   ActionAnimates: []
   ActionBuffs: []
-  ActionEffects:
-  - skillActionType: 0
-    target: 0
-    startFrame: 0
-    keyFrame: 0
-    endFrame: 0
-    FXID: 12001
-    trackType: 0
-    offsetPos: {x: 2, y: 0, z: 0}
-    offsetRotate: {x: 0, y: 0, z: 0}
-    ContinueTypeEnum: 0
-    time: 0
-    isMove: 0
-    emitVector: {x: 0, y: 0, z: 0}
-    emitSpeed: 0
+  ActionEffects: []
   ActionPhysics:
   - skillActionType: 0
     target: 0

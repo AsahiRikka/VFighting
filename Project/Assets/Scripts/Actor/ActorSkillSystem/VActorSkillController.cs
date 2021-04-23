@@ -31,8 +31,6 @@ public class VActorSkillController:VSkillEventBase
     private readonly VActorState _actorState;
     private readonly VActorChangeProperty _property;
 
-    private float SkillEnterFlag = 1f;
-
     private readonly VActorAnimationController _animationController;
     private readonly VActorColliderController _colliderController;
     private readonly VActorPhysicController _physicController;
@@ -47,34 +45,32 @@ public class VActorSkillController:VSkillEventBase
     /// <param name="skillAction"></param>
     protected override void SkillStartTriggerEvent(VSkillAction skillAction)
     {
-        //过快的技能触发被忽略，只有当被关闭的当前技能有动画前摇时
-        if (SkillEnterFlag <= 0.5f && _actorInfo.skillInfo.currentSkill.motion.animationStraights.Count > 0) 
+        //角色状态无法释放
+        if (!_actorState.canSkill)
         {
             return;
         }
-        
-        //相同技能退出
-        if (skillAction == _actorInfo.skillInfo.currentSkill)
-            return;
+        _actorState.canSkill = false;
 
-        //角色状态无法释放
-        if(!_actorState.canSkill)
-            return;
-        
         //硬直检查
-        if (skillAction.skillProperty.priority <= _actorInfo.skillInfo.skillStraightLevel) 
+        if (skillAction.skillProperty.priority <= _actorInfo.skillInfo.skillStraightLevel)
+        {
+            _actorState.canSkill = true;
             return;
+        }
 
         //前置状态是否满足，为空不需要前置状态
         if (!skillAction.preConditionData.skillPreState.Contains(_actorState.actorState) &&
-            skillAction.preConditionData.skillPreState.Count > 0) 
+            skillAction.preConditionData.skillPreState.Count > 0)
         {
+            _actorState.canSkill = true;
             return;
         }
         //无法触发技能的状态，为空不需要
         if (skillAction.preConditionData.notSkillPreState.Contains(_actorState.actorState) &&
-            skillAction.preConditionData.notSkillPreState.Count > 0) 
+            skillAction.preConditionData.notSkillPreState.Count > 0)
         {
+            _actorState.canSkill = true;
             return;
         }
 
@@ -98,6 +94,8 @@ public class VActorSkillController:VSkillEventBase
                 }
             }
         }
+
+        _actorState.canSkill = true;
     }
 
     /// <summary>
@@ -105,6 +103,9 @@ public class VActorSkillController:VSkillEventBase
     /// </summary>
     private void SkillTriggerJudge(VSkillAction skillAction, VActorSkillInfo skillInfo, VActorState actorState)
     {
+        //确认释放后停止技能输入
+        _actorState.canSkill = false;
+        
         //技能判断
         switch (skillAction.skillProperty.skillType)
         {
@@ -161,7 +162,7 @@ public class VActorSkillController:VSkillEventBase
                 break;
             }
         }
-        
+
         //打断当前技能
         if (skillInfo.currentSkill != null)
         {
@@ -172,7 +173,7 @@ public class VActorSkillController:VSkillEventBase
         
         //修改当前技能
         _actorInfo.skillInfo.currentSkill = skillAction;
-        
+
         //完成释放判断，释放技能
         _actorEvent.SkillEvent.skillStartEvent.Invoke(temp, skillAction);
     }
@@ -189,8 +190,11 @@ public class VActorSkillController:VSkillEventBase
         _physicController.SkillStartEvent(lastSkill,currentSkill);
         _fxController.SkillStartEvent(currentSkill);
         _soundController.SkillStartEvent(currentSkill);
+        _stateController.SkillStartEvent();
+
+        //初始化完成恢复技能输入
+        _actorState.canSkill = true;
         
-        SkillEnterFlag = 0;
         inSkill = true;
         DebugHelper.Log("角色{0}，开始技能：{1}  结束技能{2}", _property.playerEnum.ToString(), currentSkill, lastSkill);
     }
@@ -202,9 +206,9 @@ public class VActorSkillController:VSkillEventBase
         _animationController.SkillUpdateEvent(skillAction);
         
         _continueController.SkillUpdateEvent(skillAction);
-        _stateController.SkillUpdateEvent(skillAction);
         _colliderController.SkillUpdateEvent(skillAction);
         _physicController.SkillUpdateEvent(skillAction);
+        _stateController.SkillUpdateEvent(skillAction);
     }
 
     protected override void SkillFixUpdateEvent(VSkillAction skillAction)
@@ -242,7 +246,10 @@ public class VActorSkillController:VSkillEventBase
     protected override void ActorBeAttackedEvent(VSkillAction activeSkillAction, VSkillAction passiveSkillAction)
     {
         base.ActorBeAttackedEvent(activeSkillAction,passiveSkillAction);
-        SkillTriggerJudge(_skillActions.beAttackSkillAction, _actorInfo.skillInfo, _actorState);
+
+        _actorEvent.SkillEvent.skillPlayTriggerEvent.Invoke(_skillActions.beAttackSkillAction);
+        
+        _physicController.BeAttackedEvent(activeSkillAction,passiveSkillAction);
     }
 
     private bool inSkill = false;
@@ -255,10 +262,6 @@ public class VActorSkillController:VSkillEventBase
 
     public void FixUpdate()
     {
-        if (SkillEnterFlag < 1)
-        {
-            SkillEnterFlag +=  Time.fixedDeltaTime;
-        }
         if(inSkill)
             _actorEvent.SkillEvent.skillFixUpdateEvent.Invoke(_actorInfo.skillInfo.currentSkill);
     }

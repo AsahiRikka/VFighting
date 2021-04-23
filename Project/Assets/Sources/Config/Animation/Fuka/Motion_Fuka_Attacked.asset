@@ -28,7 +28,7 @@ MonoBehaviour:
   animationDefaultPos: {x: 0, y: 0, z: 0}
   applyRoomMotion: 0
   animationEndClip: 55
-  animationClip: {fileID: -203655887218126122, guid: 3520c975e6d361b41bc12a1c6be8074c,
+  animationClip: {fileID: -6066081072686136725, guid: 0884c9d47df80e446adeffc5337e5e0b,
     type: 3}
   passiveBoxes:
   - segmentMotion:
@@ -44,4 +44,4 @@ MonoBehaviour:
   animationStraights:
   - straightLevel: 5
     startFrame: 1
-    endFrame: 50
+    endFrame: 40

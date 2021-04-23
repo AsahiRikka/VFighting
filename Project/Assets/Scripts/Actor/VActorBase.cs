@@ -43,10 +43,10 @@ public class VActorBase : MonoBehaviour
     /// </summary>
     public VActorEvent actorEvent;
 
-    /// <summary>
-    /// 动画帧事件绑定
-    /// </summary>
-    public VActorEventBind actorEventBind;
+    // /// <summary>
+    // /// 动画帧事件绑定
+    // /// </summary>
+    // public VActorEventBind actorEventBind;
 
     /// <summary>
     /// 需要与存储数据进行绑定的初始化，最先进行
@@ -77,7 +77,7 @@ public class VActorBase : MonoBehaviour
             new VActorController(actorProperty, state, skillActions, actorInfo, actorEvent, referanceGameObject);
         actorController.ControllerInit();
 
-        actorEventBind = new VActorEventBind(skillActions, referanceGameObject, actorInfo, actorEvent, actorController);
+        //actorEventBind = new VActorEventBind(skillActions, referanceGameObject, actorInfo, actorEvent, actorController);
     }
 
     private void Start()

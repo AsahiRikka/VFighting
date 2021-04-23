@@ -15,6 +15,12 @@ public class VActorStateController
     private VActorState _actorState;
     private VActorInfo _actorInfo;
 
+    public void SkillStartEvent()
+    {
+        //动画硬直当前被认为等于技能硬直
+        _actorInfo.skillInfo.skillStraightLevel = _actorInfo.animationInfo.straightLevel;
+    }
+    
     public void SkillUpdateEvent(VSkillAction skillAction)
     {
         //动画硬直当前被认为等于技能硬直

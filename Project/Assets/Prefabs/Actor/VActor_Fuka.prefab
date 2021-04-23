@@ -1,62 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2095040398935370192
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2635767384690466243}
-  - component: {fileID: 5224598397276930142}
-  - component: {fileID: 12676660313691927}
-  m_Layer: 8
-  m_Name: GravitySimulate
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2635767384690466243
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2095040398935370192}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 6589796070768851294}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5224598397276930142
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2095040398935370192}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0023106f3c6f8249a861ee56760f3a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!65 &12676660313691927
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2095040398935370192}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.4963869, y: 1.6525075, z: 0.46671546}
-  m_Center: {x: -0.006568849, y: 0.7773155, z: 0.024606705}
 --- !u!1 &2362567497183045434
 GameObject:
   m_ObjectHideFlags: 0
@@ -1622,6 +1565,238 @@ MonoBehaviour:
     clip: {fileID: -203655887218126122, guid: 3520c975e6d361b41bc12a1c6be8074c, type: 3}
     layerIndex: 0
     funcs: []
+  - stateName: Base Layer.Avatar_Fuka_Ani_StandBy
+    clip: {fileID: 3644802387886327014, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_1
+    clip: {fileID: 7382378529333395315, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.MoveFrant
+    clip: {fileID: -203655887218126122, guid: b7dc6e53e62785a4084f36fba83dcbdf, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.MoveBack
+    clip: {fileID: -203655887218126122, guid: ed4509b532e8d1f419411bacb9a57415, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_2
+    clip: {fileID: -898632268292908620, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_3
+    clip: {fileID: -4202730747837278895, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_4
+    clip: {fileID: -85481574712235593, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_5
+    clip: {fileID: 7494061353682422395, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_6
+    clip: {fileID: -7778489565417566346, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Dash
+    clip: {fileID: -8487307672374459578, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.DodgeBack
+    clip: {fileID: 997057917329610289, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.DodgeFront
+    clip: {fileID: 850611847518859096, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Jump
+    clip: {fileID: -203655887218126122, guid: 5e4eac011a975a74c9ae4ffc175d7f13, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Attacked
+    clip: {fileID: -203655887218126122, guid: 3520c975e6d361b41bc12a1c6be8074c, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Avatar_Fuka_Ani_StandBy
+    clip: {fileID: 3644802387886327014, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_1
+    clip: {fileID: 7382378529333395315, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.MoveFrant
+    clip: {fileID: -203655887218126122, guid: b7dc6e53e62785a4084f36fba83dcbdf, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.MoveBack
+    clip: {fileID: -203655887218126122, guid: ed4509b532e8d1f419411bacb9a57415, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_2
+    clip: {fileID: -898632268292908620, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_3
+    clip: {fileID: -4202730747837278895, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_4
+    clip: {fileID: -85481574712235593, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_5
+    clip: {fileID: 7494061353682422395, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_6
+    clip: {fileID: -7778489565417566346, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Dash
+    clip: {fileID: -8487307672374459578, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.DodgeBack
+    clip: {fileID: 997057917329610289, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.DodgeFront
+    clip: {fileID: 850611847518859096, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Jump
+    clip: {fileID: -203655887218126122, guid: 5e4eac011a975a74c9ae4ffc175d7f13, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Attacked
+    clip: {fileID: -203655887218126122, guid: 3520c975e6d361b41bc12a1c6be8074c, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Avatar_Fuka_Ani_StandBy
+    clip: {fileID: 3644802387886327014, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_1
+    clip: {fileID: 7382378529333395315, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.MoveFrant
+    clip: {fileID: -203655887218126122, guid: b7dc6e53e62785a4084f36fba83dcbdf, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.MoveBack
+    clip: {fileID: -203655887218126122, guid: ed4509b532e8d1f419411bacb9a57415, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_2
+    clip: {fileID: -898632268292908620, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_3
+    clip: {fileID: -4202730747837278895, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_4
+    clip: {fileID: -85481574712235593, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_5
+    clip: {fileID: 7494061353682422395, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_6
+    clip: {fileID: -7778489565417566346, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Dash
+    clip: {fileID: -8487307672374459578, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.DodgeBack
+    clip: {fileID: 997057917329610289, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.DodgeFront
+    clip: {fileID: 850611847518859096, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Jump
+    clip: {fileID: -203655887218126122, guid: 5e4eac011a975a74c9ae4ffc175d7f13, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Attacked
+    clip: {fileID: -203655887218126122, guid: 3520c975e6d361b41bc12a1c6be8074c, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Fuka_Crouch
+    clip: {fileID: -203655887218126122, guid: 7a07c5eb45d3e804c9d4354df731e019, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Avatar_Fuka_Ani_StandBy
+    clip: {fileID: 3644802387886327014, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_1
+    clip: {fileID: 7382378529333395315, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.MoveFrant
+    clip: {fileID: -203655887218126122, guid: b7dc6e53e62785a4084f36fba83dcbdf, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.MoveBack
+    clip: {fileID: -203655887218126122, guid: ed4509b532e8d1f419411bacb9a57415, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_2
+    clip: {fileID: -898632268292908620, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_3
+    clip: {fileID: -4202730747837278895, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_4
+    clip: {fileID: -85481574712235593, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_5
+    clip: {fileID: 7494061353682422395, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_6
+    clip: {fileID: -7778489565417566346, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Dash
+    clip: {fileID: -8487307672374459578, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.DodgeBack
+    clip: {fileID: 997057917329610289, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.DodgeFront
+    clip: {fileID: 850611847518859096, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Jump
+    clip: {fileID: -203655887218126122, guid: 5e4eac011a975a74c9ae4ffc175d7f13, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Attacked
+    clip: {fileID: -203655887218126122, guid: 3520c975e6d361b41bc12a1c6be8074c, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Fuka_Crouch
+    clip: {fileID: -203655887218126122, guid: 7a07c5eb45d3e804c9d4354df731e019, type: 3}
+    layerIndex: 0
+    funcs: []
 --- !u!1 &6589796070768851289
 GameObject:
   m_ObjectHideFlags: 0
@@ -1653,7 +1828,7 @@ Transform:
   m_Children:
   - {fileID: 6699405582135364210}
   - {fileID: 9008585676120161198}
-  - {fileID: 2635767384690466243}
+  - {fileID: 1741343874505597081}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1671,8 +1846,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 6589796070768851289}
   actor: {fileID: 6319325765016146120}
+  actorRig: {fileID: 968123099580171089}
   actorAnimator: {fileID: 150760119649848980}
-  actorPhysicDetect: {fileID: 5224598397276930142}
+  actorPhysicDetect: {fileID: 7369349467443657239}
   hitBoxPrefab: {fileID: 6544498376907621355, guid: 05dde7edab015494eae6f6db4dd80350,
     type: 3}
   passiveBoxPrefab: {fileID: 5193485465561335387, guid: 8057b9912accf39439fdfa8238d67f4a,
@@ -1693,8 +1869,65 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 1
-  m_Constraints: 88
+  m_Constraints: 120
   m_CollisionDetection: 2
+--- !u!1 &8027205356474300801
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1741343874505597081}
+  - component: {fileID: 6014928423682491918}
+  - component: {fileID: 7369349467443657239}
+  m_Layer: 8
+  m_Name: GravitySimulate
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1741343874505597081
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8027205356474300801}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6589796070768851294}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6014928423682491918
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8027205356474300801}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 1.7, z: 0.5}
+  m_Center: {x: 0, y: 0.8, z: 0}
+--- !u!114 &7369349467443657239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8027205356474300801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0023106f3c6f8249a861ee56760f3a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6589796070825389465
 PrefabInstance:
   m_ObjectHideFlags: 0

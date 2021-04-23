@@ -25,8 +25,7 @@ MonoBehaviour:
     skillActionID: 
     skillActionName: 
     skillType: 6
-    priority: 5
-    canInterrupt: 0
+    priority: 10
     isLoopSkill: 0
   signalData:
     SignalEnum: 0
@@ -51,14 +50,4 @@ MonoBehaviour:
   ActionAnimates: []
   ActionBuffs: []
   ActionEffects: []
-  ActionPhysics:
-  - skillActionType: 4
-    target: 0
-    startFrame: 0
-    keyFrame: 0
-    endFrame: 0
-    initSpeed: 100
-    initVector: {x: -1, y: 0, z: 0}
-    speedDecay: 1
-    bounceTimes: 1
-    gravityScale: 1
+  ActionPhysics: []

@@ -23,11 +23,13 @@ public class VActorColliderController
     //碰撞器列表
     private List<VActorHitColliderScript> hitList=new List<VActorHitColliderScript>();
     private List<VActorPassiveColliderScript> passiveList=new List<VActorPassiveColliderScript>();
+    private List<VActorDefenceColliderScript> defenceList = new List<VActorDefenceColliderScript>();
 
     public void SkillStartEvent(VSkillAction lastSkill, VSkillAction currentSkill)
     {
         hitList.Clear();
         passiveList.Clear();
+        defenceList.Clear();
 
         foreach (var hitColliderScript in _actorInfo.colliderInfo.hitBoxes[currentSkill])
         {
@@ -44,6 +46,15 @@ public class VActorColliderController
             {
                 passiveColliderScript.ColliderScriptBase.collider.enabled = true;
                 passiveList.Add(passiveColliderScript);
+            }
+        }
+
+        foreach (var defenceColliderScript in _actorInfo.colliderInfo.defenceBoxes[currentSkill])
+        {
+            if (defenceColliderScript.startFrame == -1)
+            {
+                defenceColliderScript.ColliderScriptBase.collider.enabled = true;
+                defenceList.Add(defenceColliderScript);
             }
         }
     }
@@ -78,6 +89,21 @@ public class VActorColliderController
                 passiveColliderScript.ColliderScriptBase.collider.enabled = false;
             }
         }
+        
+        foreach (var defenceColliderScript in _actorInfo.colliderInfo.defenceBoxes[skillAction])
+        {
+            if (defenceColliderScript.startFrame <= _animationInfo.currentFrame &&
+                defenceColliderScript.startFrame != -1 && !defenceList.Contains(defenceColliderScript))  
+            {
+                defenceColliderScript.ColliderScriptBase.collider.enabled = true;
+                defenceList.Add(defenceColliderScript);
+            }
+            else if (defenceColliderScript.endFrame <= _animationInfo.currentFrame &&
+                     defenceColliderScript.endFrame != -1)  
+            {
+                defenceColliderScript.ColliderScriptBase.collider.enabled = false;
+            }
+        }
     }
 
     public void SkillEndEvent(VSkillAction currentSkill, VSkillAction nextSkill)
@@ -90,6 +116,11 @@ public class VActorColliderController
         foreach (var passiveColliderScript in _actorInfo.colliderInfo.passiveBoxes[currentSkill])
         {
             passiveColliderScript.ColliderScriptBase.collider.enabled = false;
+        }
+        
+        foreach (var defenceColliderScript in _actorInfo.colliderInfo.defenceBoxes[currentSkill])
+        {
+            defenceColliderScript.ColliderScriptBase.collider.enabled = false;
         }
     }
 }

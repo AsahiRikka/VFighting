@@ -30,6 +30,9 @@ public class VActorAnimationFrame
 
     public void SkillUpdateEvent(VSkillAction currentSkill)
     {
+        if(anim.GetCurrentAnimatorClipInfo(0)[0].clip!=currentSkill.motion.animationClip)
+            return;
+
         _clip = anim.GetCurrentAnimatorClipInfo(0)[0].clip;
 
         if (_clip == currentSkill.motion.animationClip)

@@ -27,14 +27,4 @@ public class VActorFXController:VSkillEventBase
             }
         }
     }
-
-    protected override void ActorBeAttackedEvent(VSkillAction activeSkillAction, VSkillAction passiveSkillAction)
-    {
-
-    }
-
-    protected override void ActorAttackEvent(VSkillAction activeSkillAction, VSkillAction passiveSkillAction)
-    {
-
-    }
 }

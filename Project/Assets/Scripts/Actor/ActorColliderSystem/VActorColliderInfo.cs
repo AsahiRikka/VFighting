@@ -25,15 +25,18 @@ public class VActorColliderInfo
         VSkillAction makeAction = skillActions.defaultSkillActions;
         HitColliderInit(makeAction);
         PassiveColliderInit(makeAction);
+        DefenceColliderInit(makeAction);
 
         makeAction = skillActions.beAttackSkillAction;
         HitColliderInit(makeAction);
         PassiveColliderInit(makeAction);
+        DefenceColliderInit(makeAction);
 
         foreach (var action in skillActions.actorSkillActions)
         {
             HitColliderInit(action);
             PassiveColliderInit(action);
+            DefenceColliderInit(action);
         }
     }
 
@@ -102,6 +105,38 @@ public class VActorColliderInfo
         }
         
         passiveBoxes.Add(skillAction,passiveColliderScripts);
+    }
+
+    private void DefenceColliderInit(VSkillAction skillAction)
+    {
+        List<VActorDefenceColliderScript> defenceColliderScripts = new List<VActorDefenceColliderScript>();
+        
+        foreach (var defenceBox in skillAction.motion.defenseBoxes)
+        {
+            VActorDefenceColliderScript defenceColliderScript = _referance.GetDefenceColliderScript();
+
+            defenceColliderScript.ColliderScriptBase.collider.enabled = false;
+            Transform transform;
+            (transform = defenceColliderScript.transform).SetParent(_referance.transform);
+            transform.localPosition=Vector3.zero;
+            transform.localRotation=Quaternion.Euler(Vector3.zero);
+
+            int startF = -1;
+            int endF = -1;
+            
+            if (defenceBox.segmentMotion.type == VSegmentMotionType.keyFrame)
+            {
+                startF = defenceBox.segmentMotion.startFrame;
+                endF = defenceBox.segmentMotion.endFrame;
+            }
+
+            defenceColliderScript.ActorDefenceColliderInit(defenceBox.collider.center, defenceBox.collider.size,
+                defenceBox.collider.trigger, _property.playerEnum, skillAction, startF, endF);
+
+            defenceColliderScripts.Add(defenceColliderScript);
+        }
+
+        defenceBoxes.Add(skillAction, defenceColliderScripts);
     }
 }
 

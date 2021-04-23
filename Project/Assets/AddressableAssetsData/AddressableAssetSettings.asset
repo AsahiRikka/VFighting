@@ -26,6 +26,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0c0eb0b447973294c94b45c7e4e6ce19, type: 2}
   - {fileID: 11400000, guid: 0aa02d3b7012baf41ab4a4de63948689, type: 2}
   - {fileID: 11400000, guid: e17e385af6563a042b52ca432a7d13fd, type: 2}
+  - {fileID: 11400000, guid: b5ee1622f4abaa2438f06c3fc1c65328, type: 2}
   m_BuildSettings:
     m_CompileScriptsInVirtualMode: 0
     m_CleanupStreamingAssetsAfterBuilds: 1
@@ -69,6 +70,7 @@ MonoBehaviour:
     - Model_1
     - Config_1
     - FX_1
+    - Common
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: 342e6081c5b99e64695200d58cea1b8e, type: 2}

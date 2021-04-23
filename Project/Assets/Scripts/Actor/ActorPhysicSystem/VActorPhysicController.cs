@@ -198,7 +198,7 @@ public class VActorPhysicController:VSkillEventBase
     /// </summary>
     /// <param name="activeSkillAction"></param>
     /// <param name="passiveSkillAction"></param>
-    protected override void ActorBeAttackedEvent(VSkillAction activeSkillAction, VSkillAction passiveSkillAction)
+    public void BeAttackedEvent(VSkillAction activeSkillAction, VSkillAction passiveSkillAction)
     {
         base.ActorBeAttackedEvent(activeSkillAction,passiveSkillAction);
         
