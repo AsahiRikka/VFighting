@@ -52,7 +52,7 @@ public class VActorAnimationController
         //如果有硬直先判断为硬直
         if (currentSkill.motion.animationStraights.Count > 0)
         {
-            _actorInfo.animationInfo.straightLevel = 10;
+            _actorInfo.animationInfo.straightLevel = 5;
         }
     }
 
@@ -69,8 +69,19 @@ public class VActorAnimationController
         foreach (var straight in skillAction.motion.animationStraights)
         {
             //在硬直帧范围内，高等级会覆盖低等级
-            if (straight.startFrame <= _actorInfo.animationInfo.currentFrame &&
-                straight.endFrame >= _actorInfo.animationInfo.currentFrame)
+
+            if (straight.type == VSegmentMotionType.keyFrame)
+            {
+                if (straight.startFrame <= _actorInfo.animationInfo.currentFrame &&
+                    straight.endFrame >= _actorInfo.animationInfo.currentFrame)
+                {
+                    if (straight.straightLevel > tempStraight)
+                    {
+                        tempStraight = straight.straightLevel;
+                    }
+                }
+            }
+            else if (straight.type == VSegmentMotionType.allskill) 
             {
                 if (straight.straightLevel > tempStraight)
                 {
@@ -79,18 +90,22 @@ public class VActorAnimationController
             }
         }
         _actorInfo.animationInfo.straightLevel = tempStraight;
-
-        //是否可循环，非循环技能播放到结尾帧自动结束
-        if (!skillAction.skillProperty.isLoopSkill)
+        
+        if (_actorInfo.animationInfo.currentFrame >= skillAction.motion.animationEndClip)
         {
-            if (_actorInfo.animationInfo.currentFrame >= skillAction.motion.animationEndClip)
+            //技能播放到结尾帧自动结束
+            if(skillAction.skillProperty.PlayType==SkillAnimPlayType.autoQuit)
                 _actorEvent.SkillEvent.skillEndNormalEvent.Invoke(skillAction);
+            //如果技能需要保持最后一帧，不自动结束
+            else if (skillAction.skillProperty.PlayType == SkillAnimPlayType.holdEnd)
+                _animator.speed = 0;
         }
     }
 
     public void SkillEndEvent(VSkillAction currentSkill, VSkillAction nextSkill)
     {
-        if (currentSkill.skillProperty.isLoopSkill)
+        //非自动结束类技能，要手动关闭动画
+        if (currentSkill.skillProperty.PlayType != SkillAnimPlayType.autoQuit) 
         {
             _animator.SetBool(currentSkill.motion.parameter, false);
         }
@@ -103,38 +118,19 @@ public class VActorAnimationController
     {
         //设置rootMotion
         animator.applyRootMotion = startSkill.motion.applyRoomMotion;
-            
-        //设置该动画初始角度
-        Vector3 offset=new Vector3(0,0,0);
-        if (_actorState.actorFace == -1)
-            offset = new Vector3(0, 180, 0);
-        parent.transform.rotation = Quaternion.Euler(offset);
 
-        Transform transform;
-        (transform = actor.transform).localRotation = Quaternion.Euler(startSkill.motion.animationDefaultRotate);
-        
-        //位置偏移量
-        transform.localPosition += startSkill.motion.animationDefaultPos;
+        //恢复动画机播放
+        animator.speed = 1;
         
         //非循环动画使用trigger
-        if (startSkill.skillProperty.isLoopSkill)
+        if (startSkill.skillProperty.PlayType==SkillAnimPlayType.autoQuit)
+        {
+            _animator.SetTrigger(startSkill.motion.parameter);
+        }
+        else
         {
             //播放动画
             animator.SetBool(startSkill.motion.parameter, true);
         }
-        else
-        {
-            _animator.SetTrigger(startSkill.motion.parameter);
-        }
-        
-        // if (startSkill == lastSkill)
-        // {
-        //     _animator.SetTrigger(startSkill.motion.parameter + "_Trigger");
-        // }
-        // else
-        // {
-        //     //播放动画
-        //     animator.SetBool(startSkill.motion.parameter, true);
-        // }
     }
 }

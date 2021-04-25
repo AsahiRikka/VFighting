@@ -24,7 +24,7 @@ MonoBehaviour:
   motionID: 
   motionName: Fuka_LightPunch_4
   parameter: LightPunch_4
-  animationDefaultRotate: {x: 0, y: 90, z: 0}
+  animationDefaultRotate: {x: 0, y: 0, z: 0}
   animationDefaultPos: {x: 0, y: 0, z: 0}
   applyRoomMotion: 0
   animationEndClip: 145
@@ -58,9 +58,11 @@ MonoBehaviour:
       trigger: 1
   defenseBoxes: []
   animationStraights:
-  - straightLevel: 2
+  - type: 0
+    straightLevel: 2
     startFrame: 1
     endFrame: 46
-  - straightLevel: 1
+  - type: 0
+    straightLevel: 1
     startFrame: 46
     endFrame: 60

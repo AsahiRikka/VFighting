@@ -23,11 +23,10 @@ MonoBehaviour:
     SerializationNodes: []
   skillProperty:
     skillActionID: 
-    skillActionName: 
+    skillActionName: DodgeBack
     skillType: 7
     priority: 2
-    canInterrupt: 1
-    isLoopSkill: 0
+    PlayType: 1
   signalData:
     SignalEnum: 1
     skillSignalDataSegments:
@@ -35,7 +34,7 @@ MonoBehaviour:
   preConditionData:
     skillContinues: []
     skillPreState: 
-    notSkillPreState: 04000000
+    notSkillPreState: 040000000900000008000000
   physicComponent:
     isEnable: 0
     isMove: 0
@@ -58,7 +57,7 @@ MonoBehaviour:
     startFrame: 0
     keyFrame: 0
     endFrame: 0
-    initSpeed: 300
+    initSpeed: 500
     initVector: {x: -1, y: 0, z: 0}
     speedDecay: 1
     bounceTimes: 1

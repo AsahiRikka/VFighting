@@ -23,11 +23,10 @@ MonoBehaviour:
     SerializationNodes: []
   skillProperty:
     skillActionID: 
-    skillActionName: 
+    skillActionName: Dash
     skillType: 3
     priority: 1
-    canInterrupt: 1
-    isLoopSkill: 1
+    PlayType: 0
   signalData:
     SignalEnum: 4
     skillSignalDataSegments:
@@ -36,7 +35,7 @@ MonoBehaviour:
   preConditionData:
     skillContinues: []
     skillPreState: 
-    notSkillPreState: 04000000
+    notSkillPreState: 040000000900000008000000
   physicComponent:
     isEnable: 1
     isMove: 0

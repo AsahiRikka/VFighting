@@ -19,7 +19,10 @@ public class VActorSkillSignal
     /// 物理组件信号
     /// </summary>
     public Dictionary<VActorPhysicComponentEnum, bool> physicComponentDic=new Dictionary<VActorPhysicComponentEnum, bool>();
-    InputCombinationObj dash;
+    
+    private InputCombinationObj dash;
+    private InputCombinationObj invertDash;
+    
     private PlayerKeyCode anamy = PlayerKeyCode.rightArrow;
     private PlayerKeyCode invertAnamy = PlayerKeyCode.leftArrow;
     
@@ -38,6 +41,8 @@ public class VActorSkillSignal
         {
             physicComponentDic.Add(e,false);
         }
+
+        EventManager.ActorDirTransEvent.Subscribe(ActorDirTrans);
     }
 
     public void Init()
@@ -55,27 +60,43 @@ public class VActorSkillSignal
         AddCombination();
         
         //冲刺
-        if (_property.playerEnum == PlayerEnum.player_2)
-        {
-            anamy = PlayerKeyCode.leftArrow;
-            invertAnamy = PlayerKeyCode.rightArrow;
-        }
+
+        #region 冲刺输入obj初始化
+        
         dash = new InputCombinationObj(new List<MyKeyCode[]>()
         {
             {
                 new[]
                 {
-                    MyKeyCodeForPlayer[anamy]
+                    MyKeyCodeForPlayer[PlayerKeyCode.rightArrow]
                 }
             },
             {
                 new[]
                 {
-                    MyKeyCodeForPlayer[anamy]
+                    MyKeyCodeForPlayer[PlayerKeyCode.rightArrow]
+                }
+            },
+        }, allkeys, SkillSignalEnum.combinationHold);
+        invertDash=new InputCombinationObj(new List<MyKeyCode[]>()
+        {
+            {
+                new[]
+                {
+                    MyKeyCodeForPlayer[PlayerKeyCode.leftArrow]
+                }
+            },
+            {
+                new[]
+                {
+                    MyKeyCodeForPlayer[PlayerKeyCode.leftArrow]
                 }
             },
         }, allkeys, SkillSignalEnum.combinationHold);
         _combinationSignal.InsertCombinationSignal(dash);
+        _combinationSignal.InsertCombinationSignal(invertDash);
+
+        #endregion
     }
 
     public void Update()
@@ -150,7 +171,8 @@ public class VActorSkillSignal
         }
         
         //冲刺
-        if (_combinationSignal.IsCombination(dash))
+        if ((_combinationSignal.IsCombination(dash) && _actorState.actorFace == 1) ||
+            (_combinationSignal.IsCombination(invertDash) && _actorState.actorFace == -1)) 
         {
             physicComponentDic[VActorPhysicComponentEnum.dash] = true;
         }
@@ -188,6 +210,7 @@ public class VActorSkillSignal
     public void Destroy()
     {
         RemoveCombination();
+        EventManager.ActorDirTransEvent.RemoveEventHandler(ActorDirTrans);
     }
 
     /// <summary>
@@ -258,7 +281,18 @@ public class VActorSkillSignal
         
         foreach (VSkillAction skillAction in _skillActions.actorSkillActions)
         {
-            SkillSignalEnum e = skillAction.signalData.SignalEnum;
+            AddSkillDic(skillAction);
+        }
+
+        foreach (var value in _skillActions.specialSkillDic)
+        {
+            AddSkillDic(value.Value);
+        }
+    }
+
+    private void AddSkillDic(VSkillAction skillAction)
+    {
+                    SkillSignalEnum e = skillAction.signalData.SignalEnum;
             //组合键
             if (skillAction.signalData.SignalEnum == SkillSignalEnum.combinationPress ||
                 skillAction.signalData.SignalEnum == SkillSignalEnum.combinationHold)       
@@ -307,7 +341,8 @@ public class VActorSkillSignal
                 _combinationSignal.InsertCombinationSignal(invertObj);
             }
             //非组合键
-            else
+            else if(skillAction.signalData.SignalEnum == SkillSignalEnum.allPress ||
+                     skillAction.signalData.SignalEnum == SkillSignalEnum.allHold)     
             {
                 MyKeyCode[] normalSignal=new MyKeyCode[skillAction.signalData.skillSignalDataSegments[0].playerKeyCodes.Count];
                 MyKeyCode[] invertSignal=new MyKeyCode[skillAction.signalData.skillSignalDataSegments[0].playerKeyCodes.Count];
@@ -335,7 +370,6 @@ public class VActorSkillSignal
                 normalSignalDic.Add(normalSignal,skillAction);
                 invertNormalSignalDic.Add(invertSignal,skillAction);
             }
-        }
     }
 
     private void RemoveCombination()
@@ -403,6 +437,20 @@ public class VActorSkillSignal
         }
         else
             DebugHelper.LogError("不存在该玩家!" + _property.playerEnum);
+    }
+
+    private void ActorDirTrans(PlayerEnum left, PlayerEnum right)
+    {
+        //角色变换到左边
+        if (left == _property.playerEnum)
+        {
+            SkillDirChange(1);
+        }
+        //角色变换到右边
+        else
+        {
+            SkillDirChange(-1);
+        }
     }
 
     /// <summary>

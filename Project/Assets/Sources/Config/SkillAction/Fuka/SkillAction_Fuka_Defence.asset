@@ -23,11 +23,10 @@ MonoBehaviour:
     SerializationNodes: []
   skillProperty:
     skillActionID: 
-    skillActionName: 
+    skillActionName: Defence
     skillType: 7
     priority: 1
-    canInterrupt: 1
-    isLoopSkill: 1
+    PlayType: 0
   signalData:
     SignalEnum: 3
     skillSignalDataSegments:
@@ -35,7 +34,7 @@ MonoBehaviour:
   preConditionData:
     skillContinues: []
     skillPreState: 
-    notSkillPreState: 04000000
+    notSkillPreState: 040000000900000008000000
   physicComponent:
     isEnable: 0
     isMove: 0
@@ -46,7 +45,7 @@ MonoBehaviour:
     backSpeedScale: 0
     dashSpeedScale: 0
     jumpForceScale: 0
-  motion: {fileID: 0}
+  motion: {fileID: 11400000, guid: 8ab8361d0a2ca5b4dabd316ac05d9557, type: 2}
   ActionDamanges: []
   ActionSounds: []
   ActionAnimates: []

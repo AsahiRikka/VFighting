@@ -9,10 +9,14 @@ using UnityEngine;
 [Serializable]
 public class VAnimationStraight
 {
+    public VSegmentMotionType type = VSegmentMotionType.keyFrame;
+    
     [InfoBox("硬直等级")]
     public int straightLevel;
     
+    [ShowIf("type",VSegmentMotionType.keyFrame)]
     public int startFrame;
 
+    [ShowIf("type",VSegmentMotionType.keyFrame)]
     public int endFrame;
 }

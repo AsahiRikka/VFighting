@@ -122,6 +122,7 @@
      <Compile Include="Assets\Scripts\Actor\ActorSkillContinueSystem\VActorSkillContinueController.cs" />
      <Compile Include="Assets\Scripts\Actor\ActorSkillContinueSystem\VActorSkillContinueEventBind.cs" />
      <Compile Include="Assets\Scripts\Actor\ActorSkillContinueSystem\VActorSkillContinueInfo.cs" />
+     <Compile Include="Assets\Scripts\Actor\ActorSkillSystem\SkillLogic\JumpSkillControl.cs" />
      <Compile Include="Assets\Scripts\Actor\ActorSkillSystem\VActorSkillController.cs" />
      <Compile Include="Assets\Scripts\Actor\ActorSkillSystem\VActorSkillInfo.cs" />
      <Compile Include="Assets\Scripts\Actor\ActorSkillSystem\VActorSkillSignal.cs" />
@@ -148,11 +149,7 @@
      <Compile Include="Assets\Scripts\Common\GameCommonSetting.cs" />
      <Compile Include="Assets\Scripts\Common\GameStartSetting.cs" />
      <Compile Include="Assets\Scripts\Common\SoundSetting.cs" />
-     <Compile Include="Assets\Scripts\Data\Actor\VActorColliderBox.cs" />
      <Compile Include="Assets\Scripts\Data\Actor\VActorData.cs" />
-     <Compile Include="Assets\Scripts\Data\Actor\VActorDefenseBox.cs" />
-     <Compile Include="Assets\Scripts\Data\Actor\VActorHitBox.cs" />
-     <Compile Include="Assets\Scripts\Data\Actor\VActorPassiveBox.cs" />
      <Compile Include="Assets\Scripts\Data\Actor\VActorProperty.cs" />
      <Compile Include="Assets\Scripts\Data\Animation\VAnimationStraight.cs" />
      <Compile Include="Assets\Scripts\Data\Animation\VMotion.cs" />
@@ -165,6 +162,11 @@
      <Compile Include="Assets\Scripts\Data\Buff\VBuffEffectType.cs" />
      <Compile Include="Assets\Scripts\Data\Buff\VBuffFXSetting.cs" />
      <Compile Include="Assets\Scripts\Data\Buff\VBuffSetting.cs" />
+     <Compile Include="Assets\Scripts\Data\Collider\VActorColliderBox.cs" />
+     <Compile Include="Assets\Scripts\Data\Collider\VActorDefenseBox.cs" />
+     <Compile Include="Assets\Scripts\Data\Collider\VActorHitBox.cs" />
+     <Compile Include="Assets\Scripts\Data\Collider\VActorJumpRayData.cs" />
+     <Compile Include="Assets\Scripts\Data\Collider\VActorPassiveBox.cs" />
      <Compile Include="Assets\Scripts\Data\FX\VFXData.cs" />
      <Compile Include="Assets\Scripts\Data\FX\VFXSegment.cs" />
      <Compile Include="Assets\Scripts\Data\FX\VFXSetting.cs" />
@@ -230,6 +232,15 @@
      <Compile Include="Assets\Scripts\Util\TagType.cs" />
      <Compile Include="Assets\Sources\AZURE Nature\Scripts\MouseLook.cs" />
      <Compile Include="Assets\Sources\AZURE Nature\Scripts\MoveController.cs" />
+     <Compile Include="Assets\Sources\FX\JMO Assets\Cartoon FX\Demo\Assets\CFX3_AutoStopLoopedEffect.cs" />
+     <Compile Include="Assets\Sources\FX\JMO Assets\Cartoon FX\Demo\Assets\CFX3_Demo.cs" />
+     <Compile Include="Assets\Sources\FX\JMO Assets\Cartoon FX\Demo\Assets\CFX3_Demo_Translate.cs" />
+     <Compile Include="Assets\Sources\FX\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_RotateCamera.cs" />
+     <Compile Include="Assets\Sources\FX\JMO Assets\Cartoon FX\Scripts\CFX_AutoDestructShuriken.cs" />
+     <Compile Include="Assets\Sources\FX\JMO Assets\Cartoon FX\Scripts\CFX_AutodestructWhenNoChildren.cs" />
+     <Compile Include="Assets\Sources\FX\JMO Assets\Cartoon FX\Scripts\CFX_LightIntensityFade.cs" />
+     <Compile Include="Assets\Sources\FX\JMO Assets\Cartoon FX\Scripts\CFX_ShurikenThreadFix.cs" />
+     <Compile Include="Assets\Sources\FX\JMO Assets\Cartoon FX\Spawn System\CFX_SpawnSystem.cs" />
      <None Include="Assets\3rd\unity-chan!\Unity-chan! Model\Art\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />
      <None Include="Assets\3rd\Toon\Shader\Toon_DoubleShadeWithFeather_Mobile_TransClipping_StencilMask.shader" />
      <None Include="Assets\3rd\Toon\Shader\Toon_ShadingGradeMap_Mobile_StencilMask.shader" />
@@ -243,6 +254,7 @@
      <None Include="Assets\3rd\MMD4Mecanim\Shaders\MMD4Mecanim-MMDLit-Tess-NoShadowCasting-BothFaces.shader" />
      <None Include="Assets\3rd\MMD4Mecanim\Shaders\MMD4Mecanim-MMDLit-Tess-BothFaces-Edge.shader" />
      <None Include="Assets\3rd\MMD4Mecanim\Shaders\MMD4Mecanim-MMDLit-Tess-NoShadowCasting-BothFaces-Transparent.shader" />
+     <None Include="Assets\Sources\FX\JMO Assets\Cartoon FX\Shaders\CFX3 Multiply Color.shader" />
      <None Include="Assets\3rd\Toon\Shader\Tess\Toon_DoubleShadeWithFeather_Clipping_Tess.shader" />
      <None Include="Assets\Sources\AZURE Nature\Shaders\AN_Vegetation.shader" />
      <None Include="Assets\3rd\Toon\Shader\Tess\ToonColor_ShadingGradeMap_Tess.shader" />
@@ -288,10 +300,12 @@
      <None Include="Assets\3rd\Toon\Shader\Tess\Toon_ShadingGradeMap_AngelRing_TransClipping_Tess.shader" />
      <None Include="Assets\3rd\Toon\Shader\ToonColor_ShadingGradeMap_StencilMask.shader" />
      <None Include="Assets\3rd\MMD4Mecanim\Shaders\MMD4Mecanim-MMDLit-Tess-NoShadowCasting-Transparent.shader" />
+     <None Include="Assets\Sources\FX\JMO Assets\Cartoon FX\CartoonFX3 Readme.txt" />
      <None Include="Assets\3rd\Toon\Shader\Tess\Toon_DoubleShadeWithFeather_Clipping_Tess_StencilOut.shader" />
      <None Include="Assets\3rd\Toon\Shader\Toon_DoubleShadeWithFeather_Mobile_TransClipping.shader" />
      <None Include="Assets\3rd\Toon\Shader\Tess\Toon_ShadingGradeMap_AngelRing_TransClipping_Tess_StencilOut.shader" />
      <None Include="Assets\3rd\Toon\Shader\Tess\Toon_ShadingGradeMap_Tess_Light.shader" />
+     <None Include="Assets\Sources\FX\JMO Assets\Cartoon FX Easy Editor\CartoonFX Easy Editor Readme.txt" />
      <None Include="Assets\3rd\Toon\Shader\Toon_DoubleShadeWithFeather_Mobile_StencilOut.shader" />
      <None Include="Assets\Sources\Models\小希-v2.0-红裙（周年版）\Readme.txt" />
      <None Include="Assets\3rd\Toon\Shader\ToonColor_ShadingGradeMap_AngelRing_TransClipping_StencilOut.shader" />
@@ -385,6 +399,8 @@
      <None Include="Assets\Sources\Models\小希-v2.0-红裙（周年版）\小希-v2.0-红裙（周年版）.MMD4Mecanim.xml" />
      <None Include="Assets\3rd\Toon\Shader\Tess\ToonColor_ShadingGradeMap_Tess_StencilOut.shader" />
      <None Include="Assets\3rd\Toon\Shader\ToonColor_DoubleShadeWithFeather_Clipping_StencilMask.shader" />
+     <None Include="Assets\Sources\FX\JMO Assets\Cartoon FX\Shaders (Mobile)\CFXM_MobileParticleAdd_Alpha8.shader" />
+     <None Include="Assets\Sources\FX\JMO Assets\Cartoon FX\Shaders\CFX3 Invert.shader" />
      <None Include="Assets\3rd\Toon\Shader\ToonColor_DoubleShadeWithFeather_Clipping.shader" />
      <None Include="Assets\3rd\Toon\Shader\Toon_ShadingGradeMap_Mobile_TransClipping.shader" />
      <None Include="Assets\3rd\Toon\Shader\UCTS_ShadingGradeMap.cginc" />
@@ -404,6 +420,7 @@
      <None Include="Assets\3rd\MMD4Mecanim\Shaders\MMD4Mecanim-MMDLit-SurfaceEdge-ForwardBase.cginc" />
      <None Include="Assets\3rd\Toon\Shader\ToonColor_DoubleShadeWithFeather_StencilOut.shader" />
      <None Include="Assets\3rd\Toon\Shader\Toon_OutlineObject_StencilOut.shader" />
+     <None Include="Assets\Sources\FX\JMO Assets\!JMO Assets Readme.txt" />
      <None Include="Assets\3rd\Toon\Shader\Tess\Toon_DoubleShadeWithFeather_Tess_Light_StencilOut.shader" />
      <None Include="Assets\3rd\Toon\Shader\Tess\ToonColor_ShadingGradeMap_TransClipping_Tess_StencilOut.shader" />
      <None Include="Assets\3rd\MMD4Mecanim\Shaders\MMD4Mecanim-MMDLit-Tess-BothFaces.shader" />

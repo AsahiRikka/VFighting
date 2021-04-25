@@ -24,7 +24,7 @@ MonoBehaviour:
   motionID: 
   motionName: Fuka_Crouch
   parameter: Crouch
-  animationDefaultRotate: {x: 0, y: 90, z: 0}
+  animationDefaultRotate: {x: 0, y: 0, z: 0}
   animationDefaultPos: {x: 0, y: 0, z: 0}
   applyRoomMotion: 1
   animationEndClip: 0
@@ -38,7 +38,7 @@ MonoBehaviour:
     collider:
       center: {x: 0, y: 0.5, z: 0}
       size: {x: 0.5, y: 1, z: 0.5}
-      trigger: 0
+      trigger: 1
   hitBoxes: []
   defenseBoxes: []
   animationStraights: []

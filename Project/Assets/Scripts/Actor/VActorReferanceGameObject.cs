@@ -12,6 +12,8 @@ public class VActorReferanceGameObject : MonoBehaviour
 
     public GameObject actor;
 
+    public GameObject actorRoot;
+
     public Rigidbody actorRig;
     
     public Animator actorAnimator;

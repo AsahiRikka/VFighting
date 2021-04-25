@@ -26,8 +26,7 @@ MonoBehaviour:
     skillActionName: 
     skillType: 7
     priority: 2
-    canInterrupt: 1
-    isLoopSkill: 0
+    PlayType: 1
   signalData:
     SignalEnum: 1
     skillSignalDataSegments:
@@ -39,7 +38,7 @@ MonoBehaviour:
       frame: {x: 1, y: 50}
       targetLayer: 2
     skillPreState: 
-    notSkillPreState: 04000000
+    notSkillPreState: 040000000900000008000000
   physicComponent:
     isEnable: 0
     isMove: 0

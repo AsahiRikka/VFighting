@@ -98,4 +98,9 @@ public class VActorChangeProperty
     /// 一些回复效率
     /// </summary>
     public VActorEfficiencyProperty efficiencyProperty;
+
+    /// <summary>
+    /// 跳跃射线参数
+    /// </summary>
+    public VActorJumpRayData jumpRayData;
 }

@@ -24,7 +24,7 @@ MonoBehaviour:
   motionID: 
   motionName: Fuka_Attacked
   parameter: Attacked
-  animationDefaultRotate: {x: 0, y: 180, z: 0}
+  animationDefaultRotate: {x: 0, y: 0, z: 0}
   animationDefaultPos: {x: 0, y: 0, z: 0}
   applyRoomMotion: 0
   animationEndClip: 55
@@ -42,6 +42,7 @@ MonoBehaviour:
   hitBoxes: []
   defenseBoxes: []
   animationStraights:
-  - straightLevel: 5
+  - type: 0
+    straightLevel: 5
     startFrame: 1
     endFrame: 40

@@ -80,8 +80,7 @@ public class VMotionEditor : OdinEditorWindow
         collider = prefab.AddComponent<BoxCollider>();
 
         prefab.transform.SetParent(parent.transform);
-        parent.transform.rotation = Quaternion.Euler(animationDefaultRotate);
-        
+
         //Gizmos
         vGizmos = prefab.AddComponent<VMotionDataGizmos>();
         vGizmos.Init(motion);
@@ -90,8 +89,6 @@ public class VMotionEditor : OdinEditorWindow
     private void AssetLoad()
     {
         animationClip = motion.animationClip;
-        animationDefaultRotate = motion.animationDefaultRotate;
-        animationDefaultPos = motion.animationDefaultPos;
         rootMotion = motion.applyRoomMotion;
         
         motionID = motion.motionID;
@@ -121,8 +118,6 @@ public class VMotionEditor : OdinEditorWindow
             p += words[i];
         }
         motion.parameter = p;
-        motion.animationDefaultRotate = animationDefaultRotate;
-        motion.animationDefaultPos = animationDefaultPos;
         motion.applyRoomMotion = rootMotion;
         motion.animationClip = animationClip;
     }
@@ -147,18 +142,6 @@ public class VMotionEditor : OdinEditorWindow
     [InfoBox("选择动画片段：")] 
     public AnimationClip animationClip;
 
-    [VerticalGroup("animationRotate", 12)]
-    [ShowIf("motionState")]
-    [OnValueChanged("AnimationDefaultRotateChange")]
-    [InfoBox("动画默认角度，以向右为准")]
-    public Vector3 animationDefaultRotate;
-    
-    [VerticalGroup("animationPos", 13)]
-    [ShowIf("motionState")]
-    [OnValueChanged("AnimationDefaultRotateChange")]
-    [InfoBox("动画位置偏移")]
-    public Vector3 animationDefaultPos;
-
     [VerticalGroup("rootMotion", 14)] 
     [ShowIf("motionState")] 
     [InfoBox("是否使用rootMotion")]
@@ -180,12 +163,6 @@ public class VMotionEditor : OdinEditorWindow
     {
         animationClip.SampleAnimation(prefab, currentFrame / animationClip.frameRate);
         vGizmos.CurrentFrameRefrsh(currentFrame);
-    }
-
-    private void AnimationDefaultRotateChange()
-    {
-        parent.transform.rotation = Quaternion.Euler(animationDefaultRotate);
-        parent.transform.position += animationDefaultPos;
     }
 
     [Space(40)]

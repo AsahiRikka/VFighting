@@ -22,15 +22,14 @@ public class VActorColliderInfo
         _property = property;
 
         //遍历技能初始化所有碰撞器并设置碰撞器 enable=false
-        VSkillAction makeAction = skillActions.defaultSkillActions;
-        HitColliderInit(makeAction);
-        PassiveColliderInit(makeAction);
-        DefenceColliderInit(makeAction);
 
-        makeAction = skillActions.beAttackSkillAction;
-        HitColliderInit(makeAction);
-        PassiveColliderInit(makeAction);
-        DefenceColliderInit(makeAction);
+        foreach (var value in skillActions.specialSkillDic)
+        {
+            VSkillAction makeAction = value.Value;
+            HitColliderInit(makeAction);
+            PassiveColliderInit(makeAction);
+            DefenceColliderInit(makeAction);
+        }
 
         foreach (var action in skillActions.actorSkillActions)
         {

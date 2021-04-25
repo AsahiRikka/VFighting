@@ -9,12 +9,11 @@ public class EventManager
 {
     public static FEvent FeventTest = new FEvent();
 
-    
-    
-    //技能事件
-    
-    
-    
+    /// <summary>
+    /// 方向转换事件，参数1：左边角色；参数2：右边角色
+    /// </summary>
+    public static FEvent<PlayerEnum,PlayerEnum> ActorDirTransEvent=new FEvent<PlayerEnum, PlayerEnum>();
+
     //对于碰撞事件，只有不同阵营碰撞才触发事件。
 
     /// <summary>

@@ -23,11 +23,10 @@ MonoBehaviour:
     SerializationNodes: []
   skillProperty:
     skillActionID: 
-    skillActionName: 
+    skillActionName: Crouch
     skillType: 7
     priority: 1
-    canInterrupt: 1
-    isLoopSkill: 1
+    PlayType: 0
   signalData:
     SignalEnum: 3
     skillSignalDataSegments:
@@ -35,7 +34,7 @@ MonoBehaviour:
   preConditionData:
     skillContinues: []
     skillPreState: 
-    notSkillPreState: 04000000
+    notSkillPreState: 040000000900000008000000
   physicComponent:
     isEnable: 0
     isMove: 0

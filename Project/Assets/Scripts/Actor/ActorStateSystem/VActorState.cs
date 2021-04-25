@@ -43,6 +43,9 @@ public class VActorState
     /// </summary>
     public Vector3 focusDir;
 
+    /// <summary>
+    /// 角色朝向，1代表p1，-1代表p2
+    /// </summary>
     public int actorFace;
     
     public VActorState(PlayerEnum e)
@@ -62,6 +65,9 @@ public class VActorState
     }
 }
 
+/// <summary>
+/// 技能分类，角色状态分类，判断特殊技能
+/// </summary>
 public enum ActorStateTypeEnum
 {
     idle,
@@ -72,4 +78,8 @@ public enum ActorStateTypeEnum
     crouch,
     attacked,
     skill,
+    fall,
+    inAir,
+    attackedInAir,
+    attackedFall,
 }

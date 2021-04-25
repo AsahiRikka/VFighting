@@ -50,9 +50,11 @@ MonoBehaviour:
       trigger: 1
   defenseBoxes: []
   animationStraights:
-  - straightLevel: 2
+  - type: 0
+    straightLevel: 2
     startFrame: 1
     endFrame: 33
-  - straightLevel: 1
+  - type: 0
+    straightLevel: 1
     startFrame: 33
     endFrame: 48

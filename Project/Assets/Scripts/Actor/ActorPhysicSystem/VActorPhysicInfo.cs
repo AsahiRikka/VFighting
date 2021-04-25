@@ -16,4 +16,9 @@ public class VActorPhysicInfo
     /// 水平摩擦加速度
     /// </summary>
     public float actorHorizontalSpeedDecay = 200;
+
+    /// <summary>
+    /// 是否在空中，在空中时会根据垂直方向速度持续尝试释放跳跃技能
+    /// </summary>
+    public bool inAir = false;
 }

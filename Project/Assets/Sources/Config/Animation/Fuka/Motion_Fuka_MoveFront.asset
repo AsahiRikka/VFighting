@@ -24,7 +24,7 @@ MonoBehaviour:
   motionID: 0
   motionName: Fuka_MoveFront
   parameter: MoveFront
-  animationDefaultRotate: {x: 0, y: 90, z: 0}
+  animationDefaultRotate: {x: 0, y: 0, z: 0}
   animationDefaultPos: {x: 0, y: 0, z: 0}
   applyRoomMotion: 0
   animationEndClip: 0

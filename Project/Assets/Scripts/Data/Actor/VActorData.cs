@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
+using Sirenix.Serialization;
 using UnityEngine;
 
 /// <summary>
@@ -19,5 +20,13 @@ public class VActorData : SerializedScriptableObject
     
     public VActorProperty actorProperty;
 
+    [Space(30)]
+    
+    [InfoBox("跳跃射线参数")]
+    public VActorJumpRayData jumpRay;
+    
+    [Space(30)]
+    
+    [OdinSerialize]
     public VSkillActions skillActions;
 }

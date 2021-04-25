@@ -11,23 +11,21 @@ public class VSkillProperty
 
     public string skillActionName;
 
-    public SkillTypeEnum skillType = SkillTypeEnum.skill;
+    public ActorStateTypeEnum skillType = ActorStateTypeEnum.skill;
     
     [InfoBox("技能优先级，大于技能硬直等级才可释放")]
     public int priority;
 
-    [InfoBox("是否是循环技能，如果不是动画播放完成自动结束")]
-    public bool isLoopSkill;
+    [InfoBox("技能形式")] 
+    public SkillAnimPlayType PlayType;
 }
 
-public enum SkillTypeEnum
+public enum SkillAnimPlayType
 {
-    idle,
-    moveFront,
-    moveBack,
-    dash,
-    jump,
-    crouch,
-    attacked,
-    skill,
+    [InfoBox("循环手动结束")]
+    loop,
+    [InfoBox("结束帧自动退出")]
+    autoQuit,
+    [InfoBox("保持最后一帧，手动结束")]
+    holdEnd,
 }

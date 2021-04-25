@@ -17,12 +17,6 @@ public class VMotion:SerializedScriptableObject
 
     public string parameter;
 
-    [InfoBox("动画默认角度")] 
-    public Vector3 animationDefaultRotate = Vector3.zero;
-    
-    [InfoBox("动画位置偏移")]
-    public Vector3 animationDefaultPos=Vector3.zero;
-
     [InfoBox("动画使用rootMotion")]
     public bool applyRoomMotion = true;
 

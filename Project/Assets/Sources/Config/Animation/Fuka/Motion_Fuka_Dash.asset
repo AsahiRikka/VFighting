@@ -24,7 +24,7 @@ MonoBehaviour:
   motionID: 
   motionName: Fuka_Dash
   parameter: Dash
-  animationDefaultRotate: {x: 0, y: 90, z: 0}
+  animationDefaultRotate: {x: 0, y: 0, z: 0}
   animationDefaultPos: {x: 0, y: 0, z: 0}
   applyRoomMotion: 0
   animationEndClip: 0

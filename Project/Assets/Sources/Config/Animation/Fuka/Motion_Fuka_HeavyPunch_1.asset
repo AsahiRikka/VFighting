@@ -24,6 +24,12 @@ MonoBehaviour:
   motionID: 0
   motionName: Fuka_HeavyPunch_1
   parameter: HeavyPunch_1
+  animationDefaultRotate: {x: 0, y: 0, z: 0}
+  animationDefaultPos: {x: 0, y: 0, z: 0}
+  applyRoomMotion: 1
+  animationEndClip: 0
+  animationClip: {fileID: 0}
   passiveBoxes: []
   hitBoxes: []
   defenseBoxes: []
+  animationStraights: []

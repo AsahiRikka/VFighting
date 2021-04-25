@@ -39,6 +39,9 @@ public class VActorPhysicController:VSkillEventBase
     //帧范围效果的列表
     private List<VSkillAction_Physic> _frameDic=new List<VSkillAction_Physic>();
     
+    //关键帧效果列表
+    private List<VSkillAction_Physic> _keyFrameDic = new List<VSkillAction_Physic>();
+    
     public void SkillStartEvent(VSkillAction lastSkill, VSkillAction currentSkill)
     {
         //重置物理
@@ -47,6 +50,7 @@ public class VActorPhysicController:VSkillEventBase
         //清理持续字典
         _dictionary.Clear();
         _frameDic.Clear();
+        _keyFrameDic.Clear();
         
         //填充字典
         foreach (SkillActionEnum e in Enum.GetValues(typeof(SkillActionEnum)))
@@ -70,9 +74,10 @@ public class VActorPhysicController:VSkillEventBase
         //根据关键帧的物理效果
         foreach (var physic in _dictionary[SkillActionEnum.keyFrame])
         {
-            if (_animationInfo.currentFrame >= physic.keyFrame)
+            if (_animationInfo.currentFrame >= physic.keyFrame && !_keyFrameDic.Contains(physic))
             {
                 PhysicEffect(physic);
+                _keyFrameDic.Add(physic);
             }
         }
         
@@ -229,10 +234,13 @@ public class VActorPhysicController:VSkillEventBase
     private void PhysicEffect(VSkillAction_Physic physic)
     {
         _actorInfo.physicInfo.actorVerticalAcceleration *= physic.gravityScale;
-        _actorRig.AddForce(physic.initVector *
-                           physic.initSpeed *
-                           _state.actorFace *
-                           Time.deltaTime, ForceMode.VelocityChange
+
+        float forceX = physic.initVector.x * physic.initSpeed * _state.actorFace;
+        float forceY = physic.initVector.y * physic.initSpeed;
+        float forceZ = 0;
+
+        _actorRig.AddForce(new Vector3(forceX, forceY, forceZ) *
+                           Time.fixedDeltaTime, ForceMode.VelocityChange
         );
     }
 
@@ -248,8 +256,8 @@ public class VActorPhysicController:VSkillEventBase
 
     private void PhysicReset()
     {
-        _actorRig.velocity=Vector3.zero;
-        _actorRig.angularVelocity=Vector3.zero;
+        // _actorRig.velocity=Vector3.zero;
+        // _actorRig.angularVelocity=Vector3.zero;
     }
 
     #region 重力 摩擦力 模拟
@@ -261,35 +269,21 @@ public class VActorPhysicController:VSkillEventBase
 
     public void FixUpdate()
     {
-        // 重力模拟
-        // if (_isGravity)
-        // {
-        //     _actorRig.AddForce(0,
-        //         _actorProperty.actorWeight * _actorInfo.physicInfo.actorVerticalAcceleration * Time.deltaTime,
-        //         0, ForceMode.Acceleration);
-        // }
-        // 摩擦力模拟
-        // if (Mathf.Abs(_actorRig.velocity.x) > 1f)
-        // {
-        //     var velocity = _actorRig.velocity;
-        //     _actorRig.AddForce(new Vector3(
-        //         _actorInfo.physicInfo.actorHorizontalSpeedDecay *
-        //         Time.deltaTime,
-        //         0, 0
-        //     ),ForceMode.Acceleration);
-        // }
-        // else
-        // {
-        //     PhysicReset();
-        // }
+        if (_actorInfo.physicInfo.inAir)
+        {
+            if (_actorRig.velocity.y < 0)
+            {
+                //持续尝试下落技能
+                
+            }
+        }
     }
-
-    private bool _isGravity = true;
+    
     private void GroundEnter(TagEnum e)
     {
         if (e == TagEnum.ground)
         {
-            _isGravity = false;
+            _actorInfo.physicInfo.inAir = false;
         }
     }
     
@@ -297,7 +291,7 @@ public class VActorPhysicController:VSkillEventBase
     {
         if (e == TagEnum.ground)
         {
-            _isGravity = true;
+            _actorInfo.physicInfo.inAir = true;
         }
     }
 

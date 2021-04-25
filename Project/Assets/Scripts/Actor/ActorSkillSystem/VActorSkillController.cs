@@ -8,7 +8,8 @@ using UnityEngine;
 public class VActorSkillController:VSkillEventBase
 {
     public VActorSkillController(VSkillActions skillActions, VActorEvent actorEvent, VActorInfo actorInfo,
-        VActorState actorState,VActorChangeProperty property,VActorController controller) : base(actorEvent)
+        VActorState actorState, VActorChangeProperty property, VActorReferanceGameObject referance,
+        VActorController controller) : base(actorEvent)
     {
         _skillActions = skillActions;
         _actorEvent = actorEvent;
@@ -23,6 +24,8 @@ public class VActorSkillController:VSkillEventBase
         _continueController = controller.skillContinueController;
         _fxController = controller.FXController;
         _soundController = controller.soundController;
+
+        _jumpSkillControl = new JumpSkillControl(property.jumpRayData, referance, actorEvent, skillActions, actorInfo);
     }
 
     private VActorInfo _actorInfo;
@@ -38,6 +41,8 @@ public class VActorSkillController:VSkillEventBase
     private readonly VActorSkillContinueController _continueController;
     private readonly VActorFXController _fxController;
     private readonly VActorSoundController _soundController;
+
+    private JumpSkillControl _jumpSkillControl;
 
     /// <summary>
     /// 技能输入被触发，这一步判断是否释放技能，判断条件：角色状态能否释放，是否有前置buff条件，当前技能是否能被打断
@@ -104,64 +109,10 @@ public class VActorSkillController:VSkillEventBase
     private void SkillTriggerJudge(VSkillAction skillAction, VActorSkillInfo skillInfo, VActorState actorState)
     {
         //确认释放后停止技能输入
-        _actorState.canSkill = false;
+        actorState.canSkill = false;
         
         //技能判断
-        switch (skillAction.skillProperty.skillType)
-        {
-            case SkillTypeEnum.idle:
-            {
-                actorState.actorState = ActorStateTypeEnum.idle;
-                break;
-            }
-            case SkillTypeEnum.moveFront:
-            {
-                if (!actorState.canMove || skillInfo.currentSkill.skillProperty.skillType == SkillTypeEnum.dash) 
-                    return;
-                actorState.actorState = ActorStateTypeEnum.move;
-                break;
-            }
-            case SkillTypeEnum.moveBack:
-            {
-                if(!actorState.canMove)
-                    return;
-                actorState.actorState = ActorStateTypeEnum.moveBack;
-                break;
-            }
-            case SkillTypeEnum.dash:
-            {
-                if(!actorState.canDash)
-                    return;
-                actorState.actorState = ActorStateTypeEnum.dash;
-                break;
-            }
-            case SkillTypeEnum.jump:
-            {
-                if(!actorState.canJump)
-                    return;
-                actorState.actorState = ActorStateTypeEnum.jump;
-                break;
-            }
-            case SkillTypeEnum.crouch:
-            {
-                actorState.actorState = ActorStateTypeEnum.crouch;
-                break;
-            }
-            case SkillTypeEnum.skill:
-            {
-                actorState.actorState = ActorStateTypeEnum.skill;
-                break;
-            }
-            case SkillTypeEnum.attacked:
-            {
-                actorState.actorState = ActorStateTypeEnum.attacked;
-                break;
-            }
-            default:
-            {
-                break;
-            }
-        }
+        actorState.actorState = skillAction.skillProperty.skillType;
 
         //打断当前技能
         if (skillInfo.currentSkill != null)
@@ -206,8 +157,8 @@ public class VActorSkillController:VSkillEventBase
         _animationController.SkillUpdateEvent(skillAction);
         
         _continueController.SkillUpdateEvent(skillAction);
-        _colliderController.SkillUpdateEvent(skillAction);
         _physicController.SkillUpdateEvent(skillAction);
+        _colliderController.SkillUpdateEvent(skillAction);
         _stateController.SkillUpdateEvent(skillAction);
     }
 
@@ -235,7 +186,7 @@ public class VActorSkillController:VSkillEventBase
         base.SkillEndNormalEvent(skillAction);
         
         //自然结束添加idle技能
-        SkillTriggerJudge(_skillActions.defaultSkillActions, _actorInfo.skillInfo, _actorState);
+        SkillTriggerJudge(_skillActions.specialSkillDic[ActorStateTypeEnum.idle], _actorInfo.skillInfo, _actorState);
     }
     
     /// <summary>
@@ -247,7 +198,10 @@ public class VActorSkillController:VSkillEventBase
     {
         base.ActorBeAttackedEvent(activeSkillAction,passiveSkillAction);
 
-        _actorEvent.SkillEvent.skillPlayTriggerEvent.Invoke(_skillActions.beAttackSkillAction);
+        if(_actorInfo.physicInfo.inAir)
+            _jumpSkillControl.AttackedInAirJudge();
+        else
+            _actorEvent.SkillEvent.skillPlayTriggerEvent.Invoke(_skillActions.specialSkillDic[ActorStateTypeEnum.attacked]);
         
         _physicController.BeAttackedEvent(activeSkillAction,passiveSkillAction);
     }
@@ -258,11 +212,18 @@ public class VActorSkillController:VSkillEventBase
     {
         if(inSkill)
             _actorEvent.SkillEvent.skillUpdateEvent.Invoke(_actorInfo.skillInfo.currentSkill);
+        
+        _jumpSkillControl.Update();
     }
 
     public void FixUpdate()
     {
         if(inSkill)
             _actorEvent.SkillEvent.skillFixUpdateEvent.Invoke(_actorInfo.skillInfo.currentSkill);
+    }
+
+    public void Destroy()
+    {
+        _stateController.Destroy();
     }
 }

@@ -44,8 +44,13 @@ public class GameFactory
         _actorManager = new VActorManager(player1.GetComponent<VActorBase>(), player2.GetComponent<VActorBase>());
     }
 
+    public void Update()
+    {
+        _actorManager?.Update();
+    }
+    
     public void Destroy()
     {
-        _actorManager.Destory();
+        _actorManager.Destroy();
     }
 }

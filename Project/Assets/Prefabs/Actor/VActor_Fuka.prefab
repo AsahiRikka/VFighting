@@ -24,12 +24,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2362567497183045434}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.763, z: 0}
   m_LocalScale: {x: 0.3125, y: 1.5125, z: 1}
   m_Children: []
-  m_Father: {fileID: 6589796070768851294}
-  m_RootOrder: 1
+  m_Father: {fileID: 6699405582135364210}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &8446305838903508284
 CapsuleCollider:
@@ -45,14 +45,120 @@ CapsuleCollider:
   m_Height: 1.0457289
   m_Direction: 1
   m_Center: {x: -0.07006788, y: 0.02286446, z: 0.028107285}
---- !u!95 &150760119649848980
+--- !u!1 &3236220909900365642
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7280704585760032948}
+  m_Layer: 0
+  m_Name: ActorFoot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7280704585760032948
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3236220909900365642}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6589796070768851294}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6589796070768851289
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6589796070768851294}
+  - component: {fileID: 2382079333507498553}
+  - component: {fileID: 968123099580171089}
+  - component: {fileID: 1469398671543570986}
+  - component: {fileID: 3339016781519436050}
+  m_Layer: 8
+  m_Name: VActor_Fuka
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6589796070768851294
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6589796070768851289}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 6699405582135364210}
+  - {fileID: 7280704585760032948}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2382079333507498553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6589796070768851289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab18271601e8f0d408fc13d07de75a61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 6589796070768851289}
+  actor: {fileID: 6319325765016146120}
+  actorRoot: {fileID: 3236220909900365642}
+  actorRig: {fileID: 968123099580171089}
+  actorAnimator: {fileID: 1469398671543570986}
+  actorPhysicDetect: {fileID: 7369349467443657239}
+  hitBoxPrefab: {fileID: 6544498376907621355, guid: 05dde7edab015494eae6f6db4dd80350,
+    type: 3}
+  passiveBoxPrefab: {fileID: 5193485465561335387, guid: 8057b9912accf39439fdfa8238d67f4a,
+    type: 3}
+  defenceBoxPrefab: {fileID: 2542916446957074944, guid: 1e8d3d9110692cd439cc04826678bfb0,
+    type: 3}
+--- !u!54 &968123099580171089
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6589796070768851289}
+  serializedVersion: 2
+  m_Mass: 5
+  m_Drag: 0.1
+  m_AngularDrag: 0.01
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 1
+  m_Constraints: 120
+  m_CollisionDetection: 2
+--- !u!95 &1469398671543570986
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6319325765016146120}
+  m_GameObject: {fileID: 6589796070768851289}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
   m_Controller: {fileID: 9100000, guid: 5fad8ee6c6fab1648b8794e4a189ca7b, type: 2}
@@ -64,13 +170,13 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &7628097145525203052
+--- !u!114 &3339016781519436050
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6319325765016146120}
+  m_GameObject: {fileID: 6589796070768851289}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e25acab8b97525a4ca09e846def1988b, type: 3}
@@ -1797,80 +1903,1098 @@ MonoBehaviour:
     clip: {fileID: -203655887218126122, guid: 7a07c5eb45d3e804c9d4354df731e019, type: 3}
     layerIndex: 0
     funcs: []
---- !u!1 &6589796070768851289
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6589796070768851294}
-  - component: {fileID: 2382079333507498553}
-  - component: {fileID: 968123099580171089}
-  m_Layer: 8
-  m_Name: VActor_Fuka
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6589796070768851294
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6589796070768851289}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 6699405582135364210}
-  - {fileID: 9008585676120161198}
-  - {fileID: 1741343874505597081}
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2382079333507498553
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6589796070768851289}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab18271601e8f0d408fc13d07de75a61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parent: {fileID: 6589796070768851289}
-  actor: {fileID: 6319325765016146120}
-  actorRig: {fileID: 968123099580171089}
-  actorAnimator: {fileID: 150760119649848980}
-  actorPhysicDetect: {fileID: 7369349467443657239}
-  hitBoxPrefab: {fileID: 6544498376907621355, guid: 05dde7edab015494eae6f6db4dd80350,
-    type: 3}
-  passiveBoxPrefab: {fileID: 5193485465561335387, guid: 8057b9912accf39439fdfa8238d67f4a,
-    type: 3}
-  defenceBoxPrefab: {fileID: 2542916446957074944, guid: 1e8d3d9110692cd439cc04826678bfb0,
-    type: 3}
---- !u!54 &968123099580171089
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6589796070768851289}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0.1
-  m_AngularDrag: 0
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 1
-  m_Constraints: 120
-  m_CollisionDetection: 2
+  - stateName: Base Layer.Avatar_Fuka_Ani_StandBy
+    clip: {fileID: 3644802387886327014, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_1
+    clip: {fileID: 7382378529333395315, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.MoveFrant
+    clip: {fileID: -203655887218126122, guid: b7dc6e53e62785a4084f36fba83dcbdf, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.MoveBack
+    clip: {fileID: -203655887218126122, guid: ed4509b532e8d1f419411bacb9a57415, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_2
+    clip: {fileID: -898632268292908620, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_3
+    clip: {fileID: -4202730747837278895, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_4
+    clip: {fileID: -85481574712235593, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_5
+    clip: {fileID: 7494061353682422395, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_6
+    clip: {fileID: -7778489565417566346, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Dash
+    clip: {fileID: -8487307672374459578, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.DodgeBack
+    clip: {fileID: 997057917329610289, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.DodgeFront
+    clip: {fileID: 850611847518859096, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Jump
+    clip: {fileID: -7144703951618674855, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Attacked
+    clip: {fileID: -6066081072686136725, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Fuka_Crouch
+    clip: {fileID: -203655887218126122, guid: 7a07c5eb45d3e804c9d4354df731e019, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Fall
+    clip: {fileID: -8607306001132944645, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Air
+    clip: {fileID: 7585906284540592091, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.AttackedInAir
+    clip: {fileID: -6066081072686136725, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Avatar_Fuka_Ani_StandBy
+    clip: {fileID: 3644802387886327014, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_1
+    clip: {fileID: 7382378529333395315, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.MoveFrant
+    clip: {fileID: -203655887218126122, guid: b7dc6e53e62785a4084f36fba83dcbdf, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.MoveBack
+    clip: {fileID: -203655887218126122, guid: ed4509b532e8d1f419411bacb9a57415, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_2
+    clip: {fileID: -898632268292908620, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_3
+    clip: {fileID: -4202730747837278895, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_4
+    clip: {fileID: -85481574712235593, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_5
+    clip: {fileID: 7494061353682422395, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_6
+    clip: {fileID: -7778489565417566346, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Dash
+    clip: {fileID: -8487307672374459578, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.DodgeBack
+    clip: {fileID: 997057917329610289, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.DodgeFront
+    clip: {fileID: 850611847518859096, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Jump
+    clip: {fileID: -7144703951618674855, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Attacked
+    clip: {fileID: -6066081072686136725, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Fuka_Crouch
+    clip: {fileID: -203655887218126122, guid: 7a07c5eb45d3e804c9d4354df731e019, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Fall
+    clip: {fileID: -8607306001132944645, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Air
+    clip: {fileID: 7585906284540592091, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.AttackedInAir
+    clip: {fileID: -6066081072686136725, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Avatar_Fuka_Ani_StandBy
+    clip: {fileID: 3644802387886327014, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_1
+    clip: {fileID: 7382378529333395315, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.MoveFrant
+    clip: {fileID: -203655887218126122, guid: b7dc6e53e62785a4084f36fba83dcbdf, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.MoveBack
+    clip: {fileID: -203655887218126122, guid: ed4509b532e8d1f419411bacb9a57415, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_2
+    clip: {fileID: -898632268292908620, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_3
+    clip: {fileID: -4202730747837278895, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_4
+    clip: {fileID: -85481574712235593, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_5
+    clip: {fileID: 7494061353682422395, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_6
+    clip: {fileID: -7778489565417566346, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Dash
+    clip: {fileID: -8487307672374459578, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.DodgeBack
+    clip: {fileID: 997057917329610289, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.DodgeFront
+    clip: {fileID: 850611847518859096, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Jump
+    clip: {fileID: -7144703951618674855, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Attacked
+    clip: {fileID: -6066081072686136725, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Fuka_Crouch
+    clip: {fileID: -203655887218126122, guid: 7a07c5eb45d3e804c9d4354df731e019, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Fall
+    clip: {fileID: -8607306001132944645, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Air
+    clip: {fileID: 7585906284540592091, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.AttackedInAir
+    clip: {fileID: -6066081072686136725, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Avatar_Fuka_Ani_StandBy
+    clip: {fileID: 3644802387886327014, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_1
+    clip: {fileID: 7382378529333395315, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.MoveFrant
+    clip: {fileID: -203655887218126122, guid: b7dc6e53e62785a4084f36fba83dcbdf, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.MoveBack
+    clip: {fileID: -203655887218126122, guid: ed4509b532e8d1f419411bacb9a57415, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_2
+    clip: {fileID: -898632268292908620, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_3
+    clip: {fileID: -4202730747837278895, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_4
+    clip: {fileID: -85481574712235593, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_5
+    clip: {fileID: 7494061353682422395, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_6
+    clip: {fileID: -7778489565417566346, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Dash
+    clip: {fileID: -8487307672374459578, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.DodgeBack
+    clip: {fileID: 997057917329610289, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.DodgeFront
+    clip: {fileID: 850611847518859096, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Jump
+    clip: {fileID: -7144703951618674855, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Attacked
+    clip: {fileID: -6066081072686136725, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Fuka_Crouch
+    clip: {fileID: -203655887218126122, guid: 7a07c5eb45d3e804c9d4354df731e019, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Fall
+    clip: {fileID: -8607306001132944645, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Air
+    clip: {fileID: 7585906284540592091, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.AttackedInAir
+    clip: {fileID: -6066081072686136725, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Avatar_Fuka_Ani_StandBy
+    clip: {fileID: 3644802387886327014, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_1
+    clip: {fileID: 7382378529333395315, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.MoveFrant
+    clip: {fileID: -203655887218126122, guid: b7dc6e53e62785a4084f36fba83dcbdf, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.MoveBack
+    clip: {fileID: -203655887218126122, guid: ed4509b532e8d1f419411bacb9a57415, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_2
+    clip: {fileID: -898632268292908620, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_3
+    clip: {fileID: -4202730747837278895, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_4
+    clip: {fileID: -85481574712235593, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_5
+    clip: {fileID: 7494061353682422395, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_6
+    clip: {fileID: -7778489565417566346, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Dash
+    clip: {fileID: -8487307672374459578, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.DodgeBack
+    clip: {fileID: 997057917329610289, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.DodgeFront
+    clip: {fileID: 850611847518859096, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Jump
+    clip: {fileID: -7144703951618674855, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Attacked
+    clip: {fileID: -6066081072686136725, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Fuka_Crouch
+    clip: {fileID: -203655887218126122, guid: 7a07c5eb45d3e804c9d4354df731e019, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Fall
+    clip: {fileID: -8607306001132944645, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Air
+    clip: {fileID: 7585906284540592091, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.AttackedInAir
+    clip: {fileID: -6066081072686136725, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Avatar_Fuka_Ani_StandBy
+    clip: {fileID: 3644802387886327014, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_1
+    clip: {fileID: 7382378529333395315, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.MoveFrant
+    clip: {fileID: -203655887218126122, guid: b7dc6e53e62785a4084f36fba83dcbdf, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.MoveBack
+    clip: {fileID: -203655887218126122, guid: ed4509b532e8d1f419411bacb9a57415, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_2
+    clip: {fileID: -898632268292908620, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_3
+    clip: {fileID: -4202730747837278895, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_4
+    clip: {fileID: -85481574712235593, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_5
+    clip: {fileID: 7494061353682422395, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_6
+    clip: {fileID: -7778489565417566346, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Dash
+    clip: {fileID: -8487307672374459578, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.DodgeBack
+    clip: {fileID: 997057917329610289, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.DodgeFront
+    clip: {fileID: 850611847518859096, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Jump
+    clip: {fileID: -7144703951618674855, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Attacked
+    clip: {fileID: -6066081072686136725, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Fuka_Crouch
+    clip: {fileID: -203655887218126122, guid: 7a07c5eb45d3e804c9d4354df731e019, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Fall
+    clip: {fileID: -8607306001132944645, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Air
+    clip: {fileID: 7585906284540592091, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.AttackedInAir
+    clip: {fileID: -6066081072686136725, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Avatar_Fuka_Ani_StandBy
+    clip: {fileID: 3644802387886327014, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_1
+    clip: {fileID: 7382378529333395315, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.MoveFrant
+    clip: {fileID: -203655887218126122, guid: b7dc6e53e62785a4084f36fba83dcbdf, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.MoveBack
+    clip: {fileID: -203655887218126122, guid: ed4509b532e8d1f419411bacb9a57415, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_2
+    clip: {fileID: -898632268292908620, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_3
+    clip: {fileID: -4202730747837278895, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_4
+    clip: {fileID: -85481574712235593, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_5
+    clip: {fileID: 7494061353682422395, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_6
+    clip: {fileID: -7778489565417566346, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Dash
+    clip: {fileID: -8487307672374459578, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.DodgeBack
+    clip: {fileID: 997057917329610289, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.DodgeFront
+    clip: {fileID: 850611847518859096, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Jump
+    clip: {fileID: -203655887218126122, guid: 78719538fe247f04a8cb7a3260595521, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Attacked
+    clip: {fileID: -6066081072686136725, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Fuka_Crouch
+    clip: {fileID: -203655887218126122, guid: 7a07c5eb45d3e804c9d4354df731e019, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Fall
+    clip: {fileID: -8607306001132944645, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Air
+    clip: {fileID: 7585906284540592091, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.AttackedInAir
+    clip: {fileID: -6066081072686136725, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Avatar_Fuka_Ani_StandBy
+    clip: {fileID: 3644802387886327014, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_1
+    clip: {fileID: 7382378529333395315, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.MoveFrant
+    clip: {fileID: -203655887218126122, guid: b7dc6e53e62785a4084f36fba83dcbdf, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.MoveBack
+    clip: {fileID: -203655887218126122, guid: ed4509b532e8d1f419411bacb9a57415, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_2
+    clip: {fileID: -898632268292908620, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_3
+    clip: {fileID: -4202730747837278895, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_4
+    clip: {fileID: -85481574712235593, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_5
+    clip: {fileID: 7494061353682422395, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_6
+    clip: {fileID: -7778489565417566346, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Dash
+    clip: {fileID: -8487307672374459578, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.DodgeBack
+    clip: {fileID: 997057917329610289, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.DodgeFront
+    clip: {fileID: 850611847518859096, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Jump
+    clip: {fileID: -203655887218126122, guid: 78719538fe247f04a8cb7a3260595521, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Attacked
+    clip: {fileID: -6066081072686136725, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Fuka_Crouch
+    clip: {fileID: -203655887218126122, guid: 7a07c5eb45d3e804c9d4354df731e019, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Fall
+    clip: {fileID: -8607306001132944645, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Air
+    clip: {fileID: 7585906284540592091, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.AttackedInAir
+    clip: {fileID: -6066081072686136725, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Avatar_Fuka_Ani_StandBy
+    clip: {fileID: 3644802387886327014, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_1
+    clip: {fileID: 7382378529333395315, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.MoveFrant
+    clip: {fileID: -203655887218126122, guid: b7dc6e53e62785a4084f36fba83dcbdf, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.MoveBack
+    clip: {fileID: -203655887218126122, guid: ed4509b532e8d1f419411bacb9a57415, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_2
+    clip: {fileID: -898632268292908620, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_3
+    clip: {fileID: -4202730747837278895, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_4
+    clip: {fileID: -85481574712235593, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_5
+    clip: {fileID: 7494061353682422395, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_6
+    clip: {fileID: -7778489565417566346, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Dash
+    clip: {fileID: -8487307672374459578, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.DodgeBack
+    clip: {fileID: 997057917329610289, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.DodgeFront
+    clip: {fileID: 850611847518859096, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Jump
+    clip: {fileID: -203655887218126122, guid: 78719538fe247f04a8cb7a3260595521, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Attacked
+    clip: {fileID: -6066081072686136725, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Fuka_Crouch
+    clip: {fileID: -203655887218126122, guid: 7a07c5eb45d3e804c9d4354df731e019, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Fall
+    clip: {fileID: -8607306001132944645, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Air
+    clip: {fileID: 7585906284540592091, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.AttackedInAir
+    clip: {fileID: -6066081072686136725, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Avatar_Fuka_Ani_StandBy
+    clip: {fileID: 3644802387886327014, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_1
+    clip: {fileID: 7382378529333395315, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.MoveFrant
+    clip: {fileID: -203655887218126122, guid: b7dc6e53e62785a4084f36fba83dcbdf, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.MoveBack
+    clip: {fileID: -203655887218126122, guid: ed4509b532e8d1f419411bacb9a57415, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_2
+    clip: {fileID: -898632268292908620, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_3
+    clip: {fileID: -4202730747837278895, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_4
+    clip: {fileID: -85481574712235593, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_5
+    clip: {fileID: 7494061353682422395, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_6
+    clip: {fileID: -7778489565417566346, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Dash
+    clip: {fileID: -8487307672374459578, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.DodgeBack
+    clip: {fileID: 997057917329610289, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.DodgeFront
+    clip: {fileID: 850611847518859096, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Jump
+    clip: {fileID: -203655887218126122, guid: 78719538fe247f04a8cb7a3260595521, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Attacked
+    clip: {fileID: -6066081072686136725, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Fuka_Crouch
+    clip: {fileID: -203655887218126122, guid: 7a07c5eb45d3e804c9d4354df731e019, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Fall
+    clip: {fileID: -8607306001132944645, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Air
+    clip: {fileID: 7585906284540592091, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.AttackedInAir
+    clip: {fileID: -6066081072686136725, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Avatar_Fuka_Ani_StandBy
+    clip: {fileID: 3644802387886327014, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_1
+    clip: {fileID: 7382378529333395315, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.MoveFrant
+    clip: {fileID: -203655887218126122, guid: b7dc6e53e62785a4084f36fba83dcbdf, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.MoveBack
+    clip: {fileID: -203655887218126122, guid: ed4509b532e8d1f419411bacb9a57415, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_2
+    clip: {fileID: -898632268292908620, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_3
+    clip: {fileID: -4202730747837278895, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_4
+    clip: {fileID: -85481574712235593, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_5
+    clip: {fileID: 7494061353682422395, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_6
+    clip: {fileID: -7778489565417566346, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Dash
+    clip: {fileID: -8487307672374459578, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.DodgeBack
+    clip: {fileID: 997057917329610289, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.DodgeFront
+    clip: {fileID: 850611847518859096, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Jump
+    clip: {fileID: -203655887218126122, guid: 78719538fe247f04a8cb7a3260595521, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Attacked
+    clip: {fileID: -6066081072686136725, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Fuka_Crouch
+    clip: {fileID: -203655887218126122, guid: 7a07c5eb45d3e804c9d4354df731e019, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Fall
+    clip: {fileID: -203655887218126122, guid: b463583daefb2ff4f99039ba05399884, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Air
+    clip: {fileID: -203655887218126122, guid: 7a9fbf63f7ca3a041ad430a8a3ba85ed, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.AttackedInAir
+    clip: {fileID: -6066081072686136725, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Avatar_Fuka_Ani_StandBy
+    clip: {fileID: 3644802387886327014, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_1
+    clip: {fileID: 7382378529333395315, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.MoveFrant
+    clip: {fileID: -203655887218126122, guid: b7dc6e53e62785a4084f36fba83dcbdf, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.MoveBack
+    clip: {fileID: -203655887218126122, guid: ed4509b532e8d1f419411bacb9a57415, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_2
+    clip: {fileID: -898632268292908620, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_3
+    clip: {fileID: -4202730747837278895, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_4
+    clip: {fileID: -85481574712235593, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_5
+    clip: {fileID: 7494061353682422395, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_6
+    clip: {fileID: -7778489565417566346, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Dash
+    clip: {fileID: -8487307672374459578, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.DodgeBack
+    clip: {fileID: 997057917329610289, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.DodgeFront
+    clip: {fileID: 850611847518859096, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Jump
+    clip: {fileID: -203655887218126122, guid: 78719538fe247f04a8cb7a3260595521, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Attacked
+    clip: {fileID: -6066081072686136725, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Fuka_Crouch
+    clip: {fileID: -203655887218126122, guid: 7a07c5eb45d3e804c9d4354df731e019, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Fall
+    clip: {fileID: -203655887218126122, guid: b463583daefb2ff4f99039ba05399884, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Air
+    clip: {fileID: -203655887218126122, guid: 7a9fbf63f7ca3a041ad430a8a3ba85ed, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.AttackedInAir
+    clip: {fileID: -6066081072686136725, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Avatar_Fuka_Ani_StandBy
+    clip: {fileID: 3644802387886327014, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_1
+    clip: {fileID: 7382378529333395315, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.MoveFrant
+    clip: {fileID: -203655887218126122, guid: b7dc6e53e62785a4084f36fba83dcbdf, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.MoveBack
+    clip: {fileID: -203655887218126122, guid: ed4509b532e8d1f419411bacb9a57415, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_2
+    clip: {fileID: -898632268292908620, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_3
+    clip: {fileID: -4202730747837278895, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_4
+    clip: {fileID: -85481574712235593, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_5
+    clip: {fileID: 7494061353682422395, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_6
+    clip: {fileID: -7778489565417566346, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Dash
+    clip: {fileID: -8487307672374459578, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.DodgeBack
+    clip: {fileID: 997057917329610289, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.DodgeFront
+    clip: {fileID: 850611847518859096, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Jump
+    clip: {fileID: -203655887218126122, guid: 78719538fe247f04a8cb7a3260595521, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Attacked
+    clip: {fileID: -6066081072686136725, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Fuka_Crouch
+    clip: {fileID: -203655887218126122, guid: 7a07c5eb45d3e804c9d4354df731e019, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Fall
+    clip: {fileID: -203655887218126122, guid: b463583daefb2ff4f99039ba05399884, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Air
+    clip: {fileID: -203655887218126122, guid: 7a9fbf63f7ca3a041ad430a8a3ba85ed, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.AttackedInAir
+    clip: {fileID: -203655887218126122, guid: ea2442aa436116545bc4fe83aeec9032, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.AttackFall
+    clip: {fileID: -203655887218126122, guid: 75da40c5c0a1747488a47040001375f4, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Idle
+    clip: {fileID: 3644802387886327014, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_1
+    clip: {fileID: 7382378529333395315, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.MoveFrant
+    clip: {fileID: -203655887218126122, guid: b7dc6e53e62785a4084f36fba83dcbdf, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.MoveBack
+    clip: {fileID: -203655887218126122, guid: ed4509b532e8d1f419411bacb9a57415, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_2
+    clip: {fileID: -898632268292908620, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_3
+    clip: {fileID: -4202730747837278895, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_4
+    clip: {fileID: -85481574712235593, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_5
+    clip: {fileID: 7494061353682422395, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_6
+    clip: {fileID: -7778489565417566346, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Dash
+    clip: {fileID: -8487307672374459578, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.DodgeBack
+    clip: {fileID: 997057917329610289, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.DodgeFront
+    clip: {fileID: 850611847518859096, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Jump
+    clip: {fileID: -203655887218126122, guid: 78719538fe247f04a8cb7a3260595521, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Attacked
+    clip: {fileID: -6066081072686136725, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Fuka_Crouch
+    clip: {fileID: -203655887218126122, guid: 7a07c5eb45d3e804c9d4354df731e019, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Fall
+    clip: {fileID: -203655887218126122, guid: b463583daefb2ff4f99039ba05399884, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Air
+    clip: {fileID: -203655887218126122, guid: 7a9fbf63f7ca3a041ad430a8a3ba85ed, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.AttackedInAir
+    clip: {fileID: -203655887218126122, guid: ea2442aa436116545bc4fe83aeec9032, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.AttackFall
+    clip: {fileID: -203655887218126122, guid: 75da40c5c0a1747488a47040001375f4, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Idle
+    clip: {fileID: 3644802387886327014, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_1
+    clip: {fileID: 7382378529333395315, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.MoveFrant
+    clip: {fileID: -203655887218126122, guid: b7dc6e53e62785a4084f36fba83dcbdf, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.MoveBack
+    clip: {fileID: -203655887218126122, guid: ed4509b532e8d1f419411bacb9a57415, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_2
+    clip: {fileID: -898632268292908620, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_3
+    clip: {fileID: -4202730747837278895, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_4
+    clip: {fileID: -85481574712235593, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_5
+    clip: {fileID: 7494061353682422395, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.LightPunch_6
+    clip: {fileID: -7778489565417566346, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Dash
+    clip: {fileID: -8487307672374459578, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.DodgeBack
+    clip: {fileID: 997057917329610289, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.DodgeFront
+    clip: {fileID: 850611847518859096, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Jump
+    clip: {fileID: -203655887218126122, guid: 78719538fe247f04a8cb7a3260595521, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Attacked
+    clip: {fileID: -6066081072686136725, guid: 0884c9d47df80e446adeffc5337e5e0b, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Fuka_Crouch
+    clip: {fileID: -203655887218126122, guid: 7a07c5eb45d3e804c9d4354df731e019, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Fall
+    clip: {fileID: -203655887218126122, guid: b463583daefb2ff4f99039ba05399884, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.Air
+    clip: {fileID: -203655887218126122, guid: 7a9fbf63f7ca3a041ad430a8a3ba85ed, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.AttackedInAir
+    clip: {fileID: -203655887218126122, guid: ea2442aa436116545bc4fe83aeec9032, type: 3}
+    layerIndex: 0
+    funcs: []
+  - stateName: Base Layer.AttackFall
+    clip: {fileID: -203655887218126122, guid: 75da40c5c0a1747488a47040001375f4, type: 3}
+    layerIndex: 0
+    funcs: []
 --- !u!1 &8027205356474300801
 GameObject:
   m_ObjectHideFlags: 0
@@ -1896,12 +3020,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8027205356474300801}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 6589796070768851294}
-  m_RootOrder: 2
+  m_Father: {fileID: 6699405582135364210}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &6014928423682491918
 BoxCollider:

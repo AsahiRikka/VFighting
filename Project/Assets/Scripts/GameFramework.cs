@@ -45,6 +45,7 @@ public class GameFramework : MonoBehaviour
     void Update()
     {
         _service.Update();
+        _gameFactory.Update();
     }
 
     private void OnDestroy()

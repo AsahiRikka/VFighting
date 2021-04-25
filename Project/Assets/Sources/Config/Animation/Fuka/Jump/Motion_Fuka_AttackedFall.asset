@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 456a6edc4ab0d3441a9c762d78e18888, type: 3}
+  m_Name: Motion_Fuka_AttackedFall
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  motionID: 
+  motionName: Fuka_AttackedFall
+  parameter: AttackedFall
+  applyRoomMotion: 0
+  animationEndClip: 95
+  animationClip: {fileID: -203655887218126122, guid: 75da40c5c0a1747488a47040001375f4,
+    type: 3}
+  passiveBoxes:
+  - segmentMotion:
+      type: 0
+      startFrame: 100
+      endFrame: 120
+    collider:
+      center: {x: 0, y: 0.8, z: 0}
+      size: {x: 0.5, y: 1.8, z: 0.5}
+      trigger: 0
+  hitBoxes: []
+  defenseBoxes: []
+  animationStraights:
+  - type: 1
+    straightLevel: 10
+    startFrame: 1
+    endFrame: 100

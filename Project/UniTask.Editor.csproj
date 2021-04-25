@@ -296,6 +296,9 @@
  <Reference Include="clipper_library">
  <HintPath>D:/Work/VFightFight/Project/Library/PackageCache/com.unity.cinemachine@2.7.3/Runtime/ThirdParty/clipper_library.dll</HintPath>
  </Reference>
+ <Reference Include="JMOAssets">
+ <HintPath>D:/Work/VFightFight/Project/Assets/Sources/FX/JMO Assets/Editor/JMOAssets.dll</HintPath>
+ </Reference>
  <Reference Include="nunit.framework">
  <HintPath>D:/Work/VFightFight/Project/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
  </Reference>

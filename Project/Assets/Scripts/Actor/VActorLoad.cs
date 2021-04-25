@@ -76,6 +76,7 @@ public static class VActorLoad
         changeProperty.actorAttackSpeed = property.actorAttackSpeed;
         changeProperty.actorAccumulateTankSpeed = property.actorAccumulateTankSpeed;
         changeProperty.actorWeight = property.actorWeight;
+        changeProperty.jumpRayData = data.jumpRay;
 
         changeProperty.playerEnum = e;
         if (e == PlayerEnum.player_1)

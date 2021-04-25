@@ -83,7 +83,7 @@ public class VActorBase : MonoBehaviour
     private void Start()
     {
         //全部初始化完成，自动进入idle技能
-        actorEvent.SkillEvent.skillPlayTriggerEvent.Invoke(skillActions.defaultSkillActions);
+        actorEvent.SkillEvent.skillPlayTriggerEvent.Invoke(skillActions.specialSkillDic[ActorStateTypeEnum.idle]);
     }
 
     private void Update()

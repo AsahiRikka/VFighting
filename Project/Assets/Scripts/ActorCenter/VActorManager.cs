@@ -15,9 +15,16 @@ public class VActorManager
     public VActorManager(VActorBase player1,VActorBase player2)
     {
         ActorColliderManager=new VActorColliderManager(player1,player2);
+        
+        ActorDirManager=new VActorDirManager(player1,player2);
     }
 
-    public void Destory()
+    public void Update()
+    {
+        ActorDirManager.Update();
+    }
+
+    public void Destroy()
     {
         ActorColliderManager.Destory();
     }
