@@ -1,1 +1,0 @@
-[{"myKeyCode":2,"keyCodeMapperKey":"JSB0"}]

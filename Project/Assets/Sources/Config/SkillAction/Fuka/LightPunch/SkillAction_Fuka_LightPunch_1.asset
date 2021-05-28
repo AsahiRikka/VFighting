@@ -28,8 +28,10 @@ MonoBehaviour:
     priority: 2
     PlayType: 1
   signalData:
-    SignalEnum: 1
+    SignalEnum: 2
     skillSignalDataSegments:
+    - playerKeyCodes: 03000000
+    - playerKeyCodes: 0a000000
     - playerKeyCodes: 04000000
   preConditionData:
     skillContinues:
@@ -50,15 +52,29 @@ MonoBehaviour:
     dashSpeedScale: 0
     jumpForceScale: 0
   motion: {fileID: 11400000, guid: a2dd5d1084a25e34892549549f292445, type: 2}
-  ActionDamanges: []
+  ActionDamanges:
+  - skillActionType: 3
+    target: 1
+    startFrame: 0
+    keyFrame: 0
+    endFrame: 0
+    damage: 5
   ActionSounds:
-  - skillActionType: 0
+  - skillActionType: 3
     target: 0
     startFrame: 0
     keyFrame: 0
     endFrame: 0
     soundType: 1
-    audioClip: {fileID: 8300000, guid: 66fda1f43c9bfb146b37dc801101c2c0, type: 3}
+    audioClip: {fileID: 8300000, guid: 2d1bf0e1bd2354e4bb691e3c3f11163c, type: 3}
+    isLoop: 0
+  - skillActionType: 7
+    target: 0
+    startFrame: 0
+    keyFrame: 10
+    endFrame: 0
+    soundType: 1
+    audioClip: {fileID: 8300000, guid: 6c7572ceb4e7e74489d82e360c924498, type: 3}
     isLoop: 0
   ActionAnimates: []
   ActionBuffs: []
@@ -74,12 +90,12 @@ MonoBehaviour:
     speedDecay: 1
     bounceTimes: 1
     gravityScale: 1
-  - skillActionType: 3
+  - skillActionType: 7
     target: 1
     startFrame: 0
-    keyFrame: 0
+    keyFrame: 70
     endFrame: 0
-    initSpeed: 60
+    initSpeed: 150
     initVector: {x: -1, y: 0, z: 0}
     speedDecay: 1
     bounceTimes: 1

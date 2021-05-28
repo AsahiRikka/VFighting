@@ -1,1 +1,0 @@
-{"effectSound":1.0,"musicSound":1.0,"characterSound":1.0}

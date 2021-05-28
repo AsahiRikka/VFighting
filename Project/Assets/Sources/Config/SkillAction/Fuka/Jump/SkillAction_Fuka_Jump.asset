@@ -34,7 +34,7 @@ MonoBehaviour:
   preConditionData:
     skillContinues: []
     skillPreState: 
-    notSkillPreState: 04000000
+    notSkillPreState: 0400000009000000
   physicComponent:
     isEnable: 1
     isMove: 1

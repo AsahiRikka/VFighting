@@ -24,8 +24,6 @@ MonoBehaviour:
   motionID: 0
   motionName: Fuka_LightPunch_1
   parameter: LightPunch_1
-  animationDefaultRotate: {x: 0, y: 0, z: 0}
-  animationDefaultPos: {x: 0, y: 0, z: 0}
   applyRoomMotion: 0
   animationEndClip: 120
   animationClip: {fileID: 7382378529333395315, guid: 0884c9d47df80e446adeffc5337e5e0b,

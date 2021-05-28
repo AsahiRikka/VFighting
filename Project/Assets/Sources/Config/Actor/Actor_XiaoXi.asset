@@ -1,0 +1,310 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2d017bab802b544cae25f12c3993ded, type: 3}
+  m_Name: Actor_XiaoXi
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 11400000, guid: addaae1097b0ce14289caa70a9514ab7, type: 2}
+    - {fileID: 11400000, guid: 8164f869c6caffb45a7ae591d1574702, type: 2}
+    - {fileID: 11400000, guid: f96ad10e5f5242048b408620a5ea05d8, type: 2}
+    - {fileID: 11400000, guid: b69706f64f0d8734bb7703d91e9819ef, type: 2}
+    - {fileID: 11400000, guid: e3465712d9b46074eb471f7bbc338ac7, type: 2}
+    - {fileID: 11400000, guid: 4dc79fbedce6ced44bc2eac52f7cfa8d, type: 2}
+    - {fileID: 11400000, guid: c7d0f2b421742324b8929b5a240144b5, type: 2}
+    - {fileID: 11400000, guid: d0b3086b0eb410946b88a26d8963f9da, type: 2}
+    - {fileID: 11400000, guid: e9499de4d1e7a1b4e91aa71b3dc94b94, type: 2}
+    - {fileID: 11400000, guid: 46bb033ec5d70b74f8b2db7d1117f532, type: 2}
+    - {fileID: 11400000, guid: 2296e83ce02748f4a981246de4409873, type: 2}
+    - {fileID: 11400000, guid: 468619934b90b89409c7fea4ecc8a4f6, type: 2}
+    - {fileID: 11400000, guid: 103ac9c640e38c347b76a925ef6d279d, type: 2}
+    - {fileID: 11400000, guid: f35d342ca6e1318478fab09bcebc79ed, type: 2}
+    - {fileID: 11400000, guid: b61e6a087ddd3de419e82804d188e246, type: 2}
+    - {fileID: 11400000, guid: a3820faf64f317947b2c808512344f12, type: 2}
+    - {fileID: 11400000, guid: f5e7cd1b72c45c64dbe19bb532f67165, type: 2}
+    - {fileID: 11400000, guid: a0902fdb1a4a6784a8864d59067fc20e, type: 2}
+    - {fileID: 11400000, guid: f089ef613b9c97e43b52c5079715089b, type: 2}
+    - {fileID: 11400000, guid: f240f816a0a552d46a6cf4c5323b6e86, type: 2}
+    - {fileID: 11400000, guid: ce7308fd9678d7244ac2e1cacd509444, type: 2}
+    - {fileID: 11400000, guid: b439a8ffc4676b8488cf10c0495ba94a, type: 2}
+    - {fileID: 11400000, guid: 4fb2919b27cc8904f91a30a46d7a7570, type: 2}
+    - {fileID: 11400000, guid: 5e06008b6c344964a8a42f8e35ebdfe3, type: 2}
+    - {fileID: 11400000, guid: 3b8c92015c6e0d24b8a2deed36a8342d, type: 2}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: skillActions
+      Entry: 7
+      Data: 0|VSkillActions, Assembly-CSharp
+    - Name: actorSkillActions
+      Entry: 7
+      Data: 1|System.Collections.Generic.List`1[[VSkillAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 11
+    - Name: 
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 2
+    - Name: 
+      Entry: 10
+      Data: 3
+    - Name: 
+      Entry: 10
+      Data: 4
+    - Name: 
+      Entry: 10
+      Data: 5
+    - Name: 
+      Entry: 10
+      Data: 6
+    - Name: 
+      Entry: 10
+      Data: 7
+    - Name: 
+      Entry: 10
+      Data: 8
+    - Name: 
+      Entry: 10
+      Data: 9
+    - Name: 
+      Entry: 10
+      Data: 10
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: specialSkillDic
+      Entry: 7
+      Data: 2|System.Collections.Generic.Dictionary`2[[ActorStateTypeEnum, Assembly-CSharp],[VSkillAction,
+        Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 3|System.Collections.Generic.EnumEqualityComparer`1[[ActorStateTypeEnum,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 14
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 0
+    - Name: $v
+      Entry: 10
+      Data: 11
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 6
+    - Name: $v
+      Entry: 10
+      Data: 12
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 4
+    - Name: $v
+      Entry: 10
+      Data: 13
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 8
+    - Name: $v
+      Entry: 10
+      Data: 14
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 9
+    - Name: $v
+      Entry: 10
+      Data: 15
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 10
+    - Name: $v
+      Entry: 10
+      Data: 16
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 11
+    - Name: $v
+      Entry: 10
+      Data: 17
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 1
+    - Name: $v
+      Entry: 10
+      Data: 18
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 2
+    - Name: $v
+      Entry: 10
+      Data: 19
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 3
+    - Name: $v
+      Entry: 10
+      Data: 20
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 5
+    - Name: $v
+      Entry: 10
+      Data: 21
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 12
+    - Name: $v
+      Entry: 10
+      Data: 22
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 13
+    - Name: $v
+      Entry: 10
+      Data: 23
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 14
+    - Name: $v
+      Entry: 10
+      Data: 24
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  actorID: 11001
+  actorName: XiaoXi
+  actorProperty:
+    heathPoints: 100
+    actorDamage: 100
+    actorMoveSpeed: 3
+    actorBackSpeed: 3
+    actorDashSpeed: 8
+    jumpForce: 700
+    actorAttackSpeed: 10
+    actorAccumulateTankSpeed: 10
+    actorWeight: 10
+  jumpRay:
+    airSkillDistance: 1
+    fallSkillDistance: 0.5
+    attackFallSkillDistance: 0

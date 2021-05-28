@@ -140,7 +140,7 @@
     <vertexScaleByHeightFlag>false</vertexScaleByHeightFlag>
     <vertexScaleByHeight>158</vertexScaleByHeight>
     <waitProcessExitting>false</waitProcessExitting>
-    <pmxAssetPath>Assets/小桃初代女仆v1/小桃初代女仆v1.pmx</pmxAssetPath>
+    <pmxAssetPath>Assets/Sources/Models/小桃初代女仆v1/小桃初代女仆v1.pmx</pmxAssetPath>
     <vmdAssetPathList />
     <fbxOutputPath>Assets/小桃初代女仆v1/小桃初代女仆v1.fbx</fbxOutputPath>
     <bulletPhysicsVersion>_275</bulletPhysicsVersion>
@@ -180,5 +180,7 @@
       <selfShadowEnabled>true</selfShadowEnabled>
       <sphereMapEnabled>true</sphereMapEnabled>
     </materialGlobalProperty>
+    <materialProperyList />
+    <materialBlockPropertyList />
   </mmd4MecanimProperty>
 </PMX2FBXConfig>

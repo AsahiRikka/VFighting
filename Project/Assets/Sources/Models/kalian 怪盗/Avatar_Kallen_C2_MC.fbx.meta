@@ -1,0 +1,199 @@
+fileFormatVersion: 2
+guid: 09d1825f86d1b594a9010ef65af0902d
+ModelImporter:
+  serializedVersion: 19301
+  internalIDToNameTable:
+  - first:
+      74: 1378809559411146331
+    second: Avatar_Kallen_Ani_Die
+  - first:
+      74: -8271621135380261981
+    second: Avatar_Kallen_Ani_Appear
+  - first:
+      74: 282485083126494340
+    second: Avatar_Kallen_Ani_SwitchOut
+  - first:
+      74: -7624126698255051082
+    second: Avatar_Kallen_Ani_Victory_01
+  - first:
+      74: -4740883514326856305
+    second: Avatar_Kallen_Ani_Failure_01
+  - first:
+      74: -4088497850058695513
+    second: Avatar_Kallen_Ani_Victory_Idle
+  - first:
+      74: 8147324664517280399
+    second: Avatar_Kallen_Ani_Failure_01_Idle
+  - first:
+      74: -1970469736212883122
+    second: Avatar_Kallen_Ani_StandBy
+  - first:
+      74: 6266626735673021009
+    second: Avatar_Kallen_Ani_Idle
+  - first:
+      74: -1645676790044380686
+    second: Avatar_Kallen_Ani_Run
+  - first:
+      74: -2550780678950249275
+    second: Avatar_Kallen_Ani_RunBS
+  - first:
+      74: 1504389644176937879
+    second: Avatar_Kallen_Ani_RunStopLeft
+  - first:
+      74: -2385569831996049262
+    second: Avatar_Kallen_Ani_RunStopRight
+  - first:
+      74: 7443567944537513745
+    second: Avatar_Kallen_Ani_Attack_A_03_Direct
+  - first:
+      74: 5858262298464995894
+    second: Avatar_Kallen_Ani_Attack_A_02
+  - first:
+      74: -6610667294324788543
+    second: Avatar_Kallen_Ani_Attack_A_04
+  - first:
+      74: -3077386801049253744
+    second: Avatar_Kallen_Ani_Attack_A_03
+  - first:
+      74: 3113851338338952418
+    second: Avatar_Kallen_Ani_Attack_A_05
+  - first:
+      74: 8659063345748859980
+    second: Avatar_Kallen_Ani_Attack_A_06
+  - first:
+      74: 6110545246076764773
+    second: Avatar_Kallen_Ani_Attack_A_01
+  - first:
+      74: -6590394580990276285
+    second: Avatar_Kallen_Ani_Attack_Branch_B_Full
+  - first:
+      74: -7676419656719797229
+    second: Avatar_Kallen_Ani_Attack_Branch_B_FullMAX
+  - first:
+      74: 6951679145488687868
+    second: Avatar_Kallen_Ani_Attack_Branch_B_Lite
+  - first:
+      74: 6103970611953066543
+    second: Avatar_Kallen_Ani_Attack_Branch_A_End
+  - first:
+      74: -4235561002125721567
+    second: Avatar_Kallen_Ani_Attack_Branch_A_Loop
+  - first:
+      74: -4811412183604456733
+    second: Avatar_Kallen_Ani_Attack_Branch_A_BS
+  - first:
+      74: 3464302760430714760
+    second: Avatar_Kallen_Ani_Ultra_McGun
+  - first:
+      74: 6129315414795193489
+    second: Avatar_Kallen_Ani_EvadeBackward
+  - first:
+      74: -7016318469539608176
+    second: Avatar_Kallen_Ani_EvadeForward_A
+  - first:
+      74: -8209706339471663547
+    second: Avatar_Kallen_Ani_EvadeForward_B
+  - first:
+      74: 3121057688495209405
+    second: Avatar_Kallen_Ani_Hit_L
+  - first:
+      74: 3939178772604045627
+    second: Avatar_Kallen_Ani_Hit_H
+  - first:
+      74: 1534120929011222290
+    second: Avatar_Kallen_Ani_Stun
+  - first:
+      74: -8298465304130825502
+    second: Avatar_Kallen_Ani_SwitchIn
+  externalObjects: {}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 3
+  humanoidOversampling: 1
+  avatarSetup: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

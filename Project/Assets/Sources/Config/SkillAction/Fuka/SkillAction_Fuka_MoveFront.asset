@@ -47,7 +47,15 @@ MonoBehaviour:
     jumpForceScale: 0
   motion: {fileID: 11400000, guid: a7490739ae96b764884645834e40cfc5, type: 2}
   ActionDamanges: []
-  ActionSounds: []
+  ActionSounds:
+  - skillActionType: 1
+    target: 0
+    startFrame: 0
+    keyFrame: 0
+    endFrame: 0
+    soundType: 1
+    audioClip: {fileID: 8300000, guid: 4d061dd2cbdbef14182bb789d070ef67, type: 3}
+    isLoop: 1
   ActionAnimates: []
   ActionBuffs: []
   ActionEffects: []

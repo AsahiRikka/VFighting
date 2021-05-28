@@ -43,3 +43,13 @@ The following packages were added:
   com.unity.textmeshpro@2.0.1
   com.unity.timeline@1.2.15
   com.unity.ugui@1.0.0
+
+=== Fri May 14 17:37:32 2021
+
+Packages were changed.
+Update Mode: resetToDefaultDependencies
+
+The following packages were removed:
+  com.unity.2d.sprite@1.0.0
+  com.unity.addressables@1.8.5
+  com.unity.cinemachine@2.7.3
