@@ -180,7 +180,5 @@
       <selfShadowEnabled>true</selfShadowEnabled>
       <sphereMapEnabled>true</sphereMapEnabled>
     </materialGlobalProperty>
-    <materialProperyList />
-    <materialBlockPropertyList />
   </mmd4MecanimProperty>
 </PMX2FBXConfig>

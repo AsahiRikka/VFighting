@@ -1,0 +1,242 @@
+fileFormatVersion: 2
+guid: ddb13c9359330fc4abdd2742fc4cb58e
+ModelImporter:
+  serializedVersion: 19301
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 0.Mat_Xiaoxi_Face
+    second: {fileID: 2100000, guid: 83ff23f797be9c94abf1c00b3c328e7b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 1.Mat_Xiaoxi_Oral cavity
+    second: {fileID: 2100000, guid: 3ab98dc29c1eec94baa4576cc98087f1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 10.Mat_Xiaoxi_Decorations02
+    second: {fileID: 2100000, guid: aa40725fecb55da4a90f2f81ab0ea537, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 11.Mat_Xiaoxi_Shoes
+    second: {fileID: 2100000, guid: a957789212197ee4f9c88ce9ce3090dc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 12.Mat_xiaoxi_Silk stockings
+    second: {fileID: 2100000, guid: f3a4352b7283ec84a8c014ed93189698, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 13.Mat_Xiaoxi_Base
+    second: {fileID: 2100000, guid: 4999d7f8df65ed449b112a166938eb5c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 14.Mat_Xiaoxi_Body_Diffuse
+    second: {fileID: 2100000, guid: f7ac86abcdcff6e4dbdc91ef09bb38b9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 15.Mat_Xiaoxi_Knickers
+    second: {fileID: 2100000, guid: 105758c32af9e154fa812526e029eabc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 16.Mat_Xiaoxi_Hair
+    second: {fileID: 2100000, guid: a4a7a3dd4c7e4474294de4467928adc3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 17.Mat_Xiaoxi_Hair
+    second: {fileID: 2100000, guid: 5e9a57d6eabcf494cb6fb8dfe86b6853, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 18.Mat_Xiaoxi_Hair
+    second: {fileID: 2100000, guid: f37dbb17da487ff46b8264b0c5086995, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 19.Mat_Xiaoxi_Hair
+    second: {fileID: 2100000, guid: 751406401d18ac949b8a5823a2fd699f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 2.Mat_Xiaoxi_Eyelash
+    second: {fileID: 2100000, guid: fd5f7d744b0c0314b966b3dcc11ca7db, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 20.Mat_Xiaoxi_Hair
+    second: {fileID: 2100000, guid: 4357b47962f30a04086c5df9fc5672ad, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 21.Mat_Xiaoxi_Hair
+    second: {fileID: 2100000, guid: 37334db864369684891c759fc3e5817d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 22.Mat_Xiaoxi_Hair
+    second: {fileID: 2100000, guid: e0304d2408d8ef444b4fa625069cd50f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 23.Mat_Xiaoxi_Hair
+    second: {fileID: 2100000, guid: 55ef8790024c41a46aabc16537ccfe43, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 24.Mat_Xiaoxi_Hair
+    second: {fileID: 2100000, guid: 02b8f7829725c93438ef57b707e2d5c4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 25.Mat_Xiaoxi_Hair
+    second: {fileID: 2100000, guid: 6e5e830bd7acd024685e607305c3e748, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 26.Mat_Xiaoxi_Hair
+    second: {fileID: 2100000, guid: 79e82f54adb34e943b81e46b16fcc1f2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 27.Mat_Xiaoxi_Hair
+    second: {fileID: 2100000, guid: 45063a1231f29ac4fa7c92b53f0f11ad, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 28.Mat_Xiaoxi_Hair
+    second: {fileID: 2100000, guid: 4d780161dca4aac4f988ba8dcf5de472, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 3.Mat_Xiaoxi_Eyebrow
+    second: {fileID: 2100000, guid: 139e6b05ef18c3448bc7d5c24d2322ac, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 4.Mat_Xiaoxi_Whites
+    second: {fileID: 2100000, guid: 3af01a82cb6e2d14ebd9877975bc424f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 5.Mat_Xiaoxi_Eye
+    second: {fileID: 2100000, guid: c4a7d0fdce22c9d46bffbb07448c24bc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 6.Mat_Xiaoxi_Eyelight
+    second: {fileID: 2100000, guid: b445035b3d8fef6428815eea16a5f8a0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 7.Mat_Xiaoxi_Other expressions01
+    second: {fileID: 2100000, guid: 695e6257a323a5141bb61a2b7a4df3c8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 8.Mat_Xiaoxi_Other expressions02
+    second: {fileID: 2100000, guid: c4140c160befe9d4faae0094c09ecddf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 9.Mat_Xiaoxi_Decorations01
+    second: {fileID: 2100000, guid: b13b809dcdce8814cb61f36e84168ecb, type: 2}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 0
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 3
+  humanoidOversampling: 1
+  avatarSetup: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

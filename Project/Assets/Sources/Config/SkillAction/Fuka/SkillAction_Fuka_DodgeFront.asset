@@ -28,12 +28,13 @@ MonoBehaviour:
     priority: 2
     PlayType: 1
   signalData:
-    SignalEnum: 1
+    SignalEnum: 0
     skillSignalDataSegments:
+    - playerKeyCodes: 0a000000
     - playerKeyCodes: 06000000
   preConditionData:
     skillContinues: []
-    skillPreState: 0300000001000000
+    skillPreState: 
     notSkillPreState: 040000000900000008000000
   physicComponent:
     isEnable: 0
@@ -47,15 +48,7 @@ MonoBehaviour:
     jumpForceScale: 0
   motion: {fileID: 11400000, guid: b8bd0d0cb5a691d49b223d2179c0bc09, type: 2}
   ActionDamanges: []
-  ActionSounds:
-  - skillActionType: 0
-    target: 0
-    startFrame: 0
-    keyFrame: 0
-    endFrame: 0
-    soundType: 1
-    audioClip: {fileID: 8300000, guid: 5996d003a40b876468c0aa1104151213, type: 3}
-    isLoop: 0
+  ActionSounds: []
   ActionAnimates: []
   ActionBuffs: []
   ActionEffects: []
@@ -65,7 +58,7 @@ MonoBehaviour:
     startFrame: 0
     keyFrame: 0
     endFrame: 0
-    initSpeed: 500
+    initSpeed: 300
     initVector: {x: 1, y: 0, z: 0}
     speedDecay: 1
     bounceTimes: 1

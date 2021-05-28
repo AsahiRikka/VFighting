@@ -50,30 +50,8 @@ MonoBehaviour:
     dashSpeedScale: 0
     jumpForceScale: 0
   motion: {fileID: 11400000, guid: 19c5147afa6d92c41a295cf7e81424d8, type: 2}
-  ActionDamanges:
-  - skillActionType: 3
-    target: 1
-    startFrame: 0
-    keyFrame: 0
-    endFrame: 0
-    damage: 5
-  ActionSounds:
-  - skillActionType: 3
-    target: 0
-    startFrame: 0
-    keyFrame: 0
-    endFrame: 0
-    soundType: 1
-    audioClip: {fileID: 8300000, guid: 2d1bf0e1bd2354e4bb691e3c3f11163c, type: 3}
-    isLoop: 0
-  - skillActionType: 7
-    target: 0
-    startFrame: 0
-    keyFrame: 10
-    endFrame: 0
-    soundType: 1
-    audioClip: {fileID: 8300000, guid: 6c7572ceb4e7e74489d82e360c924498, type: 3}
-    isLoop: 0
+  ActionDamanges: []
+  ActionSounds: []
   ActionAnimates: []
   ActionBuffs: []
   ActionEffects: []

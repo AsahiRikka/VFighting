@@ -33,7 +33,7 @@ MonoBehaviour:
     - playerKeyCodes: 06000000
   preConditionData:
     skillContinues: []
-    skillPreState: 070000000000000002000000
+    skillPreState: 
     notSkillPreState: 040000000900000008000000
   physicComponent:
     isEnable: 0
@@ -47,15 +47,7 @@ MonoBehaviour:
     jumpForceScale: 0
   motion: {fileID: 11400000, guid: c3566d235ec2def46a5f74925fd6e1da, type: 2}
   ActionDamanges: []
-  ActionSounds:
-  - skillActionType: 0
-    target: 0
-    startFrame: 0
-    keyFrame: 0
-    endFrame: 0
-    soundType: 1
-    audioClip: {fileID: 8300000, guid: 5996d003a40b876468c0aa1104151213, type: 3}
-    isLoop: 0
+  ActionSounds: []
   ActionAnimates: []
   ActionBuffs: []
   ActionEffects: []

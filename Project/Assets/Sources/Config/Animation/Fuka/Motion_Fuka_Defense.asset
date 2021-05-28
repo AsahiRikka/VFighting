@@ -24,19 +24,28 @@ MonoBehaviour:
   motionID: 0
   motionName: Fuka_Defense
   parameter: Defense
+  animationDefaultRotate: {x: 0, y: 0, z: 0}
+  animationDefaultPos: {x: 0, y: 0, z: 0}
   applyRoomMotion: 0
   animationEndClip: 0
-  animationClip: {fileID: -203655887218126122, guid: 8057ac34779bfd345a24b4736bae6f71,
-    type: 3}
-  passiveBoxes: []
+  animationClip: {fileID: 0}
+  passiveBoxes:
+  - segmentMotion:
+      type: 1
+      startFrame: 0
+      endFrame: 0
+    collider:
+      center: {x: 0, y: 0, z: 0}
+      size: {x: 0, y: 0, z: 0}
+      trigger: 1
   hitBoxes: []
   defenseBoxes:
   - segmentMotion:
-      type: 1
+      type: 0
       startFrame: 6
       endFrame: 13
     collider:
-      center: {x: 0.2, y: 0.8, z: 0}
-      size: {x: 0.5, y: 1.6, z: 0.5}
-      trigger: 1
+      center: {x: 0, y: 0.8, z: 0}
+      size: {x: 0, y: 0, z: 0}
+      trigger: 0
   animationStraights: []
