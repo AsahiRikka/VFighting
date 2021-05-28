@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 004375c057d011742b39c0344172fe0e, type: 3}
+  m_Name: SkillAction_Fuka_Dash
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  skillProperty:
+    skillActionID: 
+    skillActionName: Dash
+    skillType: 3
+    priority: 1
+    PlayType: 0
+  signalData:
+    SignalEnum: 4
+    skillSignalDataSegments:
+    - playerKeyCodes: 0a000000
+    - playerKeyCodes: 0a000000
+  preConditionData:
+    skillContinues: []
+    skillPreState: 
+    notSkillPreState: 040000000900000008000000
+  physicComponent:
+    isEnable: 1
+    isMove: 0
+    isBack: 0
+    isDash: 1
+    isJump: 0
+    moveSpeedScale: 0
+    backSpeedScale: 0
+    dashSpeedScale: 1
+    jumpForceScale: 0
+  motion: {fileID: 11400000, guid: 1f9a3266429069f4eaa2709b7117ee44, type: 2}
+  ActionDamanges: []
+  ActionSounds:
+  - skillActionType: 1
+    target: 0
+    startFrame: 0
+    keyFrame: 0
+    endFrame: 0
+    soundType: 1
+    audioClip: {fileID: 8300000, guid: fd88dfc56d6b07a4989c28d129e2304f, type: 3}
+    isLoop: 1
+  ActionAnimates: []
+  ActionBuffs: []
+  ActionEffects: []
+  ActionPhysics: []

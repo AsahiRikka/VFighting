@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 004375c057d011742b39c0344172fe0e, type: 3}
+  m_Name: SkillAction_Fuka_MoveBack
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  skillProperty:
+    skillActionID: 130002
+    skillActionName: MoveBack
+    skillType: 2
+    priority: 1
+    PlayType: 0
+  signalData:
+    SignalEnum: 3
+    skillSignalDataSegments:
+    - playerKeyCodes: 0b000000
+  preConditionData:
+    skillContinues: []
+    skillPreState: 
+    notSkillPreState: 040000000900000008000000
+  physicComponent:
+    isEnable: 1
+    isMove: 0
+    isBack: 1
+    isDash: 0
+    isJump: 0
+    moveSpeedScale: 0
+    backSpeedScale: 1
+    dashSpeedScale: 0
+    jumpForceScale: 0
+  motion: {fileID: 11400000, guid: f183158d62c18a94bb95854a418fdc00, type: 2}
+  ActionDamanges: []
+  ActionSounds:
+  - skillActionType: 1
+    target: 0
+    startFrame: 0
+    keyFrame: 0
+    endFrame: 0
+    soundType: 1
+    audioClip: {fileID: 8300000, guid: 4d061dd2cbdbef14182bb789d070ef67, type: 3}
+    isLoop: 1
+  ActionAnimates: []
+  ActionBuffs: []
+  ActionEffects: []
+  ActionPhysics: []

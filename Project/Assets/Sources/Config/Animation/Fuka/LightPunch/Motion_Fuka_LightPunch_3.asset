@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 456a6edc4ab0d3441a9c762d78e18888, type: 3}
+  m_Name: Motion_Fuka_LightPunch_3
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  motionID: 
+  motionName: Fuka_LightPunch_3
+  parameter: LightPunch_3
+  animationDefaultRotate: {x: 0, y: 0, z: 0}
+  animationDefaultPos: {x: 0, y: 0, z: 0}
+  applyRoomMotion: 0
+  animationEndClip: 125
+  animationClip: {fileID: -4202730747837278895, guid: 0884c9d47df80e446adeffc5337e5e0b,
+    type: 3}
+  passiveBoxes:
+  - segmentMotion:
+      type: 1
+      startFrame: 1
+      endFrame: 125
+    collider:
+      center: {x: 0, y: 0.8, z: 0}
+      size: {x: 0.8, y: 1.8, z: 0.8}
+      trigger: 1
+  hitBoxes:
+  - segmentMotion:
+      type: 0
+      startFrame: 13
+      endFrame: 20
+    collider:
+      center: {x: 0.5, y: 1, z: 0}
+      size: {x: 0.5, y: 0.5, z: 0.5}
+      trigger: 1
+  defenseBoxes: []
+  animationStraights:
+  - type: 0
+    straightLevel: 2
+    startFrame: 1
+    endFrame: 20
+  - type: 0
+    straightLevel: 1
+    startFrame: 20
+    endFrame: 30

@@ -1,0 +1,1 @@
+{"resolutionType":2,"gameQuality":3}
