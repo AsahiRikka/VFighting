@@ -32,6 +32,8 @@ public class GameFramework : MonoBehaviour
     // Start is called before the first frame update
     async void Start()
     {
+        DebugHelper.LogError("打开Debug窗口");
+        
         _service=new Service();
         
         //设置画质分辨率

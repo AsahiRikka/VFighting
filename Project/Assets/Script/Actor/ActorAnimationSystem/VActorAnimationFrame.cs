@@ -30,24 +30,21 @@ public class VActorAnimationFrame
 
     public void SkillUpdateEvent(VSkillAction currentSkill)
     {
-        if(anim.GetCurrentAnimatorClipInfo(0)[0].clip!=currentSkill.motion.animationClip)
-            return;
-
-        _clip = anim.GetCurrentAnimatorClipInfo(0)[0].clip;
-
-        if (_clip == currentSkill.motion.animationClip)
+        if (anim.GetCurrentAnimatorClipInfo(0)[0].clip.ToString() != currentSkill.motion.animationClip.ToString())
         {
-            //当前动画机播放时长
-            currentTime = anim.GetCurrentAnimatorStateInfo(0).normalizedTime;
-            //动画片段长度
-            length = anim.GetCurrentAnimatorClipInfo(0)[0].clip.length;
-            //获取动画片段帧频
-            frameRate = anim.GetCurrentAnimatorClipInfo(0)[0].clip.frameRate; 
-            //计算动画片段总帧数
-            totalFrame = length / (1 / frameRate);
-            //计算当前播放的动画片段运行至哪一帧
-            _animationInfo.currentFrame = (int)(Mathf.Floor(totalFrame * currentTime) % totalFrame);
+            return;
         }
+
+        //当前动画机播放时长
+        currentTime = anim.GetCurrentAnimatorStateInfo(0).normalizedTime;
+        //动画片段长度
+        length = anim.GetCurrentAnimatorClipInfo(0)[0].clip.length;
+        //获取动画片段帧频
+        frameRate = anim.GetCurrentAnimatorClipInfo(0)[0].clip.frameRate; 
+        //计算动画片段总帧数
+        totalFrame = length / (1 / frameRate);
+        //计算当前播放的动画片段运行至哪一帧
+        _animationInfo.currentFrame = (int)(Mathf.Floor(totalFrame * currentTime) % totalFrame);
     }
 
     public void SkillEndEvent()

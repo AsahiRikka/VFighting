@@ -22,17 +22,10 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - default
-    m_MainAsset: {fileID: 11400000, guid: 0147eb8c1feb904409d85ee96446ec18, type: 2}
-    m_TargetAsset: {fileID: 11400000, guid: 0147eb8c1feb904409d85ee96446ec18, type: 2}
-  - m_GUID: 353cebca1767f9144b1f6738030ad950
-    m_Address: Actor_Config_Fuka
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - default
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
-  - m_GUID: 5bd19d70c8ac254458e3b1c3359063cc
-    m_Address: Actor_Prefab_Fuka
+  - m_GUID: 353cebca1767f9144b1f6738030ad950
+    m_Address: Actor_Config_Fuka
     m_ReadOnly: 0
     m_SerializedLabels:
     - default
@@ -52,6 +45,23 @@ MonoBehaviour:
     - default
     m_MainAsset: {fileID: 11400000, guid: e943ef9d573af704b935a6a943776430, type: 2}
     m_TargetAsset: {fileID: 11400000, guid: e943ef9d573af704b935a6a943776430, type: 2}
+  - m_GUID: eb9f87da4e7cb1c4096852f14449523c
+    m_Address: FX_ShardRock
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 1118498283874468604, guid: eb9f87da4e7cb1c4096852f14449523c,
+      type: 3}
+    m_TargetAsset: {fileID: 1118498283874468604, guid: eb9f87da4e7cb1c4096852f14449523c,
+      type: 3}
+  - m_GUID: f86191a5e1e5f004f9e896558a30cdf9
+    m_Address: Actor_Prefab_Fuka
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+    m_MainAsset: {fileID: 6589796070768851289, guid: f86191a5e1e5f004f9e896558a30cdf9,
+      type: 3}
+    m_TargetAsset: {fileID: 6589796070768851289, guid: f86191a5e1e5f004f9e896558a30cdf9,
+      type: 3}
   - m_GUID: fd25d76553131bd48a2df5635e58049f
     m_Address: Actor_Prefab_XiaoTao
     m_ReadOnly: 0

@@ -55,7 +55,7 @@ public class VActorAnimationController
             _actorInfo.animationInfo.straightLevel = 5;
         }
     }
-
+    
     public void SkillUpdateEvent(VSkillAction skillAction)
     {
         //刷新帧
@@ -69,7 +69,6 @@ public class VActorAnimationController
         foreach (var straight in skillAction.motion.animationStraights)
         {
             //在硬直帧范围内，高等级会覆盖低等级
-
             if (straight.type == VSegmentMotionType.keyFrame)
             {
                 if (straight.startFrame <= _actorInfo.animationInfo.currentFrame &&
@@ -90,11 +89,10 @@ public class VActorAnimationController
             }
         }
         _actorInfo.animationInfo.straightLevel = tempStraight;
-        
         if (_actorInfo.animationInfo.currentFrame >= skillAction.motion.animationEndClip)
         {
             //技能播放到结尾帧自动结束
-            if(skillAction.skillProperty.PlayType==SkillAnimPlayType.autoQuit)
+            if (skillAction.skillProperty.PlayType == SkillAnimPlayType.autoQuit)
                 _actorEvent.SkillEvent.skillEndNormalEvent.Invoke(skillAction);
             //如果技能需要保持最后一帧，不自动结束
             else if (skillAction.skillProperty.PlayType == SkillAnimPlayType.holdEnd)
@@ -114,6 +112,7 @@ public class VActorAnimationController
         _actorInfo.animationInfo.straightLevel = 0;
     }
 
+    private string lastTrigger = "";
     private void AnimationPlay(Animator animator, Transform actor,Transform parent, VSkillAction startSkill,VSkillAction lastSkill)
     {
         //设置rootMotion
@@ -125,7 +124,10 @@ public class VActorAnimationController
         //非循环动画使用trigger
         if (startSkill.skillProperty.PlayType==SkillAnimPlayType.autoQuit)
         {
+            _animator.ResetTrigger(lastTrigger);
             _animator.SetTrigger(startSkill.motion.parameter);
+
+            lastTrigger = startSkill.motion.parameter;
         }
         else
         {

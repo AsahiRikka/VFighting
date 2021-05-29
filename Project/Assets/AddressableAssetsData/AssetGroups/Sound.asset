@@ -17,14 +17,13 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 8be4e3a1156014c479fc368e509e5dd9
   m_SerializeEntries:
-  - m_GUID: 6edada73e3b2cb34596267e96d5481d0
+  - m_GUID: f66e0bfe847105a45bc505b5d93dc774
     m_Address: SoundPrefab
     m_ReadOnly: 0
-    m_SerializedLabels:
-    - default
-    m_MainAsset: {fileID: 4090532212675169926, guid: 6edada73e3b2cb34596267e96d5481d0,
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 4090532212675169926, guid: f66e0bfe847105a45bc505b5d93dc774,
       type: 3}
-    m_TargetAsset: {fileID: 4090532212675169926, guid: 6edada73e3b2cb34596267e96d5481d0,
+    m_TargetAsset: {fileID: 4090532212675169926, guid: f66e0bfe847105a45bc505b5d93dc774,
       type: 3}
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 8e518f294edf0e146969a20a4329c77f, type: 2}
