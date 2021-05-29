@@ -20,11 +20,10 @@ MonoBehaviour:
   - m_GUID: f66e0bfe847105a45bc505b5d93dc774
     m_Address: SoundPrefab
     m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 4090532212675169926, guid: f66e0bfe847105a45bc505b5d93dc774,
-      type: 3}
-    m_TargetAsset: {fileID: 4090532212675169926, guid: f66e0bfe847105a45bc505b5d93dc774,
-      type: 3}
+    m_SerializedLabels:
+    - default
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 8e518f294edf0e146969a20a4329c77f, type: 2}
   m_SchemaSet:

@@ -142,7 +142,7 @@
     <waitProcessExitting>false</waitProcessExitting>
     <pmxAssetPath>Assets/Sources/Models/小希-v2.0-红裙（周年版）/小希-v2.0-红裙（周年版）.pmx</pmxAssetPath>
     <vmdAssetPathList />
-    <fbxOutputPath>Assets/Sources/Models/小希-v2.0-红裙（周年版）/小希-v2.0-红裙（周年版）.fbx</fbxOutputPath>
+    <fbxOutputPath>Assets/Sources/Models/小希-v2.0-红裙（周年版）/小希-v2.0-红裙（原）.fbx</fbxOutputPath>
     <bulletPhysicsVersion>_275</bulletPhysicsVersion>
     <useWineFlag>false</useWineFlag>
     <wine>Manual</wine>
